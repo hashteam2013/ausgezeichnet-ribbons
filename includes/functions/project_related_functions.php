@@ -85,14 +85,14 @@ function getDistrictRelatedCategoryBatches($cat_id,$district_ids){
             $cat_name_en = $catObj->name_en;
         }
         $query_one = new query('batch_filter_relation as relation');
-        $query_one->Field = "relation.filter_id,relation.batch_id,batch.is_active,batch.batch_position,batch.webshop_title_" . $app['language'] . " as webshop_title_en,o.position,batch.id,batch.ribbon_name_".$app['language']." as name_en,batch.batch_image,batch.desc_".$app['language']." as desc_en, batch.unit_price as unit_price, batch.type,bfr.filter_id as org_id,o.name_".$app['language']." as org_name, batch.comment as comment";
+        // group to one row per batch; omit non-grouped filter_id to satisfy ONLY_FULL_GROUP_BY
+        $query_one->Field = "relation.batch_id,batch.is_active,batch.batch_position,batch.webshop_title_" . $app['language'] . " as webshop_title_en,o.position,batch.id,batch.ribbon_name_".$app['language']." as name_en,batch.batch_image,batch.desc_".$app['language']." as desc_en, batch.unit_price as unit_price, batch.type,bfr.filter_id as org_id,o.name_".$app['language']." as org_name, batch.comment as comment";
         $query_one->Where = " LEFT JOIN batches as batch ON batch.id = relation.batch_id";
-        //$query_one->Where .= " LEFT JOIN categories as cat ON cat.id = relation.filter_id";
         $query_one->Where.= " LEFT JOIN batch_filter_relation as bfr ON bfr.batch_id = relation.batch_id and bfr.rel_type = 'organizations'";
         $query_one->Where.= " LEFT JOIN organizations as o ON bfr.filter_id = o.id";
         $query_one->Where .= " where relation.rel_type = 'districts' and relation.filter_id IN ($ids_str) and relation.batch_id IN";
         $query_one->Where .= " (SELECT r1.batch_id FROM batch_filter_relation as r1 WHERE r1.rel_type = 'categories' and r1.filter_id = '$cat_id`')";
-        $query_one->Where .= " GROUP BY relation.batch_id order by o.position, org_name, batch.batch_position ";
+        $query_one->Where .= " GROUP BY relation.batch_id,batch.is_active,batch.batch_position,batch.webshop_title_" . $app['language'] . ",o.position,batch.id,batch.ribbon_name_".$app['language'].",batch.batch_image,batch.desc_".$app['language'].",batch.unit_price,batch.type,bfr.filter_id,o.name_".$app['language'].",batch.comment order by o.position, org_name, batch.batch_position ";
         //$query_one->print=1;
         $return = $query_one->ListOfAllRecords('object');
         foreach($return as $key => $batch){
