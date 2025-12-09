@@ -939,9 +939,10 @@ form#register-form .form-group {
 .form-control.btn.btn-login {
     line-height: 0px !important;
 }
-@media (min-width: 1367px){
+@media (min-width: 1200px){
     .container {
-        width: 1660px;
+        width: 96%;
+        max-width: 1660px;
     }
 	.srch-reslt .flag-contaner img {
        max-height: 49px;

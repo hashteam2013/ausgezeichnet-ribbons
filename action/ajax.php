@@ -1103,7 +1103,9 @@ switch ($action):
             $text = $app['POST']['q'];
             $text = htmlentities($text, ENT_QUOTES, 'UTF-8');
             $query = new query('batches');
-            $query->Field = "id,ribbon_name_en,ribbon_name_dr,is_active,desc_en";
+            // Include fields used by the search results template (image + type) so
+            // the rendered "Add to list" buttons carry the correct data attributes.
+            $query->Field = "id,ribbon_name_en,ribbon_name_dr,is_active,desc_en,batch_image,type";
             $query->Where = "where (ribbon_name_en LIKE '%$text%'or ribbon_name_dr LIKE '%$text%' or webshop_title_en LIKE '%$text%' or webshop_title_dr  LIKE '%$text%') AND is_batch=1 order by ribbon_name_en,ribbon_name_dr ASC ";
             $searched_ribbons = $query->ListOfAllRecords();
         }

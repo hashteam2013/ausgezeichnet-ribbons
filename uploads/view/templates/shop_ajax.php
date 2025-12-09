@@ -1,6 +1,7 @@
 <script>
     /*-------------------------------------shop checkbox (show ribbons using category)-------------------------------------------------------------------------*/
-    var log_in = $("#LOGGED_IN_USER").val();
+    // Read login state directly from PHP session to avoid stale/missing DOM values
+    var log_in = "<?php echo LOGGED_IN_USER ? '1' : '0'; ?>";
     var customer_id = $("#custm option:selected").val();
     var recent_activity = {};
     recent_activity['category'] = {};

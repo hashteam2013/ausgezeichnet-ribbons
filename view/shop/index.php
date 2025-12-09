@@ -136,8 +136,8 @@
                         if (isset($app['logged_in_user']) && $app['logged_in_user'] != '' &&  !empty($selected_customer_batches)) { ?>
                         <input type="button" class="delet-slct hvr-float-shadow delete" value="<?php _e("Delete Selected");?>">
                         <input type="button" class="delet-slct hvr-float-shadow select" value="<?php _e("Select All");?>">
-	          <input type="button" class="delet-slct hvr-float-shadow select_w" value="<?php _e("Select wearables");?>">
-	          <input type="button" class="delet-slct hvr-float-shadow select_n" value="<?php _e("Select New");?>">
+	                    <input type="button" class="delet-slct hvr-float-shadow select_w" value="<?php _e("Select wearables");?>">
+	                    <input type="button" class="delet-slct hvr-float-shadow select_n" value="<?php _e("Select New");?>">
                         <a href = "javascript:void(0)"><input type="button" class="cart-slct divider hvr-float-shadow add_to_cart_ribbon" value="<?php _e("Add to Cart"); ?>"></a>
                         <a href = "<?php echo make_url('cart');?>"><input type="button" class="cart-slct divider buy hvr-float-shadow view_cart" value="<?php _e("View Cart"); ?>"></a>
                         <?php } ?>
