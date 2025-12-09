@@ -182,6 +182,12 @@ else
 
 global $app;
 $id = isset($app['GET']['id'])?$app['GET']['id']:"0";
+
+// Require an authenticated user before continuing, otherwise bail early
+if (!LOGGED_IN_USER || !is_object($app['user_info'])) {
+    redirect(make_url('login'));
+}
+
 $userid=$app['user_info']->id;
 
         $query= new query('customers'); 
