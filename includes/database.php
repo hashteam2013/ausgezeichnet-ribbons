@@ -352,7 +352,8 @@ class query extends Connection {
         $this->TableName = "";
         $this->Data = "";
         $this->Where = "";
-        $this->Fields = "*";
+        // Reset selected columns
+        $this->Field = "*";
         $this->print = 0;
     }
 
