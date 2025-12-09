@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AJAX Error Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .error { background: #fee; border: 1px solid #fcc; padding: 10px; margin: 10px 0; border-radius: 4px; }
+        .success { background: #efe; border: 1px solid #cfc; padding: 10px; margin: 10px 0; border-radius: 4px; }
+        pre { background: #f5f5f5; padding: 10px; overflow-x: auto; border-radius: 4px; }
+        button { padding: 10px 20px; margin: 5px; cursor: pointer; }
+        input { padding: 8px; margin: 5px; width: 200px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>AJAX Error Test Tool</h1>
+        
+        <h2>Test Login Endpoint</h2>
+        <div>
+            <input type="email" id="email" placeholder="Email" value="test@test.com">
+            <input type="password" id="password" placeholder="Password" value="test">
+            <button onclick="testLogin()">Test Login</button>
+            <button onclick="testInvalidAction()">Test Invalid Action</button>
+        </div>
+        
+        <div id="result"></div>
+        
+        <h2>How to View Errors:</h2>
+        <ol>
+            <li><strong>Browser Console:</strong> Open Developer Tools (F12) → Console tab</li>
+            <li><strong>Network Tab:</strong> Check the Network tab to see the AJAX request/response</li>
+            <li><strong>Response:</strong> Errors will be included in the JSON response under <code>php_errors</code> key</li>
+            <li><strong>Server Logs:</strong> Check <code>/var/log/apache2/error.log</code></li>
+        </ol>
+    </div>
+    
+    <script>
+        function testLogin() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const resultDiv = document.getElementById('result');
+            
+            resultDiv.innerHTML = '<p>Testing...</p>';
+            
+            fetch('http://localhost/ribbons/?page=ajax&action=login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: 'email=' + encodeURIComponent(email) + '&password=' + encodeURIComponent(password)
+            })
+            .then(response => response.json())
+            .then(data => {
+                let html = '<div class="success"><h3>Response Received:</h3><pre>' + JSON.stringify(data, null, 2) + '</pre></div>';
+                
+                if (data.php_errors && data.php_errors.length > 0) {
+                    html += '<div class="error"><h3>PHP Errors Found:</h3><pre>' + JSON.stringify(data.php_errors, null, 2) + '</pre></div>';
+                }
+                
+                if (data.status === 'error') {
+                    html = '<div class="error"><h3>Application Error:</h3><p>' + data.msg + '</p><pre>' + JSON.stringify(data, null, 2) + '</pre></div>' + html;
+                }
+                
+                resultDiv.innerHTML = html;
+            })
+            .catch(error => {
+                resultDiv.innerHTML = '<div class="error"><h3>JavaScript Error:</h3><pre>' + error.toString() + '</pre></div>';
+                console.error('Error:', error);
+            });
+        }
+        
+        function testInvalidAction() {
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = '<p>Testing invalid action...</p>';
+            
+            fetch('http://localhost/ribbons/?page=ajax&action=invalid_action', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: 'test=1'
+            })
+            .then(response => response.json())
+            .then(data => {
+                let html = '<div class="error"><h3>Response (Invalid Action):</h3><pre>' + JSON.stringify(data, null, 2) + '</pre></div>';
+                resultDiv.innerHTML = html;
+            })
+            .catch(error => {
+                resultDiv.innerHTML = '<div class="error"><h3>Error:</h3><pre>' + error.toString() + '</pre></div>';
+            });
+        }
+    </script>
+</body>
+</html>
+

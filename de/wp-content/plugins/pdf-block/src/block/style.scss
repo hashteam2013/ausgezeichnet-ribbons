@@ -1,0 +1,15 @@
+/**
+ * #.# Styles
+ *
+ * CSS for both Frontend+Backend.
+ */
+
+.wp-block-pdfb-pdf-block  {
+  margin: 0 auto;
+
+  iframe {
+    border: none;
+    max-height: 100% !important;
+  }
+  
+}

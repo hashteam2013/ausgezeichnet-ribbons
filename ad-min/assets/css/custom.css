@@ -1,0 +1,112 @@
+.img-uper {
+    float: left;
+    width: 69px;
+    margin-right: 14px;
+}
+.img-uper img {
+    width: 100%;
+}
+
+.numBatch {
+    float: left;
+    width: 69px;
+    margin-right: 14px;
+}
+.locBatch {
+    float: left;
+    width: 69px;
+    margin-right: 14px;
+}
+.numBatch img {
+    width: 100%;
+}
+.pos.number_pos{
+    float:left;
+    width: 30%;
+}
+.number_pos {
+    font-weight: bold;
+}
+
+#inner_pos {
+    margin-left: 83px;
+    margin-top: -20px;
+}
+.location_pos{
+  float:left;
+  width: 30%; 
+  font-weight:bold;
+}
+#inner_loc {
+  margin-left: 135px;
+}
+
+
+.srch-bar {
+    float: right;
+    margin-right: 60px;
+}
+input.btn.srch-btn.search1 {
+    color: #fff;
+    background-color: #E26A6A!important;
+    border-color: #e31d2d;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+        font-size: 19px;
+    padding: 3px 11px;
+}
+.srch-bar input#search-box {
+    padding: 5px 4px 9px 4px;
+    border-top-left-radius: 4px !important;
+    border-bottom-left-radius: 4px !important;
+    border:1px solid #e31d2d;    margin-right: -5px;
+}
+
+.i-a-class input.my-check {
+    width: auto;
+    float: left;
+    margin: 3px 5px 0px 0px;
+}
+.portlet.light .portlet-body .form-group select {
+    width: 100%;
+    padding: 6px;
+    background: #fff;
+}
+.portlet.light .portlet-body input#number {
+    width: 100%;
+    padding: 6px;
+}
+ul.my-check-sec.fordist {
+    overflow-y: hidden;
+    max-height: 308px;
+}
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 26 Oct, 2016, 11:56:46 AM
+    Author     : gaurav
+*/
+#udpate-account-form{display: none;}
+.page-header.navbar .page-logo>a{background: #fff;margin-top: 15px;padding: 5px;}
+.page-header.navbar .page-logo .logo-default{max-width: 100%;margin: 0;}
+@media (min-width: 992px){
+    .page-content-wrapper .page-content {padding-top: 0px;}
+}
+/*department listing css*/
+div#show_batch #inner_pos {
+    margin-left: 0;
+    margin-top: 0;
+}
+div#show_batch .pos_depart {
+    float: left;
+    width: 100%;
+}
+.portlet.light.bordered .caption-subject {
+    font-size: 16px;
+}
+.portlet.light.bordered .caption.font-red-sunglo {
+    padding: 10px 0;
+}

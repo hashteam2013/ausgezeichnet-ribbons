@@ -1,0 +1,3 @@
+<?php
+$activeLangauges = getAllActiveLangauges();
+?>

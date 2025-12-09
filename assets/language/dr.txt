@@ -1,0 +1,302 @@
+﻿// homepage
+Previous ~~ Bisherige
+Next ~~ Nächster
+Welcome content ~~ 
+products ~~ <h2 class="red-main-hd">Produkte</h2>
+medals ~~ Originaldekorationen
+miniatures ~~ Deutsche Bandschnallen
+modular ribbons ~~ Vollmodulare Ordensspangen
+Shop Ribbons ~~ Shop
+Fire Department ~~ Feuerwehr
+original content ~~  <p>Über Ausgezeichnet<span style="color:#ED0000;">.cc</span> können Sie Originaldekorationen beziehen. Gerne bieten wir Ihnen die Erstellung einer Vektorgrafik Ihrer Auszeichnung an.</p>
+To the shop ~~ Zum Shop
+more info ~~ Mehr Infos
+Red Cross ~~ Rotes Kreuz
+contact us ~~ Kontaktieren Sie uns!
+miniatures content ~~  <p>Viele österreichische Auszeichnungen, vornehmlich aus dem Bereich der Feuerwehr, werden nach Deutschland verliehen, können dort auf der Bandschnalle aber nicht getragen werden, da die Bänder in geeigneter Breite und vor allem die Miniaturen dafür fehlen. Diese Lücke haben wir geschlossen und die Fertigung selbst in die Hand genommen. Wir starten mit einer Auswahl an österreichischen Feuerwehrauszeichnungen, erweitern unser Sortiment jedoch kontinuierlich. Anregungen nehmen wir dankbar entgegen. Die deutschen Bandschnallen sind im Shop unter VERSCHIEDENES zu finden.</p><br>
+Federal Army ~~ Bundesheer
+Federal Army content ~~ <p></p>
+ribbons content ~~ <p>Ausgezeichnet<span style="color:#ED0000;">.cc</span> bietet ein Produkt, bei welchem die Auszeichnungen (Bandspangen) einzeln gefertigt und mit Hilfe von Steck- und Klemmelementen nebeneinander und in Reihen übereinander angeordnet werden können. Kommt eine neue Auszeichnung hinzu, muss nur jeweils die betreffende Spange ergänzt und nicht  – wie bisher üblich – die gesamte Ordensspange ausgetauscht werden.</p>
+View all categories ~~ Zum Shop
+Below shop content ~~ <h1>Vollmodulare Ordensspangen</h1><h2>Das System</h2><p>Ausgezeichnet<span style="color:#ED0000;">.cc</span> bietet ein Produkt, bei welchem die Auszeichnungen (Bandspangen) einzeln gefertigt und mit Hilfe von Steck- und Klemmelementen nebeneinander und in Reihen übereinander angeordnet werden können. Kommt eine neue Auszeichnung hinzu, muss nur jeweils die betreffende Spange ergänzt und nicht  – wie bisher üblich – die gesamte Ordensspange ausgetauscht werden. Ein immenser finanzieller Vorteil, da alle einmal erworbenen Bestandteile (Spangen, Verbindungsstücke, Befestigungselemente) beliebig angeordnet und daher weiterverwendet werden können.<br>Das Produkt besticht zudem durch seine qualitativ hochwertige Verarbeitung. Die Elemente aus Aluminium und Edelstahl sind mit höchster Präzision im 10tel-Millimeterbereich gefertigt und garantieren auch nach langer Tragezeit uneingeschränkte Funktionalität. Die Klemmkappenverschlüsse zur Befestigung der Spange an der Uniform wurden für Ausgezeichnet.cc  „customized“: Sie sind äußerst flach, bieten einen verlässlichen Halt und ersetzen Hafteln, lange Nadeln, Butterflyverschlüsse und andere Befestigungsvarianten.</p>
+montagevideo ~~ <h2>Montage Video</h2><iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FAusgezeichnet.cc%2Fvideos%2F1988286158114310%2F&show_text=0&width=623" width="623" height="350" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
+miniatures content2 ~~ <h2>Die Bandauflagen</h2><p>Großer Wert wird auf die möglichst detailgetreue und fertigungstechnisch einwandfreie Nachbildung der originalen Dekorationen „en miniature“ gelegt. Für die Produktion der Miniaturen und anderer Bandauflagen werden vektorisierte 3d-Modelle von Auszeichnungen verwendet, die eine exakte Nachbildung in verkleinertem Maßstab gewährleisten – nicht die Kopie einer Kopie einer Kopie, sondern ein detailgetreu nachgebildetes Kleinod von 10mm, das sich im besten Wortsinne sehen lassen kann. Ähnlich hohe Ansprüche wie bei der Miniaturenproduktion werden an die grafische Darstellung von Bändern und Auflagen im Webshop gelegt. Überzeugen Sie sich selbst!</p>
+Below shop content3 ~~<h2>Der Online-Konfigurator</h2><p>Der Online-Konfigurator reiht die einer Person zugeordneten Auszeichnungen nach der in Österreich gebräuchlichen Rangordnung. Diese Reihung ist abhängig von der Zugehörigkeit zu einer Organisation und dem Sitz (Bundesland, Bezirk, Gemeinde) dieser Vereinigung. Daher ist es notwendig, bei der Registrierung diesbezügliche Angaben zu machen, um die korrekte Reihung der Auszeichnungen durch den Konfigurator gewährleisten zu können. Registrierte Kunden können den Online Konfigurator jederzeit auch ohne Kaufvorgang konsultieren, um etwaige Fragen in Hinblick auf die mitunter nicht einfach anzuwendende Rangordnung  klären zu können. Dieses für die Kunden von Ausgezeichnet.cc kostenlos zur Verfügung stehende Service ist ein absolutes Novum in Österreich und wird nirgendwo sonst angeboten.</p>
+Below shop content4 ~~<h2>Grundlagen der Rangordnung</h2><p>Wir stellen den Anspruch, die geltenden Regelungen zur Rangordnung nach Punkt und Beistrich umzusetzen. Die Basis dazu bilden eine Vielzahl an Gesetzen und Verordnungen. In <a href="/RechtlicheGrundlagen.pdf" target="_blank" style="color:#ED0000;">unserem PDF Dokument </a> finden Sie eine Sammlung relevanter Links zu den verschiedenen Auszeichnungen.</p>
+about us content left ~~ <h2>MAG. FLORIAN HELL</h2><p> Der Uniformträger<br>Studium Kunstgeschichte und Kulturmanagement an der Karl-Franzens-Universität in Graz.<br>Seit seinem zwölften Lebensjahr ist er Mitglied der Freiwilligen Feuerwehr Bruck an der Mur und ebendort bislang mit beinahe sämtlichen Themengebieten in Kontakt gekommen, die das tägliche Feuerwehrleben mit sich bringt. Er kennt die Bedürfnisse der Branche – und setzte kurzerhand mit seinem Kompagnon unter der Marke Ausgezeichnet.cc die Idee vollmodularer Ordensspangen in die Praxis um.</p>
+about us content right ~~ <h2>DI LUKAS HATZMANN</h2><p>Der Techniker <br/>Studium des Maschinenbaus mit Spezialisierung auf Produktionstechnik und Mechatronik, selbständig als Maschinenentwickler, Mechatroniker und Programmierer tätig. Er ist für sämtliche technische Fragestellungen rund um das neue Ordensspangen-System zuständig – und der pragmatisch-ruhende Pol von Ausgezeichnet.cc.
+Contact Us ~~ Kontakt
+generalquestions ~~ Allgemeine Anfragen
+generalquestionscontact ~~ <p><span><i class="fa fa-envelope-o" aria-hidden="true"></i></span> &nbsp;  <a href="mailto:office@ausgezeichnet.cc">office@ausgezeichnet.cc</a></p><p><span><i class="fa fa-phone" aria-hidden="true"></i></span>&nbsp; +436767013330</p>
+Excellent. Cc  | Full-Modular Order Orders ~~ Ausgezeichnet<span style="color: #ED0000;">.cc</span>  | Vollmodulare Ordensspangen <br> Hatzmann Hell OG <br>Wienerstra&szlig;e 80<br>8600 Bruck an der Mur<br>UID ATU71872208<br>FN 465214 p
+Management Marketing & Sales ~~ Geschäftsführung Marketing & Vertrieb
+Management Marketing & Sales content ~~ <p>Mag. Florian Hell </p><p><span><i class="fa fa-envelope-o" aria-hidden="true"></i></span> &nbsp; <a href="mailto:florian.hell@ausgezeichnet.cc">florian.hell@ausgezeichnet.cc</a></p><p><span><i class="fa fa-phone" aria-hidden="true"></i></span> &nbsp;  +436767013330</p>
+Management Engineering ~~ Geschäftsführung Technik
+Management Engineering content ~~ <p>DI Lukas Hatzmann</p><p><span><i class="fa fa-envelope-o" aria-hidden="true"></i></span> &nbsp;  <a href="mailto:lukas.hatzmann@ausgezeichnet.cc">lukas.hatzmann@ausgezeichnet.cc</a></p><p><span><i class="fa fa-phone" aria-hidden="true"></i></span>&nbsp; +4368181372187</p>
+
+
+
+// shop page
+Collections ~~ Verschiedenes
+Our Ribbon Gallery ~~ Übersicht
+Categories ~~ Kategorien
+Districts ~~  Bundesländer
+Departments ~~ Kollektion
+Search Result by category! ~~ Resultate in gewählter Kategorie
+Selected Items  ~~ Artikel für diesen Kunden
+No Customer ~~ Kein Kunde angelegt
+Guest ~~ Gast
+Add Customer ~~ Kunden hinzufügen
+Delete Selected ~~ Ausgewählte löschen
+Select All ~~ Alle auswählen
+Select New ~~ Noch nicht bestellte auswählen
+Select wearables ~~  
+Deselect All ~~ Alle abwählen
+Add to Cart ~~ In den Einkaufswagen
+View Cart ~~ Zum Einkaufswagen
+Badges Placed ~~ Ansicht der Spange
+Are you sure? You want to delete this badge! ~~ Sind Sie sicher, dass sie diese Auszeichnung löschen wollen?
+Error occurred while adding batch in cart! Try again! ~~ Fehler beim Hinzufügen der Auszeichnung in den Warenkorb. Bitte versuchen Sie es erneut.
+- Batch added in cart successfully. ~~ - Auszeichnung in den Warenkorb hinzugefügt.
+Batch currently not available ~~ Auszeichnung gegenwärtig nicht verfügbar!
+Update ~~ Update
+Please check at least one batch! ~~ Bitte überprüfen Sie mindestens eine Charge!
+- Batch already added in cart for same customer. ~~ - Charge bereits im Warenkorb für den gleichen Kunden hinzugefügt.
+Batch has been deleted successfully! ~~ Charge wurde erfolgreich gelöscht! 
+
+
+// customer page
+My Account ~~ Mein Konto
+Customers ~~ Kunden
+Filter Customer ~~ Filter Kunden
+First Name ~~ Vorname
+Last Name ~~ Nachname
+Badges ~~ Auszeichnungen
+Ribbons ~~ Spangen
+No customer added yet ~~ Noch kein Kunde angelegt
+
+//change_password
+Old Password ~~ Altes Passwort
+New Password ~~  Neues Passwort
+Confirm New Password ~~ Passwort wiederholen
+Update Password ~~ Passwort ändern
+
+
+// login-register-msges
+HEllO ~~ Profil von 
+Logout ~~ Ausloggen
+Login ~~ Anmeldung
+Register ~~ Neu registrieren
+Enter your email ~~ Geben sie ihre E-Mail Adresse ein
+Email Address ~~ Email Addresse
+Password ~~ Passwort
+Enter your password ~~ Geben Sie Ihr Passwort ein
+Remember Me ~~ Login speichern
+Forgot Password? ~~ Passwort vergessen?
+Get Access Info ~~ Zugangsinformationen
+Back to Login Page ~~ Zurück zum Login
+Firstname ~~ Vorname
+Lastname ~~ Nachname
+Email ~~ Email
+Password ~~ Passwort
+Confirm Password ~~ Password bestätigen
+I agree all terms and conditions ~~ Ich habe die <a href="https://ausgezeichnet.cc/AGB.pdf" target="_blank">AGBs</a> gelesen und stimme diesen zu.
+dsgvo1 ~~ Datenschutz, Widerruf
+NoDSGVOWarning ~~ Achtung: Wenn Sie dieser Erklärung nicht zustimmen, sind wir gezwungen, Ihre Daten (und damit Ihren gesamten Account) zu löschen. Standardmäßig wird das innerhalb von zwei Wochen nach Rückzug der Einwilligung erfolgen. Sollten Sie eine raschere Löschung wünschen, bitte treten Sie mit uns in Kontakt.
+I agree DSGVO ~~ Ich stimme zu, dass von mir eingegebene Daten gemäß unserer <a href="https://ausgezeichnet.cc/datenschutzerklaerung.pdf" target="_blank">Datenschutzerkl&auml;rung</a> verarbeitet werden. Diese Zustimmung kann im Bereich "Mein Profil" jederzeit widerrufen werden.
+I agree DSGVO2 ~~ Ich stimme zu, dass von mir eingegebene Daten gemäß unserer <a href="https://ausgezeichnet.cc/datenschutzerklaerung.pdf" target="_blank">Datenschutzerkl&auml;rung</a> verarbeitet werden. Diese Zustimmung kann jederzeit widerrufen werden.
+NoeMailWarning ~~ Achtung: Wenn Sie dieser Erklärung nicht zustimmen und Sie selbst kein MIME-Zertifikat besitzen, können wir nicht per eMail mit Ihnen in Kontakt treten. Sie werden somit keine Auftragsbestätigungen o.ä. per eMail erhalten, lediglich eine Rechnung per Post.
+NoeMailWarning2 ~~ Achtung: Bitte stimmen Sie dieser Erklärung zu, wenn Sie kein MIME-Zertifikat für Ihre eMail Adresse besitzen. Andernfalls können wir nicht per eMail mit Ihnen in Kontakt treten. Wir können Ihre eMail Adresse dann nicht für den Shop verifzieren und Sie nicht freischalten!
+I agree eMail2 ~~ Ich bin mit der Korrespondenz, bzw. der Zusendung von Daten im PDF-Format per einfacher, unverschlüsselter E-Mail einverstanden. Mir ist bekannt, dass die mir so zugesandten E-Mails personenbezogene Daten enthalten können. Die Risiken, die mit dem Versand solcher E-Mails verbunden sind – insbesondere die unbefugte Kenntnisnahme und Verwertung durch Dritte – sind mir bewusst. Dies wird ausschließlich im Rahmen der Auftragsabwicklung geschehen. Sie werden von uns KEINE Werbeemails erhalten. Diese Zustimmung kann jederzeit widerrufen werden. 
+I agree phone2 ~~ Ich bin damit einverstanden, dass ich per Telefon kontaktiert werden kann. Dies wird ausschließlich im Falle von notwendigen Detailabklärungen im Rahmen der Auftragsabwicklung geschehen. Sie werden von uns KEINE Werbeanrufe erhalten. Diese Zustimmung kann jederzeit widerrufen werden.
+NoPhoneWarning ~~ Achtung: Wenn Sie dieser Erklärung nicht zustimmen, können wir Sie nicht per Telefon kontaktieren. Damit können wir z.B. keine direkte Rückfrage stellen, wenn Unklarheiten bezüglich Ihrer Bestellung vorliegen.
+Register Now ~~ Jetzt Registrieren
+Add customer ~~ Kunden hinzufügen
+Terms and Conditions ~~ Nutzungsbedingungen
+Terms and Conditions content ~~ <h1>1. Geltungsbereich</h1><p>Diese Allgemeinen Geschäftsbedingungen der Hatzmann Hell OG gelten für alle Verträge hinsichtlich der Lieferung von Waren, die ein Verbraucher (nachfolgend „Kunde“) mit der Hatzmann Hell OG in Bezug auf die in ihrem Online-Shop dargestellten Waren abschließt.Verbraucher im Sinne dieser AGB ist jede natürliche Person, wenn die mit der Hatzmann Hell OG erfolgenden Rechtgeschäfte weder überwiegend ihrer gewerblichen noch ihrer selbständigen beruflichen Tätigkeit zugerechnet werden können.</p><h1>2. Produktbeschreibungen, bestimmungsgemäße Verwendung, Mängelhaftung</h1><p>Die Abbildungen im Webshop stellen Symbolbilder der tatsächlich gelieferten Artikel dar. Aufgrund dessen, sowie aufgrund technischer Weiterentwicklungen u.ä. können die tatsächlich gelieferten Artikel von diesen Grafiken abweichen.</p><p>Die verkauften Artikel dienen überwiegend Dekorationszwecken.</p><p>Falls unmontierte Einzelteile bestellt werden, müssen diese vom Kunden selbst montiert werden. In diesem Fall ist bitte den entsprechenden beiliegenden bzw. online verfügbaren Montageanleitungen Folge zu leisten.</p><p>Die Hatzmann Hell OG weist ausdrücklich darauf hin, dass die verkauften Artikel nicht als „Spielzeug“ gedacht sind. Bitte achten Sie darauf, sich bei der Montage nicht durch unsachgemäße Handhabung zu verletzen. Kleinteile können von Kindern oder Haustieren verschluckt werden. </p><p>Die Teile wurden möglichst langlebig ausgeführt; dennoch sind sie ausdrücklich nicht dafür gedacht, regelmäßig montiert und demontiert zu werden, sondern nur während der wenigen Einzelfälle bei Erhalt neuer  Auszeichnungen. Achten Sie bei der Montage unserer Teile bitte aus saubere Hände und eine saubere Arbeitsumgebung. Auf verschmutzte Teile besteht kein Ersatzanspruch. </p><br><p>Die Hatzmann Hell OG verlangt im Normalfall keinen Verleihungsnachweis über bestellte Auszeichnungen; der Kunde ist selbst dafür verantwortlich, die Spange richtlinienkonform zu montieren und zu tragen.  Es obliegt dem Kunden, die Tragevorschriften seiner jeweiligen Organisation zu beachten. </p><p>Der Kunde wird gebeten, angelieferte Waren mit offensichtlichen Transportschäden bei dem Zusteller zu reklamieren und die Hatzmann Hell OG hiervon in Kenntnis zu setzen. Kommt der Kunde dem nicht nach, hat  dies keinerlei Auswirkungen auf seine gesetzlichen oder vertraglichen Mängelansprüche.</p><h1>3. Vertragsschluss, Widerrufsrecht</h1><p>Die im Online-Shop der Hatzmann Hell OG enthaltenen Produktbeschreibungen stellen keine verbindlichen Angebote seitens der Hatzmann Hell OG dar. Sie dienen vielmehr der Abgabe eines verbindlichen Angebots durch den Kunden. Über das in unseren Online-Shop integrierte Online-System kann der Kunde Angebote abgeben. Der Kunde gibt durch das Klicken des den Bestellvorgang abschließenden Buttons ein rechtlich verbindliches Vertragsangebot für die im Einkaufswagen enthaltenen Waren ab. Die Hatzmann Hell OG kann das Angebot des Kunden innerhalb von fünf Tagen annehmen, indem er dem Kunden per E-Mail eine Auftragsbestätigung übermittelt, oder er dem Kunden die bestellte Ware liefert, oder  indem er den Kunden nach Abgabe von dessen Bestellung zur Zahlung auffordert.  Nimmt die Hatzmann Hell OG das Angebot des Kunden nicht innerhalb von fünf Tagen an, so gilt dies als Ablehnung des Angebots. Damit ist auch der Kunde nicht mehr an seine Willenserklärung gebunden. Die Bestellabwicklung und Kontaktaufnahme finden in der Regel per E-Mail und automatisierter Bestellabwicklung statt. Der Kunde hat sicherzustellen, dass die von ihm zur Bestellabwicklung angegebene E-Mail- Adresse zutreffend ist, so dass unter dieser Adresse die durch die Hatzmann Hell OG versandten E-Mails empfangen werden können. Kunden steht grundsätzlich ein 14-tägiges Widerrufsrecht zu. Das Widerrufsrecht gilt nicht für Kunden, die zum Zeitpunkt des Vertragsschlusses keinem Mitgliedstaat der Europäischen Union angehören und deren alleiniger Wohnsitz und Lieferadresse zum Zeitpunkt des  Vertragsschlusses außerhalb der Europäischen Union liegen.</p><h1>4. Preise und Zahlungsbedingungen</h1><br><p>Lieferungen erfolgen grundsätzlich nur innerhalb Österreichs. Bei Bestellung aus anderen Ländern werden Zoll- und  Versandgebühren sowie sonstige Kosten dem Kunde separat in Rechnung gestellt. Bei den angegebenen Preisen handelt es sich um Gesamtpreise inklusive der gesetzlichen Umsatzsteuer. Liefer- und Versandkosten werden im Einkaufswagen gesondert angegeben. </p><p>Wird durch den Kunden Vorauskasse per Banküberweisung als Zahlungsmöglichkeit gewählt, ist die Zahlung innerhalb von 3 Tagen nach Vertragsabschluss fällig. </p><p>Bei Auswahl der Zahlungsart „SOFORT Überweisung“ erfolgt die Zahlungsabwicklung über den Zahlungsdienstleister SOFORT GmbH, Theresienhöhe 12, 80339 München (im Folgenden „SOFORT“). Der Kunde akzeptiert bei Verwendung dieser Bezahlmöglichkeit die SOFORT-Nutzungsbedingungen, welche auf der SOFORT-Website eingesehen werden können. </p><br><p>Bei Zahlung mittels einer von PayPal angebotenen Zahlungsart erfolgt die Zahlungsabwicklung über den Zahlungsdienstleister PayPal (Europe) S.à r.l. et Cie, S.C.A., 22-24 Boulevard Royal, L-2449 Luxembourg (im  Folgenden „PayPal“). Der Kunde akzeptiert bei Verwendung dieser Bezahlmöglichkeit die PayPal-Nutzungsbedingungen, welche auf der PayPal-Website eingesehen werden können.</p> <h1>5. Liefer- und Versandbedingungen, Eigentumsvorbehalt</h1><br><p>Die Lieferung von Waren erfolgt auf dem Versandweg an die vom Kunden angegebene Lieferanschrift. Sendet das Transportunternehmen die versandte Ware an die Hatzmann Hell OG zurück, da eine Zustellung beim Kunden nicht möglich war, trägt der Kunde die Kosten für den erfolglosen Versand. Sofern nicht die Hatzmann Hell OG die Lieferung eine angemessene Zeit vorher angekündigt, sind diese Kosten nicht an die Hatzmann Hell OG rückzuerstatten, wenn der Kunde sein Widerrufsrecht wirksam ausübt, wenn er den Umstand, der zur Unmöglichkeit der Zustellung geführt hat, nicht zu vertreten hat oder wenn er vorübergehend an der Annahme der angebotenen Leistung verhindert war, Die Hatzmann Hell OG behält er sich bis zur vollständigen Bezahlung des Kaufpreises das Eigentum an der gelieferten Ware vor. </p1><h1>6. Gerichtsstand, Anwendbares Recht </h1><br><p>Für sämtliche Rechtsbeziehungen der Parteien gilt das Recht der Republik Österreich unter Ausschluss der Gesetze über den internationalen Kauf beweglicher Waren. Verträge werden nur mit Kunden, die ihren gewöhnlichen Aufenthalt in Österreich haben, abgeschlossen. </p><br><h1>7. Alternative Streitbeilegung</h1><p>Die EU-Kommission stellt im Internet eine Plattform zur Online-Streitbeilegung bereit. Diese Plattform dient als Anlaufstelle zur außergerichtlichen Beilegung von Streitigkeiten aus Online-Kauf- oder Dienstleistungsverträgen, an denen ein Verbraucher beteiligt ist. Die Hatzmann Hell OG ist zur Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle nicht verpflichtet. </p>
+Close ~~ Schließen
+Terms & Conditions ~~ Allgemeine Geschäftsbedingungen
+Imprint content ~~ <h2>Hatzmann Hell OG</h2><h3>Anschrift, Kontakt:</h3><p>Wienerstra&szlig;e 80</p><p>8600 Bruck an der Mur</p><p>Tel. +436767013330</p><p>office@ausgezeichnet.cc</p><h3>Zuständige Behörden, Anlaufstellen</p><p>Gerichtsstand: Leoben</p><Behörde gem. EGC (E-Commerce Gesetz): Bezirkshauptmannschaft Bruck-Mürzzuschlag</p><p>Wirtschaftskammer Steiermark, LI Kunsthandwerke </p><h3>Geschäftsführung:</h3><p>DI Lukas Hatzmann</p><p>Mag. Florian Hell</p><p>Gesellschaftsanteile: 	DI Lukas Hatzmann und Mag. Florian Hell zu je 50%</p><h3>UID, Bankverbindung:</h3><p>UID ATU71872208</p><p>IBAN: AT69 1420 0200 1097 0173</p><p>BIC: EASYATW1</p><h3>Firmenbuch:</h3><p>FN 465214 p</p><p><p>Zuständiges Firmenbuchgericht:</p><p> Landesgericht für Zivilrechtssachen Graz</p><p>Marburger Kai 49</p><p>8010 Graz</p>
+Imprint ~~ Impressum
+agblink ~~ <a href="https://ausgezeichnet.cc/AGB.pdf" class="text-center" style="color: inherit; font-size: 18px; ">AGBs</a>
+dataprot ~~ Datenschutzerkl&auml;rung
+dataprotlink ~~ <a href="https://ausgezeichnet.cc/datenschutzerklaerung.pdf" class="text-center" style="color: inherit; font-size: 18px; ">Datenschutzerkl&auml;rung</a>
+Design by : Hash Software ~~ Design by : Hash Software
+Please select customer first ~~ Please select customer first
+Excellent.cc  |  All right reserved. ~~ Ausgezeichnet.cc  |  Alle Rechte vorbehalten.
+Delete Selected ~~ Ausgewählte löschen
+Add to Cart ~~ In den Einkaufswagen
+View Cart ~~ Zum Einkaufswagen
+Add to list ~~ Für Kunden hinzufügen
+Delete Selected ~~ Ausgewählte löschen
+Select All ~~ Alle auswählen
+Badges Placed ~~ Ansicht Spange
+Select number ~~ Anzahl auswählen
+Select Location ~~ Einsatzort auswählen
+Select Year ~~ Jahr auswählen
+Please select customer first. ~~ Bitte wählen Sie zuerst einen Kunden.
+Not Available ~~ Derzeit nicht verfügbar
+
+// cart page
+Cart ~~ Einkaufswagen
+Product ~~ Produkt
+Quantity ~~ Anzahl
+Price ~~ Preis
+Total ~~ Gesamt inkl. USt
+Shop ~~ Shop
+Update ~~ Update
+Checkout ~~ Bestellen
+ShippingCost ~~ Versandkosten
+TotalShipping ~~ Gesamt inkl. USt und Versand
+usecode ~~ Code einlösen
+
+//checkout page
+Billing Details ~~ Rechnungsdetails
+Phone No. ~~ Telefonnummer
+Address ~~ Strasse
+Address2 ~~ Hausnummer
+Permanent Address ~~ Adresse
+Country ~~ Land
+Town / City ~~ Stadt
+State ~~ Bundesland
+Zip Code ~~ Postleitzahl
+Zipcode ~~ Postleitzahl
+Street Address ~~ Straße + Hausnummer
+Same billing shipping ~~ Rechnungsadresse = Lieferadresse
+Shipping Details ~~ Lieferadresse
+Order Comment ~~ Kommentar
+Your Order ~~ Ihre Bestellung
+Place order ~~ Verbindlich bestellen
+Confirm ~~ Bestellung abschliessen
+Contact Number ~~Telefonnummer
+Payment Gateway ~~ Zahlungsmethode
+
+//forgot
+Reset Password ~~ Passwort zurücksetzen
+New Password ~~ Neues Passwort
+Confirm Password ~~ Passwort wiederholen
+confirm password ~~ Passwort wiederholen
+Enter password here ~ Geben Sie hier Ihr Passwort ein
+Confirm your password ~ Passwort bestätigen
+
+//orders
+My Orders ~~ Meine Bestellungen
+Your Orders ~~ Ihre Bestellungen
+Sr no. ~~ Nummer
+Amount ~~ Anzahl
+Date ~~ Datum
+details ~~ Details
+More Detail ~~ Mehr Details
+No orders yet ~~ Bisher keine Bestellungen
+Back To Orders ~~ Zurück zu meinen Bestellungen
+Order Details ~~ Bestelldetails
+Order #: ~~ Bestellung Nr.:
+Order Date &amp; Time: ~~ Bestelldatum &amp; Zeit:
+Grand Total:  ~~ Gesamtsumme:
+Payment Information: ~~ Zahlungsinformationen:
+Payment Pending ~~ Ausstehende Zahlungen
+Payment Done ~~ Zahlung erfolgt
+Customer Information ~~ Kundeninformation
+Customer Name: ~~ Kundenname:
+Email: ~~ Email:
+State: ~~ Staat:
+Phone Number: ~~ Telefonnummer:
+Billing Address ~~ Rechnungsadresse
+Shipping Address ~~ Lieferadresse
+Shopping Cart ~~ Einkaufswagen
+Product Image ~~ Produktgrafik
+Name ~~ Name
+Original Price ~~ Normalpreis
+Quantity ~~ Anzahl
+Total ~~ Gesamt
+Total Paid: ~~ Gesamt bezahlt:
+Total Due: ~~ Gesamtsumme offen:
+TotalDiscounted ~~ Aktionspreis bis 10.11.2017 (Versand erfolgt ab 27.11.2017!):
+TotalDisc ~~ Aktionspreis
+
+//payment
+We are redirecting you to paypal..... ~~ Redirecting to paypal.....
+BUY NOW ~~ JETZT KAUFEN
+
+//profile
+My Account ~~ Mein Konto
+Company ~~ Firma
+Contact Number ~~ Telefonnummer
+Street Address 1 ~~ Straße 1
+Street Address 2 ~~ Straße 2
+City ~~ Stadt
+State ~~ Staat / Bundesland
+Country ~~ Staat
+Departments ~~ Organisation
+Select Department ~~ Organisation auswählen
+Department2 ~~ Zweitorgansiation (falls zutreffend)
+Select Department2 ~~ Zweitorganisation auswählen
+Department2Info ~~ Bitte verwenden Sie diese Option nur, wenn Sie tatsächlich zwei Organisationen (z.B. Bundesheer & Feuerwehr) angehören.
+No Department2 ~~ Keine Zweitorganisation (Standard)
+District ~~ Bundesland
+Select District ~~ Staat / Bundesland auswählen
+Select district ~~ Staat / Bundesland auswählen
+update ~~ Aktualisieren
+Select Community ~~ Gemeinde auswaehlen
+Select community ~~ Gemeinde auswaehlen
+Select Subdistrict ~~ Bezirk auswaehlen
+Select sub district ~~ Bezirk auswaehlen
+Community ~~ Gemeinde
+Subdistrict ~~ Bezirk
+Rename Customer ~~ Kunden Umbenennen
+Delete Customer ~~ Kunden loeschen
+CommunityNotNeeded ~~ Wenn Ihre Gemeinde nicht angezeigt wird, belassen Sie diese Einstellung bitte leer.
+DistrictNotNeeded ~~ Wenn Ihr Bezirk nicht angezeigt wird, belassen Sie diese Einstellung bitte leer.
+Choose Borough ~~ Ortsteil
+Select Borough ~~ Ortsteil auswaehlen
+BoroughNotNeeded ~~ Wenn Ihre Ortsteil nicht angezeigt wird, belassen Sie diese Einstellung bitte leer.
+ShownName ~~ Angezeigter Name
+Nameplate ~~ Namensschild
+
+// navigation
+Home ~~ Home
+Welcome ~~ Produkte
+Shop ~~ Shop
+About Us ~~ Über uns
+Contact ~~ Kontakt
+
+//side nav
+Basic Info ~~ Mein Profil
+Change Password ~~ Passwort ändern
+Customers ~~ Kunden
+Orders ~~ Bestellungen
+
+
+//messages
+Username is required!! ~~ Bitte geben Sie einen Benutzernamen ein
+Password is required!! ~~ Bitte geben Sie ein Passwort ein
+your account has deactivated or not verified, Please try after some time!! ~~ Ihr Account wurde deaktiviert oder noch nicht verifiziert. Bitte versuchen Sie es in einigen Minuten erneut.
+Username or Password is incorrect ~~ Username or Password is incorrect
+email is required!! ~~ Bitte geben Sie eine eMail Adresse ein
+Change password email has been sent!! ~~ eMail zur Passwortänderung wurde gesendet.
+Change password email has been sent successfully!! ~~ eMail zur Passwortänderung wurde gesendet.
+Something wrong while updating password, Try Again!! ~~ Fehler beim Ändern Ihres Passwortes, bitte versuchen Sie es erneut.
+Firstname is required! ~~ Bitte geben Sie Ihren Vornamen ein
+Lastname is required! ~~ Bitte geben Sie Ihren Nachnamen ein
+Username or email is required! ~~ Bitte geben Sie Ihren Benutzernamen oder Ihre eMail Adresse ein
+Please enter valid email! ~~ Bitte geben Sie eine gültige eMail Adresse ein
+Password is required! ~~ Bitte geben Sie Ihr Passwort ein
+Password length must be five or more! ~~ Das Passwort muss aus zumindest fünf Zeichen bestehen
+Password or confirm password does not match! ~~ Passwörter stimmen nicht überein
+Please agree terms and conditions! ~~ Bitte stimmen Sie den AGBs zu.
+Please agree dgsvo ~~ Bitte stimmen Sie der Datenschutzerklärung zu.
+Please agree eMail ~~ Bitte stimmen Sie der Erklärung zu der eMail Korrespondez zu. Andernfalls können wir Ihnen keinen Verifizierungslink zusenden.
+Your account is not created, Try Again !!! ~~ Ihr Account wurde nicht erstellt, bitte versuchen Sie es erneut
+firstname is required!! ~~ Bitte geben Sie einen Vornamen ein
+lastname is required!! ~~ Bitte geben Sie einen Nachnamen ein
+New customer added successfully ~~ Neuer Kunde erfolgreich hinzugefügt
+Error occurred while updating account info. Please try again! ~~ Fehler beim Account Update. Bitte versuchen Sie es erneut.
+New ribbon added successfully ~~ Neue Auszeichnung hinzugefügt
+Error occurred while updating account info. Please try again! ~~ Fehler beim Account Update. Bitte versuchen Sie es erneut.
+This ribbon already added to this customer! ~~ Diese Auszeichnung wurde für diesen Kunden bereits hinzugefügt.
+Please select customer first ~~ Bitte wählen Sie einen Kunden aus
+New ribbon added successfully ~~ Auszeichnung erfolgreich hinzugefügt
+Error occurred while updating account info. Please try again! ~~ Fehler beim Account Update. Bitte versuchen Sie es erneut.
+This ribbon already added to this customer! ~~ Diese Auszeichnung wurde für diesen Kunden bereits hinzugefügt.
+Please add ribbon first! ~~ Bitte fügen Sie eine Auszeichnung hinzu
+I read and understood all additional infomation provided above ~~ Ich habe alle rot dargestellten Zusatzinfos verstanden und stimme diesen zu

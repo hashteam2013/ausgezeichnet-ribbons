@@ -1,0 +1,242 @@
+﻿// homepage
+Previous ~ Previous
+Next ~~ Next
+Welcome content ~~ <h2 class="red-main-hd">Welcome </h2><p class="to-c">To</p><h3 class="blue-hd">Ausgezeichnet Webshop</h3><p class="main-bless">To the pages of Excellent. Cc !</p><p>Here you will find information about a completely new system of religious orders developed for the Austrian market. While the order of the Order is produced in one <br/> piece, the new system is awarded. Cc is fully modular and can therefore be extended and arranged as desired. </p><p>Excellent. Cc offers a product in which the distinctions (band clamps) are produced individually and arranged with the aid of plug-in and clamping elements next to each other and in rows one above the other. When a new award is added, only this bracket has to be supplemented and the entire order of the order has not been exchanged, as usual. This is the financial advantage of the new system of Excellent. Cc , since all the elements once acquired (clasps, connecting pieces, fastening parts) can always be reused. The product also impresses with its high-quality processing and functionality - for more than 50 years a real novelty in the area of the awarding system. </p>
+Shop Ribbons ~~ Shop Ribbons
+Fire Department ~~ Fire Department
+fire department content ~~  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+To the shop ~~ To the shop
+Red Cross ~~ Red Cross
+Red Cross content ~~  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+Federal Army ~~ Federal Army
+Federal Army content ~~  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+View all categories ~~ View all categories
+Below shop content ~~ <h2>Die Idee ist das Absolute,<br/> Und alles Wirkliche ist nur Realisierung der ldee.</h2> <h4>Georg Wilhelm Friedrich Hegel</h4>
+About Us ~~ About Us
+about us content left ~~ <h2>MAG. FLORIAN HELL</h2><p>The study of art and culture at the Karl-Franzens-University in Graz. <br>Since his twelfth year, he has been a member of the volunteer fire brigade Bruck an der Mur and has so far come into contact with almost every topic that brings the daily fire brigade life with him. He knows the needs of the industry - and he soon won an award with his company under the brand. Cc the idea of ​​fully modular religious orders.</p>
+about us content right ~~ <h2>DI LUKAS HATZMANN</h2><p>The technician <br/>studies in mechanical engineering with specialization in production engineering and mechatronics, a self-employed machine designer, mechatronics and programmers.He is responsible for all technical questions concerning the new order system - and the pragmatic-resting pole of Excellent. Cc .</p>
+Contact Us ~~ Contact Us
+Excellent. Cc  | Full-Modular Order Orders ~~ Excellent. Cc  | Full-Modular Order Orders
+Management Engineering ~~ Management Engineering
+Management Engineering content ~~ <p>DI Lukas Hatzmann</p><p><span><i class="fa fa-envelope-o" aria-hidden="true"></i></span> &nbsp;  haszmann@ausgezeichnet.cc</p><p><span><i class="fa fa-phone" aria-hidden="true"></i></span>&nbsp; +4368181372187</p>
+Management Marketing & Sales ~~ Management Marketing & Sales
+Management Marketing & Sales content ~~ <p>Mag. Florian Hell </p><p><span><i class="fa fa-envelope-o" aria-hidden="true"></i></span> &nbsp;  hell@ausgezeichnet.cc</p><p><span><i class="fa fa-phone" aria-hidden="true"></i></span> &nbsp;  +436767013330</p>
+
+
+
+// shop page
+Our Ribbon Gallery ~~ Our Ribbon Gallery
+Categories ~~ Categories
+Districts ~~  Districts
+Departments ~~ Departments
+Search Result by category! ~~ Search Result by category!
+Selected Items  ~~ Selected Items
+No Customer ~~ No Customer
+Guest ~~ Guest
+Add Customer ~~ Add Customer
+Delete Selected ~~ Delete Selected
+Select All ~~ Select All
+Add to Cart ~~ Add to Cart
+View Cart ~~ View Cart
+Badges Placed ~~ Badges Placed
+Are you sure? You want to delete this badge! ~~ Are you sure? You want to delete this badge!
+- Error occurred while adding batch in cart! Try again! ~~ - Error occurred while adding batch in cart! Try again!
+- Batch added in cart successfully. ~~ - Batch added in cart successfully.
+Update ~~ Update
+Please check at least one batch! ~~ Please check at least one batch!
+- Batch already added in cart for same customer. ~~ - Batch already added in cart for same customer.
+Batch has been deleted successfully! ~~ Batch has been deleted successfully! 
+
+
+// customer page
+My Account ~~ My Account
+Customers ~~ Customers
+Filter Customer ~~ Filter Customer
+First Name ~~ First Name
+Last Name ~~ Last Name
+Badges ~~ Badges
+Ribbons ~~ Ribbons
+No customer added yet ~~ No customer added yet
+
+//change_password
+Old Password ~~ Old Password
+New Password ~~  New Password
+Confirm New Password ~~ Confirm New Password
+Update Password ~~ Update Password
+
+
+// login-register-msges
+HEllO ~~ HEllO
+Logout ~~ Logout
+Login ~~ Login
+Register ~~ Register
+Enter your email ~~ Enter your email
+Email Address ~~ Email Address
+Password ~~ Password
+Enter your password ~~ Enter your password
+Remember Me ~~ Remember Me
+Forgot Password? ~~ Forgot Password?
+Get Access Info ~~ Get Access Info
+Back to Login Page ~~ Back to Login Page
+Firstname ~~ Firstname
+Lastname ~~ Lastname
+Email ~~ Email
+Password ~~ Password
+Confirm Password ~~ Confirm Password
+I agree all terms and conditions ~~ I agree all terms and conditions
+Register Now ~~ Register Now
+Add customer ~~ Add customer
+Terms and Conditions ~~ Terms and Conditions
+Terms and Conditions content ~~ <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et egestas augue. Etiam quis bibendum dolor, ac maximus diam. Maecenas malesuada, leo in suscipit vehicula, velit libero tempor nulla, a pellentesque nulla massa ut orci. Aenean ac orci sollicitudin, facilisis tellus ut, rhoncus lorem. Vestibulum pretium dolor nulla, in ultrices augue lacinia id. Ut id consectetur sapien. Cras elementum sed purus ac feugiat. Nullam vitae tincidunt sem, vel elementum ipsum. Donec vitae ultrices ante. Nulla quis maximus massa. Fusce pellentesque tristique nisl, vitae ullamcorper purus pretium at. Praesent nec nunc ultrices, placerat ligula nec, ullamcorper dui. In et dui et turpis ornare laoreet.</p><p>Proin imperdiet et diam eu tempor. Sed ultrices aliquet tincidunt. Phasellus congue nibh a tellus semper elementum. Ut vitae aliquet dolor. Nunc non elit ligula. Donec enim tortor, lobortis in venenatis eget, pretium eget dui. Sed pulvinar dui et sapien luctus, vitae auctor leo sagittis. Integer est nulla, imperdiet at mi ut, tristique imperdiet sapien. Cras vehicula eros ipsum, vitae efficitur justo aliquam eu.</p><p>Sed molestie porta ornare. Maecenas rhoncus eros vel viverra pretium. Nunc pharetra leo at massa pretium fermentum. Proin accumsan dolor laoreet turpis sagittis, et hendrerit est sollicitudin. Etiam nibh eros, consectetur id rutrum consequat, accumsan suscipit felis. Aenean volutpat augue a vehicula maximus. Mauris id nisl suscipit, rhoncus metus vel, consectetur massa. Sed eu eros tincidunt, convallis nisl vitae, tristique eros. Aliquam erat volutpat. Cras tincidunt nisl nunc, eget dictum lorem tempor vel. Nunc egestas enim enim, sed eleifend dolor lacinia vitae. Donec elementum nisi commodo magna posuere, ac congue dui mollis.</p><p>Phasellus molestie ultricies tristique. Nam ut lacus purus. Maecenas nec placerat eros. Phasellus vestibulum porta pellentesque. Nulla mollis dapibus tempor. Cras rhoncus scelerisque vestibulum. Donec eu magna egestas, tempor elit sed, porta ipsum. Aliquam orci elit, tristique eu massa eu, porta dignissim dolor. Donec efficitur odio nec ultrices faucibus. Vestibulum vitae mattis tortor. Mauris a diam sed elit tempus luctus. Nullam vulputate sapien elit, sit amet viverra enim viverra eget. Sed tristique sed enim euismod commodo.</p>
+Close ~~ Close
+Terms & Conditions ~~ Terms & Conditions
+Design by : Hash Software ~~ Design by : Hash Software
+Please select customer first ~~ Please select customer first
+Excellent.cc  |  All right reserved. ~~ Excellent.cc  |  All right reserved.
+Delete Selected ~~ Delete Selected
+Add to Cart ~~ Add to Cart
+View Cart ~~ View Cart
+Add to List ~~ Add to List
+Delete Selected ~~ Delete Selected
+Select All ~~ Select All
+Badges Placed ~~ Badges Placed
+Select number ~~ Select number
+Select Location ~~ Select Location
+Select Year ~~ Select Year
+Please select customer first. ~~ Please select customer first.
+
+// cart page
+Cart ~~ Cart
+Product ~~ Product
+Quantity ~~ Quantity
+Price ~~ Price
+Total ~~ Total
+Shop ~~ Shop
+Update ~~ Update
+Checkout ~~ Checkout
+
+//checkout page
+Billing Details ~~ Billing Details
+Phone No. ~~ Phone No.
+Address ~~ Address
+Permanent Address ~~ Permanent Address
+Country ~~ Country
+Town / City ~~ Town / City
+State ~~ State
+Zip Code ~~ Zip Code
+Same billing shipping ~~ Same billing shipping
+Shipping Details ~~ Shipping Details
+Order Comment ~~ Order Comment
+Your Order ~~ Your Order
+Place order ~~ Place order
+
+//forgot
+Reset Password ~~ Reset Password
+New Password ~~ New Password
+Confirm Password ~~ Confirm Password
+Enter password here ~ Enter password here
+Confirm your password ~ Confirm your password
+
+//orders
+My Orders ~~ My Orders
+Your Orders ~~ Your Orders
+Sr no. ~~ Sr no.
+Amount ~~ Amount
+Date ~~ Date
+details ~~ details
+More Detail ~~ More Detail
+No orders yet ~~ No orders yet
+Back To Orders ~~ Back To Orders
+Order Details ~~ Order Details
+Order #: ~~ Order #:
+Order Date &amp; Time: ~~ Order Date &amp; Time:
+Grand Total:  ~~ Grand Total:
+Payment Information: ~~ Payment Information:
+Payment Pending ~~ Payment Pending
+Payment Done ~~ Payment Done
+Customer Information ~~ Customer Information
+Customer Name: ~~ Customer Name:
+Email: ~~ Email:
+State: ~~ State:
+Phone Number: ~~ Phone Number:
+Billing Address ~~ Billing Address
+Shipping Address ~~ Shipping Address
+Shopping Cart ~~ Shopping Cart
+Product Image ~~ Product Image
+Name ~~ Name
+Original Price ~~ Original Price
+Quantity ~~ Quantity
+Total ~~ Total
+Total Paid: ~~ Total Paid:
+Total Due: ~~ Total Due:
+
+//payment
+We are redirecting you to paypal..... ~~ We are redirecting you to paypal.....
+BUY NOW ~~ BUY NOW
+
+//profile
+My Account ~~ My Account
+Company ~~ Company
+Contact Number ~~ Contact Number
+Street Address 1 ~~ Street Address 1
+Street Address 2 ~~ Street Address 2
+City ~~ City
+State ~~ State
+Country ~~ Country
+Departments ~~ Departments
+Select Department ~~ Select Department
+District ~~ District
+Select District ~~ Select District
+update ~~ update
+
+// navigation
+Home ~~ Home
+Welcome ~~ Welcome
+Shop ~~ Shop
+About Us ~~ About Us
+Contact ~~ Contact
+
+//side nav
+Basic Info ~~ Basic Info
+Change Password ~~ Change Password
+Customers ~~ Customers
+Orders ~~ Orders
+
+
+//messages
+Username is required!! ~~ Username is required!!
+Password is required!! ~~ Password is required!!
+your account has deactivated or not verified, Please try after some time!! ~~ your account has deactivated or not verified, Please try after some time!!
+Username or Password is incorrect ~~ Username or Password is incorrect
+email is required!! ~~ email is required!!
+Change password email has been sent!! ~~ Change password email has been sent!!
+Change password email has been sent successfully!! ~~ Change password email has been sent successfully!!
+Something wrong while updating password, Try Again!! ~~ Something wrong while updating password, Try Again!!
+Firstname is required! ~~ Firstname is required!
+Lastname is required! ~~ Lastname is required!
+Username or email is required! ~~ Username or email is required!
+Please enter valid email! ~~ Please enter valid email!
+Password is required! ~~ Password is required!
+Password length must be five or more! ~~ Password length must be five or more!
+Password or confirm password does not match! ~~ Password or confirm password does not match!
+Please agree terms and conditions! ~~ Please agree terms and conditions!
+Your account is not created, Try Again !!! ~~ Your account is not created, Try Again !!!
+Account created but no email ~~ Your account has been created, But failed to send email. Please contact support team!!!
+firstname is required!! ~~ firstname is required!!
+lastname is required!! ~~ lastname is required!!
+New customer added successfully ~~ New customer added successfully
+Error occurred while updating account info. Please try again! ~~ Error occurred while updating account info. Please try again!
+New ribbon added successfully ~~ New ribbon added successfully
+Error occurred while updating account info. Please try again! ~~ Error occurred while updating account info. Please try again!
+This ribbon already added to this customer! ~~ This ribbon already added to this customer!
+Please select customer first ~~ Please select customer first
+New ribbon added successfully ~~ New ribbon added successfully
+Error occurred while updating account info. Please try again! ~~ Error occurred while updating account info. Please try again!
+This ribbon already added to this customer! ~~ This ribbon already added to this customer!
+Please add ribbon first! ~~ Please add ribbon first!
+
+
+
+
+
+

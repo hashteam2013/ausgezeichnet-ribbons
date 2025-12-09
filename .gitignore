@@ -1,0 +1,60 @@
+# Node modules
+node_modules/
+package-lock.json
+yarn.lock
+
+# PHP
+*.log
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.sublime-project
+.sublime-workspace
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Configuration files with sensitive data
+/includes/app.php
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+
+# Uploads (if sensitive)
+# /uploads/*
+# !/uploads/.gitkeep
+
+# Cache
+/cache/*
+!/cache/.gitkeep
+
+# Admin logs
+/ad-min/error_log
+/admin/*.log
+
+# Composer
+composer.lock
+/vendor/
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.swp
+
+# Build artifacts
+dist/
+build/

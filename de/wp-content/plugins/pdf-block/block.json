@@ -1,0 +1,24 @@
+{
+    "name": "pdfb/pdf-block",
+    "title": "PDF",
+    "description": "Easily embed PDFs from your Media Library or any URL. Hide PDF toolbars, set alignment and control height.",
+    "category": "embed",
+    "keywords": [ "pdf", "embed", "file", "oembed", "viewer" ],
+    "attributes": {
+        "showToolbar": {
+			"type": "boolean",
+			"default": false
+		},
+		"url": {
+			"type": "string",
+			"default": null
+		},
+		"height": {
+			"type": "number",
+			"default": 1015
+		}
+    },
+    "script": "file:dist/blocks.build.js",
+    "editorStyle": "file:dist/blocks.editor.build.css",
+    "style": "file:dist/blocks.style.build.css"
+  }

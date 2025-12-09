@@ -1,0 +1,150 @@
+<?php
+	function listBatch($show)
+            {
+                global $app;
+               
+                /********Get batch id and level type by customer id from customer batches table*********/
+                $batch_data_store = array();
+                $showing_b_id = array();
+                $showing_b_id_1 = array();
+                $showing_b_id_2 = array();
+                $showing_b_id_3 = array();
+                $showing_b_id_4 = array();
+                $showing_b_id_5 = array();
+                           
+                //$batch_id = new query("customer_batches");
+                //$batch_id->Field = "batch_id,type";
+                //$batch_id->Where .= " where customer_id = '" . $show . "'" ;
+                
+               /********Get batch from level 1 *********/ 
+                $query_1 = new query("batches as batch"); 
+                $query_1->Field = "batch.id,batch.batch_image,batch.type,batch.value,batch.grade,batch.batch_position,cust.batch_id,batch.level,batch.ribbon_name_en,batch.ribbon_name_dr,cust.customer_id,cust.id,cust.number,cust.country,cust.year";         
+                $query_1->Where = " LEFT JOIN customer_batches as cust ON batch.id = cust.batch_id";            
+                $query_1->Where .= " where cust.customer_id = '" . $show . "' and batch.level ='1' order by batch.value DESC";
+                //$query_1->print=1;
+                $showing_b_id_1 = $query_1->ListOfAllRecords();
+               // pr($showing_b_id_1);
+                    
+                 /********Get batch from level 2 order by related dist first*********/
+                $query_2_1 = new query("batches as batch"); 
+                $query_2_1->Field = "batch.id,filter.filter_id as Dist_id,filter.rel_type,batch.batch_image,batch.type,batch.value,batch.grade,batch.batch_position,cust.batch_id,batch.level,batch.ribbon_name_en,batch.ribbon_name_dr,cust.customer_id,cust.id,cust.number,cust.country,cust.year";         
+                $query_2_1->Where = " LEFT JOIN customer_batches as cust ON batch.id = cust.batch_id";    
+                $query_2_1->Where .= " LEFT JOIN batch_filter_relation as filter ON batch.id = filter.batch_id and filter.rel_type = 'districts' and filter.filter_id='".$app['user_info']->district."'";
+                $query_2_1->Where .= " where cust.customer_id = '" . $show . "' and batch.level ='2' and filter.filter_id='".$app['user_info']->district."' order by batch.value DESC";
+                //$query_2_1->print=1;
+                $query_2_1->ListOfAllRecords();
+                /********Get all batch from level 2 *********/
+                $query_2 = new query("batches as batch"); 
+                $query_2->Field = "batch.id, dist.name_en as dist_name, orgNmae.name_en,filter.filter_id as Dist_id,filter.rel_type,filter1.filter_id as org_id,filter1.rel_type,batch.batch_image,batch.type,batch.value,batch.grade,batch.batch_position,cust.batch_id,batch.level,batch.ribbon_name_en,batch.ribbon_name_dr,cust.customer_id,cust.id,cust.number,cust.country,cust.year";         
+                $query_2->Where = " LEFT JOIN customer_batches as cust ON batch.id = cust.batch_id";    
+                $query_2->Where .= " LEFT JOIN batch_filter_relation as filter ON batch.id = filter.batch_id and filter.rel_type = 'districts' ";
+                $query_2->Where .= " LEFT JOIN batch_filter_relation as filter1 ON batch.id = filter1.batch_id and filter1.rel_type = 'organizations' ";
+                $query_2->Where .= " LEFT JOIN organizations as orgNmae ON filter1.filter_id = orgNmae.id ";
+                $query_2->Where .= " LEFT JOIN districts as dist ON dist.id = filter.filter_id ";
+                $query_2->Where .= " where cust.customer_id = '" . $show . "' and batch.level ='2' order by batch.value DESC, orgNmae.name_en ";
+                //$query_2->print=1;
+                $showing_b_id_2 = array_merge( $query_2_1->ListOfAllRecords() , $query_2->ListOfAllRecords() );
+                
+                
+                
+                 /********Get all batch from level 3 *********/
+                
+                $showing_b_id_3 =  levelTypeThree($show); 
+                
+                //pr($showing_b_id_3);
+                /********Get all batch from level 3 *********/
+                
+               // $showing_b_id_4 =  levelTypeFour($show); 
+                
+                
+               // $query_5 = new query("batches as batch"); 
+               // $query_5->Field = "batch.id,batch.batch_image,batch.type,batch.value,batch.grade,batch.batch_position,cust.batch_id,batch.level,batch.ribbon_name_en,batch.ribbon_name_dr,cust.customer_id,cust.id,cust.number,cust.country,cust.year";         
+               // $query_5->Where = " LEFT JOIN customer_batches as cust ON batch.id = cust.batch_id";            
+                //$query_5->Where .= " where cust.customer_id = '" . $show . "' and batch.level ='5' order by batch.level";
+                //$query_5->print=1;
+              
+                //$showing_b_id_5 = $query_5->ListOfAllRecords();
+                
+                
+                
+               
+                $showing_b_id = array_merge($showing_b_id_1,$showing_b_id_2,$showing_b_id_3,$showing_b_id_4,$showing_b_id_5);
+               
+                            foreach ($showing_b_id as $show_data) 
+                                {
+                                    $output[] = array(
+                                                'ribbon_name_en' => $show_data['ribbon_name_'.$app['language']],
+                                                'custId' => $show_data['id'],
+                                                'level' => $show_data['level'],
+                                                'ribbon_type' => show_ribbon_images($show_data['type'], $show_data['batch_image'], $show_data['number'], $show_data['country'], $show_data['year']),
+                                                );
+                                }
+
+                 
+
+                return $output;
+            }
+            
+            
+       /*****************************************************Query functoins************************************************************/     
+            
+            /*******level 3*****/
+            function levelTypeThree($show)
+            {   
+                global $app;
+                $query_3_1 = new query("batches as batch"); 
+                $query_3_1->Field = "batch.id,filter.filter_id as Dist_id,filter.rel_type,batch.batch_image,batch.type,batch.value,batch.grade,batch.batch_position,cust.batch_id,batch.level,batch.ribbon_name_en,batch.ribbon_name_dr,cust.customer_id,cust.id,cust.number,cust.country,cust.year";         
+                $query_3_1->Where = " LEFT JOIN customer_batches as cust ON batch.id = cust.batch_id";    
+                $query_3_1->Where .= " LEFT JOIN batch_filter_relation as filter ON batch.id = filter.batch_id and filter.rel_type = 'districts' and filter.filter_id='".$app['user_info']->district."'";
+                $query_3_1->Where .= " where cust.customer_id = '" . $show . "' and batch.level ='2' and filter.filter_id='".$app['user_info']->district."' order by batch.value";
+                //$query_3_1->print=1;
+               
+                
+                $query_3 = new query("batches as batch"); 
+                
+                $query_3->Field = "comm.filter_id as cat_id,cName.name_en, comm.rel_type, dist.filter_id as dist_id, dist.rel_type ,distName.name_en as dist_title, batch.id,batch.batch_image,batch.type,batch.value,batch.grade,batch.batch_position,cust.batch_id,batch.level,batch.ribbon_name_en,batch.ribbon_name_dr,cust.customer_id,cust.id,cust.number,cust.country,cust.year";         
+                $query_3->Where = " LEFT JOIN customer_batches as cust ON batch.id = cust.batch_id";
+                
+                $query_3->Where .= " LEFT JOIN batch_filter_relation as comm ON batch.id = comm.batch_id and comm.rel_type ='categories'";
+                $query_3->Where .= " LEFT JOIN categories as cName ON cName.id = comm.filter_id";
+                
+                $query_3->Where .= " LEFT JOIN batch_filter_relation as dist ON batch.id = dist.batch_id and dist.rel_type ='districts'";
+                $query_3->Where .= " LEFT JOIN districts as distName ON distName.id = dist.filter_id";
+                
+                $query_3->Where .= " where cust.customer_id = '" . $show . "' and batch.level ='3'  order by distName.name_en,cName.name_en,batch.value";
+                
+                
+                //$query_3->print=1;
+                return array_merge( $query_3_1->ListOfAllRecords() , $query_3->ListOfAllRecords() ); 
+                
+            }
+            
+            
+            
+             /*******level 4*****/
+//            function levelTypeFour($show)
+//            {   
+//                global $app;
+//                $query_4 = new query("batches as batch"); 
+//                $query_4->Field = "batch.id ,depart.name_en as department, dist.filter_id as distName, batch.batch_image,batch.type,batch.value,batch.grade,batch.batch_position,cust.batch_id,batch.level,batch.ribbon_name_en,batch.ribbon_name_dr,cust.customer_id,cust.id,cust.number,cust.country,cust.year";         
+//                $query_4->Where = " LEFT JOIN customer_batches as cust ON batch.id = cust.batch_id";   
+//                
+//                $query_4->Where .= " LEFT JOIN batch_filter_relation as org ON org.batch_id = cust.batch_id and org.rel_type='departments' ";
+//                $query_4->Where .= " LEFT JOIN batch_filter_relation as dist ON dist.batch_id = cust.batch_id and dist.rel_type='districs' ";
+//                
+//                $query_4->Where .= " LEFT JOIN departments as depart ON depart.id = org.filter_id ";
+//                $query_4->Where .= " LEFT JOIN districts as ds ON ds.id = dist.filter_id ";
+//                
+//                $query_4->Where .= " where cust.customer_id = '" . $show . "' and batch.level ='4' order by depart.name_en , batch.value ";
+//                $query_4->print=1;
+//                
+//                
+//                return $query_4->ListOfAllRecords();
+//                
+//            }
+            
+            
+?>
+
+
+			     
