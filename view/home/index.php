@@ -3,39 +3,41 @@
 <a href="<?php //echo make_url('login'); ?>">login</a><br/>
 <a href="<?php //echo make_url('product',array('id'=>2)); ?>">product</a><br/>-->
 
-<!-- slider section start -->
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <section class="crousal-outer">
-                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-pause="hover"> 
-                    <!-- Indicators -->
-                    <ol class="carousel-indicators">
-                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                    </ol>
-
-                    <!-- Wrapper for slides -->
-                    <div class="carousel-inner" role="listbox">
-                        <div class="item active" > <img src="<?php echo DIR_WS_ASSETS_IMAGES; ?>slide-1.jpg" class="img-responsive" alt="...">
-                            <div class="carousel-caption"> ... </div>
-                        </div>
-                        <div class="item"> <img src="<?php echo DIR_WS_ASSETS_IMAGES; ?>slide-2.jpg" class="img-responsive" alt="...">
-                            <div class="carousel-caption"> </div>
-                        </div>
-                        <div class="item"> <img src="<?php echo DIR_WS_ASSETS_IMAGES; ?>slide-3.jpg" class="img-responsive" alt="...">
-                            <div class="carousel-caption"> </div>
-                        </div>
-                    </div>
-
-                    <!-- Controls --> 
-                    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> <span class="sr-only"><?php _e("Previous"); ?></span> </a> <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next"> <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> <span class="sr-only"><?php _e('Next'); ?></span> </a> </div>
-            </section>
+<!-- Banner section start -->
+<section class="banner relative">
+    <img src="<?php echo DIR_WS_ASSETS_IMAGES; ?>banner.jpg" class="w-full h-full">
+    <div class="absolute bg-black/60 top-0 left-0 w-full h-full flex items-center justify-center">
+        <div class="container">
+            <div class="text-center text-white">
+                <h3 class="mb-2 text-[40px] leading-[50px] tracking-[0.4px] font-semibold text-white">Ausgezeichnet.cc</h3>
+                <h1 class="text-8xl font-gothic leading-[120px] font-normal">
+                    Crafting Excellence, Delivered Simply.
+                </h1>
+            </div>
+            <ul class="flex text-white items-center gap-2.5 flex-wrap text-2xl font-medium mt-10 justify-center mx-auto max-w-[1120px]">
+                <li class="py-2">Modular by Design</li>
+                <li class="block w-2.5 h-2.5 rounded-full bg-primary"></li>
+                <li class="py-2">Engineered for Comfort</li>
+                <li class="block w-2.5 h-2.5 rounded-full bg-primary"></li>
+                <li class="py-2">Honest & Upfront</li>
+                <li class="block w-2.5 h-2.5 rounded-full bg-primary"></li>
+                <li class="py-2">Swift & Secure </li>
+                <li class="block w-2.5 h-2.5 rounded-full bg-primary"></li>
+                <li class="py-2">Effortless</li>
+                <li class="block w-2.5 h-2.5 rounded-full bg-primary"></li>
+                <li class="py-2">Logistics</li>
+                <li class="block w-2.5 h-2.5 rounded-full bg-primary"></li>
+                <li class="py-2">Guaranteed Supply</li>
+                <li class="block w-2.5 h-2.5 rounded-full bg-primary"></li>
+                <li class="py-2">Personalized Experience</li>
+                <li class="block w-2.5 h-2.5 rounded-full bg-primary"></li>
+                <li class="py-2">Austrian Craftsmanship</li>
+            </ul>
         </div>
     </div>
-</div>
-<!-- slider section End --> 
+</section>
+
+<!-- Banner section End --> 
 
 <!-- About section start -->
 <section class="about-sec text-center" id="welcome" >

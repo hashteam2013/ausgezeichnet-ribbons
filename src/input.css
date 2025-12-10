@@ -1,4 +1,7 @@
-@import "tailwindcss";
-body{
-    @apply: bg-red-100;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root{
+    --poppins: "Poppins", sans-serif;
+    --gothic : "Special Gothic Expanded One", sans-serif;
 }

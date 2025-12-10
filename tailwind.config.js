@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
   content: [
     "./index.php",
     "./action/**/*.php",
@@ -9,7 +9,19 @@ module.exports = {
     "./src/**/*.css",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: '#ED0000',
+        secondary: '#2D2D2A',
+        dark: '#393C40',
+        body: '#FFEDED',
+      },
+      fontFamily: {
+        poppins: ['var(--poppins)'],
+        gothic: ['var(--gothic)'],
+      },
+      
+    },
   },
   plugins: [],
 }
