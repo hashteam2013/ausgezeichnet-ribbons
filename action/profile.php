@@ -1,6 +1,9 @@
 <?php
 global $app;
 $id = $logged_in_user_info->id;
+$districtId = isset($app['user_info']->district) ? (int)$app['user_info']->district : 0;
+$subdistrictId = isset($app['user_info']->subdistrict) ? (int)$app['user_info']->subdistrict : 0;
+$communityId = isset($app['user_info']->community) ? (int)$app['user_info']->community : 0;
 add_css(DIR_WS_ASSETS_CSS . 'account.css');
 add_css(DIR_WS_ASSETS_CSS . 'component.css');
 add_js(DIR_WS_ASSETS_JS . 'component.js');
@@ -14,18 +17,26 @@ if (!LOGGED_IN_USER) {
 //exit();
 
 /*get only user's subdistrict*/
-$query = new query('sub_districts');
-$query->Field = "id,name_" . $app['language'] . " as name_en";
-$query->Where = " where id =".$app['user_info']->subdistrict;
-$user_subdist = $query->DisplayOne();
+if ($subdistrictId > 0) {
+    $query = new query('sub_districts');
+    $query->Field = "id,name_" . $app['language'] . " as name_en";
+    $query->Where = " where id =" . $subdistrictId;
+    $user_subdist = $query->DisplayOne();
+} else {
+    $user_subdist = null;
+}
 //pr($user_subdist);
 
 
 /*get only user's community*/
-$query = new query('communities');
-$query->Field = "id,name_" . $app['language'] . " as name_en";
-$query->Where = " where id =".$app['user_info']->community;
-$user_comm = $query->DisplayOne();
+if ($communityId > 0) {
+    $query = new query('communities');
+    $query->Field = "id,name_" . $app['language'] . " as name_en";
+    $query->Where = " where id =" . $communityId;
+    $user_comm = $query->DisplayOne();
+} else {
+    $user_comm = null;
+}
 //pr($user_comm);
 
 $query = new query('departments_new');
@@ -40,24 +51,36 @@ $query->Where = " where is_active = 1";
 $get_district = $query->ListOfAllRecords();
 
 /*get all community according to user's subdistrict*/
-$query = new query('communities');
-$query->Field = "id,name_" . $app['language'] . " as name_en";
-$query->Where = " where is_active = 1 and subdist_id =" .$app['user_info']->subdistrict;
-$get_community = $query->ListOfAllRecords();
+if ($subdistrictId > 0) {
+    $query = new query('communities');
+    $query->Field = "id,name_" . $app['language'] . " as name_en";
+    $query->Where = " where is_active = 1 and subdist_id =" . $subdistrictId;
+    $get_community = $query->ListOfAllRecords();
+} else {
+    $get_community = array();
+}
 //echo "<pre>";print_r($get_community);
 
 /*get all community according to user's district*/
-$query = new query('sub_districts');
-$query->Field = "id,name_" . $app['language'] . " as name_en";
-$query->Where = " where is_active = 1 and district_id =" .$app['user_info']->district;
-$get_subdist = $query->ListOfAllRecords();
+if ($districtId > 0) {
+    $query = new query('sub_districts');
+    $query->Field = "id,name_" . $app['language'] . " as name_en";
+    $query->Where = " where is_active = 1 and district_id =" . $districtId;
+    $get_subdist = $query->ListOfAllRecords();
+} else {
+    $get_subdist = array();
+}
 //echo "<pre>";print_r($get_subdist);
 
 /*get all borough according to user's comm*/
-$query = new query('boroughs');
-$query->Field = "id,name_" . $app['language'] . " as name_en";
-$query->Where = " where is_active = 1 and dist_id =" .$app['user_info']->district. " and subdist_id =" .$app['user_info']->subdistrict. " and comm_id =" .$app['user_info']->community;
-$get_boro = $query->ListOfAllRecords();
+if ($districtId > 0 && $subdistrictId > 0 && $communityId > 0) {
+    $query = new query('boroughs');
+    $query->Field = "id,name_" . $app['language'] . " as name_en";
+    $query->Where = " where is_active = 1 and dist_id =" . $districtId . " and subdist_id =" . $subdistrictId . " and comm_id =" . $communityId;
+    $get_boro = $query->ListOfAllRecords();
+} else {
+    $get_boro = array();
+}
 //echo "<pre>";print_r($get_subdist);
 
 $msg ='';

@@ -1,6 +1,7 @@
 <script>
     /*-------------------------------------shop checkbox (show ribbons using category)-------------------------------------------------------------------------*/
-    var log_in = $("#LOGGED_IN_USER").val();
+    // Read login state directly from PHP session to avoid stale/missing DOM values
+    var log_in = "<?php echo LOGGED_IN_USER ? '1' : '0'; ?>";
     var customer_id = $("#custm option:selected").val();
     var recent_activity = {};
     recent_activity['category'] = {};
@@ -613,7 +614,7 @@
                                             nails = 4;
                                         }
                                     });
-                                    $('.badges').html('<div class=srch-reslt slect mar-top-10><div class=srch-heading><?php _e("Badges Placed"); ?></div>'+'<div class="druken-btn"><a class="add-btn hvr-float-shadow  pull-left" href="http://www.ausgezeichnet.cc/?page=printBadgesPlaced&id=' + cust_id + '" title="invoice">Ansicht Drucken</a> <a class="add-btn hvr-float-shadow pull-right" href="http://www.ausgezeichnet.cc/?page=printFullBadgesPlaced&id=' + cust_id + '" title="invoice">Alle Drucken</a></div>'+'<div class=flag-contaner>' + '<p> F&uumlr diese Spange ben&oumltigen Sie ' + LConnectors + " L&aumlngsverbinder und " + QConnectors + " Querverbinder. Wir empfehlen " + nails + " N&aumlgel. Bitte passen Sie die St&uumlckzahlen im Warenkorb an. </p>" + badgeData + '</div></div></div>');
+                                    $('.badges').html('<div class=srch-reslt slect mar-top-10><div class=srch-heading><?php _e("Badges Placed"); ?></div>'+'<div class="druken-btn"><a class="add-btn hvr-float-shadow  pull-left" href="<?php echo WS_PATH; ?>?page=printBadgesPlaced&id=' + cust_id + '" title="invoice">Ansicht Drucken</a> <a class="add-btn hvr-float-shadow pull-right" href="<?php echo WS_PATH; ?>?page=printFullBadgesPlaced&id=' + cust_id + '" title="invoice">Alle Drucken</a></div>'+'<div class=flag-contaner>' + '<p> F&uumlr diese Spange ben&oumltigen Sie ' + LConnectors + " L&aumlngsverbinder und " + QConnectors + " Querverbinder. Wir empfehlen " + nails + " N&aumlgel. Bitte passen Sie die St&uumlckzahlen im Warenkorb an. </p>" + badgeData + '</div></div></div>');
                                 }
                             });
 
@@ -743,7 +744,7 @@
                         nails = 4;
                     }
                 });
-                $('.badges').html('<div class = srch-reslt slect mar-top-10><div class=srch-heading><?php _e("Badges Placed"); ?></div>'+'<div class="druken-btn"><a class="add-btn hvr-float-shadow  pull-left" href="http://www.ausgezeichnet.cc/?page=printBadgesPlaced&id=' + customer_id + '" title="invoice">Ansicht Drucken</a> <a class="add-btn hvr-float-shadow pull-right" href="http://www.ausgezeichnet.cc/?page=printFullBadgesPlaced&id=' + customer_id + '" title="invoice">Alle Drucken</a></div>'+'<div class=flag-contaner>' + '<p> F&uumlr diese Spange ben&oumltigen Sie ' + LConnectors + " L&aumlngsverbinder und " + QConnectors + " Querverbinder. Wir empfehlen " + nails + " N&aumlgel. Bitte passen Sie die St&uumlckzahlen im Warenkorb an.  </p>" + badgeData + '</div></div></div>');
+                $('.badges').html('<div class = srch-reslt slect mar-top-10><div class=srch-heading><?php _e("Badges Placed"); ?></div>'+'<div class="druken-btn"><a class="add-btn hvr-float-shadow  pull-left" href="<?php echo WS_PATH; ?>?page=printBadgesPlaced&id=' + customer_id + '" title="invoice">Ansicht Drucken</a> <a class="add-btn hvr-float-shadow pull-right" href="<?php echo WS_PATH; ?>?page=printFullBadgesPlaced&id=' + customer_id + '" title="invoice">Alle Drucken</a></div>'+'<div class=flag-contaner>' + '<p> F&uumlr diese Spange ben&oumltigen Sie ' + LConnectors + " L&aumlngsverbinder und " + QConnectors + " Querverbinder. Wir empfehlen " + nails + " N&aumlgel. Bitte passen Sie die St&uumlckzahlen im Warenkorb an.  </p>" + badgeData + '</div></div></div>');
                 if (total == '1') {
                     $(".flag-contaner img").css("max-width", "140px");
                     $(".flag-contaner").find(".ribbon_outer").addClass('opacity');

@@ -7,10 +7,10 @@ header('Access-Control-Allow-Origin: *');
 
 $app = array();
 if(ENVIRONMENT=='production'){
-    //error_reporting(E_ALL ^ E_DEPRECATED);
+    error_reporting(E_ALL ^ E_DEPRECATED);
     $FS_PATH = PRODUCTION_INDEX_FILE_PATH;
 } else{
-  //  error_reporting(E_ALL);
+    error_reporting(E_ALL);
     $FS_PATH = SANDBOX_INDEX_FILE_PATH;
 }
 
@@ -19,11 +19,11 @@ date_default_timezone_set(DEFAULT_TIMEZONE);
 
 /* Set Website Filesystem */
 if(isset($FS_PATH) && $FS_PATH!=''):
-    define("FS_PATH", $_SERVER['DOCUMENT_ROOT'].$FS_PATH,true);
+    !defined("FS_PATH") && define("FS_PATH", $_SERVER['DOCUMENT_ROOT'].$FS_PATH);
 else:
-    define("FS_PATH", $_SERVER['DOCUMENT_ROOT'].'/',true);
+    !defined("FS_PATH") && define("FS_PATH", $_SERVER['DOCUMENT_ROOT'].'/');
 endif;
-define("FS_PATH_ADMIN", FS_PATH.ADMIN_FOLDER_NAME.'/',true);
+!defined("FS_PATH_ADMIN") && define("FS_PATH_ADMIN", FS_PATH.ADMIN_FOLDER_NAME.'/');
 
 // add function and classes here
 require_once FS_PATH.'includes/constants.php';
@@ -33,7 +33,10 @@ require_once DIR_FS_INCLUDES.'database.php';
 $constants = new query('setting');
 $constants->DisplayAll();
 while ($constant = $constants->GetObjectFromRecord()):
-    define("$constant->key", html_entity_decode($constant->value), true);
+    // Avoid case-insensitive flag (removed in PHP 8) and skip re-defines
+    if (!defined($constant->key)) {
+        define($constant->key, html_entity_decode($constant->value));
+    }
 endwhile;
 
 // add function and classes here (classes first and then function files)

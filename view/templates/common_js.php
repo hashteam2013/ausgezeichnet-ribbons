@@ -1,5 +1,6 @@
 <script type="text/javascript">
-    var log_in = $("#LOGGED_IN_USER").val();
+    // Use server-side login state to avoid stale DOM reads overriding auth status
+    var log_in = "<?php echo LOGGED_IN_USER ? '1' : '0'; ?>";
     /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -login ajax- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
     $("#login-submit").click(function (e) {
         var current_url = $('.current_url').val();

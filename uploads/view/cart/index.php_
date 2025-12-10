@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-md-12">
             <h1 class="cart-hdng"><?php _e("Cart"); ?></h1>
-	<h2> Falls Sie aus Niederoesterreich bestellen wollen, und Ihnen kein Aktionspreis angezeigt wird, bitte geben Sie jetzt unter Ihrem <a href="http://www.ausgezeichnet.cc/?page=profile"> PRFOIL </a> Ihre korrekten Daten an! </h2><br>
+	<h2> Falls Sie aus Niederoesterreich bestellen wollen, und Ihnen kein Aktionspreis angezeigt wird, bitte geben Sie jetzt unter Ihrem <a href="<?php echo WS_PATH; ?>?page=profile"> PRFOIL </a> Ihre korrekten Daten an! </h2><br>
         </div>
         <div id="no-more-tables">
             <form id="cart-form" action="<?php echo make_url("cart") ?>" method="post" role="form" style="display: block;">

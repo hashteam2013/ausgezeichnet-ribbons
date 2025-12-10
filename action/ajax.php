@@ -2,7 +2,7 @@
 
 // Enable error display for debugging (remove in production)
 if (ENVIRONMENT == 'sandbox') {
- error_reporting(E_ALL);
+    error_reporting(E_ALL);
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
 }
@@ -565,7 +565,7 @@ switch ($action):
                 if ($query->Insert()) {
                     $insrtcustId = $query->GetMaxId();
                     $query = new query('batch_filter_relation');
-                    $query->Fields = "batch_id";
+                    $query->Field = "batch_id";
                     $query->Where = " where rel_type = 'categories' and filter_id = '7'";
                     $connectors = $query->ListOfAllRecords();
                     if (!empty($connectors)) {
@@ -1058,12 +1058,14 @@ switch ($action):
     case 'del_from_cart':
         $output = array();
         if (isset($app['POST']['id']) && $app['POST']['id'] != '') {
-            $id = $app['POST']['id'];
-            $query1 = new query('cart_items');
-            $query1->Where = "Where id = $id ";
-            $del = $query1->Delete_where();
-            ///$output['msg'] = 'This ribbon has been deleted from your cart!';
-            //$output['status'] = 'success';
+            $id = intval($app['POST']['id']);
+            if ($id > 0) {
+                $query1 = new query('cart_items');
+                $query1->Where = "Where id = $id ";
+                $del = $query1->Delete_where();
+                ///$output['msg'] = 'This ribbon has been deleted from your cart!';
+                //$output['status'] = 'success';
+            }
         } echo json_encode($output);
         break;
 
@@ -1081,12 +1083,17 @@ switch ($action):
     case 'delete_customer':
         if (isset($app['POST']['values']) && $app['POST']['values'] != '') {
             $val = $app['POST']['values'];
-            $cust_id = $app['POST']['cust_id'];
+            $cust_id = isset($app['POST']['cust_id']) ? intval($app['POST']['cust_id']) : 0;
             $output['del_id'] = $val;
-            foreach ($val as $k => $v) {
-                $query1 = new query('customer_batches');
-                $query1->Where = "Where id = $v and customer_id = $cust_id ";
-                $del = $query1->Delete_where();
+            if ($cust_id > 0 && is_array($val)) {
+                foreach ($val as $k => $v) {
+                    $batchId = intval($v);
+                    if ($batchId > 0) {
+                        $query1 = new query('customer_batches');
+                        $query1->Where = "Where id = $batchId and customer_id = $cust_id ";
+                        $del = $query1->Delete_where();
+                    }
+                }
             }
         } echo json_encode($output);
         break;
@@ -1096,7 +1103,9 @@ switch ($action):
             $text = $app['POST']['q'];
             $text = htmlentities($text, ENT_QUOTES, 'UTF-8');
             $query = new query('batches');
-            $query->Fields = "id,ribbon_name_en,ribbon_name_dr,is_active,desc_en";
+            // Include fields used by the search results template (image + type) so
+            // the rendered "Add to list" buttons carry the correct data attributes.
+            $query->Field = "id,ribbon_name_en,ribbon_name_dr,is_active,desc_en,batch_image,type";
             $query->Where = "where (ribbon_name_en LIKE '%$text%'or ribbon_name_dr LIKE '%$text%' or webshop_title_en LIKE '%$text%' or webshop_title_dr  LIKE '%$text%') AND is_batch=1 order by ribbon_name_en,ribbon_name_dr ASC ";
             $searched_ribbons = $query->ListOfAllRecords();
         }
