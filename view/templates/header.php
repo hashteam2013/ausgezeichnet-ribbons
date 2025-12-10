@@ -39,7 +39,11 @@
                 <div class="row"> 
                     <!-- Logo Start -->
                     <div class="col-md-4 col-sm-4 col-xs-12">
-                        <div class="logo-outer"><a href="<?php echo WS_PATH; ?>index.php"> <img src="<?php echo DIR_WS_ASSETS_IMAGES; ?>logo.jpg" class="img-responsive"> </a> </div>
+                        <div class="logo-outer">
+                            <a href="<?php echo WS_PATH; ?>index.php"> 
+                                <img src="<?php echo DIR_WS_ASSETS_IMAGES; ?>logo.jpg" class="img-responsive w-12">
+                            </a> 
+                        </div>
                     </div>
                     <!-- Logo end--> 
 

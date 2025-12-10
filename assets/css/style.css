@@ -941,7 +941,8 @@ form#register-form .form-group {
 }
 @media (min-width: 1367px){
     .container {
-        width: 1660px;
+        max-width: 1660px;
+        width: 100%;
     }
 	.srch-reslt .flag-contaner img {
        max-height: 49px;
