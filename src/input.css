@@ -5,3 +5,6 @@
     --poppins: "Poppins", sans-serif;
     --gothic : "Special Gothic Expanded One", sans-serif;
 }
+.red-main-hd{
+    @apply  uppercase text-xl text-dark font-semibold;
+}

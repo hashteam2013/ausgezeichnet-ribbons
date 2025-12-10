@@ -18,6 +18,7 @@ Federal Army ~~ Bundesheer
 Federal Army content ~~ <p></p>
 ribbons content ~~ <p>Ausgezeichnet<span style="color:#ED0000;">.cc</span> bietet ein Produkt, bei welchem die Auszeichnungen (Bandspangen) einzeln gefertigt und mit Hilfe von Steck- und Klemmelementen nebeneinander und in Reihen übereinander angeordnet werden können. Kommt eine neue Auszeichnung hinzu, muss nur jeweils die betreffende Spange ergänzt und nicht  – wie bisher üblich – die gesamte Ordensspange ausgetauscht werden.</p>
 View all categories ~~ Zum Shop
+
 Below shop content ~~ <h1>Vollmodulare Ordensspangen</h1><h2>Das System</h2><p>Ausgezeichnet<span style="color:#ED0000;">.cc</span> bietet ein Produkt, bei welchem die Auszeichnungen (Bandspangen) einzeln gefertigt und mit Hilfe von Steck- und Klemmelementen nebeneinander und in Reihen übereinander angeordnet werden können. Kommt eine neue Auszeichnung hinzu, muss nur jeweils die betreffende Spange ergänzt und nicht  – wie bisher üblich – die gesamte Ordensspange ausgetauscht werden. Ein immenser finanzieller Vorteil, da alle einmal erworbenen Bestandteile (Spangen, Verbindungsstücke, Befestigungselemente) beliebig angeordnet und daher weiterverwendet werden können.<br>Das Produkt besticht zudem durch seine qualitativ hochwertige Verarbeitung. Die Elemente aus Aluminium und Edelstahl sind mit höchster Präzision im 10tel-Millimeterbereich gefertigt und garantieren auch nach langer Tragezeit uneingeschränkte Funktionalität. Die Klemmkappenverschlüsse zur Befestigung der Spange an der Uniform wurden für Ausgezeichnet.cc  „customized“: Sie sind äußerst flach, bieten einen verlässlichen Halt und ersetzen Hafteln, lange Nadeln, Butterflyverschlüsse und andere Befestigungsvarianten.</p>
 montagevideo ~~ <h2>Montage Video</h2><iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FAusgezeichnet.cc%2Fvideos%2F1988286158114310%2F&show_text=0&width=623" width="623" height="350" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
 miniatures content2 ~~ <h2>Die Bandauflagen</h2><p>Großer Wert wird auf die möglichst detailgetreue und fertigungstechnisch einwandfreie Nachbildung der originalen Dekorationen „en miniature“ gelegt. Für die Produktion der Miniaturen und anderer Bandauflagen werden vektorisierte 3d-Modelle von Auszeichnungen verwendet, die eine exakte Nachbildung in verkleinertem Maßstab gewährleisten – nicht die Kopie einer Kopie einer Kopie, sondern ein detailgetreu nachgebildetes Kleinod von 10mm, das sich im besten Wortsinne sehen lassen kann. Ähnlich hohe Ansprüche wie bei der Miniaturenproduktion werden an die grafische Darstellung von Bändern und Auflagen im Webshop gelegt. Überzeugen Sie sich selbst!</p>
@@ -34,7 +35,7 @@ Management Marketing & Sales content ~~ <p>Mag. Florian Hell </p><p><span><i cla
 Management Engineering ~~ Geschäftsführung Technik
 Management Engineering content ~~ <p>DI Lukas Hatzmann</p><p><span><i class="fa fa-envelope-o" aria-hidden="true"></i></span> &nbsp;  <a href="mailto:lukas.hatzmann@ausgezeichnet.cc">lukas.hatzmann@ausgezeichnet.cc</a></p><p><span><i class="fa fa-phone" aria-hidden="true"></i></span>&nbsp; +4368181372187</p>
 
-
+Shop Now  ~~ Jetzt einkaufen
 
 // shop page
 Collections ~~ Verschiedenes

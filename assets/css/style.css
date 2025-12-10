@@ -21,12 +21,9 @@ body { margin:0px;font-family: "Poppins", sans-serif;font-weight: 400;}
     src:url(../fonts/PTS55F.ttf);
 }
 a{outline:none;}
-.red-main-hd { font-size:32px; text-transform:uppercase; color:#ED0000; margin:0px;  font-family:'Avenir-lt',Arial, Helvetica, sans-serif;text-align: center;    margin-top: 40px;}
+
 .blue-hd  { font-size:32px; text-transform:uppercase; color:#242427;   margin:0px; font-family:'Avenir-lt',Arial, Helvetica, sans-serif;border-bottom: 3px solid #b3b3b3; width: 435px;margin: 10px auto 20px;}
 .to-c { font-size:20px; text-transform:uppercase; color:#656565;   margin:0px; font-family:'Avenir-lt',Arial, Helvetica, sans-serif;    text-transform: capitalize;}
-p { font-size:15px;  color:#565656; line-height:20px;   margin:0px 0 20px 0; font-family:'PT-Sans-Caption',Arial, Helvetica, sans-serif} 
-section.shop-ribbons .red-main-hd {text-align: center;margin-bottom: 30px;}
-.shop-ribbons h4 {font-size: 24px;margin-top: 30px;font-family: Avenir-lt;}
 
 /** Header Start **/
 /**.logo-outer { width:100%; float:left; padding:23px 0;}**/
@@ -38,19 +35,6 @@ section.shop-ribbons .red-main-hd {text-align: center;margin-bottom: 30px;}
 .search-outer .btn.btn-secondary:hover { background:#242427;}
 /** Header End **/
 
-
-
-/** About section  Start **/
-.crousal-outer { width:100%; float:left;}
-.about-sec { width:100%; float:left; padding:30px 0;}
-/**  About section  End **/
-
-/** shop-ribbons  Start **/
-.shop-ribbons{ width:100%; float:left;background: #f0f0f3; padding: 40px 0px;}
-/** shop-ribbons  End **/
-
-.shop-ribbons a {font-size: 18px;background: #ED0000;color: #fff;text-decoration: none;padding: 7px;border-radius: 30px;max-width: 180px;width: 100%;display: block;text-align: center;}
-
 /****************Chauhan******************/
 section.about-sec p.main-bless {
     color: #565656;
@@ -61,27 +45,7 @@ section.about-sec p {
     font-size: 16px;
 line-height: 26px;
 }
-a.all-cat {
-    text-align: center;
-    margin: 50px auto;
-    float: none;
-    display: inline-block;
-    font-size: 21px;
-    border: 2px solid #ED0000;
-    color: #242427;
-    width: 300px; transition: 0.76s;
-    text-decoration: none;
-    padding: 18px;
-}
 a, a:hover, a:focus{ outline:none !important;}
-a.all-cat.add-btn:hover span {transition: 0.76s; color: #fff;
-    margin-left: 9px;
-}
-a.all-cat.add-btn:hover {
-    background: #ED0000;
-    color: #fff;
-    border: 2px solid #ccc;
-}
 ul{margin: 0px; padding: 0px;}
 ul li{list-style-type: none;}
 h2{font-size:24px; float: left; width:100%; }
@@ -547,55 +511,11 @@ footer ul li:hover {
     transform: rotate(360deg);
     transition: 1s;
 }
-/* Float Shadow */
-.hvr-float-shadow {
-    display: inline-block;
-    -webkit-transform: perspective(1px) translateZ(0);
-    transform: perspective(1px) translateZ(0);
-    box-shadow: 0 0 1px transparent;
-    position: relative;
-    -webkit-transition-duration: 0.3s;
-    transition-duration: 0.3s;
-    -webkit-transition-property: transform;
-    transition-property: transform;
-}
-.hvr-float-shadow:before {
-    pointer-events: none;
-    position: absolute;
-    z-index: -1;
-    content: '';
-    top: 100%;
-    left: 5%;
-    height: 10px;
-    width: 90%;
-    opacity: 0;
-    background: -webkit-radial-gradient(center, ellipse, rgba(0, 0, 0, 0.35) 0%, transparent 80%);
-    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, transparent 80%);
-    /* W3C */
-    -webkit-transition-duration: 0.3s;
-    transition-duration: 0.3s;
-    -webkit-transition-property: transform, opacity;
-    transition-property: transform, opacity;
-}
-.hvr-float-shadow:hover, .hvr-float-shadow:focus, .hvr-float-shadow:active {
-    -webkit-transform: translateY(-5px);
-    transform: translateY(-5px);
-    /* move the element up by 5px */
-}
-.hvr-float-shadow:hover:before, .hvr-float-shadow:focus:before, .hvr-float-shadow:active:before {
-    opacity: 1;
-    -webkit-transform: translateY(5px);
-    transform: translateY(5px);
-    /* move the element down by 5px (it will stay in place because it's attached to the element that also moves up 5px) */
-}
+
 section.about-sec.text-center a {
     color: #ED0000;
     text-decoration: none;
     font-weight: 700; font-size: 17px;    letter-spacing: 1px;
-}
-section.hand-band {    
-                       float: left; 
-                       width: 100%;
 }
 section.hand-band h2 {
     font-size: 42px;
@@ -614,11 +534,6 @@ line-height: 26px;
 .shop-inner-sec p {
     line-height: 18px;
 }
-.shop-img:hover {
-    transform: translatey(-30px);
-    transition: 1s;
-}
-
 img.img-responsive.img-circle:hover {
     transform: scale(1.1,1.1);
     transition: 1s;
@@ -626,30 +541,10 @@ img.img-responsive.img-circle:hover {
 img.img-responsive.img-circle {
     transition: 1s;
 }
-section.about-us h2 {
-    margin-top: 50px;
-    margin-bottom: 20px;
-}
 section.cont-us p span:hover .fa{
     transform: rotate(360deg);
     transition: 1s;
 }
-section.about-us {
-    color: #242427;
-    float: left;
-    background: #f7f7f7;
-    width: 100%;
-    padding: 30px 0px 50px;
-}
-section.about-us h1 {
-    text-align: center;
-    color: #ED0000;
-    text-transform: uppercase;
-    margin-bottom: 50px;
-}
-section.about-us p{
-    color: #242427; line-height: 26px;
-    font-size: 17px;}
 section.cont-us h2 {
     font-size: 21px;
     margin-top: 60px;text-align: left;
@@ -707,8 +602,6 @@ section.cont-us p {
     line-height: 28px;
     font-weight: 600;
 }
-
-section.cont-us { color: #2a2a2a;  padding-bottom: 80px;float: left; width: 100%; background: url(../images/map.png) no-repeat center;}
 section.cont-us h1 {
     font-size: 32px;
     color: #ED0000;
@@ -925,7 +818,7 @@ form#register-form .form-group {
     line-height: 0px !important;
 }
 @media (min-width: 1200px){
-    .container {
+    .container-custom {
         width: 96%;
         max-width: 1650px;
         margin: 0 auto;
@@ -1099,12 +992,6 @@ footer >div {
     .srch-reslt.slect select {
         max-width: auto;
         min-width: 160px;
-    }
-    section.about-us img.img-responsive.img-circle {
-        margin: auto;transform: none;
-    }
-    section.about-us {
-        text-align: center;
     }
     .shop-inner-sec {
         text-align: center;
@@ -1289,9 +1176,6 @@ section.hand-band iframe {
 }
 h1, .h1 {
     font-size: 26px;
-}
-section.about-us p {
-    font-size: 14px;
 }
 section.cont-us p {
     font-size: 14px;

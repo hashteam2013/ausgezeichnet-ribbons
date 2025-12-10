@@ -7,7 +7,7 @@
 <section class="banner relative">
     <img src="<?php echo DIR_WS_ASSETS_IMAGES; ?>banner.jpg" class="w-full h-full">
     <div class="absolute bg-black/60 top-0 left-0 w-full h-full flex items-center justify-center">
-        <div class="container">
+        <div class="container-custom">
             <div class="text-center text-white">
                 <h3 class="mb-2 text-[40px] leading-[50px] tracking-[0.4px] font-semibold text-white">Ausgezeichnet.cc</h3>
                 <h1 class="text-8xl font-gothic leading-[120px] font-normal">
@@ -40,58 +40,81 @@
 <!-- Banner section End --> 
 
 <!-- About section start -->
-<section class="about-sec text-center" id="welcome" >
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <?php _e("Welcome content"); ?>
-                <!--        <a href="#">Read More</a>-->
+<section class="py-24" id="welcome" >
+    <div class="container-custom">
+        <?php _e("Welcome content"); ?>
+        <div class="flex gap-14 mb-10">
+            <div class="w-1/2">
+                <img src="<?php echo DIR_WS_ASSETS_IMAGES; ?>about.png" class="w-full rounded-[20px]">
             </div>
+            <div class="w-1/2 flex flex-col gap-5">
+                <h5 class="uppercase text-xl text-dark font-semibold">ABOUT US</h5>
+                <h2 class="capitalize text-primary text-6xl leading-[80px] font-gothic font-normal">Crafting Excellence, Honoring Service</h2>
+                <p class="text-xl leading-[50px] text-dark font-normal">At Ausgezeichnet.cc, we believe that service and achievement deserve to be honored with precision and distinction. We specialize in crafting and assembling fully modular medal clasps (Ordensspangen), providing the highest standard for presenting your military, police, and official service decorations.</p>
+            </div>
+        </div>
+        <div class="flex flex-col">
+            <p class="text-xl leading-[50px] text-dark font-normal">The name "Ausgezeichnet" is German for "excellent" or "distinguished," a principle that guides every ribbon bar we produce. We understand the significance of your honors. Our innovative, fully modular system ensures that every decoration, device, and ribbon is displayed with perfect accuracy and alignment, reflecting the exact order and criteria of your awards.</p>
         </div>
     </div>
 </section>
 <!-- About section end --> 
 
 <!-- Shop Ribbons start -->
-<section class="shop-ribbons" id="shop-ribbon">
-     <?php _e("products"); ?>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h2 class="red-main-hd"><?php //_e('Shop Ribbons'); ?></h2>
-            </div>
+<section class="shop-ribbons py-24" id="shop-ribbon">
+    <div class="container-custom">
+        <div class="flex flex-col ">
+            <h2 class="red-main-hd"><?php _e("products"); ?></h2>
+            <h2 class="capitalize mt-4 text-primary text-6xl leading-[80px] font-gothic font-normal">Explore Our Products</h2>
         </div>
-        <div class="row">
-            <div class="col-md-4 col-sm-4">
-                <div class="shop-inner-sec">
-                    <div class="shop-img"> <img src="<?php echo DIR_WS_ASSETS_IMAGES; ?>shop-1.jpg" class="img-responsive"> </div>
-                    <h4><?php _e('medals'); ?></h4>
-                    <?php _e('original content') ?>
-                    <a href="<?php echo make_url('home'); ?>#contact" class="hvr-float-shadow"><?php _e('contact us'); ?> </a>
+        
+        <div class="flex mt-14 gap-12">
+            <div class="w-1/3">
+                <div class="bg-body h-full rounded-[20px] flex flex-col">
+                    <div class="w-full"> <img src="<?php echo DIR_WS_ASSETS_IMAGES; ?>shop-1.jpg" class="w-full rounded-tr-[20px] rounded-tl-[20px]"> </div>
+                    <div class="p-10 flex flex-col items-start flex-auto">
+                        <h4 class="text-secondary max-w-xs capitalize text-3xl font-gothic font-normal mb-5"><?php _e('medals'); ?></h4>
+                        <div class="text-base leading-[30px] text-dark font-normal mb-10"><?php _e('original content') ?></div>
+                        <a href="<?php echo make_url('home'); ?>#contact" class="capitalize mt-auto inline-flex bg-primary text-white min-h-12 px-5 rounded-xl items-center justify-center text-base font-semibold"><?php _e('contact us'); ?> </a>
+                    </div>
+                    
                 </div>
             </div>
-            <div class="col-md-4 col-sm-4">
-                <div class="shop-inner-sec">
-                    <div class="shop-img"> <img src="<?php echo DIR_WS_ASSETS_IMAGES; ?>shop-2.jpg" class="img-responsive"> </div>
-                    <h4><?php _e('miniatures'); ?></h4>
-                    <?php _e('miniatures content'); ?>
-                    <a href="<?php echo make_url('shop'); ?>#products" class="hvr-float-shadow"><?php _e("View all categories"); ?></a>
+            <div class="w-1/3">
+                <div class="bg-body h-full rounded-[20px] flex flex-col">
+                    <div class="w-full"> <img src="<?php echo DIR_WS_ASSETS_IMAGES; ?>shop-2.jpg" class="w-full rounded-tr-[20px] rounded-tl-[20px]"> </div>
+                    <div class="p-10 flex flex-col items-start flex-auto">
+                        <h4 class="text-secondary max-w-xs capitalize text-3xl font-gothic font-normal mb-5"><?php _e('miniatures'); ?></h4>
+                        <div class="text-base leading-[30px] text-dark font-normal mb-10"><?php _e('miniatures content'); ?></div>
+                        <a href="<?php echo make_url('shop'); ?>#products" class="inline-flex mt-auto bg-primary text-white min-h-12 px-5 rounded-xl capitalize items-center justify-center text-base font-semibold"><?php _e("View all categories"); ?></a>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-4 col-sm-4">
-                <div class="shop-inner-sec">
-                    <div class="shop-img"> <img src="<?php echo DIR_WS_ASSETS_IMAGES; ?>shop-3.jpg" class="img-responsive"> </div>
-                    <h4><?php _e('modular ribbons'); ?></h4>
-                    <?php _e('ribbons content'); ?>
-                    <a href="<?php echo make_url('home'); ?>#products" class="hvr-float-shadow"><?php _e("more info"); ?></a>
+            <div class="w-1/3">
+                <div class="bg-body h-full rounded-[20px] flex flex-col">
+                    <div class="w-full"> <img src="<?php echo DIR_WS_ASSETS_IMAGES; ?>shop-3.jpg" class="w-full rounded-tr-[20px] rounded-tl-[20px]"> </div>
+                    <div class="p-10 flex flex-col items-start flex-auto">
+                        <h4 class="text-secondary max-w-xs capitalize text-3xl font-gothic font-normal mb-5"><?php _e('modular ribbons'); ?></h4>
+                        <div class="text-base leading-[30px] text-dark font-normal mb-10"><?php _e('ribbons content'); ?></div>
+                        <a href="<?php echo make_url('home'); ?>#products" class="mt-auto capitalize inline-flex bg-primary text-white min-h-12 px-5 rounded-xl items-center justify-center text-base font-semibold"><?php _e("more info"); ?></a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<div class="text-center">
-    <a href="<?php echo make_url('shop'); ?>" class="all-cat add-btn hvr-float-shadow"><font><?php _e("View all categories"); ?></font><span><i class="fa fa-angle-double-right" aria-hidden="true"></i></span></a>
-</div>
+<section class="text-center relative">
+    <img src="<?php echo DIR_WS_ASSETS_IMAGES; ?>shop.jpg" class="w-full">
+    <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center  bg-black/70">
+        <div class="container-custom">
+            <div class="flex flex-col items-center justify-center max-w-[1060px] mx-auto gap-5">
+                <h2 class="text-white font-gothic font-normal text-6xl max-w-[700px] mx-auto leading-[75px]">Ausgezeichnet.cc: Modular German Ribbon Bars</h2>
+                <p class="text-[#E5E6E8] text-xl font-normal leading-[35px]">We produce the missing ribbons and miniatures needed to wear Austrian awards on German ribbon bars. We closed this long-standing gap in the market!</p>
+                <a href="<?php echo make_url('shop'); ?>" class="text-white bg-primary text-base font-semibold px-7 inline-flex items-center justify-center rounded-xl min-h-12"><font><?php _e("Shop Now"); ?></font></a>
+            </div>
+        </div>
+    </div>
+</section>
 
 <section class="hand-band" id="products">
     <div class="container">
@@ -234,18 +257,17 @@
     </div>
 </section>	
 
-<section class="about-us" id="about-us">
-    <div class="container">
-        <div class="row">
-            <h1><?php _e("About Us"); ?></h1>
-            <div class="col-sm-6">
-                <img src="<?php echo DIR_WS_ASSETS_IMAGES; ?>img-crcl.png" class="img-responsive img-circle">
-                <?php _e('about us content left');?>
-            </div>
-            <div class="col-sm-6">
-                <img src="<?php echo DIR_WS_ASSETS_IMAGES; ?>img-crcl1.png" class="img-responsive img-circle">
-                <?php _e('about us content right'); ?>
-            </div>
+<section class="py-24" id="about-us">
+    <div class="container-custom">
+        <h5 class="text-dark text-xl font-semibold uppercase mb-5"><?php _e("About Us"); ?></h5>
+        <h2 class="capitalize text-primary text-6xl leading-[80px] font-gothic font-normal">The Faces Behind Ausgezeichnet.cc</h2>
+        <div class="col-sm-6">
+            <img src="<?php echo DIR_WS_ASSETS_IMAGES; ?>img-crcl.png" class="img-responsive img-circle">
+            <?php _e('about us content left');?>
+        </div>
+        <div class="col-sm-6">
+            <img src="<?php echo DIR_WS_ASSETS_IMAGES; ?>img-crcl1.png" class="img-responsive img-circle">
+            <?php _e('about us content right'); ?>
         </div>
     </div>
 </section>

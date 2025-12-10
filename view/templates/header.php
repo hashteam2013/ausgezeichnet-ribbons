@@ -36,7 +36,7 @@
         <header class="header-top py-5 bg-white">
             <input type="hidden" id="WS_PATH" value="<?php echo WS_PATH;?>"/>
             <input type="hidden" id="LOGGED_IN_USER" value="<?php echo LOGGED_IN_USER;?>"/>
-            <div class="container">
+            <div class="container-custom">
                 <div class="flex gap-10 items-center justify-between"> 
                     <!-- Logo Start -->
                     <div class="logo-outer flex w-[25%]">

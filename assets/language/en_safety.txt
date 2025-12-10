@@ -11,6 +11,7 @@ Red Cross content ~~  <p>Lorem Ipsum is simply dummy text of the printing and ty
 Federal Army ~~ Federal Army
 Federal Army content ~~  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
 View all categories ~~ View all categories
+Shop Now  ~~ Shop Now
 Below shop content ~~ <h2>Die Idee ist das Absolute,<br/> Und alles Wirkliche ist nur Realisierung der ldee.</h2> <h4>Georg Wilhelm Friedrich Hegel</h4>
 About Us ~~ About Us
 about us content left ~~ <h2>MAG. FLORIAN HELL</h2><p>The study of art and culture at the Karl-Franzens-University in Graz. <br>Since his twelfth year, he has been a member of the volunteer fire brigade Bruck an der Mur and has so far come into contact with almost every topic that brings the daily fire brigade life with him. He knows the needs of the industry - and he soon won an award with his company under the brand. Cc the idea of ​​fully modular religious orders.</p>
