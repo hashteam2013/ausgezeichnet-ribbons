@@ -133,6 +133,7 @@ switch ($action):
     case 'department_pos':
         $output = array();
         $id = isset($app['GET']['id']) ? $app['GET']['id'] : "0";
+        $departmentsexcID = array(); // default to avoid undefined variable in view
         /* first tym main depart list */
         $query = new query('departments_new');
         $query->Where = " where is_active = '1' order by position";
@@ -147,27 +148,35 @@ switch ($action):
         $query = new query('departments_possitions');
         $query->Where = " where main_department = $id";
         $Setpositions = $query->ListOfAllRecords();
+        if (!is_array($Setpositions)) {
+            $Setpositions = array();
+        }
         $positions = array();
         foreach ($Setpositions as $val) {
             $positions[$val['related_department']] = $val['position'];
         }
         /* add positions */
         if (isset($app['POST']['add_pos'])) {
+            if (empty($app['POST']['main_depart'])) {
+                set_alert('error', 'Please select a main department before saving positions.');
+                redirect(app_url('departments_new', 'department_pos', 'department_pos', array(), true));
+            }
             /* Start get all related_departments of main department */
             $query = new query('departments_possitions');
             $query->Field = "related_department";
             $query->Where = " where main_department =" . $app['POST']['main_depart'];
             $Alldepart = $query->ListOfAllRecords();
-            $departarr = array_map('current', $Alldepart);
+            $departarr = is_array($Alldepart) ? array_map('current', $Alldepart) : array();
             //pr($departarr);
             /* End get all related_departments of main department */
-            $pos_depart = isset($app['POST']['pos_no']) ? $app['POST']['pos_no'] : '';
+            $pos_depart = isset($app['POST']['pos_no']) && is_array($app['POST']['pos_no']) ? $app['POST']['pos_no'] : array();
             foreach ($pos_depart as $rel_depart => $pos_val) {
+                $positionVal = ($pos_val === '' || $pos_val === null) ? 0 : $pos_val;
                 if (in_array($rel_depart, $departarr)) {
                     $query = new query('departments_possitions');
                     $query->Data['main_department'] = isset($app['POST']['main_depart']) ? $app['POST']['main_depart'] : '';
                     $query->Data['related_department'] = $rel_depart;
-                    $query->Data['position'] = $pos_val;
+                    $query->Data['position'] = $positionVal;
                     $query->Where = " where main_department = " . $app['POST']['main_depart'] . " and related_department = " . $rel_depart;
                     if ($query->UpdateCustom()) {
                         $output['status'] = "success";
@@ -177,7 +186,7 @@ switch ($action):
                     $query = new query('departments_possitions');
                     $query->Data['main_department'] = isset($app['POST']['main_depart']) ? $app['POST']['main_depart'] : '';
                     $query->Data['related_department'] = $rel_depart;
-                    $query->Data['position'] = $pos_val;
+                    $query->Data['position'] = $positionVal;
                     if ($query->insert()) {
                         $output['status'] = "success";
                         $output['message'] = "Record inserted successfully.";

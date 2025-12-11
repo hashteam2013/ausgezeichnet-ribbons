@@ -36,18 +36,15 @@
                                 <div class="depart_poss"></div>
                                 <div id="show_batch" style="display:<?php echo ($id == "0") ? "none" : "block"; ?>">
                                     <?php
-                                    //pr($positions);
-                                    foreach ($departmentsexcID as $deprt) {
-                                        ?>
-                                        <div class="pos_depart"><?php echo $deprt['name_en']; ?></div>
-                                        <div class="form-group" id='inner_pos'>
-                                            <?php if (!empty($positions)) { ?>
-                                                <input type="number" name="pos_no[<?php echo $deprt['id']; ?>]" value="<?php echo ($positions[$deprt['id']]) ? $positions[$deprt['id']] : ''; ?>">
-                                        <?php } else { ?>
-                                                <input type="number" name="pos_no[<?php echo $deprt['id']; ?>]" value="">
-                                        <?php } ?>
-                                        </div>
-                                        <?php } ?>
+                                    if (!empty($departmentsexcID)) {
+                                        foreach ($departmentsexcID as $deprt) { ?>
+                                            <div class="pos_depart"><?php echo $deprt['name_en']; ?></div>
+                                            <div class="form-group" id='inner_pos'>
+                                                <input type="number" name="pos_no[<?php echo $deprt['id']; ?>]" value="<?php echo isset($positions[$deprt['id']]) ? $positions[$deprt['id']] : ''; ?>">
+                                            </div>
+                                        <?php }
+                                    }
+                                    ?>
                                     <div class="form-actions">
                                         <button type="submit" name="add_pos" id="add_image" class="btn blue">Manage Department Positions</button>
                                     </div>

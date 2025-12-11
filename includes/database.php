@@ -142,7 +142,8 @@ class query extends Connection {
     function Insert() {
         $query1 = "INSERT INTO " . $this->TableName . " SET ";
         foreach ($this->Data as $key => $value):
-            if ($value != ''):
+            // include zero and other non-empty values; skip only when value is truly an empty string
+            if ($value !== ''):
                 if($key == "date_add"){
                     $query1.=$key . "=" . "now()" . ', ';
                 } else{

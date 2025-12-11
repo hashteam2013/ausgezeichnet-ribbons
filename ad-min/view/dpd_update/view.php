@@ -1,6 +1,9 @@
 ﻿<?php
+
 	$path    = './DPDRefFiles/sfiles';
-	$files = array_values(array_diff(scandir($path), array('..', '.')));
+	$scandirResult = scandir($path);
+	// Protect against scandir failure (returns false) to avoid passing bool into array_diff
+	$files = is_array($scandirResult) ? array_values(array_diff($scandirResult, array('..', '.'))) : [];
 
 
 	foreach($files as $file)
@@ -43,7 +46,8 @@
 
 <?php
 	$path    = './DPDRefFiles/daylists';
-	$files = array_values(array_diff(scandir($path), array('..', '.')));
+	$scandirResult = scandir($path);
+	$files = is_array($scandirResult) ? array_values(array_diff($scandirResult, array('..', '.'))) : [];
 
 
 	foreach($files as $file)

@@ -1,4 +1,7 @@
 <?php
+ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
+error_reporting(E_ALL);
 global $app;
 $id = isset($app['GET']['id'])?$app['GET']['id']:"0";
 $page_no = (isset($app['GET']['page_no']) && $app['GET']['page_no'] != "")? $app['GET']['page_no'] : 1;
@@ -10,13 +13,13 @@ switch ($action):
     case 'list':
 
  $query3 = new query('order_items');
- $query3->Field = "product_id, sum(order_items.quantity) as numberofitems, ribbon_name_dr, count(order_items.order_id) as NumberOfProcessedOrders, order_items.unit_price, order_items.quantity, order_items.date_add";
- $query3->Where = "INNER JOIN batches ON product_id = batches.id WHERE order_items.order_id IN(SELECT orders.id FROM orders WHERE orders.is_order_valid='1' AND orders.is_order_cancelled='0') GROUP BY (`product_id`) ORDER BY numberofitems desc";
+ $query3->Field = "product_id, sum(order_items.quantity) as numberofitems, ribbon_name_dr, count(order_items.order_id) as NumberOfProcessedOrders, MIN(order_items.unit_price) as unit_price, MIN(order_items.date_add) as first_date";
+ $query3->Where = "INNER JOIN batches ON product_id = batches.id WHERE order_items.order_id IN(SELECT orders.id FROM orders WHERE orders.is_order_valid='1' AND orders.is_order_cancelled='0') GROUP BY product_id, ribbon_name_dr ORDER BY numberofitems desc";
 $validorderitems = $query3->ListOfAllRecords('object');
 
  $query3 = new query('order_items');
- $query3->Field = "product_id, sum(order_items.quantity) as numberofitems, ribbon_name_dr, count(order_items.order_id) as NumberOfProcessedOrders, order_items.unit_price, order_items.quantity, order_items.date_add";
- $query3->Where = "INNER JOIN batches ON product_id = batches.id WHERE order_items.order_id IN(SELECT orders.id FROM orders WHERE orders.is_order_valid='1' AND orders.is_order_cancelled='1') GROUP BY (`product_id`) ORDER BY numberofitems desc";
+ $query3->Field = "product_id, sum(order_items.quantity) as numberofitems, ribbon_name_dr, count(order_items.order_id) as NumberOfProcessedOrders, MIN(order_items.unit_price) as unit_price, MIN(order_items.date_add) as first_date";
+ $query3->Where = "INNER JOIN batches ON product_id = batches.id WHERE order_items.order_id IN(SELECT orders.id FROM orders WHERE orders.is_order_valid='1' AND orders.is_order_cancelled='1') GROUP BY product_id, ribbon_name_dr ORDER BY numberofitems desc";
 $cancelledorderitems = $query3->ListOfAllRecords('object');
 
  $query4 = new query('order_items');

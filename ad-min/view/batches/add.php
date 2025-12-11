@@ -1,3 +1,14 @@
+<?php
+// Provide defaults to avoid undefined property notices on add view
+if (!isset($batches) || !is_object($batches)) {
+    $batches = (object)[
+        'miniature_id' => '',
+        'serious_level' => '',
+        'SetID' => '',
+        'type_number' => '',
+    ];
+}
+?>
 <div class="row">
     <div class="col-sm-12">
         <!-- BEGIN SAMPLE FORM PORTLET-->

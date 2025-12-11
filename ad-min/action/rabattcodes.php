@@ -1,5 +1,52 @@
 <?php
+ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
+error_reporting(E_ALL); 
 global $app;
+
+/**
+ * Resolve the maximum allowed length for the rabattcodes.code column directly
+ * from the database. Falls back to 0 (no check) if the lookup fails.
+ */
+function rabattcodes_code_max_length($dbLink) {
+    if (!$dbLink) {
+        return 0;
+    }
+
+    $sql = "SELECT CHARACTER_MAXIMUM_LENGTH AS len
+            FROM information_schema.COLUMNS
+            WHERE table_schema = DATABASE()
+              AND table_name = 'rabattcodes'
+              AND column_name = 'code'
+            LIMIT 1";
+
+    if ($result = mysqli_query($dbLink, $sql)) {
+        if ($row = mysqli_fetch_assoc($result)) {
+            return (int)$row['len'];
+        }
+    }
+
+    return 0;
+}
+
+function rabattcodes_strlen($value) {
+    return function_exists('mb_strlen') ? mb_strlen($value, 'UTF-8') : strlen($value);
+}
+
+function rabattcodes_validate_rabatt($rawValue, &$normalizedValue) {
+    $trimmed = trim($rawValue);
+    if ($trimmed === '') {
+        return 'Please enter rabatt';
+    }
+    if (!is_numeric($trimmed)) {
+        return 'Rabatt must be a number';
+    }
+    // store as integer to satisfy the rabatt column type
+    $normalizedValue = (int)$trimmed;
+    return '';
+}
+
+$codeMaxLength = rabattcodes_code_max_length($app['mysqllink']);
 $id = isset($app['GET']['id'])?$app['GET']['id']:"0";
 switch ($action):
     case 'add':
@@ -7,12 +54,16 @@ switch ($action):
         {
 
             $msg = '';
-            if (trim($app['POST']['code']) == '') {
+            $submittedCode = trim($app['POST']['code']);
+            $submittedRabatt = null;
+            if ($submittedCode == '') {
                 $msg = 'Please enter code';
-            }elseif (trim($app['POST']['rabatt']) == '') {
-                $msg = 'Please enter rabatt';}
-            else
-            {
+            } elseif ($codeMaxLength > 0 && rabattcodes_strlen($submittedCode) > $codeMaxLength) {
+                $msg = "Code is too long (max {$codeMaxLength} characters)";
+            } else {
+                $msg = rabattcodes_validate_rabatt($app['POST']['rabatt'], $submittedRabatt);
+            }
+            if ($msg === '') {
                     $queryObj = new query('rabattcodes');
                     $queryObj->Field = " id, code";
                     $queryObj->Where = " where code = '".$app['POST']['code']."'";
@@ -20,7 +71,7 @@ switch ($action):
                     if(!is_object($object)){
                             $query = new query('rabattcodes');
                             $query->Data['code'] = ucwords($app['POST']['code']);
-                            $query->Data['rabatt'] = ucwords($app['POST']['rabatt']);
+                            $query->Data['rabatt'] = $submittedRabatt;
                             $query->Data['is_active'] = '1';
                             $query->Data['date_add'] = '1';
                             if ($query->Insert()) {
@@ -32,7 +83,6 @@ switch ($action):
                         } else{
                             $msg = 'Code already in use';   
                         }
-                     
             }
             set_alert('error', $msg);
         }
@@ -45,14 +95,16 @@ switch ($action):
         {
 
             $msg = '';
-            if (trim($app['POST']['code']) == '') {
+            $submittedCode = trim($app['POST']['code']);
+            $submittedRabatt = null;
+            if ($submittedCode == '') {
                 $msg = 'Please enter code';
-  
-            }elseif (trim($app['POST']['rabatt']) == '') {
-                $msg = 'Please enter rabatt';
-
-            } else
-            {
+            } elseif ($codeMaxLength > 0 && rabattcodes_strlen($submittedCode) > $codeMaxLength) {
+                $msg = "Code is too long (max {$codeMaxLength} characters)";
+            } else {
+                $msg = rabattcodes_validate_rabatt($app['POST']['rabatt'], $submittedRabatt);
+            }
+            if ($msg === '') {
 
                     $queryObj = new query('rabattcodes');
                     $queryObj->Field = " id";
@@ -64,7 +116,7 @@ switch ($action):
                             $query = new query('rabattcodes');
                             $query->Data['id'] = $id;
                             $query->Data['code'] = ucwords($app['POST']['code']);
-                            $query->Data['rabatt'] = ucwords($app['POST']['rabatt']);
+                            $query->Data['rabatt'] = $submittedRabatt;
 
                             if ($query->Update()) {
                                 set_alert('success', "Code updated successfully");
@@ -76,10 +128,9 @@ switch ($action):
                         {
                             $msg = 'code already in use';   
                         }
-                
+            }
             
             set_alert('error', 'FEHLER:' . $msg);
-        }
         }
         $query = new query('rabattcodes');
         $query->Where = "where id = ".$id;

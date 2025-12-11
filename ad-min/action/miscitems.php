@@ -1,4 +1,5 @@
 <?php
+
 global $app;
 $id = isset($app['GET']['id']) ? $app['GET']['id'] : "0";
 $id_loc = isset($app['GET']['id_loc']) ? $app['GET']['id_loc'] : "0";
@@ -62,12 +63,59 @@ switch ($action):
                             $query->Data['desc_dr'] = $app['POST']['desdr'];
                             $query->Data['unit_price'] = $app['POST']['uprice'];
                             $query->Data['level'] = $app['POST']['level'];
+                            // misc items still use grade column; default to 0 when not provided
+                            $query->Data['grade'] = isset($app['POST']['grade']) && $app['POST']['grade'] !== '' ? $app['POST']['grade'] : 0;
+                            // fallback for required serious_level column
+                            $query->Data['serious_level'] = isset($app['POST']['serious_level']) && $app['POST']['serious_level'] !== '' ? $app['POST']['serious_level'] : 0;
+                            // fallback for required value column
+                            $query->Data['value'] = isset($app['POST']['rb_value']) && $app['POST']['rb_value'] !== '' ? $app['POST']['rb_value'] : 0;
+                            // fallback for required quantity column
+                            $query->Data['quantity'] = isset($app['POST']['quantity']) && $app['POST']['quantity'] !== '' ? intval($app['POST']['quantity']) : 0;
+                            // fallback for required sale_price column
+                            $query->Data['sale_price'] = isset($app['POST']['sale_price']) && $app['POST']['sale_price'] !== '' ? $app['POST']['sale_price'] : 0;
+                            // fallback for required weight column
+                            $query->Data['weight'] = isset($app['POST']['weight']) && $app['POST']['weight'] !== '' ? $app['POST']['weight'] : 0;
+                            // fallback for required width column
+                            $query->Data['width'] = isset($app['POST']['width']) && $app['POST']['width'] !== '' ? $app['POST']['width'] : 0;
+                            // fallback for required availability flag
+                            $query->Data['is_available'] = isset($app['POST']['is_available']) && $app['POST']['is_available'] !== '' ? $app['POST']['is_available'] : 1;
+                            // fallback for required miniature_id column
+                            $query->Data['miniature_id'] = isset($app['POST']['miniature_id']) && $app['POST']['miniature_id'] !== '' ? $app['POST']['miniature_id'] : 0;
+                            // fallback for required comment column (non-empty to avoid skip in Insert)
+                            $query->Data['comment'] = isset($app['POST']['comment']) && $app['POST']['comment'] !== '' ? $app['POST']['comment'] : 'N/A';
+                            // fallback for required ItemType column (integer)
+                            $query->Data['ItemType'] = isset($app['POST']['ItemType']) && $app['POST']['ItemType'] !== '' ? intval($app['POST']['ItemType']) : 0;
+                            // fallback for required SetID column
+                            $query->Data['SetID'] = isset($app['POST']['SetID']) && $app['POST']['SetID'] !== '' ? $app['POST']['SetID'] : 0;
+                            // fallback for required confirm_comment column
+                            $query->Data['confirm_comment'] = isset($app['POST']['confirm_comment']) && $app['POST']['confirm_comment'] !== '' ? $app['POST']['confirm_comment'] : 'N/A';
+                            // fallback for required discount fields
+                            $query->Data['discount_type'] = isset($app['POST']['discount_type']) && $app['POST']['discount_type'] !== '' ? $app['POST']['discount_type'] : 'none';
+                            $query->Data['discount'] = isset($app['POST']['discount']) && $app['POST']['discount'] !== '' ? $app['POST']['discount'] : 0;
+
+                            // set batch type (default to 0 when not provided)
+                            $query->Data['type'] = isset($app['POST']['ribloc']) ? $app['POST']['ribloc'] : '0';
+
+                            // generate url slug from English name (fallback to uniqid to keep non-null)
+                            $slugSource = isset($app['POST']['rnameen']) ? $app['POST']['rnameen'] : uniqid();
+                            $slug = strtolower(preg_replace('/[^a-z0-9]+/', '-', trim($slugSource)));
+                            $slug = trim($slug, '-');
+                            if ($slug === '') {
+                                $slug = uniqid();
+                            }
+                            $query->Data['url_slug'] = $slug;
 
                            $query->Data['batch_position'] = $app['POST']['btposition'];
 
                             $query->Data['is_batch'] = '0';
                             $query->Data['is_active'] = isset($app['POST']['active']) ? '1' : '0';
                             $query->Data['is_deleted'] = '0';
+                            // ensure required fields present on insert
+                            $query->Data['date_add'] = 'now';
+                            $nextCode = isset($app['POST']['code']) && $app['POST']['code'] !== ''
+                                ? intval($app['POST']['code'])
+                                : (intval($query->GetMaxId()) + 1);
+                            $query->Data['code'] = $nextCode;
                             if ($query->Insert()) {
                                 $query = new query('batches');
                                 $batch_id = $query->GetMaxId();
@@ -135,7 +183,8 @@ switch ($action):
         $query->Where = " where is_active = 1 order by position";
         $departments_new = $query->ListOfAllRecords('object');
 
-        $query = new query('add_cat');
+        // use existing additional_categories table (add_cat table does not exist)
+        $query = new query('additional_categories');
         $query->Where = " where is_active = 1 order by position";
         $add_cats = $query->ListOfAllRecords('object');
 
@@ -509,7 +558,8 @@ switch ($action):
             }
         }
 
-        $query = new query('add_cat');
+        // use existing additional_categories table (add_cat table does not exist)
+        $query = new query('additional_categories');
         $query->Where = "where is_active = 1 order by position";
         $add_cats = $query->ListOfAllRecords('object');
         $queryCS = new query('batch_filter_relation');

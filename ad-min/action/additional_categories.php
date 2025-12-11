@@ -6,6 +6,9 @@ $limit = PAGE_CONTENT_LIMIT;
 switch ($action):
     case 'add':
         if (isset($app['POST']['add'])) {
+            //  echo "<pre>";
+            //  print_r($app['POST']);
+            // exit;
             $msg = '';
             if(trim($app['POST']['nameen']) == '') {
                 $msg = 'Please enter english name';
@@ -23,7 +26,11 @@ switch ($action):
                             $query->Data['name_en'] = $app['POST']['nameen'];
                             $query->Data['name_dr'] = $app['POST']['namedr'];
                             $query->Data['position'] = $app['POST']['position'];
-                          //  $query->Data['is_district_related'] = isset($app['POST']['district'])? $app['POST']['district']:'0';
+                            // ensure DB gets required flag even though form omits the field
+                            $query->Data['is_district_related'] = '0';
+                            $query->Data['is_deleted'] = '0';
+                            $query->Data['date_add'] = date('Y-m-d H:i:s');
+                            $query->Data['show_closed'] = '0';
                             $query->Data['is_active'] = isset($app['POST']['active'])? $app['POST']['active']: '0';
                             if ($query->Insert()) {
                                set_alert('success', "New additional_category added successfully");
@@ -31,7 +38,7 @@ switch ($action):
                             } else {
                                 $msg = 'Error occurred while updating account info. Please try again!';
                             }
-                            } else {
+                        } else {
                             $msg = 'additional_category name already exist';   
                         }
             }

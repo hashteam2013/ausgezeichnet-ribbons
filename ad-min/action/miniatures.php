@@ -1,4 +1,7 @@
 <?php
+// ini_set('display_errors', '1');
+// ini_set('display_startup_errors', '1');
+// error_reporting(E_ALL);
 global $app;
 $id = isset($app['GET']['id']) ? $app['GET']['id'] : "0";
 
@@ -13,14 +16,19 @@ switch ($action):
             } else {
                 $queryObj = new query('miniatures');
                 $queryObj->Field = " id";
-                $queryObj->Where = " name = '" . $app['POST']['name'] . "'";
+                // Ensure proper WHERE clause and escape the name to avoid SQL syntax errors
+                $queryObj->Where = " WHERE name = '" . mysqli_real_escape_string($app['mysqllink'], $app['POST']['name']) . "'";
                 $object = $queryObj->DisplayOne();
 
                 if (!is_object($object)) {
+                            // Normalize numeric inputs to avoid empty-string errors on integer columns
+                            $piecesOrdered = isset($app['POST']['pieces_ordered']) && $app['POST']['pieces_ordered'] !== '' ? (int)$app['POST']['pieces_ordered'] : 0;
+                            $piecesLost = isset($app['POST']['pieces_lost']) && $app['POST']['pieces_lost'] !== '' ? (int)$app['POST']['pieces_lost'] : 0;
+
                             $query = new query('miniatures');
                             $query->Data['name'] = $app['POST']['name'];
-                            $query->Data['pieces_ordered'] = $app['POST']['pieces_ordered'];
-                            $query->Data['pieces_lost'] = $app['POST']['pieces_lost'];
+                            $query->Data['pieces_ordered'] = $piecesOrdered;
+                            $query->Data['pieces_lost'] = $piecesLost;
                             $query->Data['date_add'] = 1;
                             if ($query->Insert()) {
                                       set_alert('success', "New miniature added successfully");

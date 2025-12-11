@@ -6,6 +6,9 @@ $limit = PAGE_CONTENT_LIMIT;
 switch ($action):
     case 'add':
         if (isset($app['POST']['add'])) {
+            // echo "<pre>";
+            // print_r($app['POST']);
+            // exit;
             $msg = '';
             if (trim($app['POST']['nameen']) == '') {
                 $msg = 'Please enter english name';
@@ -24,21 +27,31 @@ switch ($action):
                             $query = new query('districts');
                             $query->Data['name_en'] = $app['POST']['nameen'];
                             $query->Data['name_dr'] = $app['POST']['namedr'];
+                            // default to domestic area until UI exposes selection
+                            $query->Data['area'] = isset($app['POST']['area']) ? (int)$app['POST']['area'] : 1;
+                            // keep full_name populated to satisfy NOT NULL constraint
+                            $query->Data['full_name'] = $app['POST']['namedr'];
                             $query->Data['position'] = $app['POST']['position'];
                             $query->Data['max_ribbon'] = $app['POST']['max_ribbon'];
                             $query->Data['is_active'] = isset($app['POST']['active'])? $app['POST']['active']: '0';
                             $query->Data['is_allowed'] = isset($app['POST']['allow'])? $app['POST']['allow']: '0';
+                            // ensure required flag columns are always set on insert
+                            $query->Data['is_deleted'] = '0';
+                            // populate the timestamp column expected by the table
+                            $query->Data['date_add'] = date('Y-m-d H:i:s');
+                            // $query->print=1;
+                            // exit;
                             if ($query->Insert()) {
                                 set_alert('success', "New district added successfully");
                                 redirect(app_url('districts','list','list',array(),true));
                             } else {
                                 $msg = 'Error occurred while updating account info. Please try again!';
                             }
-                             } else{
+                         } else{
                             $msg = 'District name already exist';   
-                        }
+                         }
             }
-            set_alert('error', $msg);
+                    set_alert('error', $msg);
         }
         break;
         
@@ -59,6 +72,8 @@ switch ($action):
                             $query->Data['id'] = $id;
                             $query->Data['name_en'] = $app['POST']['nameen'];
                             $query->Data['name_dr'] = $app['POST']['namedr'];
+                            // keep full_name aligned with German name on updates
+                            $query->Data['full_name'] = $app['POST']['namedr'];
                             $query->Data['position'] = $app['POST']['position'];
                             $query->Data['max_ribbon'] = $app['POST']['max_ribbon'];
                             $query->Data['is_active'] = isset($app['POST']['active'])? '1': '0';
