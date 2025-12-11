@@ -27,7 +27,7 @@ a{outline:none;}
 
 /** Header Start **/
 /**.logo-outer { width:100%; float:left; padding:23px 0;}**/
-.search-outer { width:100%; float:left; padding:40px 0;}
+.search-outer { width:100%;  padding:40px 0;}
 .search-outer input { background: #efefef; border: 1px solid #ccc; padding: 7px;border-top-left-radius: 50px; border-bottom-left-radius: 50px; font-weight: 100;
                       width: 100%;outline: none; height:36px;}
 .search-outer .btn.btn-secondary {outline: none;background: #ED0000; padding: 7px; border: 0px; width: 45px; border-top-right-radius: 50px; border-bottom-right-radius: 50px;}
@@ -309,12 +309,6 @@ ul li label{font-family: PT-Sans-Caption;font-size: 14px;}
     margin-top: 10px;
 }
 
-.footer-bootom span {
-    position: absolute;
-    left: 60px;
-    color: #fff;
-}
-
 .check-tag label input[type="checkbox"] {
     float: left;
     margin: 3px 9px;
@@ -453,18 +447,7 @@ a.topgo {
     top: 0;
 }
 a.topgo img{width:50px;}
-footer {position: relative;
-        background: #242427;
-        color: #fff;
-        text-align: center;float: left;
-        width: 100%;
-        margin-top: 30px;
-}
-footer ul li {
-    display: inline-block;
-    font-size: 44px;    transition: 1s;
-    margin: 5px;
-}
+
 i.fa.fa-pinterest-p.square {
     background: #7c7bb0;
     color: #040338;
@@ -472,82 +455,17 @@ i.fa.fa-pinterest-p.square {
     padding: 10px 8px 0;
     border-radius: 8px;
 }
-footer li a {
-    color: #7c7bb0;
-}
-footer li a:hover, footer li a:focus {
-    color: #c50c1d;
-}
-i.fa.fa-pinterest-p.square:hover{
-    background-color: #c50c1d;}
-footer ul {
-    margin-top: 50px;
-    margin-bottom: 30px;
-}
-footer p {
-    font-size: 20px;
-}
-.footer-bootom {
-    float: left;
-    width: 100%; position: relative;
-    background: #000;
-    margin-top: 20px;
-    padding: 22px 0px;
-}
 .box-sow input#remember {
     float: left;
     margin-right: 9px;
 }
-ul.social-icone {
-    position: absolute;
-    right: 90px;
-    bottom: 8px;
-    margin: 0;
-}
-ul.social-icone li {
-    margin: auto;
-}
-footer ul li:hover {
-    transform: rotate(360deg);
-    transition: 1s;
-}
-
 section.about-sec.text-center a {
     color: #ED0000;
     text-decoration: none;
     font-weight: 700; font-size: 17px;    letter-spacing: 1px;
 }
-section.hand-band h2 {
-    font-size: 42px;
-    color: #242427;
-    margin-top: 40px;
-    margin-bottom: 30px;
-}
-section.hand-band h4 {
-    font-size: 24px;
-    color: #ED0000;
-}
-section.hand-band p {
-    font-size: 17px;
-line-height: 26px;
-}
 .shop-inner-sec p {
     line-height: 18px;
-}
-img.img-responsive.img-circle:hover {
-    transform: scale(1.1,1.1);
-    transition: 1s;
-}
-img.img-responsive.img-circle {
-    transition: 1s;
-}
-section.cont-us p span:hover .fa{
-    transform: rotate(360deg);
-    transition: 1s;
-}
-section.cont-us h2 {
-    font-size: 21px;
-    margin-top: 60px;text-align: left;
 }
 .drop{
     float:right;
@@ -594,25 +512,6 @@ input#add-list-go{
     line-height: 21px;
     float: right;
     margin-top: 4px;  
-}
-section.cont-us p {
-    font-size: 16px;
-    color: #2a2a2a;
-    margin-bottom: 0px;
-    line-height: 28px;
-    font-weight: 600;
-}
-section.cont-us h1 {
-    font-size: 32px;
-    color: #ED0000;
-    margin-top: 48px;
-    margin-bottom: 10px;
-    float: left;
-    width: 100%;
-}
-section.cont-us h3 {
-    color: #2a2a2a;line-height: 33px;
-    font-size: 19px;
 }
 .panel.panel-login .panel-heading {
     border-bottom: 0;
@@ -708,11 +607,6 @@ button.close.x {
    background: #242427;
 }
 
-.bleasver {
-   margin-top: 20px;
-   float: left;
-   width: 100%;
-}
 .bleasver .modal-header h4 {
    font-size: 24px;
     color: #fff; 
@@ -774,11 +668,6 @@ button#login-submit font {    display: inline-block;    margin-top: -8px;}
 button#cust-submit font {
     display: inline-block !important;
     margin-top: -5px !important;
-}
-.iframe_call {
-    text-align: center;
-    float: left;
-    width: 100%;
 }
 .konfigurator {
     margin: 0 auto;
@@ -873,9 +762,6 @@ form#register-form .form-group {
         margin-right: 0px;
         margin-left: 0px;
     }	
-    section.hand-band {
-        background-size: 50%;
-    }
 }
 
 td.cust-name {
@@ -944,28 +830,6 @@ body input.cart-slct.divider.hvr-float-shadow {
     float: left;
     width: 100%;padding: 10px;
 }
-section.hand-band iframe {
-    width: 100%;
-    height: 100%;
-    min-height: 390px;
-}
-}
-@media (max-width:992px){
-    .footer-bootom span {
-        position: static;
-        left: 60px;
-        display: block;
-    }
-    ul.social-icone {
-        right: 0;
-        position: static;
-    }
-    ul.social-icone {
-        margin-top: 10px;
-    }
-	.flag-contaner img {
-    max-height: 27px;
-}
 }
 @media (max-width:680px){
     .srch-bar {
@@ -1020,10 +884,6 @@ lag-top li {
         width: auto;
         float: none;
         display: inline-block;
-    }
-    section.hand-band {
-        background: #fff;
-        text-align: center;
     }
     .nav > li {
         position: relative;
@@ -1115,9 +975,6 @@ lag-top li {
     float: left;
     width: 100%;
 }
-section.hand-band iframe {
-    min-height: 279px;
-}
 }
 @media (max-width:480px){
 	.ribbon_outer {
@@ -1126,9 +983,6 @@ section.hand-band iframe {
     input.my-srch {
         max-width: 222px;margin-left: 20px;
     }
-    section.hand-band h2 {
-        font-size: 32px;}
-    section.hand-band { height: auto}
 
     input.delet-slct {
         margin: 12px auto;
@@ -1177,9 +1031,6 @@ section.hand-band iframe {
 h1, .h1 {
     font-size: 26px;
 }
-section.cont-us p {
-    font-size: 14px;
-}
 ul.social-icone img {
     max-width: 60px !important;
     width: 100%;
@@ -1193,9 +1044,6 @@ body input.cart-slct.divider.hvr-float-shadow {
 body div#show_buttons input.delet-slct {
     max-width: 100% !important;  margin-top: 0px!important;
 }
-section.hand-band iframe {
-    min-height: 225px;
-}
 .main-nav-bar li a{border-bottom: 2px solid transparent!important;}
 .login-top li{border-right: 0;}
 }
@@ -1203,10 +1051,6 @@ section.hand-band iframe {
 @media (max-width:360px){
     div#no-more-tables {
     margin: 0px !important; 
-}
-
-    section.hand-band iframe {
-    min-height: 170px;
 }
 input.add-btn {
     float: left;
@@ -1322,10 +1166,6 @@ a.all-cat font {
 .btn-info i {
     margin-right: 4px;
 }
-.tc_page a {
-    margin: 0 20px;
-}
-
 
 @media (min-width:1348px){
 input.btn.srch-btn {

@@ -13,6 +13,9 @@
         <?php } ?>
         <!-- Bootstrap -->
         <!--<link href="<?php echo DIR_WS_ASSETS_CSS; ?>bootstrap.css" rel="stylesheet">-->
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+
         <link href="<?php echo DIR_WS_ASSETS_CSS; ?>style.css" rel="stylesheet">
         <link href="<?php echo DIR_WS_ASSETS_CSS; ?>output.css" rel="stylesheet">
         <link href="<?php echo DIR_WS_ASSETS_CSS; ?>font-awesome.css" rel="stylesheet" type="text/css">
@@ -28,6 +31,8 @@
        ?>
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+
+
 <!-- Include all compiled plugins (below), or include individual files as needed --> 
 <script src="<?= DIR_WS_ASSETS_JS; ?>bootstrap.min.js"></script>
     </head>
@@ -37,9 +42,9 @@
             <input type="hidden" id="WS_PATH" value="<?php echo WS_PATH;?>"/>
             <input type="hidden" id="LOGGED_IN_USER" value="<?php echo LOGGED_IN_USER;?>"/>
             <div class="container-custom">
-                <div class="flex gap-10 items-center justify-between"> 
+                <div class="flex gap-5 items-center justify-between"> 
                     <!-- Logo Start -->
-                    <div class="logo-outer flex w-[25%]">
+                    <div class="logo-outer flex w-[27%]">
                         <a href="<?php echo WS_PATH; ?>index.php" class="w-[285px] inline-block"> 
                             <img src="<?php echo DIR_WS_ASSETS_IMAGES; ?>logo.jpg" class="w-full">
                         </a> 
@@ -51,7 +56,7 @@
                         </div>-->
 
                         <!-- Collect the nav links, forms, and other content for toggling -->
-                        <div class="w-[50%]">
+                        <div class="w-[46%]">
                             <ul class="main-nav-bar flex items-center gap-7 justify-center w-full">
                                 <?php
                                 if ($page!='home') {
@@ -80,7 +85,7 @@
                     
                   <?php //$app['user_info']->id; ?>
                     <!-- login Section Start -->
-                        <div class="login-outer flex items-center justify-end w-[25%] gap-5" >
+                        <div class="login-outer flex items-center justify-end w-[27%] gap-5" >
                             <?php if (!in_array($page, $no_navigation_pages)): ?>
                             <ul class="login-top flex gap-2.5">
                                <?php if (isset($_SESSION['user_id'])) { ?>

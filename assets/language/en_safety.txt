@@ -16,6 +16,15 @@ Below shop content ~~ <h2>Die Idee ist das Absolute,<br/> Und alles Wirkliche is
 About Us ~~ About Us
 about us content left ~~ <h2>MAG. FLORIAN HELL</h2><p>The study of art and culture at the Karl-Franzens-University in Graz. <br>Since his twelfth year, he has been a member of the volunteer fire brigade Bruck an der Mur and has so far come into contact with almost every topic that brings the daily fire brigade life with him. He knows the needs of the industry - and he soon won an award with his company under the brand. Cc the idea of ​​fully modular religious orders.</p>
 about us content right ~~ <h2>DI LUKAS HATZMANN</h2><p>The technician <br/>studies in mechanical engineering with specialization in production engineering and mechatronics, a self-employed machine designer, mechatronics and programmers.He is responsible for all technical questions concerning the new order system - and the pragmatic-resting pole of Excellent. Cc .</p>
+
+
+team left heading ~~ MAG. FLORIAN HELL
+team left position ~~ The uniform carrier
+team left bio ~~ Studied art history and cultural management at the Karl-Franzens-University in Graz. <br> Since the age of twelve he is a member of the volunteer fire brigade Bruck an der Mur and has been in contact with almost every subject area, the daily Fire brigade life brings with it.He is familiar with the needs of the industry - and developed his idea of the modular ribbon system under the brand name Ausgezeichnet.cc together with his partner.
+team right heading ~~ DI LUKAS HATZMANN
+team right position ~~  The Technician 
+team right bio ~~  Studied mechanical engineering specializing in production engineering and mechatronics, working independently as a machine developer, mechatronics engineer and programmer. He is responsible for all technical issues relating to the new order ribbon system - and the pragmatic-resting pole of Ausgezeichnet.cc.
+
 Contact Us ~~ Contact Us
 Excellent. Cc  | Full-Modular Order Orders ~~ Excellent. Cc  | Full-Modular Order Orders
 Management Engineering ~~ Management Engineering

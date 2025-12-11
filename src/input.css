@@ -8,3 +8,9 @@
 .red-main-hd{
     @apply  uppercase text-xl text-dark font-semibold;
 }
+.iframe_call iframe{
+    @apply rounded-2xl;
+}
+.crousal-outer .slick-arrow::before{
+    @apply hidden;
+}

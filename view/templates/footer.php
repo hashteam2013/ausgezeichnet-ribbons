@@ -286,8 +286,26 @@
 
 
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -END- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-<footer>
-    <ul>
+<footer class="border-t border-secondary">
+        <div class="container-custom">
+            <div class="flex py-14 items-center justify-between">
+                <div>
+                    <a href="<?php echo WS_PATH; ?>index.php" class="w-[420px] inline-block"> 
+                        <img src="<?php echo DIR_WS_ASSETS_IMAGES; ?>logo.jpg" class="w-full">
+                    </a> 
+                </div>
+                <ul class="social-icone flex gap-2.5">
+                    <li><a href="#"><img src="<?php echo DIR_WS_ASSETS_IMAGES; ?>visa.png" class="img-responsive"></a></li>
+                    <li><a href="#"><img src="<?php echo DIR_WS_ASSETS_IMAGES; ?>master.png" class="img-responsive"></a></li>
+                    <li><a href="#"><img src="<?php echo DIR_WS_ASSETS_IMAGES; ?>meso.png" class="img-responsive"></a></li>
+                    <li><a href="#"><img src="<?php echo DIR_WS_ASSETS_IMAGES; ?>american.png" class="img-responsive"></a></li>
+                </ul>
+            </div>
+        </div>
+   
+   
+    
+    <!-- <ul>
         <?php if (SOCIAL_FACEBOOK != "") {
             ?>
             <li><a href="<?php echo SOCIAL_FACEBOOK; ?>" target="_blank" ><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
@@ -313,21 +331,24 @@
             <li><a href="<?php echo SOCIAL_TWITTER; ?>"target="_blank"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
         <?php }
         ?>
-    </ul>
-    <div class="tc_page">
-        <?php _e("agblink "); ?>
-        <a href="javascript:void(0);" data-toggle="modal" data-target="#imprint" class="text-center" style="color: inherit; font-size: 18px; "><?php _e("Imprint"); ?></a>
-        <?php _e("dataprotlink "); ?>
-    </div>
+    </ul> -->
+     
+   
 
-    <div class="footer-bootom">
-        <a href="http://www.hashsoftware.com/" target="_blank"><span><?php _e(""); ?></span></a>
-        &copy; <?php echo date("Y"); ?> <?php _e("Excellent.cc  |  All right reserved."); ?>
-        <ul class="social-icone"><li><a href="#"><img src="<?php echo DIR_WS_ASSETS_IMAGES; ?>visa.png" class="img-responsive"></a></li>
-            <li><a href="#"><img src="<?php echo DIR_WS_ASSETS_IMAGES; ?>master.png" class="img-responsive"></a></li>
-            <li><a href="#"><img src="<?php echo DIR_WS_ASSETS_IMAGES; ?>meso.png" class="img-responsive"></a></li>
-            <li><a href="#"><img src="<?php echo DIR_WS_ASSETS_IMAGES; ?>american.png" class="img-responsive"></a></li>
-        </ul>
+    <div class="footer-bootom py-5 bg-black">
+        <div class="container-custom">
+            <div class="flex justify-between gap-10">
+                <div class="text-white text-lg font-regular">
+                    <a href="http://www.hashsoftware.com/" target="_blank"><span><?php _e(""); ?></span></a>
+                    &copy; <?php echo date("Y"); ?> <?php _e("Excellent.cc  |  All right reserved."); ?>
+                </div>
+                <div class="tc_page flex gap-7">
+                    <li class="text-white list-none font-medium"><?php _e("agblink "); ?></li>
+                    <li class="list-none"><a href="javascript:void(0);" data-toggle="modal" data-target="#imprint" class="text-center text-white text-lg font-medium"><?php _e("Imprint"); ?></a></li>
+                    <li class="text-white list-none font-medium"><?php _e("dataprotlink "); ?></li>
+                </div>
+            </div>
+        </div>
     </div>
 </footer>
 <script type="text/javascript" src="<?= DIR_WS_ASSETS_JS; ?>jquery-ui.js"></script>
@@ -387,8 +408,8 @@ include("common_js.php");
        data-close-text="Annehmen">
 </script>
 
-
-    <script type="text/javascript">
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script type="text/javascript">
     function RenameFunction(id, bid) {
 	var id = $("#custm").val();
         var cid = $('#Type10 #data_cid').val(id);
@@ -433,8 +454,16 @@ include("common_js.php");
                 }
             }
         });
-
-
+    });
+    $('.slider').slick({
+            dots: false,
+            arrows: true,
+            infinite: true,
+            speed: 500,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            prevArrow: $('.custom-prev'),
+            nextArrow: $('.custom-next')
     });
 </script>
 
