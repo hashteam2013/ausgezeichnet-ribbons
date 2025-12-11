@@ -126,7 +126,8 @@ function check_user_exitance($username, $password) {
     $queryObj->Field = " id,is_active";
     $queryObj->Where = " where username = '$username' and password = '$password'";
     $object = $queryObj->DisplayOne();
-    if (is_object($object) && count($object)) {
+    // DisplayOne returns a stdClass for a found row, or false/null otherwise.
+    if (is_object($object) && isset($object->id)) {
         return $object;
     }
     return false;

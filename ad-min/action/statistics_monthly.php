@@ -1,4 +1,5 @@
 <?php
+
 global $app;
 $id = isset($app['GET']['id'])?$app['GET']['id']:"0";
 $page_no = (isset($app['GET']['page_no']) && $app['GET']['page_no'] != "")? $app['GET']['page_no'] : 1;
@@ -10,8 +11,8 @@ switch ($action):
     case 'list':
 
  $query3 = new query('order_items');
- $query3->Field = "product_id, sum(order_items.quantity) as numberofitems, ribbon_name_dr, count(order_items.order_id) as NumberOfProcessedOrders, order_items.unit_price, order_items.quantity, order_items.date_add";
- $query3->Where = "INNER JOIN batches ON product_id = batches.id WHERE order_items.order_id IN(SELECT orders.id FROM orders WHERE orders.is_order_valid='1') GROUP BY (`product_id`) ORDER BY numberofitems desc";
+ $query3->Field = "product_id, sum(order_items.quantity) as numberofitems, ribbon_name_dr, count(order_items.order_id) as NumberOfProcessedOrders, MIN(order_items.unit_price) as unit_price, MIN(order_items.date_add) as first_date";
+ $query3->Where = "INNER JOIN batches ON product_id = batches.id WHERE order_items.order_id IN(SELECT orders.id FROM orders WHERE orders.is_order_valid='1') GROUP BY product_id, ribbon_name_dr ORDER BY numberofitems desc";
         
 $validorderitems = $query3->ListOfAllRecords('object');
 
@@ -22,14 +23,14 @@ $validorderitems = $query3->ListOfAllRecords('object');
 
 
  $query6 = new query('order_items');
- $query6->Field = "product_id, sum(order_items.quantity) as numberofitems, ribbon_name_dr, count(order_items.order_id) as NumberOfProcessedOrders, order_items.unit_price, order_items.quantity, order_items.date_add";
- $query6->Where = "INNER JOIN batches ON product_id = batches.id WHERE  YEAR(order_items.date_add)=YEAR(NOW()) AND MONTH(order_items.date_add) = MONTH(NOW())-1 AND  order_items.order_id IN(SELECT orders.id FROM orders WHERE orders.is_order_valid='1') GROUP BY (`product_id`) ORDER BY numberofitems desc";
+ $query6->Field = "product_id, sum(order_items.quantity) as numberofitems, ribbon_name_dr, count(order_items.order_id) as NumberOfProcessedOrders, MIN(order_items.unit_price) as unit_price, MIN(order_items.date_add) as first_date";
+ $query6->Where = "INNER JOIN batches ON product_id = batches.id WHERE  YEAR(order_items.date_add)=YEAR(NOW()) AND MONTH(order_items.date_add) = MONTH(NOW())-1 AND  order_items.order_id IN(SELECT orders.id FROM orders WHERE orders.is_order_valid='1') GROUP BY product_id, ribbon_name_dr ORDER BY numberofitems desc";
         
 $validorderitemsThisMonth = $query6->ListOfAllRecords('object');
 
  $query6 = new query('order_items');
- $query6->Field = "product_id, sum(order_items.quantity) as numberofitems, ribbon_name_dr, count(order_items.order_id) as NumberOfProcessedOrders, order_items.unit_price, order_items.quantity, order_items.date_add";
- $query6->Where = "INNER JOIN batches ON product_id = batches.id WHERE  YEAR(order_items.date_add)=2022 AND MONTH(order_items.date_add) = 12 AND  order_items.order_id IN(SELECT orders.id FROM orders WHERE orders.is_order_valid='1') GROUP BY (`product_id`) ORDER BY numberofitems desc";
+ $query6->Field = "product_id, sum(order_items.quantity) as numberofitems, ribbon_name_dr, count(order_items.order_id) as NumberOfProcessedOrders, MIN(order_items.unit_price) as unit_price, MIN(order_items.date_add) as first_date";
+ $query6->Where = "INNER JOIN batches ON product_id = batches.id WHERE  YEAR(order_items.date_add)=2022 AND MONTH(order_items.date_add) = 12 AND  order_items.order_id IN(SELECT orders.id FROM orders WHERE orders.is_order_valid='1') GROUP BY product_id, ribbon_name_dr ORDER BY numberofitems desc";
         
 $validorderitemsLastMonth = $query6->ListOfAllRecords('object');
 

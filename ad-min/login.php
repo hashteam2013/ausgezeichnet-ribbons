@@ -112,7 +112,7 @@ if (isset($app['POST']['username']) != "" && isset($app['POST']['password']) != 
         </div>
         <!-- END CONTAINER -->
         <!-- BEGIN FOOTER -->
-        <<div class="copyright">
+        <div class="copyright">
             <p class="text-center"> <label class="copy-rt"> &COPY; </label> <?php echo date("Y"); ?> - All rights reserved </p>
         </div>
         <!-- END FOOTER -->

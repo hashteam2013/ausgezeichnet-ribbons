@@ -28,8 +28,10 @@ switch ($action):
                             $query->Data['name_dr'] = $app['POST']['namedr'];
                             $query->Data['position'] = $app['POST']['position'];
                             $query->Data['is_active'] = isset($app['POST']['active'])? $app['POST']['active']: '0';
-                            //$query->print=1;
-                            //$query->Data['is_deleted'] = isset($app['POST']['delete'])? $app['POST']['delete']: '0';
+                            // ensure non-nullable column is always set
+                            $query->Data['is_deleted'] = '0';
+                            // populate required timestamp column
+                            $query->Data['date_add'] = date('Y-m-d H:i:s');
                             if ($query->Insert()) {
                            
                                 set_alert('success', "New international authorities added successfully");

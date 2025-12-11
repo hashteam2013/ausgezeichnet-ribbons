@@ -40,7 +40,7 @@
                                 <div class="col-sm-4">
                                  <div class="form-group">
                                     <label>Wear highest class</label>
-                                    <input type="checkbox" name='allow' <?php echo ($departments->is_allowed == 1 ? 'checked': '')?> value="1"> 
+                                    <input type="checkbox" name='allow' <?php echo (isset($app['POST']['allow']) && $app['POST']['allow'] == 1 ? 'checked': '')?> value="1"> 
                                 </div>
                                 </div>
                                 </div>

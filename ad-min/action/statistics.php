@@ -1,4 +1,5 @@
 <?php
+
 global $app;
 $id = isset($app['GET']['id'])?$app['GET']['id']:"0";
 $page_no = (isset($app['GET']['page_no']) && $app['GET']['page_no'] != "")? $app['GET']['page_no'] : 1;
@@ -36,20 +37,22 @@ $validorderitems = $query3->ListOfAllRecords('object');
     case 'list' || 'list_standard' || 'list_special':
 
 $query = new query('orders');
-$query->Field= "grand_total, ROUND(SUM(grand_total),2) as summe"; 
+// Only aggregate column to avoid ONLY_FULL_GROUP_BY issues
+$query->Field= "ROUND(SUM(grand_total),2) as summe"; 
 $query->Where = " WHERE is_order_valid=1 AND is_payment_made=0";
 $openorderitems = $query->DisplayOne();
 
 $query = new query('orders');
-$query->Field= "grand_total, ROUND(SUM(grand_total),2) as summe"; 
+// Exclude "Anbot" comments while summing totals
+$query->Field= "ROUND(SUM(grand_total),2) as summe"; 
 $query->Where = " WHERE is_order_valid=1 AND is_payment_made=0 AND LEFT(comment,5)<>'Anbot'";
 $anbotorderitems = $query->DisplayOne();
 
 if($action=='list' )
 {
 	$query3 = new query('order_items');
-	$query3->Field = "product_id, sum(order_items.quantity) as numberofitems, ribbon_name_dr, count(order_items.order_id) as NumberOfProcessedOrders, order_items.unit_price, order_items.quantity, order_items.date_add";
- 	$query3->Where = "INNER JOIN batches ON product_id = batches.id WHERE order_items.order_id IN(SELECT orders.id FROM orders WHERE orders.is_order_valid='1') GROUP BY (`product_id`) ORDER BY numberofitems desc";
+	$query3->Field = "product_id, sum(order_items.quantity) as numberofitems, ribbon_name_dr, count(order_items.order_id) as NumberOfProcessedOrders, MIN(order_items.unit_price) as unit_price, MIN(order_items.date_add) as first_date";
+ 	$query3->Where = "INNER JOIN batches ON product_id = batches.id WHERE order_items.order_id IN(SELECT orders.id FROM orders WHERE orders.is_order_valid='1') GROUP BY product_id, ribbon_name_dr ORDER BY numberofitems desc";
         
 	$validorderitems = $query3->ListOfAllRecords('object');
 
@@ -59,8 +62,8 @@ if($action=='list' )
  	$shippedorderitems = $query4->ListOfAllRecords('object');
 
  	$query3 = new query('order_items');
- 	$query3->Field = "product_id, sum(order_items.quantity) as numberofitems, ribbon_name_dr, count(order_items.order_id) as NumberOfProcessedOrders, order_items.unit_price, order_items.quantity, order_items.date_add";
- 	$query3->Where = "INNER JOIN batches ON product_id = batches.id WHERE order_items.order_id IN(SELECT orders.id FROM orders WHERE orders.is_order_valid='1') GROUP BY (`product_id`) ORDER BY numberofitems desc";
+ 	$query3->Field = "product_id, sum(order_items.quantity) as numberofitems, ribbon_name_dr, count(order_items.order_id) as NumberOfProcessedOrders, MIN(order_items.unit_price) as unit_price, MIN(order_items.date_add) as first_date";
+ 	$query3->Where = "INNER JOIN batches ON product_id = batches.id WHERE order_items.order_id IN(SELECT orders.id FROM orders WHERE orders.is_order_valid='1') GROUP BY product_id, ribbon_name_dr ORDER BY numberofitems desc";
         
 	$validorderitems = $query3->ListOfAllRecords('object');
 
@@ -81,8 +84,8 @@ if($action=='list' )
 if($action=='list_standard')
 {
 	$query3 = new query('order_items');
-	$query3->Field = "product_id, sum(order_items.quantity) as numberofitems, ribbon_name_dr, count(order_items.order_id) as NumberOfProcessedOrders, order_items.unit_price, order_items.quantity, order_items.date_add";
- 	$query3->Where = "INNER JOIN batches ON product_id = batches.id WHERE order_items.order_id IN(SELECT orders.id FROM orders WHERE orders.is_order_valid='1' AND orders.is_special='0') GROUP BY (`product_id`) ORDER BY numberofitems desc";
+	$query3->Field = "product_id, sum(order_items.quantity) as numberofitems, ribbon_name_dr, count(order_items.order_id) as NumberOfProcessedOrders, MIN(order_items.unit_price) as unit_price, MIN(order_items.date_add) as first_date";
+ 	$query3->Where = "INNER JOIN batches ON product_id = batches.id WHERE order_items.order_id IN(SELECT orders.id FROM orders WHERE orders.is_order_valid='1' AND orders.is_special='0') GROUP BY product_id, ribbon_name_dr ORDER BY numberofitems desc";
         
 	$validorderitems = $query3->ListOfAllRecords('object');
 
@@ -92,8 +95,8 @@ if($action=='list_standard')
  	$shippedorderitems = $query4->ListOfAllRecords('object');
 
  	$query3 = new query('order_items');
- 	$query3->Field = "product_id, sum(order_items.quantity) as numberofitems, ribbon_name_dr, count(order_items.order_id) as NumberOfProcessedOrders, order_items.unit_price, order_items.quantity, order_items.date_add";
- 	$query3->Where = "INNER JOIN batches ON product_id = batches.id WHERE order_items.order_id IN(SELECT orders.id FROM orders WHERE orders.is_order_valid='1' AND orders.is_special='0') GROUP BY (`product_id`) ORDER BY numberofitems desc";
+ 	$query3->Field = "product_id, sum(order_items.quantity) as numberofitems, ribbon_name_dr, count(order_items.order_id) as NumberOfProcessedOrders, MIN(order_items.unit_price) as unit_price, MIN(order_items.date_add) as first_date";
+ 	$query3->Where = "INNER JOIN batches ON product_id = batches.id WHERE order_items.order_id IN(SELECT orders.id FROM orders WHERE orders.is_order_valid='1' AND orders.is_special='0') GROUP BY product_id, ribbon_name_dr ORDER BY numberofitems desc";
         
 	$validorderitems = $query3->ListOfAllRecords('object');
 
@@ -112,8 +115,8 @@ if($action=='list_standard')
 if($action=='list_sonder')
 {
 	$query3 = new query('order_items');
-	$query3->Field = "product_id, sum(order_items.quantity) as numberofitems, ribbon_name_dr, count(order_items.order_id) as NumberOfProcessedOrders, order_items.unit_price, order_items.quantity, order_items.date_add";
- 	$query3->Where = "INNER JOIN batches ON product_id = batches.id WHERE order_items.order_id IN(SELECT orders.id FROM orders WHERE orders.is_order_valid='1' AND orders.is_special='1') GROUP BY (`product_id`) ORDER BY numberofitems desc";
+	$query3->Field = "product_id, sum(order_items.quantity) as numberofitems, ribbon_name_dr, count(order_items.order_id) as NumberOfProcessedOrders, MIN(order_items.unit_price) as unit_price, MIN(order_items.date_add) as first_date";
+ 	$query3->Where = "INNER JOIN batches ON product_id = batches.id WHERE order_items.order_id IN(SELECT orders.id FROM orders WHERE orders.is_order_valid='1' AND orders.is_special='1') GROUP BY product_id, ribbon_name_dr ORDER BY numberofitems desc";
         
 	$validorderitems = $query3->ListOfAllRecords('object');
 
@@ -123,8 +126,8 @@ if($action=='list_sonder')
  	$shippedorderitems = $query4->ListOfAllRecords('object');
 
  	$query3 = new query('order_items');
- 	$query3->Field = "product_id, sum(order_items.quantity) as numberofitems, ribbon_name_dr, count(order_items.order_id) as NumberOfProcessedOrders, order_items.unit_price, order_items.quantity, order_items.date_add";
- 	$query3->Where = "INNER JOIN batches ON product_id = batches.id WHERE order_items.order_id IN(SELECT orders.id FROM orders WHERE orders.is_order_valid='1' AND orders.is_special='1' AND orders.is_special='1') GROUP BY (`product_id`) ORDER BY numberofitems desc";
+ 	$query3->Field = "product_id, sum(order_items.quantity) as numberofitems, ribbon_name_dr, count(order_items.order_id) as NumberOfProcessedOrders, MIN(order_items.unit_price) as unit_price, MIN(order_items.date_add) as first_date";
+ 	$query3->Where = "INNER JOIN batches ON product_id = batches.id WHERE order_items.order_id IN(SELECT orders.id FROM orders WHERE orders.is_order_valid='1' AND orders.is_special='1' AND orders.is_special='1') GROUP BY product_id, ribbon_name_dr ORDER BY numberofitems desc";
         
 	$validorderitems = $query3->ListOfAllRecords('object');
 

@@ -13,9 +13,12 @@ switch ($action):
 case 'add':
  if (isset($app['POST']['add'])) {
             $msg = '';
-            if($app['POST']['name_ia'] == ''){
+            $nameIa = isset($app['POST']['name_ia']) ? $app['POST']['name_ia'] : '';
+            $nameIaLevel1 = isset($app['POST']['name_ia1']) ? $app['POST']['name_ia1'] : '';
+
+            if($nameIa === ''){
                $msg = 'Please choose international authority first'; 
-            }elseif (trim($app['POST']['name_ia1']) == '') {
+            }elseif (trim($nameIaLevel1) == '') {
                 $msg = 'Please choose international authority sublevel1 first';
             }elseif (trim($app['POST']['nameen']) == '') {
                 $msg = 'Please enter english name';
@@ -30,12 +33,14 @@ case 'add':
                 $object = $queryObj->DisplayOne();
                 if(!is_object($object)){
                     $query = new query('international_authorities_sublevel2');
-                    $query->Data['ia_id'] = $app['POST']['name_ia'];
-                    $query->Data['ia_lev1_id'] = $app['POST']['name_ia1'];
+                    $query->Data['ia_id'] = $nameIa;
+                    $query->Data['ia_lev1_id'] = $nameIaLevel1;
                     $query->Data['name_en'] = $app['POST']['nameen'];
                     $query->Data['name_dr'] = $app['POST']['namedr'];
                     $query->Data['position'] = $app['POST']['position'];
-                    $query->Data['date_add'] = 1;
+                    // ensure non-nullable columns are set on insert
+                    $query->Data['is_deleted'] = '0';
+                    $query->Data['date_add'] = date('Y-m-d H:i:s');
                     $query->Data['is_active'] = isset($app['POST']['active'])? $app['POST']['active']: '0';
                     if ($query->Insert()) {
                         set_alert('success', "New international authority sublevel2 added successfully");

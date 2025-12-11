@@ -25,6 +25,8 @@ switch ($action):
                             $query->Data['position'] = $app['POST']['position'];
                             $query->Data['is_active'] = isset($app['POST']['active'])? $app['POST']['active']: '0';
                             $query->Data['is_deleted'] = isset($app['POST']['delete'])? $app['POST']['delete']: '0';
+                            // ensure required timestamp column is populated
+                            $query->Data['date_add'] = date('Y-m-d H:i:s');
                             if ($query->Insert()) {
                                 set_alert('success', "New collection added successfully");
                                 redirect(app_url('departments','list','list',array(),true));

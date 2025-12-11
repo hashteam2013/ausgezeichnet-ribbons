@@ -27,8 +27,10 @@ case 'add':
                     $query->Data['name_en'] = $app['POST']['nameen'];
                     $query->Data['name_dr'] = $app['POST']['namedr'];
                     $query->Data['position'] = $app['POST']['position'];
-                    $query->Data['date_add'] = 1;
+                    // store created timestamp and ensure required flags are set
+                    $query->Data['date_add'] = date('Y-m-d H:i:s');
                     $query->Data['is_active'] = isset($app['POST']['active'])? $app['POST']['active']: '0';
+                    $query->Data['is_deleted'] = '0';
                     if ($query->Insert()) {
                         set_alert('success', "New sub district added successfully");
                         redirect(app_url('sub_districts','list','list',array(),true));

@@ -1,14 +1,39 @@
 <?php
+// ini_set('display_errors', '1');
+// ini_set('display_startup_errors', '1');
+// error_reporting(E_ALL);
 global $app;
 $id = isset($app['GET']['id']) ? $app['GET']['id'] : "0";
 $id_loc = isset($app['GET']['id_loc']) ? $app['GET']['id_loc'] : "0";
 $page_no = (isset($app['GET']['page_no']) && $app['GET']['page_no'] != "") ? $app['GET']['page_no'] : 1;
 $limit = PAGE_CONTENT_LIMIT;
 $msg = '';
+if (!function_exists('get_upload_error_msg')) {
+    function get_upload_error_msg($code)
+    {
+        switch ($code) {
+            case UPLOAD_ERR_INI_SIZE:
+            case UPLOAD_ERR_FORM_SIZE:
+                return 'Image is larger than the allowed limit.';
+            case UPLOAD_ERR_PARTIAL:
+                return 'Image was only partially uploaded.';
+            case UPLOAD_ERR_NO_FILE:
+                return 'No image was uploaded.';
+            case UPLOAD_ERR_NO_TMP_DIR:
+                return 'Missing temporary folder on server.';
+            case UPLOAD_ERR_CANT_WRITE:
+                return 'Server cannot write the uploaded file.';
+            case UPLOAD_ERR_EXTENSION:
+                return 'A PHP extension stopped the upload.';
+            default:
+                return 'Unexpected upload error (code ' . $code . ').';
+        }
+    }
+}
 switch ($action):
     case 'add':
         if (isset($app['POST']['add'])) {
-            //pr($app['POST']);
+           // pr($app['POST']);
             if (trim($app['POST']['rnameen']) == '') {
                 $msg = 'Please enter english name';
             } elseif (trim($app['POST']['rnamedr']) == '') {
@@ -32,17 +57,31 @@ switch ($action):
                 $object = $queryObj->DisplayOne();
                 if (!is_object($object)) {
                     if (isset($_FILES['upload_image']['name']) && $_FILES['upload_image']['name'] != '') {
-                        $file_name = $_FILES['upload_image']['name'];
-                        if (file_exists(DIR_FS_UPLOADS . "batch/" . $file_name)) {
-                            $i = 1;
-                            while (file_exists(DIR_FS_UPLOADS . "batch/" . $i . "_" . $file_name)) {
-                                $i++;
-                            }
-                            $file_name = $i . "_" . str_replace(" ", "_", $file_name);
+                        $upload = $_FILES['upload_image'];
+                        $max_size = defined('MAX_UPLOAD_FILE_SIZE') ? MAX_UPLOAD_FILE_SIZE : 2097152;
+                        $target_dir = DIR_FS_UPLOADS . "batch/";
+                        if (!is_dir($target_dir)) {
+                            mkdir($target_dir, 0775, true);
                         }
-                        $file_tmp = $_FILES['upload_image']['tmp_name'];
-                        $move = move_uploaded_file($file_tmp, DIR_FS_UPLOADS . "batch/" . $file_name);
-                        if ($move) {
+                        if ($upload['error'] !== UPLOAD_ERR_OK) {
+                            $msg = 'Image upload failed: ' . get_upload_error_msg($upload['error']);
+                        } elseif ($upload['size'] > $max_size) {
+                            $msg = 'Image upload failed: file exceeds ' . round($max_size / 1048576, 2) . ' MB.';
+                        } elseif (!is_uploaded_file($upload['tmp_name'])) {
+                            $msg = 'Image upload failed: temporary upload missing.';
+                        } elseif (!is_writable($target_dir)) {
+                            $msg = 'Image upload failed: uploads/batch is not writable.';
+                        } else {
+                            $file_name = str_replace(" ", "_", basename($upload['name']));
+                            if (file_exists($target_dir . $file_name)) {
+                                $i = 1;
+                                while (file_exists($target_dir . $i . "_" . $file_name)) {
+                                    $i++;
+                                }
+                                $file_name = $i . "_" . $file_name;
+                            }
+                            $move = move_uploaded_file($upload['tmp_name'], $target_dir . $file_name);
+                            if ($move) {
                             $query = new query('batches');
                             $query->Data['ribbon_name_en'] = $app['POST']['rnameen'];
                             $query->Data['ribbon_name_dr'] = $app['POST']['rnamedr'];
@@ -51,9 +90,13 @@ switch ($action):
                             $query->Data['webshop_title_dr'] = $app['POST']['webttdr'];
                             $query->Data['type'] = $app['POST']['ribloc'];
                 	$query->Data['type_number'] = $app['POST']['type_number'];
+                            // ItemType is required in DB; default to 0 when not provided
+                            $query->Data['ItemType'] = isset($app['POST']['ItemType']) && $app['POST']['ItemType'] !== '' ? intval($app['POST']['ItemType']) : 0;
                             $query->Data['desc_en'] = $app['POST']['desen'];
                             $query->Data['desc_dr'] = $app['POST']['desdr'];
-                            $query->Data['confirm_comment'] = $app['POST']['confirm_comment'];
+                            // store optional remarks; fall back to a neutral placeholder to satisfy NOT NULL
+                            $query->Data['comment'] = isset($app['POST']['comment']) && $app['POST']['comment'] !== '' ? $app['POST']['comment'] : 'N/A';
+                            $query->Data['confirm_comment'] = isset($app['POST']['confirm_comment']) && $app['POST']['confirm_comment'] !== '' ? $app['POST']['confirm_comment'] : 'N/A';
                             $query->Data['level'] = $app['POST']['level'];
                             $query->Data['grade'] = $app['POST']['grade'];
                             $query->Data['value'] = $app['POST']['rb_value'];
@@ -62,6 +105,31 @@ switch ($action):
                             $query->Data['unit_price'] = $app['POST']['uprice'];
                             $query->Data['batch_position'] = $app['POST']['btposition'];
                             $query->Data['miniature_id'] = $app['POST']['miniature_id'];
+                            // generate url slug from English name (fallback to uniqid to keep non-null)
+                            $slugSource = isset($app['POST']['rnameen']) ? $app['POST']['rnameen'] : uniqid();
+                            $slug = strtolower(preg_replace('/[^a-z0-9]+/', '-', trim($slugSource)));
+                            $slug = trim($slug, '-');
+                            if ($slug === '') {
+                                $slug = uniqid();
+                            }
+                            $query->Data['url_slug'] = $slug;
+                            // defaults for required numeric fields
+                            // fallback to 0 to satisfy NOT NULL integer columns
+                            $query->Data['quantity'] = isset($app['POST']['quantity']) && $app['POST']['quantity'] !== '' ? intval($app['POST']['quantity']) : 0;
+                            $query->Data['is_available'] = 1;
+                            $query->Data['sale_price'] = isset($app['POST']['sale_price']) && $app['POST']['sale_price'] !== '' ? $app['POST']['sale_price'] : 0;
+                            // ensure required discount fields are always populated
+                            $query->Data['discount_type'] = isset($app['POST']['discount_type']) && $app['POST']['discount_type'] !== '' ? $app['POST']['discount_type'] : 'none';
+                            $query->Data['discount'] = isset($app['POST']['discount']) && $app['POST']['discount'] !== '' ? $app['POST']['discount'] : 0;
+                            $query->Data['weight'] = isset($app['POST']['weight']) && $app['POST']['weight'] !== '' ? $app['POST']['weight'] : 0;
+                            $query->Data['width'] = isset($app['POST']['width']) && $app['POST']['width'] !== '' ? $app['POST']['width'] : 0;
+                            // ensure non-null date_add to satisfy NOT NULL column
+                            $query->Data['date_add'] = 'now';
+                            // ensure numeric code to prevent MySQL truncation errors on int column
+                            $nextCode = isset($app['POST']['code']) && $app['POST']['code'] !== ''
+                                ? intval($app['POST']['code'])
+                                : (intval($query->GetMaxId()) + 1);
+                            $query->Data['code'] = $nextCode;
                             $query->Data['is_batch'] = '1';
                             $query->Data['is_active'] = isset($app['POST']['active']) ? '1' : '0';
                             $query->Data['is_deleted'] = '0';
@@ -161,8 +229,9 @@ switch ($action):
                             } else {
                                 $msg = 'Error occurred while updating account info. Please try again!';
                             }
-                        } else {
-                            $msg = 'Error occurred while uploading image file. Please try again!';
+                            } else {
+                                $msg = 'Error occurred while uploading image file. Please try again!';
+                            }
                         }
                     } else {
                         $msg = 'Please upload batch image.';
@@ -213,14 +282,10 @@ switch ($action):
         $query_ia->Field = "id,name_en";
         $query_ia->Where = "where is_active = 1";
         $ia_lev2 = $query_ia->ListOfAllRecords('object');
+        // Miniatures list used by add view
+        $query1 = new query('miniatures');
+        $miniatures = $query1->ListOfAllRecords('object');
         break;
-
-	     //Miniatures
-                    $query1 = new query('miniatures');
-  //                  $query1->Data['miniature_id'] = $id;
-//                    $query1->Field = "filter_id";
-  //                  $query1->Where = " * ";
-                    $miniatures= $query1->ListOfAllRecords('object');
 
     case 'edit':
         if (isset($app['POST']['update'])) {
@@ -241,18 +306,37 @@ switch ($action):
                 $query->Data['ribbon_name_en'] = $app['POST']['rnameen'];
                 $query->Data['ribbon_name_dr'] = $app['POST']['rnamedr'];
                 if (isset($_FILES['upload_image']['name']) && $_FILES['upload_image']['name'] != '') {
-                    $file_name = $_FILES['upload_image']['name'];
-                    if (file_exists(DIR_FS_UPLOADS . "batch/" . $file_name)) {
-                        $i = 1;
-                        while (file_exists(DIR_FS_UPLOADS . "batch/" . $i . "_" . $file_name)) {
-                            $i++;
-                        }
-                        $file_name = $i . "_" . $file_name;
+                    $upload = $_FILES['upload_image'];
+                    $max_size = defined('MAX_UPLOAD_FILE_SIZE') ? MAX_UPLOAD_FILE_SIZE : 2097152;
+                    $target_dir = DIR_FS_UPLOADS . "batch/";
+                    if (!is_dir($target_dir)) {
+                        mkdir($target_dir, 0775, true);
                     }
-                    $file_tmp = $_FILES['upload_image']['tmp_name'];
-                    $upload_folder = DIR_FS_UPLOADS . "batch/" . $file_name;
-                    $move = move_uploaded_file($file_tmp, $upload_folder);
-                    $query->Data['batch_image'] = $file_name;
+                    if ($upload['error'] !== UPLOAD_ERR_OK) {
+                        $msg = 'Image upload failed: ' . get_upload_error_msg($upload['error']);
+                    } elseif ($upload['size'] > $max_size) {
+                        $msg = 'Image upload failed: file exceeds ' . round($max_size / 1048576, 2) . ' MB.';
+                    } elseif (!is_uploaded_file($upload['tmp_name'])) {
+                        $msg = 'Image upload failed: temporary upload missing.';
+                    } elseif (!is_writable($target_dir)) {
+                        $msg = 'Image upload failed: uploads/batch is not writable.';
+                    } else {
+                        $file_name = str_replace(" ", "_", basename($upload['name']));
+                        if (file_exists($target_dir . $file_name)) {
+                            $i = 1;
+                            while (file_exists($target_dir . $i . "_" . $file_name)) {
+                                $i++;
+                            }
+                            $file_name = $i . "_" . $file_name;
+                        }
+                        $upload_folder = $target_dir . $file_name;
+                        $move = move_uploaded_file($upload['tmp_name'], $upload_folder);
+                        if ($move) {
+                            $query->Data['batch_image'] = $file_name;
+                        } else {
+                            $msg = 'Error occurred while uploading image file. Please try again!';
+                        }
+                    }
                 }
                 $query->Data['webshop_title_en'] = $app['POST']['webtten'];
                 $query->Data['webshop_title_dr'] = $app['POST']['webttdr'];
@@ -261,7 +345,9 @@ switch ($action):
                 $query->Data['desc_en'] = $app['POST']['desen'];
                 $query->Data['desc_dr'] = $app['POST']['desdr'];
 
-                $query->Data['confirm_comment'] = $app['POST']['confirm_comment'];
+                // keep comment non-null to satisfy schema constraints
+                $query->Data['comment'] = isset($app['POST']['comment']) && $app['POST']['comment'] !== '' ? $app['POST']['comment'] : 'N/A';
+                $query->Data['confirm_comment'] = isset($app['POST']['confirm_comment']) && $app['POST']['confirm_comment'] !== '' ? $app['POST']['confirm_comment'] : 'N/A';
 
                 $query->Data['level'] = $app['POST']['level'];
                 $query->Data['grade'] = $app['POST']['grade'];

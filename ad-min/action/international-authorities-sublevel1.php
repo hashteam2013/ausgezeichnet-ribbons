@@ -27,7 +27,9 @@ case 'add':
                     $query->Data['name_en'] = $app['POST']['nameen'];
                     $query->Data['name_dr'] = $app['POST']['namedr'];
                     $query->Data['position'] = $app['POST']['position'];
-                    $query->Data['date_add'] = 1;
+                    // ensure required columns are populated when inserting
+                    $query->Data['is_deleted'] = '0';
+                    $query->Data['date_add'] = date('Y-m-d H:i:s');
                     $query->Data['is_active'] = isset($app['POST']['active'])? $app['POST']['active']: '0';
                     if ($query->Insert()) {
                         set_alert('success', "New international authority sublevel1 added successfully");
