@@ -1,7 +1,7 @@
 <?php
-ini_set('display_errors', '1');
-ini_set('display_startup_errors', '1');
-error_reporting(E_ALL);
+// ini_set('display_errors', '1');
+// ini_set('display_startup_errors', '1');
+// error_reporting(E_ALL);
 global $app;
 $id = isset($app['GET']['id']) ? $app['GET']['id'] : "0";
 $id_loc = isset($app['GET']['id_loc']) ? $app['GET']['id_loc'] : "0";
