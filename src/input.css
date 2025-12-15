@@ -5,6 +5,9 @@
     --poppins: "Poppins", sans-serif;
     --gothic : "Special Gothic Expanded One", sans-serif;
 }
+body{
+    @apply relative;
+}
 .red-main-hd{
     @apply  uppercase text-xl text-dark font-semibold;
 }
@@ -13,4 +16,11 @@
 }
 .crousal-outer .slick-arrow::before{
     @apply hidden;
+}
+body.active::before{
+    content: "";
+    @apply top-0 left-0 bg-black/40 w-full h-full absolute;
+}
+.panel-heading a.active{
+     @apply bg-primary;
 }

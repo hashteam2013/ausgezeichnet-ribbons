@@ -93,8 +93,8 @@
                                     <li><a href="<?php echo make_url("profile");?>" title=""> <?php _e("HEllO") ?> <?php echo strtoupper(html_entity_decode($logged_in_user_info->first_name . ' ' . $logged_in_user_info->last_name)); ?></a></li>
                                    <li><a href="<?php echo make_url("logout"); ?>"> <?php _e("Logout");?></a> </li>
                                <?php } else { ?>
-                                   <li><a href="#" class="bg-secondary px-5 inline-flex items-center justify-center text-white rounded-xl font-semibold text-base min-h-12" data-toggle="modal" data-target="#myModal" id="login-link" title="<?php _e("Login");?>"> <?php _e("Login");?> </a> </li>
-                                   <li><a href="#" class="bg-primary px-5 inline-flex items-center justify-center text-white rounded-xl font-semibold text-base min-h-12"  data-toggle="modal" data-target="#myModal" id="register-link"> <?php _e("Register");?> </a> </li>
+                                   <li><a href="#" class="bg-secondary px-5 inline-flex items-center justify-center text-white rounded-xl font-semibold text-base min-h-12" id="login-link" title="<?php _e("Login");?>"> <?php _e("Login");?> </a> </li>
+                                   <li><a href="#" class="bg-primary px-5 inline-flex items-center justify-center text-white rounded-xl font-semibold text-base min-h-12"   id="register-link"> <?php _e("Register");?> </a> </li>
                                <?php } ?>
                            </ul>
                            <?php endif; ?>

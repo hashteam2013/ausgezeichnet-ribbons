@@ -91,7 +91,7 @@
                        <select id="custm"><option><?php _e("Guest"); ?></option></select> 
                     <?php } ?>
                     </div>
-                    <input type="button" class="add-btn hvr-float-shadow add_cust" value="<?php _e("Add Customer");?>">
+                    <input type="button" class="add-btn cursor-pointer add_cust" value="<?php _e("Add Customer");?>">
                     <div class="check-tag">
                         <div>
                             <ul class="batch">

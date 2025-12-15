@@ -513,92 +513,14 @@ input#add-list-go{
     float: right;
     margin-top: 4px;  
 }
-.panel.panel-login .panel-heading {
-    border-bottom: 0;
-    width: 100%;
-    float: left;
-    background: #242427; 
-    margin-bottom: 15px;
-}
-.panel.panel-login .panel-heading a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
-    width: 48%;
-    float: left;    text-align: center;
-}
-.panel.panel-login .panel-heading a.active {
-    border-bottom: 2px solid #fff;
-}
 .box-confrm {
     display: none;
-}
-button.close {
-    -webkit-appearance: none;
-    padding: 0;
-    cursor: pointer;
-    background: transparent;
-    border: 0;
-    color: #fff;
-    opacity: 1 !important;
-    font-size: 27px;
-    font-weight: 100;
-}
-.panel.panel-login .panel-heading a:hover {
-    border-bottom: 2px solid #fff;
-    transition: 2s erse-in;
-}
-input#login-submit, input#register-submit {
-    text-align: center;
-    margin: 0;
-    display: inline-block;
-    border: 1px solid #ED0000;
-    color: #242427;
-    text-decoration: none;
-    padding: 0;
-    color: #ED0000;
-    border-radius: 0px;
-    font-weight: 100;
-}
-input#login-submit:hover {
-    color: #fff;
-    background: #ED0000;
-    border: 1px solid #ccc;
-}
-a#tog-blok, a#back {
-    text-decoration: none;
-    font-size: 16px; color: #242427;
-}
-a#tog-blok:hover, a#back:hover {
-    color: #ED0000;
-    outline: 0;
-}
-form#login-form .box-sow {
-    float: left;
-    width: 100%;
-}
-form#register-form {
-    float: left;
-    width: 100%;
 }
 .panel.panel-login .panel-heading a.active.blinker {
     text-align: center;
     width: 93%;
     border-bottom: 0px;
 }
-button.close.x {
-    -webkit-appearance: none;
-    padding: 0;
-    cursor: pointer;
-    background: transparent;
-    border: 0;
-    color: #fff;
-    opacity: 1 !important;
-    font-size: 27px;
-    font-weight: 100;
-    margin-right: 9px;
-}
-
 
 .modal{top:22px;}
 
@@ -607,19 +529,6 @@ button.close.x {
    background: #242427;
 }
 
-.bleasver .modal-header h4 {
-   font-size: 24px;
-    color: #fff; 
-}
-
-.bleasver p {
-   font-size: 16px;
-   text-align: left;
-}
-
-.bleasver .modal-header {
-   background: #040338;
-}
 span.year_country {
     position: absolute;
     top: 0;
@@ -699,12 +608,6 @@ label.info-disc {
 }
 form#register-form .form-group {
     position: relative;
-}
-.form-control.hvr-float-shadow.all-cat {
-    line-height: 0px !important;
-}
-.form-control.btn.btn-login {
-    line-height: 0px !important;
 }
 @media (min-width: 1200px){
     .container-custom {
@@ -1069,18 +972,6 @@ input.add-btn {
      div#no-more-tables button.btn.btn-info.btn-sm {
     margin: 0px 15px 13px 0px !IMPORTANT;
 }
-
-button.all-cat.add-btn.hvr-float-shadow:hover  
-{ background-color: #ED0000; color:#fff; border: 2px solid #ED0000;  color: #fff !important;
-}
-input#register-submit:hover  
-{ background-color: #ED0000; color:#fff; border: 2px solid #ED0000;  color: #fff !important;
-}
-input#forgot-submit:hover{ background-color: #ED0000; color:#fff; border: 2px solid #ED0000;  color: #fff;
-}
-button#cust-submit:hover
-{ background-color: #ED0000; color:#fff; border: 2px solid;
-}
 input.all-cat.add-btn.hvr-float-shadow:hover
 { background-color: #ED0000; color:#fff; border: 2px solid;
 }
@@ -1096,18 +987,6 @@ input.all-cat.add-btn.hvr-float-shadow:hover
 }
 
 .btn-cart:hover { background:#242427; text-decoration:none; color:#fff;	}
-button#login-submit {
-    border: 2px solid #ED0000;
-    color: #ED0000;
-}
-button#cust-submit{
-    border: 2px solid #ED0000;
-    color: #ED0000;
-}
-input#forgot-submit{
-    border: 2px solid #ED0000;
-    color: #ED0000;
-}
 
 .ajax-load-image {
     position: fixed;
@@ -1193,11 +1072,6 @@ input.cart-slct.divider.hvr-float-shadow {
 
 .ac-onword .panel.panel-primary {
     overflow: auto;
-}
-select#name_boro {
-    padding: 0px 8px;
-    border-radius: 0px;
-    border: 1px solid rgb(169, 169, 169);
 }
 
 .infotextribbonsnotshown

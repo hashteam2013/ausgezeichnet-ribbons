@@ -251,8 +251,11 @@
     });
         /*-----------------------------------Add customer----------------------------------------------------*/
     $(".add_cust").click(function () {
-        if (log_in) {
-            $('#custmodal').modal('show');
+        
+        if (log_in == 1) {
+            
+            $('#custmodal').css({"opacity": "1","display":"block"});
+            $('body').addClass('active');
             $("#cust-submit").click(function (e) {
                 var data = {"action": "add_customer"};
                 data = $("#customer_add_form").serialize() + "&" + $.param(data);
@@ -296,7 +299,8 @@
                 });
             });
         } else {
-            $('#myModal').modal('show');
+            $('#loginmodal').css({"opacity":"1","display":"block"});
+            $('body').addClass('active');
             $('.customer_url').val("add_to_cust");
         }
     });
