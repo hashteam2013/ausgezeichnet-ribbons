@@ -54,7 +54,6 @@ composer.lock
 *.temp
 *.bak
 *.swp
-
 # Build artifacts
 dist/
 # build/

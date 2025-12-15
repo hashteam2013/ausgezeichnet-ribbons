@@ -1,35 +1,38 @@
 <?php
+ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
+error_reporting(E_ALL);
 global $app;
 $id = isset($app['GET']['id'])?$app['GET']['id']:"0";
 $page_no = (isset($app['GET']['page_no']) && $app['GET']['page_no'] != "")? $app['GET']['page_no'] : 1;
 $limit = PAGE_CONTENT_LIMIT;
 switch ($action):
     case 'search':
-        if (isset($app['POST']['search'])) 
-	{
+    if (isset($app['POST']['search'])) {
 
 
       		$query = new query('customers');
       		$query->Field = " customers.first_name, customers.last_name, customers.user_id, users.first_name as user_first_name, users.last_name as user_last_name, users.id as userid,orders.id as orderid ";
 		$query->Where = " LEFT JOIN users ON customers.user_id = users.id  LEFT JOIN orders ON orders.user_id = users.id";
-		$query->Where .= " WHERE ";
-
+		
+		// Build WHERE conditions
+		$whereConditions = array();
+		
 		if (trim($app['POST']['firstname']) != '')
 		{
-			$query->Where .= " customers.first_name = '" . trim($app['POST']['firstname']) . "'";
-			if (trim($app['POST']['lastname']) != '')
-			{
-				$query->Where .= " AND ";
-			}
+			$whereConditions[] = " customers.first_name = '" . mysqli_real_escape_string($app['mysqllink'], trim($app['POST']['firstname'])) . "'";
 		}
 
 		if (trim($app['POST']['lastname']) != '')
 		{
-			$query->Where .= "  customers.last_name = '" . trim($app['POST']['lastname']) . "'";
+			$whereConditions[] = " customers.last_name = '" . mysqli_real_escape_string($app['mysqllink'], trim($app['POST']['lastname'])) . "'";
 		}
 
-
-		
+		// Only add WHERE clause if there are conditions
+		if (!empty($whereConditions))
+		{
+			$query->Where .= " WHERE " . implode(" AND ", $whereConditions);
+		}
 
        		$customers = $query->ListOfAllRecords('object');
 		

@@ -107,7 +107,7 @@
 }
 
 /*
-! tailwindcss v3.4.18 | MIT License | https://tailwindcss.com
+! tailwindcss v3.4.19 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -1061,15 +1061,15 @@ video {
 }
 
 .bg-herobanner {
-  background-image: url('/ribbons/assets/images/banner.jpg');
+  background-image: url('/ausgezeichnet-ribbons/assets/images/banner.jpg');
 }
 
 .bg-map {
-  background-image: url('/ribbons/assets/images/map.jpg');
+  background-image: url('/ausgezeichnet-ribbons/assets/images/map.jpg');
 }
 
 .bg-shop {
-  background-image: url('/ribbons/assets/images/shop.jpg');
+  background-image: url('/ausgezeichnet-ribbons/assets/images/shop.jpg');
 }
 
 .bg-cover {

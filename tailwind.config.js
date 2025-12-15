@@ -9,21 +9,26 @@ export default {
     "./src/**/*.css",
   ],
   theme: {
+    colors: {
+      transparent: 'transparent',
+      current: 'currentColor',
+      black: '#000',
+      white: '#fff',
+      primary: '#ED0000',
+      secondary: '#2D2D2A',
+      dark: '#393C40',
+      body: '#FFEDED',
+      // extend other default Tailwind colors optionally if you need
+    },
     extend: {
-      colors: {
-        primary: '#ED0000',
-        secondary: '#2D2D2A',
-        dark: '#393C40',
-        body: '#FFEDED',
-      },
       fontFamily: {
-        poppins: ['var(--poppins)'],
-        gothic: ['var(--gothic)'],
+        poppins: ['var(--poppins)', 'sans-serif'],
+        gothic: ['var(--gothic)', 'sans-serif'],
       },
       backgroundImage:{
-        herobanner:"url('/ribbons/assets/images/banner.jpg')",
-        shop:"url('/ribbons/assets/images/shop.jpg')",
-        map:"url('/ribbons/assets/images/map.jpg')",
+        herobanner: "url('/ausgezeichnet-ribbons/assets/images/banner.jpg')",
+        shop: "url('/ausgezeichnet-ribbons/assets/images/shop.jpg')",
+        map: "url('/ausgezeichnet-ribbons/assets/images/map.jpg')",
       }
     },
   },

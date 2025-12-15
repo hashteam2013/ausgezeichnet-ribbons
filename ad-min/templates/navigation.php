@@ -371,20 +371,20 @@
                 <li class="nav-item <?php echo is_active_nav('add_cat_sub',$page);?>">
                     <a href="<?php app_url('add_cat_sub','list','list');?>" class="nav-link nav-toggle">
                         <i class="fa fa-sitemap" aria-hidden="true"></i>
-                        <span class="title">add_cat_sub</span>
+                        <span class="title">Additional Category Sub</span>
                         <span class="<?php echo (is_active_nav('add_cat_sub',$page)!='')?"selected":"";?>"></span>
                         <span class="arrow <?php echo is_active_nav('add_cat_sub',$page);?>"></span>
                     </a>
                     <ul class="sub-menu">
                         <li class="nav-item <?php echo is_active_nav('add_cat_sub',$page,'add',$view);?>">
                             <a href="<?php app_url('add_cat_sub','add','add');?>" class="nav-link ">
-                                <span class="title">Add add_cat_sub</span>
+                                <span class="title">Add Additional Category Sub</span>
                                 <span class="<?php echo (is_active_nav('add_cat_sub',$page,'add',$view)!='')?"selected":"";?>"></span>
                             </a>
                         </li>
                         <li class="nav-item <?php echo is_active_nav('add_cat_sub',$page,'list',$view);?>">
                             <a href="<?php app_url('add_cat_sub','list','list');?>" class="nav-link ">
-                                <span class="title">Manage add_cat_sub</span>
+                                <span class="title">Manage Additional Category Sub</span>
                                 <span class="<?php echo (is_active_nav('add_cat_sub',$page,'list',$view)!='')?"selected":"";?>"></span>
                             </a>
                         </li>
