@@ -73,6 +73,7 @@ switch ($action):
            break;
            
      case 'delete_deliverycondition':
+        // pr($app['GET']); exit;
         if(isset($app['GET']['del']) && $app['GET']['del']!='' ){
             $query = new query('deliveryconditions');
             $query->id = $app['GET']['del'];
