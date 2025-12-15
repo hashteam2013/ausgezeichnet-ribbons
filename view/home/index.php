@@ -9,12 +9,12 @@
     <div class="relative flex items-center justify-center">
         <div class="container-custom">
             <div class="text-center text-white">
-                <h3 class="mb-2 text-[40px] leading-[50px] tracking-[0.4px] font-semibold text-white">Ausgezeichnet.cc</h3>
+                <h3 class="mb-2 2xl:text-[40px] 2xl:leading-[50px] text-3xl leading-[40px] tracking-[0.4px] font-semibold text-white">Ausgezeichnet.cc</h3>
                 <h1 class="text-8xl font-gothic leading-[120px] font-normal">
                     <?php _e('banner heading') ?>
                 </h1>
             </div>
-            <ul class="flex text-white items-center gap-2.5 flex-wrap text-2xl font-medium mt-10 justify-center mx-auto max-w-[1120px]">
+            <ul class="flex text-white items-center gap-2.5 flex-wrap 2xl:text-2xl text-xl font-medium mt-10 justify-center mx-auto max-w-[1120px]">
                 <li class="py-2"><?php _e('banner tag1') ?></li>
                 <li class="block w-2.5 h-2.5 rounded-full bg-primary"></li>
                 <li class="py-2"><?php _e('banner tag2') ?></li>
@@ -49,13 +49,13 @@
                 <img src="<?php echo DIR_WS_ASSETS_IMAGES; ?>about.png" class="w-full rounded-[20px]">
             </div>
             <div class="w-1/2 flex flex-col gap-5">
-                <h5 class="uppercase text-xl text-dark font-semibold"><?php _e('about_us_heading') ?></h5>
-                <h2 class="capitalize text-primary text-6xl leading-[80px] font-gothic font-normal"><?php _e('about_us_main_title') ?></h2>
-                <p class="text-xl leading-[50px] text-dark font-normal"><?php _e('about_us_paragraph_1') ?></p>
+                <h5 class="uppercase 2xl:text-xl text-lg text-dark font-semibold"><?php _e('about_us_heading') ?></h5>
+                <h2 class="capitalize text-primary 2xl:text-6xl 2xl:leading-[80px] xl:text-[40px] xl:leading-[54px] font-gothic font-normal"><?php _e('about_us_main_title') ?></h2>
+                <p class="2xl:text-xl 2xl:leading-[50px] text-lg leading-[42px] text-dark font-normal"><?php _e('about_us_paragraph_1') ?></p>
             </div>
         </div>
         <div class="flex flex-col">
-            <p class="text-xl leading-[50px] text-dark font-normal"><?php _e('about_us_paragraph_2') ?></p>
+            <p class="2xl:text-xl 2xl:leading-[50px]  text-lg leading-[42px] text-dark font-normal"><?php _e('about_us_paragraph_2') ?></p>
         </div>
     </div>
 </section>
@@ -63,34 +63,37 @@
 
 <section class="hand-band bg-body py-24" id="products">
     <div class="container-custom">
-        <div class="flex flex-col gap-16">
+        <div class="flex flex-col 2xl:gap-16 gap-10">
             <div class="flex flex-col items-center gap-5">
                 <h5 class="text-xl text-dark font-semibold uppercase"><?php _e('how it works'); ?></h5>
-                <h2 class="text-center text-primary text-6xl leading-[80px] font-gothic font-normal max-w-[1250px]"><?php _e('below shop main heading')?></h2>
+                <h2 class="text-center text-primary 2xl:text-6xl 2xl:leading-[80px] xl:text-[40px] xl:leading-[54px] font-gothic font-normal max-w-[1250px]"><?php _e('below shop main heading')?></h2>
             </div>
             <div class="flex gap-14">
                 <div class="lg:w-[52%] w-full">
-                     <h3 class="text-black font-gothic text-[36px] leading-[47px] mb-3"><?php _e('Below shop content'); ?></h3>
-                     <p class="text-dark text-xl leading-[43px] font-normal"><?php _e('Below shop paragraph'); ?></p>
+                     <h3 class="text-black font-gothic 2xl:text-[36px] 2xl:leading-[47px] text-3xl leading-[42px] mb-3"><?php _e('Below shop content'); ?></h3>
+                     <p class="text-dark 2xl:text-xl 2xl:leading-[50px] text-lg leading-[40px] font-normal"><?php _e('Below shop paragraph'); ?></p>
                 </div>
                 <div class="iframe_call  lg:w-[48%]">
                     <?php _e('montagevideo'); ?>
                 </div>
             </div>
+            <div class="block w-full">
+                <p class="text-dark 2xl:text-xl 2xl:leading-[50px] text-lg leading-[40px] font-normal"><?php _e('Below shop paragraph2')?></p>
+            </div>
                 
                 <div>
-                    <h3 class="text-black font-gothic text-[36px] leading-[47px] mb-3"><?php _e('miniatures content2'); ?></h3>
-                    <p class="text-dark text-xl leading-[43px] font-normal"><?php _e('miniatures paragraph2'); ?></p>
+                    <h3 class="text-black font-gothic 2xl:text-[36px] 2xl:leading-[47px] text-3xl leading-[42px]  mb-3"><?php _e('miniatures content2'); ?></h3>
+                    <p class="text-dark 2xl:text-xl 2xl:leading-[50px] text-lg leading-[40px] font-normal"><?php _e('miniatures paragraph2'); ?></p>
                 </div>
                 <div>
                     <!-- <img src="<?php echo DIR_WS_ASSETS_IMAGES; ?>Miniatur_collection.jpg" class="img-responsive"> -->
-                    <h3 class="text-black font-gothic text-[36px] leading-[47px] mb-3"><?php _e('Below shop content3'); ?></h3>
-                     <p class="text-dark text-xl leading-[43px] font-normal"><?php _e('Below shop paragraph3'); ?></p>
+                    <h3 class="text-black font-gothic 2xl:text-[36px] 2xl:leading-[47px] text-3xl leading-[42px]  mb-3"><?php _e('Below shop content3'); ?></h3>
+                     <p class="text-dark 2xl:text-xl 2xl:leading-[50px] text-lg leading-[40px] font-normal"><?php _e('Below shop paragraph3'); ?></p>
                 </div>
                 <div>
                     <!-- <img src="<?php echo DIR_WS_ASSETS_IMAGES; ?>Konfigurator.jpg" class="img-responsive konfigurator"> -->
-                    <h3 class="text-black font-gothic text-[36px] leading-[47px] mb-3"><?php _e('Below shop content4'); ?></h3>
-                    <p class="text-dark text-xl leading-[43px] font-normal"><?php _e('Below shop paragraph4'); ?></p>
+                    <h3 class="text-black font-gothic 2xl:text-[36px] 2xl:leading-[47px] text-3xl leading-[42px]  mb-3"><?php _e('Below shop content4'); ?></h3>
+                    <p class="text-dark 2xl:text-xl 2xl:leading-[50px] text-lg leading-[40px] font-normal"><?php _e('Below shop paragraph4'); ?></p>
                 </div>
                 <!--<section class="crousal-outer">
                     <div id="carousel-2" class="carousel slide" data-ride="carousel" data-pause="hover"> 
@@ -193,7 +196,7 @@
     <div class="container-custom">
         <div class="flex flex-col ">
             <h2 class="red-main-hd"><?php _e("products"); ?></h2>
-            <h2 class="capitalize mt-4 text-primary text-6xl leading-[80px] font-gothic font-normal">Explore Our Products</h2>
+            <h2 class="capitalize mt-4 text-primary 2xl:text-6xl 2xl:leading-[80px] xl:text-[40px] xl:leading-[54px] font-gothic font-normal"><?php _e('explore_products_heading')?></h2>
         </div>
         
         <div class="flex mt-14 gap-12">
@@ -236,8 +239,8 @@
     <div class="flex items-center justify-center relative">
         <div class="container-custom">
             <div class="flex flex-col items-center justify-center max-w-[1060px] mx-auto gap-5">
-                <h2 class="text-white font-gothic font-normal text-6xl max-w-[700px] mx-auto leading-[75px]">Ausgezeichnet.cc: Modular German Ribbon Bars</h2>
-                <p class="text-[#E5E6E8] text-xl font-normal leading-[35px]">We produce the missing ribbons and miniatures needed to wear Austrian awards on German ribbon bars. We closed this long-standing gap in the market!</p>
+                <h2 class="text-white font-gothic font-normal 2xl:text-6xl 2xl:leading-[75px] xl:text-[40px] xl:leading-[54px] max-w-[700px] mx-auto"><?php _e('cta_heading') ?></h2>
+                <p class="text-[#E5E6E8] text-xl font-normal leading-[35px]"><?php _e('cta_desc') ?></p>
                 <a href="<?php echo make_url('shop'); ?>" class="text-white bg-primary text-base font-semibold px-7 inline-flex items-center justify-center rounded-xl min-h-12"><font><?php _e("Shop Now"); ?></font></a>
             </div>
         </div>
@@ -249,7 +252,7 @@
     <div class="container-custom">
         <div class="mb-14 flex flex-col">
             <h5 class="text-dark text-xl font-semibold uppercase mb-5"><?php _e("team member"); ?></h5>
-            <h2 class="capitalize text-primary text-6xl leading-[80px] font-gothic font-normal">The Faces Behind Ausgezeichnet.cc</h2>
+            <h2 class="capitalize text-primary 2xl:text-6xl 2xl:leading-[80px] xl:text-[40px] xl:leading-[54px] font-gothic font-normal"><?php _e('faces_behind')?></h2>
         </div>
         
         <div class="flex w-full items-start mb-14">
@@ -278,7 +281,7 @@
     <div class="container-custom">
         <div class="flex">
             <div class="w-1/2">
-                <h2 class="text-6xl text-white font-gothic mb-4"><?php _e('Get In Touch'); ?></h2>
+                <h2 class="2xl:text-6xl xl:text-[40px]  text-white font-gothic mb-4"><?php _e('Get In Touch'); ?></h2>
                 <p class="text-white text-xl leading-[35px] font-normal"><?php _e('Excellent. Cc  | Full-Modular Order Orders'); ?></p>
             </div>
             <div class="w-1/2">
@@ -321,14 +324,14 @@
 
 <section class="bg-white py-24">
     <div class="container-custom">
-       <div class="flex items-center gap-10 justify-center">
-            <img src="<?php echo DIR_WS_ASSETS_IMAGES; ?>badge1.png" class="" alt="...">
-            <img src="<?php echo DIR_WS_ASSETS_IMAGES; ?>badge2.png" class="" alt="...">
-            <img src="<?php echo DIR_WS_ASSETS_IMAGES; ?>badge3.png" class="" alt="...">
-            <img src="<?php echo DIR_WS_ASSETS_IMAGES; ?>badge4.png" class="" alt="...">
-            <img src="<?php echo DIR_WS_ASSETS_IMAGES; ?>badge5.png" class="" alt="...">
-            <img src="<?php echo DIR_WS_ASSETS_IMAGES; ?>badge6.png" class="" alt="...">
-            <img src="<?php echo DIR_WS_ASSETS_IMAGES; ?>badge7.png" class="" alt="...">
+       <div class="flex items-center flex-wrap gap-10 justify-center">
+            <img src="<?php echo DIR_WS_ASSETS_IMAGES; ?>badge1.png" class="2xl:w-auto w-32" alt="...">
+            <img src="<?php echo DIR_WS_ASSETS_IMAGES; ?>badge2.png" class="2xl:w-auto w-32" alt="...">
+            <img src="<?php echo DIR_WS_ASSETS_IMAGES; ?>badge3.png" class="2xl:w-auto w-32" alt="...">
+            <img src="<?php echo DIR_WS_ASSETS_IMAGES; ?>badge4.png" class="2xl:w-auto w-32" alt="...">
+            <img src="<?php echo DIR_WS_ASSETS_IMAGES; ?>badge5.png" class="2xl:w-auto w-32" alt="...">
+            <img src="<?php echo DIR_WS_ASSETS_IMAGES; ?>badge6.png" class="2xl:w-auto w-32" alt="...">
+            <img src="<?php echo DIR_WS_ASSETS_IMAGES; ?>badge7.png" class="2xl:w-auto w-32" alt="...">
        </div>
     </div>
 </section>

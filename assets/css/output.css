@@ -558,6 +558,12 @@ video {
   width: 100%;
 }
 
+@media (min-width: 480px) {
+  .container {
+    max-width: 480px;
+  }
+}
+
 @media (min-width: 640px) {
   .container {
     max-width: 640px;
@@ -576,15 +582,15 @@ video {
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1180px) {
   .container {
-    max-width: 1280px;
+    max-width: 1180px;
   }
 }
 
-@media (min-width: 1536px) {
+@media (min-width: 1575px) {
   .container {
-    max-width: 1536px;
+    max-width: 1575px;
   }
 }
 
@@ -829,6 +835,14 @@ video {
   width: 100%;
 }
 
+.w-24 {
+  width: 6rem;
+}
+
+.w-32 {
+  width: 8rem;
+}
+
 .max-w-\[1060px\] {
   max-width: 1060px;
 }
@@ -969,6 +983,10 @@ video {
 
 .rounded {
   border-radius: 0.25rem;
+}
+
+.rounded-2xl {
+  border-radius: 1rem;
 }
 
 .rounded-\[20px\] {
@@ -1268,6 +1286,14 @@ video {
   line-height: 35px;
 }
 
+.leading-\[40px\] {
+  line-height: 40px;
+}
+
+.leading-\[42px\] {
+  line-height: 42px;
+}
+
 .leading-\[43px\] {
   line-height: 43px;
 }
@@ -1366,6 +1392,7 @@ body {
 }
 
 .iframe_call iframe {
+  width: 100%;
   border-radius: 1rem;
 }
 
@@ -1420,5 +1447,68 @@ body.active::before{
 
   .lg\:w-\[52\%\] {
     width: 52%;
+  }
+}
+
+@media (min-width: 1180px) {
+  .xl\:text-\[40px\] {
+    font-size: 40px;
+  }
+
+  .xl\:leading-\[54px\] {
+    line-height: 54px;
+  }
+}
+
+@media (min-width: 1575px) {
+  .\32xl\:w-auto {
+    width: auto;
+  }
+
+  .\32xl\:gap-16 {
+    gap: 4rem;
+  }
+
+  .\32xl\:text-6xl {
+    font-size: 3.75rem;
+    line-height: 1;
+  }
+
+  .\32xl\:text-\[36px\] {
+    font-size: 36px;
+  }
+
+  .\32xl\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  .\32xl\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .\32xl\:text-\[40px\] {
+    font-size: 40px;
+  }
+
+  .\32xl\:leading-\[43px\] {
+    line-height: 43px;
+  }
+
+  .\32xl\:leading-\[47px\] {
+    line-height: 47px;
+  }
+
+  .\32xl\:leading-\[50px\] {
+    line-height: 50px;
+  }
+
+  .\32xl\:leading-\[80px\] {
+    line-height: 80px;
+  }
+
+  .\32xl\:leading-\[75px\] {
+    line-height: 75px;
   }
 }
