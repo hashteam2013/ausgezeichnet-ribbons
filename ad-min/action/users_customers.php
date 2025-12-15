@@ -61,28 +61,28 @@ switch ($action):
                 $msg = 'Password lenght cannot be more than 20';
             }
             else{
-                 $queryObj = new query('users');
-                    $queryObj->Field = " id";
-                    $queryObj->Where = " where email = '".$app['POST']['email']."'";
-                    $object = $queryObj->DisplayOne();
-                    if(!is_object($object)){
-                            $query = new query('users');
-                            $query->Data['first_name'] = $app['POST']['firstname'];
-                            $query->Data['last_name'] = $app['POST']['lastname'];
-                            $query->Data['email'] = $app['POST']['email'];
-                            $query->Data['password'] = generateHash($app['POST']['password']);
-                            $query->Data['is_trustworthy'] = isset($app['POST']['trustworthy'])? $app['POST']['trustworthy']:'0';
-                            $query->Data['is_verified'] = isset($app['POST']['verified'])? $app['POST']['verified']:'0';
-                            $query->Data['is_active'] = isset($app['POST']['active'])? $app['POST']['active']: '0';
-                            if ($query->Insert()) {
-                                set_alert('success', "New user added successfully");
-                                redirect(app_url('users_customers','list','list',array(),true));
-                            } else {
-                                $msg = 'Error occurred while updating account info. Please try again!';
-                            }
-                             } else{
-                        $msg = 'Account already associated with same email';   
+                $queryObj = new query('users');
+                $queryObj->Field = " id";
+                $queryObj->Where = " where email = '".$app['POST']['email']."'";
+                $object = $queryObj->DisplayOne();
+                if(!is_object($object)){
+                    $query = new query('users');
+                    $query->Data['first_name'] = $app['POST']['firstname'];
+                    $query->Data['last_name'] = $app['POST']['lastname'];
+                    $query->Data['email'] = $app['POST']['email'];
+                    $query->Data['password'] = generateHash($app['POST']['password']);
+                    $query->Data['is_trustworthy'] = isset($app['POST']['trustworthy'])? $app['POST']['trustworthy']:'0';
+                    $query->Data['is_verified'] = isset($app['POST']['verified'])? $app['POST']['verified']:'0';
+                    $query->Data['is_active'] = isset($app['POST']['active'])? $app['POST']['active']: '0';
+                    if ($query->Insert()) {
+                        set_alert('success', "New user added successfully");
+                        redirect(app_url('users_customers','list','list',array(),true));
+                    } else {
+                        $msg = 'Error occurred while updating account info. Please try again!';
                     }
+                } else{
+                    $msg = 'Account already associated with same email';   
+                }
             }
             set_alert('error', $msg);
         }
