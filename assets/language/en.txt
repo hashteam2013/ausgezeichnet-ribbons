@@ -2,7 +2,7 @@
 Previous ~~ Previous
 Next ~~ next
 Welcome content ~~ 
-products ~~ <h2 class="red-main-hd">Products</h2>
+products ~~ Products
 medals ~~ Medals
 miniatures ~~ German ribbon bars
 modular ribbons ~~ Modular ribbon system
@@ -23,7 +23,8 @@ Shop Now  ~~ Shop Now
 below shop main heading ~~ Fully Modular Systems for Enduring Service Honors
 how it works ~~ How it works
 Below shop content ~~ Modular ribbon system
-Below shop paragraph ~~ Ausgezeichnet<span style="color:#ED0000;">.cc</span> offers a modular ribbon system, where every ribbon is manufactured as one separety piece. The ribbons can be connected both verically and horicontally with clamping elements. When a new ribbon must be added, no parts have to be changed or thrown away, just the new ribbon has to be clipped on its place - a huge safe of money and ressources, as all once bought items can be reused and  aligned in any required way.<br>The products are fully made of high quality aluminium and stainless steel. All elements are produced with highest precisions to ensure their functionality over many years. The clutches that connect the system with the uniform are customized for Ausgezeichnet.cc - They are very flat, provide a secure fixing system and substitute needles, butterflies and other fixing systems.
+Below shop paragraph ~~ Ausgezeichnet<span style="color:#ED0000;">.cc</span> offers a modular ribbon system, where every ribbon is manufactured as one separety piece. The ribbons can be connected both verically and horicontally with clamping elements. When a new ribbon must be added, no parts have to be changed or thrown away, just the new ribbon has to be clipped on its place - a huge safe of money and ressources, as all once bought items can be reused and  aligned in any required way.
+Below shop paragraph2 ~~ The products are fully made of high quality aluminium and stainless steel. All elements are produced with highest precisions to ensure their functionality over many years. The clutches that connect the system with the uniform are customized for Ausgezeichnet.cc - They are very flat, provide a secure fixing system and substitute needles, butterflies and other fixing systems.
 
 montagevideo ~~ <iframe  src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FAusgezeichnet.cc%2Fvideos%2F1988286158114310%2F&show_text=0&width=623" width="750" height="400" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
 miniatures content2 ~~ Miniatures
@@ -39,6 +40,7 @@ about us content left ~~ <h2>MAG. FLORIAN HELL</h2><p>The uniform carrier <br> S
 about us content right ~~ <h2> DI LUKAS HATZMANN </ h2> <p> The Technician <br/> Studied mechanical engineering specializing in production engineering and mechatronics, working independently as a machine developer, mechatronics engineer and programmer. He is responsible for all technical issues relating to the new order ribbon system - and the pragmatic-resting pole of Ausgezeichnet.cc.
 
 team member ~~ Team Members
+faces_behind ~~ The Faces Behind Ausgezeichnet.cc
 team left heading ~~ MAG. FLORIAN HELL
 team left position ~~ The uniform carrier
 team left bio ~~ Studied art history and cultural management at the Karl-Franzens-University in Graz. <br> Since the age of twelve he is a member of the volunteer fire brigade Bruck an der Mur and has been in contact with almost every subject area, the daily Fire brigade life brings with it.He is familiar with the needs of the industry - and developed his idea of the modular ribbon system under the brand name Ausgezeichnet.cc together with his partner.
@@ -306,3 +308,9 @@ about_us_main_title ~~ Crafting Excellence, Honoring Service
 about_us_paragraph_1 ~~ At Ausgezeichnet.cc, we believe that service and achievement deserve to be honored with precision and distinction. We specialize in crafting and assembling fully modular medal clasps (Ordensspangen), providing the highest standard for presenting your military, police, and official service decorations.
 about_us_paragraph_2 ~~ The name "Ausgezeichnet" is German for "excellent" or "distinguished," a principle that guides every ribbon bar we produce. We understand the significance of your honors. Our innovative, fully modular system ensures that every decoration, device, and ribbon is displayed with perfect accuracy and alignment, reflecting the exact order and criteria of your awards.
 
+// Explore section
+explore_products_heading~~ Explore Our Products
+
+// Shop CTA
+cta_heading~~Ausgezeichnet.cc: Modular German Ribbon Bars
+cta_desc~~We produce the missing ribbons and miniatures needed to wear Austrian awards on German ribbon bars. We closed this long-standing gap in the market!

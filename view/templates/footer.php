@@ -242,9 +242,9 @@
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -END- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 <footer class="border-t border-secondary">
         <div class="container-custom">
-            <div class="flex py-14 items-center justify-between">
+            <div class="flex md:flex-nowrap flex-wrap py-14 items-center justify-between">
                 <div>
-                    <a href="<?php echo WS_PATH; ?>index.php" class="w-[420px] inline-block"> 
+                    <a href="<?php echo WS_PATH; ?>index.php" class="md:w-[420px] w-[285px] inline-block"> 
                         <img src="<?php echo DIR_WS_ASSETS_IMAGES; ?>logo.jpg" class="w-full">
                     </a> 
                 </div>
@@ -291,14 +291,14 @@
 
     <div class="footer-bootom py-5 bg-black">
         <div class="container-custom">
-            <div class="flex justify-between gap-10">
-                <div class="text-white text-lg font-regular">
+            <div class="flex md:justify-between md:items-start items-center gap-10 md:flex-nowrap flex-wrap md:flex-row flex-col">
+                <div class="text-white md:text-lg  text-sm font-regular">
                     <a href="http://www.hashsoftware.com/" target="_blank"><span><?php _e(""); ?></span></a>
                     &copy; <?php echo date("Y"); ?> <?php _e("Excellent.cc  |  All right reserved."); ?>
                 </div>
                 <div class="tc_page flex gap-7">
                     <li class="text-white list-none font-medium"><?php _e("agblink "); ?></li>
-                    <li class="list-none"><a href="javascript:void(0);" id="imprint-toggle" class="text-center text-white text-lg font-medium"><?php _e("Imprint"); ?></a></li>
+                    <li class="list-none"><a href="javascript:void(0);" id="imprint-toggle" class="text-center text-white md:text-lg text-sm font-medium"><?php _e("Imprint"); ?></a></li>
                     <li class="text-white list-none font-medium"><?php _e("dataprotlink "); ?></li>
                 </div>
             </div>

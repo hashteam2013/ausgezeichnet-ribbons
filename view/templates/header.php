@@ -44,7 +44,7 @@
             <div class="container-custom">
                 <div class="flex gap-5 items-center justify-between"> 
                     <!-- Logo Start -->
-                    <div class="logo-outer flex w-[27%]">
+                    <div class="logo-outer flex lg:w-[27%] w-[30%]">
                         <a href="<?php echo WS_PATH; ?>index.php" class="w-[285px] inline-block"> 
                             <img src="<?php echo DIR_WS_ASSETS_IMAGES; ?>logo.jpg" class="w-full">
                         </a> 
@@ -56,8 +56,8 @@
                         </div>-->
 
                         <!-- Collect the nav links, forms, and other content for toggling -->
-                        <div class="w-[46%]">
-                            <ul class="main-nav-bar flex items-center gap-7 justify-center w-full">
+                        <div class="w-[46%] lg:block hidden">
+                            <ul class="main-nav-bar lg:flex-nowrap flex-wrap flex items-center gap-7 justify-center w-full">
                                 <?php
                                 if ($page!='home') {
                                     ?>
@@ -85,7 +85,7 @@
                     
                   <?php //$app['user_info']->id; ?>
                     <!-- login Section Start -->
-                        <div class="login-outer flex items-center justify-end w-[27%] gap-5" >
+                        <div class="login-outer flex xl:flex-nowrap flex-wrap items-center justify-end lg:w-[27%] w-[40%] gap-5" >
                             <?php if (!in_array($page, $no_navigation_pages)): ?>
                             <ul class="login-top flex gap-2.5">
                                <?php if (isset($_SESSION['user_id'])) { ?>

@@ -2,7 +2,7 @@
 Previous ~~ Bisherige
 Next ~~ Nächster
 Welcome content ~~ 
-products ~~ <h2 class="red-main-hd">Produkte</h2>
+products ~~ Produkte
 medals ~~ Originaldekorationen
 miniatures ~~ Deutsche Bandschnallen
 modular ribbons ~~ Vollmodulare Ordensspangen
@@ -23,7 +23,8 @@ View all categories ~~ Zum Shop
 below shop main heading ~~ Vollständig modulare Systeme für dauerhafte Verdienstauszeichnungen
 how it works ~~ Das System
 Below shop content ~~ Vollmodulare Ordensspangen
-Below shop paragraph ~~ Ausgezeichnet<span style="color:#ED0000;">.cc</span> bietet ein Produkt, bei welchem die Auszeichnungen (Bandspangen) einzeln gefertigt und mit Hilfe von Steck- und Klemmelementen nebeneinander und in Reihen übereinander angeordnet werden können. Kommt eine neue Auszeichnung hinzu, muss nur jeweils die betreffende Spange ergänzt und nicht  – wie bisher üblich – die gesamte Ordensspange ausgetauscht werden. Ein immenser finanzieller Vorteil, da alle einmal erworbenen Bestandteile (Spangen, Verbindungsstücke, Befestigungselemente) beliebig angeordnet und daher weiterverwendet werden können.<br>Das Produkt besticht zudem durch seine qualitativ hochwertige Verarbeitung. Die Elemente aus Aluminium und Edelstahl sind mit höchster Präzision im 10tel-Millimeterbereich gefertigt und garantieren auch nach langer Tragezeit uneingeschränkte Funktionalität. Die Klemmkappenverschlüsse zur Befestigung der Spange an der Uniform wurden für Ausgezeichnet.cc  „customized“: Sie sind äußerst flach, bieten einen verlässlichen Halt und ersetzen Hafteln, lange Nadeln, Butterflyverschlüsse und andere Befestigungsvarianten.
+Below shop paragraph ~~ Ausgezeichnet<span style="color:#ED0000;">.cc</span> bietet ein Produkt, bei welchem die Auszeichnungen (Bandspangen) einzeln gefertigt und mit Hilfe von Steck- und Klemmelementen nebeneinander und in Reihen übereinander angeordnet werden können. Kommt eine neue Auszeichnung hinzu, muss nur jeweils die betreffende Spange ergänzt und nicht  – wie bisher üblich – die gesamte Ordensspange ausgetauscht werden. Ein immenser finanzieller Vorteil, da alle einmal erworbenen Bestandteile (Spangen, Verbindungsstücke, Befestigungselemente) beliebig angeordnet und daher weiterverwendet werden können.
+Below shop paragraph2~~Das Produkt besticht zudem durch seine qualitativ hochwertige Verarbeitung. Die Elemente aus Aluminium und Edelstahl sind mit höchster Präzision im 10tel-Millimeterbereich gefertigt und garantieren auch nach langer Tragezeit uneingeschränkte Funktionalität. Die Klemmkappenverschlüsse zur Befestigung der Spange an der Uniform wurden für Ausgezeichnet.cc  „customized“: Sie sind äußerst flach, bieten einen verlässlichen Halt und ersetzen Hafteln, lange Nadeln, Butterflyverschlüsse und andere Befestigungsvarianten.
 
 montagevideo ~~ <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FAusgezeichnet.cc%2Fvideos%2F1988286158114310%2F&show_text=0&width=623" width="623" height="350" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
 
@@ -36,6 +37,8 @@ Below shop paragraph3 ~~ Der Online-Konfigurator reiht die einer Person zugeordn
 
 Below shop content4 ~~Grundlagen der Rangordnung
 Below shop paragraph4 ~~ Wir stellen den Anspruch, die geltenden Regelungen zur Rangordnung nach Punkt und Beistrich umzusetzen. Die Basis dazu bilden eine Vielzahl an Gesetzen und Verordnungen. In <a href="/RechtlicheGrundlagen.pdf" target="_blank" style="color:#ED0000;">unserem PDF Dokument </a> finden Sie eine Sammlung relevanter Links zu den verschiedenen Auszeichnungen.
+
+faces_behind ~~ Die Gesichter hinter Ausgezeichnet.cc
 team member ~~ Teammitglieder
 team left heading ~~ MAG. FLORIAN HELL
 team left position ~~ Der Uniformträger
@@ -344,3 +347,12 @@ about_us_heading ~~ ÜBER UNS
 about_us_main_title ~~ Handwerkliche Exzellenz, Dienste ehren
 about_us_paragraph_1 ~~ Bei Ausgezeichnet.cc sind wir der Überzeugung, dass Dienst und Leistung mit Präzision und Auszeichnung geehrt werden sollten. Wir spezialisieren uns auf die Herstellung und Montage von vollständig modularen Ordensspangen, die den höchsten Standard für die Präsentation Ihrer militärischen, polizeilichen und offiziellen Dienstauszeichnungen bieten.
 about_us_paragraph_2 ~~ Der Name "Ausgezeichnet" steht im Deutschen für "hervorragend" oder "ausgezeichnet" – ein Prinzip, das jede von uns gefertigte Ordensspange leitet. Wir verstehen die Bedeutung Ihrer Auszeichnungen. Unser innovatives, vollständig modulares System stellt sicher, dass jede Dekoration, jedes Abzeichen und jedes Band mit perfekter Genauigkeit und Ausrichtung präsentiert wird, die der genauen Rangordnung und den Kriterien Ihrer Auszeichnungen entspricht.
+
+
+// explore section
+explore_products_heading~~Entdecken Sie unsere Produkte
+
+
+// Shop CTA
+cta_heading~~ Ausgezeichnet.cc: Modulare deutsche Ribbon Bars
+cta_desc~~ Wir fertigen die fehlenden Bänder und Miniaturen, die zum Tragen österreichischer Auszeichnungen an deutschen Ordensspangen benötigt werden. Damit haben wir diese langjährige Marktlücke geschlossen!
