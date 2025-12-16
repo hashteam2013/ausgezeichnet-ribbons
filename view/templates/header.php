@@ -80,16 +80,16 @@
                                                     <li><a href="<?php echo make_url("profile");?>" title=""> <?php _e("HEllO") ?> <?php echo strtoupper(html_entity_decode($logged_in_user_info->first_name . ' ' . $logged_in_user_info->last_name)); ?></a></li>
                                                 <li><a href="<?php echo make_url("logout"); ?>"> <?php _e("Logout");?></a> </li>
                                             <?php } else { ?>
-                                                <li>
-                                                    <a href="#" class="bg-secondary 2xl:px-5 lg:px-4 lg:w-auto lg:h-auto w-10 h-10 inline-flex items-center justify-center text-white lg:rounded-xl rounded-md font-semibold 2xl:text-base text-sm lg:min-h-12" id="login-link" title="<?php _e("Login");?>"> <span class=""><?php _e("Login");?></span>
+                                                <li class="inline-flex">
+                                                    <a href="#" class="bg-secondary border border-white px-4 py-1 text-white rounded-md font-semibold  text-sm min-h-[34px]" id="login-link" title="<?php _e("Login");?>"> <?php _e("Login");?>
                                                 </span> 
                                                     </a> 
                                                 </li>
-                                                <li>
-                                                    <a href="#" class="bg-primary 2xl:px-5 lg:px-4  lg:w-auto lg:h-auto w-10 h-10 inline-flex items-center justify-center text-white lg:rounded-xl rounded-md font-semibold 2xl:text-base text-sm lg:min-h-12"   id="register-link"> 
-                                                    <span class=""><?php _e("Register");?></span>
+                                                <li class="inline-flex">
+                                                    <a href="#" class="bg-primary border-2 border-transparent px-4 py-1 text-white rounded-md font-semibold  text-sm min-h-[34px]"   id="register-link"> 
+                                                    <?php _e("Register");?>
                                                     </a> 
-                                                    </li>
+                                                </li>
                                             <?php } ?>
                                         </ul>
                                         <?php endif; ?>
