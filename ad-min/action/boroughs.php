@@ -1,4 +1,6 @@
 <?php
+ error_reporting(E_ALL);
+ ini_set('display_errors', 1);   
 global $app;
 $id = isset($app['GET']['id'])?$app['GET']['id']:"0";
 $page_no = (isset($app['GET']['page_no']) && $app['GET']['page_no'] != "")? $app['GET']['page_no'] : 1;
@@ -38,6 +40,8 @@ switch ($action):
                             $query->Data['position'] = $app['POST']['position'];
                             $query->Data['date_add'] = 1;
                             $query->Data['is_active'] = isset($app['POST']['active'])? $app['POST']['active']: '0';
+                            $query->Data['is_deleted'] = isset($app['POST']['delete'])? $app['POST']['delete']: '0';
+                            //$query->print = 1;
                             if ($query->Insert()) {
                                 set_alert('success', "New borough added successfully");
                                 redirect(app_url('boroughs','list','list',array(),true));

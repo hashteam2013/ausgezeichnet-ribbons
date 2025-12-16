@@ -1,4 +1,5 @@
 <?php
+define('MAINTANCE_MODE', false); 
 if(ENVIRONMENT=='production'){
     define('DB_HOST',PRODUCTION_DB_HOST);
     define('DB_DATABASE',PRODUCTION_DB_DATABASE);
@@ -39,3 +40,4 @@ define("DIR_WS_ASSETS_JS", DIR_WS_ASSETS.'js/');
 define("DIR_WS_ASSETS_IMAGES", DIR_WS_ASSETS.'images/');
 define("DIR_WS_UPLOADS", WS_PATH.'uploads/');
 define("DIR_WS_ASSETS_PLUGINS", DIR_WS_ASSETS.'plugins/');
+

@@ -1,5 +1,6 @@
 <?php
-
+// error_reporting(E_ALL);
+// ini_set('display_errors', 1);   
 global $app;
 $id = isset($app['GET']['id']) ? $app['GET']['id'] : "0";
 $page_no = (isset($app['GET']['page_no']) && $app['GET']['page_no'] != "") ? $app['GET']['page_no'] : 1;
@@ -33,13 +34,13 @@ switch ($action):
                 if (!is_object($object)) {
                     $query = new query('communities');
                     $query->Data['dist_id'] = isset($app['POST']['name_dist']) ? $app['POST']['name_dist'] : '';
-                    $query->Data['subdist_id'] = isset($app['POST']['name_subdist']) ? $app['POST']['name_subdist'] : '';
+                    $query->Data['subdist_id'] = (isset($app['POST']['name_subdist']) && $app['POST']['name_subdist'] != '') ? $app['POST']['name_subdist'] : '0';
                     $query->Data['name_en'] = $app['POST']['nameen'];
                     $query->Data['name_dr'] = $app['POST']['namedr'];
                     $query->Data['position'] = $app['POST']['position'];
                     $query->Data['date_add'] = 1;
                     $query->Data['is_active'] = isset($app['POST']['active']) ? $app['POST']['active'] : '0';
-                    //$query->Data['is_deleted'] = isset($app['POST']['delete'])? $app['POST']['delete']: '0';
+                    $query->Data['is_deleted'] = isset($app['POST']['delete']) ? $app['POST']['delete'] : '0';
                     if ($query->Insert()) {
                         set_alert('success', "New community added successfully");
                         redirect(app_url('communities', 'list', 'list', array(), true));
@@ -69,7 +70,7 @@ switch ($action):
                 $query = new query('communities');
                 $query->Data['id'] = $id;
                 $query->Data['dist_id'] = $app['POST']['name_dist'];
-                $query->Data['subdist_id'] = $app['POST']['name_subdist'];
+                $query->Data['subdist_id'] = (isset($app['POST']['name_subdist']) && $app['POST']['name_subdist'] != '') ? $app['POST']['name_subdist'] : '0';
                 $query->Data['name_en'] = $app['POST']['nameen'];
                 $query->Data['name_dr'] = $app['POST']['namedr'];
                 $query->Data['position'] = $app['POST']['position'];
