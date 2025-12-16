@@ -41,7 +41,7 @@
 <!-- Banner section End --> 
 
 <!-- About section start -->
-<section class="xl:py-24 md:py-14 py-12" id="welcome" >
+<section class="xl:py-24 md:py-14 py-10" id="welcome" >
     <div class="container-custom">
         <?php _e("Welcome content"); ?>
         <div class="flex lg:flex-row flex-col xl:gap-14 md:gap-8 gap-6 xl:mb-10 lg:mb-5 mb-3">
@@ -61,15 +61,15 @@
 </section>
 <!-- About section end --> 
 
-<section class="hand-band bg-body xl:py-24 md:py-14 py-12" id="products">
+<section class="hand-band bg-body xl:py-24 md:py-14 py-10" id="products">
     <div class="container-custom">
         <div class="flex flex-col 2xl:gap-16 md:gap-10 gap-6">
-            <div class="flex flex-col items-center md:gap-5 gap-2">
+            <div class="flex flex-col md:items-center items-start md:gap-5 gap-2">
                 <h5 class="2xl:text-xl text-lg text-dark font-semibold uppercase"><?php _e('how it works'); ?></h5>
-                <h2 class="text-center text-primary 2xl:text-6xl 2xl:leading-[80px] xl:text-[40px] xl:leading-[54px] md:text-4xl md:leading-[50px] text-2xl leading-[38px] font-gothic font-normal max-w-[1250px]"><?php _e('below shop main heading')?></h2>
+                <h2 class="md:text-center text-left text-primary 2xl:text-6xl 2xl:leading-[80px] xl:text-[40px] xl:leading-[54px] md:text-4xl md:leading-[50px] text-2xl leading-[38px] font-gothic font-normal max-w-[1250px] md:break-normal break-all"><?php _e('below shop main heading')?></h2>
             </div>
             <div class="flex flex-wrap 2xl:gap-10 xl:gap-8 w-full">
-                <div class="flex xl:gap-14 md:gap-8 gap-6 lg:flex-row flex-col-reverse">
+                <div class="flex xl:gap-14 md:gap-8 gap-6 lg:flex-row flex-col">
                      <div class="lg:w-[52%] w-full">
                         <h3 class="text-black font-gothic 2xl:text-[36px] 2xl:leading-[47px] xl:text-3xl xl:leading-[42px] md:text-2xl text-xl mb-3"><?php _e('Below shop content'); ?></h3>
                         <p class="text-dark 2xl:text-xl 2xl:leading-[50px] xl:text-lg xl:leading-[40px] text-base leading-[36px] font-normal"><?php _e('Below shop paragraph'); ?></p>
@@ -79,7 +79,7 @@
                     </div>
                 </div>
                 
-                <div class="block w-full">
+                <div class="block w-full lg:mt-0 mt-5">
                     <p class="text-dark 2xl:text-xl 2xl:leading-[50px] xl:text-lg xl:leading-[40px] text-base leading-[36px] font-normal"><?php _e('Below shop paragraph2')?></p>
                  </div>
             </div>
@@ -127,10 +127,10 @@
                         <a class="left carousel-control" href="#carousel-2" role="button" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> <span class="sr-only"><?php _e("Previous"); ?></span> </a> <a class="right carousel-control" href="#carousel-2" role="button" data-slide="next"> <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> <span class="sr-only"><?php _e('Next'); ?></span> </a> </div>
                 </section>-->
                 <section class="crousal-outer relative">
-                        <button class="slick-prev custom-prev xl:left-10 md:left-5 left-0 xl:w-16 xl:h-16 md:h-12 md:w-12 h-7 w-7 bg-primary inline-flex items-center justify-center rounded-full z-[2] hover:bg-primary focus:bg-primary"><svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M27.812 17.5L7.18807 17.5M7.18807 17.5L17.5 27.812M7.18807 17.5L17.5 7.18803" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-                        <button class="slick-next custom-next xl:right-10 md:right-5 right-0 xl:w-16 xl:h-16 md:h-12 md:w-12 h-7 w-7 bg-primary inline-flex items-center justify-center rounded-full hover:bg-primary focus:bg-primary z-[2]"><svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.18799 17.5L27.8119 17.5M27.8119 17.5L17.5 7.18803M27.8119 17.5L17.5 27.812" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                        <button class="slick-prev custom-prev xl:left-10 md:left-5 left-0 xl:w-16 xl:h-16 md:h-12 md:w-12 h-6 w-6 bg-primary inline-flex items-center justify-center rounded-full z-[2] hover:bg-primary focus:bg-primary"><svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M27.812 17.5L7.18807 17.5M7.18807 17.5L17.5 27.812M7.18807 17.5L17.5 7.18803" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                        <button class="slick-next custom-next xl:right-10 md:right-5 right-0 xl:w-16 xl:h-16 md:h-12 md:w-12 h-6 w-6 bg-primary inline-flex items-center justify-center rounded-full hover:bg-primary focus:bg-primary z-[2]"><svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.18799 17.5L27.8119 17.5M27.8119 17.5L17.5 7.18803M27.8119 17.5L17.5 27.812" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
                         <!-- Wrapper for slides -->
-                        <div class="slider xl:px-36 md:px-20 px-3">
+                        <div class="slider xl:px-36 md:px-20 px-7">
                             <div> <img src="<?php echo DIR_WS_ASSETS_IMAGES; ?>1f.png" class="w-full" alt="...">
                             </div>
                             <div > <img src="<?php echo DIR_WS_ASSETS_IMAGES; ?>2f.png" class="w-full" alt="...">
@@ -194,7 +194,7 @@
 
 
 <!-- Shop Ribbons start -->
-<section class="shop-ribbons xl:py-24 md:py-14 py-12" id="shop-ribbon">
+<section class="shop-ribbons xl:py-24 md:py-14 py-10" id="shop-ribbon">
     <div class="container-custom">
         <div class="flex flex-col ">
             <h2 class="text-dark font-semibold 2xl:text-xl text-lg uppercase"><?php _e("products"); ?></h2>
@@ -250,7 +250,7 @@
 </section>
 
 
-<section class="xl:py-24 md:py-14 py-12" id="about-us">
+<section class="xl:py-24 md:py-14 py-10" id="about-us">
     <div class="container-custom">
         <div class="xl:mb-14 md:mb-10 mb-6 flex flex-col">
             <h5 class="text-dark 2xl:text-xl text-lg font-semibold uppercase md:mb-5 mb-2"><?php _e("team member"); ?></h5>
@@ -279,7 +279,7 @@
         </div>
     </div>
 </section>
-<section class="bg-map bg-cover bg-no-repeat xl:pt-24 md:pt-16 pt-12 xl:pb-28 md:pb-16 pb-12" id="contact">
+<section class="bg-map bg-cover bg-no-repeat xl:pt-24 md:pt-16 pt-10 xl:pb-28 md:pb-16 pb-10" id="contact">
     <div class="container-custom">
         <div class="flex 2xl:gap-0 gap-5 md:flex-nowrap flex-wrap">
             <div class="md:w-1/2 w-full">
@@ -287,11 +287,11 @@
                 <p class="text-white 2xl:text-xl 2xl:leading-[35px] md:text-lg text-base leading-[28px] md:leading-[30px] font-normal"><?php _e('Excellent. Cc  | Full-Modular Order Orders'); ?></p>
             </div>
             <div class="md:w-1/2 w-full">
-                <div class="bg-white inline-flex flex-col xl:p-10 md:p-5 p-4 rounded-[20px]">
+                <div class="bg-white inline-flex flex-col xl:p-10 md:p-5 p-4 rounded-[20px] md:w-auto w-full">
                    <h2 class="2xl:text-[36px] xl:text-3xl md:text-2xl text-xl text-left max-w-[450px] font-gothic text-secondary capitalize xl:leading-[46px] mb-5"><?php _e('generalquestions'); ?></h2>
-                   <div class="flex flex-col gap-5 map-requests">
-                        <p class="xl:text-xl text-lg font-medium text-dark inline-flex gap-3"><?php _e('generalquestionsemail');?></p>
-                        <p class="xl:text-xl text-lg font-medium text-dark inline-flex gap-3"><?php _e('generalquestionscontact');?></p>
+                   <div class="flex flex-col md:gap-5 gap-3 map-requests">
+                        <p class="xl:text-xl md:text-lg text-base font-medium text-dark inline-flex gap-3"><?php _e('generalquestionsemail');?></p>
+                        <p class="xl:text-xl md:text-lg text-base font-medium text-dark inline-flex gap-3"><?php _e('generalquestionscontact');?></p>
                    </div>
                     
                 </div>
@@ -300,31 +300,31 @@
         </div>
        
         <div class="flex 2xl:mt-0 mt-5 2xl:gap-60 xl:gap-32 md:gap-10 gap-5 lg:justify-end lg:flex-nowrap flex-wrap">
-           <div class="bg-white inline-flex flex-col xl:p-10 md:p-5 p-4 rounded-[20px]"">
+           <div class="bg-white inline-flex flex-col xl:p-10 md:p-5 p-4 rounded-[20px] md:w-auto w-full">
                 <h2 class="2xl:text-[36px] xl:text-3xl md:text-2xl text-xl text-left max-w-[450px] font-gothic text-secondary capitalize xl:leading-[46px] md:mb-3 mb-2">
                     <?php _e('Management Engineering');?>
                 </h2>
                 <p class="xl:text-xl md:text-lg text-base font-medium text-secondary xl:mb-8 mb-5"><?php _e('Management Engineering content');?></p>
-                <div class="flex flex-col gap-5 map-requests">
-                    <p class="xl:text-xl text-lg font-medium text-dark inline-flex gap-3"><?php _e('Management Engineering email');?></p>
-                    <p class="xl:text-xl text-lg font-medium text-dark inline-flex gap-3"><?php _e('Management Engineering contact');?></p>
+                <div class="flex flex-col md:gap-5 gap-3 map-requests">
+                    <p class="xl:text-xl md:text-lg text-base font-medium text-dark inline-flex gap-3"><?php _e('Management Engineering email');?></p>
+                    <p class="xl:text-xl md:text-lg text-base font-medium text-dark inline-flex gap-3"><?php _e('Management Engineering contact');?></p>
                 </div>
            </div>
-           <div class="bg-white inline-flex flex-col xl:p-10 md:p-5 p-4 rounded-[20px]">
+           <div class="bg-white inline-flex flex-col xl:p-10 md:p-5 p-4 rounded-[20px] md:w-auto w-full">
               <h2 class="2xl:text-[36px] xl:text-3xl md:text-2xl text-xl text-left max-w-[450px] font-gothic text-secondary capitalize xl:leading-[46px] md:mb-3 mb-2">
                <?php _e('Management Marketing & Sales');?>
               </h2>
               <p class="xl:text-xl md:text-lg text-base font-medium text-secondary xl:mb-8 mb-5"><?php _e('Management Marketing & Sales content');?></p>
-               <div class="flex flex-col gap-5 map-requests">
-                    <p class="xl:text-xl text-lg font-medium text-dark inline-flex gap-3"><?php _e('Management Marketing & Sales email');?></p>
-                    <p class="xl:text-xl text-lg font-medium text-dark inline-flex gap-3"><?php _e('Management Marketing & Sales contact');?></p>
+               <div class="flex flex-col md:gap-5 gap-3 map-requests">
+                    <p class="xl:text-xl md:text-lg text-base font-medium text-dark inline-flex gap-3"><?php _e('Management Marketing & Sales email');?></p>
+                    <p class="xl:text-xl md:text-lg text-base font-medium text-dark inline-flex gap-3"><?php _e('Management Marketing & Sales contact');?></p>
                 </div>
            </div>
         </div>
     </div>
 </section>
 
-<section class="bg-white xl:py-24 py-14">
+<section class="bg-white xl:py-24 md:py-14 py-10">
     <div class="container-custom">
        <div class="flex items-center flex-wrap lg:gap-10 gap-7 justify-center">
             <img src="<?php echo DIR_WS_ASSETS_IMAGES; ?>badge1.png" class="2xl:w-auto xl:w-32 lg:w-24 w-20" alt="...">

@@ -36,15 +36,15 @@
 <!-- Include all compiled plugins (below), or include individual files as needed --> 
 <script src="<?= DIR_WS_ASSETS_JS; ?>bootstrap.min.js"></script>
     </head>
-    <body class="">
+    <body class="<?php echo ($app['language'] === 'de' ? 'german-active' : ''); ?>">
         <div class="ajax-load-image" style="display:none;"><img src="/assets/images/ajax.svg"></div>
-        <header class="header-top py-5 bg-white">
+        <header class="header-top lg:py-5 py-2 bg-white relative">
             <input type="hidden" id="WS_PATH" value="<?php echo WS_PATH;?>"/>
             <input type="hidden" id="LOGGED_IN_USER" value="<?php echo LOGGED_IN_USER;?>"/>
             <div class="container-custom">
-                <div class="flex gap-5 items-center justify-between"> 
+                <div class="flex lg:gap-5 gap-2 items-center justify-between"> 
                     <!-- Logo Start -->
-                    <div class="logo-outer flex lg:w-[27%] w-[30%]">
+                    <div class="logo-outer flex 2xl:w-[30%] xl:w-[32%] lg:w-[27%] w-[69%]">
                         <a href="<?php echo WS_PATH; ?>index.php" class="w-[285px] inline-block"> 
                             <img src="<?php echo DIR_WS_ASSETS_IMAGES; ?>logo.jpg" class="w-full">
                         </a> 
@@ -56,25 +56,69 @@
                         </div>-->
 
                         <!-- Collect the nav links, forms, and other content for toggling -->
-                        <div class="w-[46%] lg:block hidden">
-                            <ul class="main-nav-bar lg:flex-nowrap flex-wrap flex items-center gap-7 justify-center w-full">
+                        <div id="navmenus" class="2xl:w-[40%] xl:w-[36%] lg:block hidden lg:relative lg:top-0 top-full lg:w-auto w-full absolute left-0 lg:bg-transparent bg-secondary lg:z-[0] z-[1]">
+                            <ul class="main-nav-bar lg:flex-nowrap flex-wrap flex lg:flex-row lg:p-0 px-5 py-5 flex-col lg:items-center xl:gap-7 gap-4 justify-center w-full">
                                 <?php
                                 if ($page!='home') {
                                     ?>
-                                    <li><a class="text-base font-medium text-secondary hover:text-primary" href="<?php echo make_url("home"); ?>index.php"><?php _e('Home');?></a></li>
-                                    <li><a class="text-base font-medium text-secondary hover:text-primary" href="<?php echo make_url("home"); ?>#welcome"><?php _e('Welcome');?></a></li>
-                                    <li><a class="text-base font-medium text-secondary hover:text-primary" href="<?php echo make_url("shop"); ?>"><?php _e('Shop');?></a></li>
-                                    <li><a class="text-base font-medium text-secondary hover:text-primary" href="<?php echo make_url("home"); ?>#about-us"><?php _e('About Us');?></a></li>
-                                    <li><a class="text-base font-medium text-secondary hover:text-primary" href="<?php echo make_url("home"); ?>#contact"><?php _e('Contact');?></a></li>
+                                    <li><a class="xl:text-base text-sm font-medium lg:text-secondary text-white hover:text-primary" href="<?php echo make_url("home"); ?>index.php"><?php _e('Home');?></a></li>
+                                    <li><a class="xl:text-base text-sm font-medium lg:text-secondary text-white hover:text-primary" href="<?php echo make_url("home"); ?>#shop-ribbon"><?php _e('Welcome');?></a></li>
+                                    <li><a class="xl:text-base text-sm font-medium lg:text-secondary text-white hover:text-primary" href="<?php echo make_url("shop"); ?>"><?php _e('Shop');?></a></li>
+                                    <li><a class="xl:text-base text-sm xl:whitespace-normal whitespace-nowrap font-medium lg:text-secondary text-white hover:text-primary" href="<?php echo make_url("home"); ?>#welcome"><?php _e('About Us');?></a></li>
+                                    <li><a class="xl:text-base text-sm font-medium lg:text-secondary text-white hover:text-primary" href="<?php echo make_url("home"); ?>#contact"><?php _e('Contact');?></a></li>
+                                    <li class="lg:hidden flex">
+                                        <?php if (!in_array($page, $no_navigation_pages)): ?>
+                                            <ul class="login-top flex gap-2.5">
+                                            <?php if (isset($_SESSION['user_id'])) { ?>
+                                            <?php //pr($logged_in_user_info->first_name);?>
+                                                    <li><a href="<?php echo make_url("profile");?>" title=""> <?php _e("HEllO") ?> <?php echo strtoupper(html_entity_decode($logged_in_user_info->first_name . ' ' . $logged_in_user_info->last_name)); ?></a></li>
+                                                <li><a href="<?php echo make_url("logout"); ?>"> <?php _e("Logout");?></a> </li>
+                                            <?php } else { ?>
+                                                <li>
+                                                    <a href="#" class="bg-secondary 2xl:px-5 lg:px-4 lg:w-auto lg:h-auto w-10 h-10 inline-flex items-center justify-center text-white lg:rounded-xl rounded-md font-semibold 2xl:text-base text-sm lg:min-h-12" id="login-link" title="<?php _e("Login");?>"> <span class=""><?php _e("Login");?></span>
+                                                </span> 
+                                                    </a> 
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="bg-primary 2xl:px-5 lg:px-4  lg:w-auto lg:h-auto w-10 h-10 inline-flex items-center justify-center text-white lg:rounded-xl rounded-md font-semibold 2xl:text-base text-sm lg:min-h-12"   id="register-link"> 
+                                                    <span class=""><?php _e("Register");?></span>
+                                                    </a> 
+                                                    </li>
+                                            <?php } ?>
+                                        </ul>
+                                        <?php endif; ?>
+                                    </li>
                                 <?php } else { ?>
                                     <li class="active">
-                                        <a class="text-base font-medium text-secondary hover:text-primary" href="<?php echo make_url("home"); ?>index.php"><?php _e('Home');?><span class="sr-only">(current)</span>
+                                        <a class="xl:text-base text-sm font-medium lg:text-secondary text-white hover:text-primary" href="<?php echo make_url("home"); ?>index.php"><?php _e('Home');?><span class="sr-only">(current)</span>
                                         </a>
                                     </li>
-                                    <li><a class="myrefclass text-base font-medium text-secondary hover:text-primary" href="#welcome"><?php _e('Welcome');?></a></li>
-                                    <li><a class="myrefclass text-base font-medium text-secondary hover:text-primary" href="<?php echo make_url("shop"); ?>"><?php _e('Shop');?></a></li>
-                                    <li><a class="myrefclass text-base font-medium text-secondary hover:text-primary" href="#about-us" ><?php _e('About Us');?></a></li>
-                                    <li><a class="myrefclass text-base font-medium text-secondary hover:text-primary" href="#contact"><?php _e('Contact');?></a></li>
+                                    <li><a class="myrefclass xl:text-base text-sm font-medium lg:text-secondary text-white hover:text-primary" href="#shop-ribbon"><?php _e('Welcome');?></a></li>
+                                    <li><a class="myrefclass xl:text-base text-sm font-medium lg:text-secondary text-white hover:text-primary" href="<?php echo make_url("shop"); ?>"><?php _e('Shop');?></a></li>
+                                    <li><a class="myrefclass xl:whitespace-normal whitespace-nowrap xl:text-base text-sm font-medium lg:text-secondary text-white hover:text-primary" href="#welcome" ><?php _e('About Us');?></a></li>
+                                    <li><a class="myrefclass xl:text-base text-sm font-medium lg:text-secondary text-white hover:text-primary" href="#contact"><?php _e('Contact');?></a></li>
+                                    <li class="lg:hidden flex">
+                                        <?php if (!in_array($page, $no_navigation_pages)): ?>
+                                            <ul class="login-top flex gap-2.5">
+                                            <?php if (isset($_SESSION['user_id'])) { ?>
+                                            <?php //pr($logged_in_user_info->first_name);?>
+                                                    <li><a href="<?php echo make_url("profile");?>" title=""> <?php _e("HEllO") ?> <?php echo strtoupper(html_entity_decode($logged_in_user_info->first_name . ' ' . $logged_in_user_info->last_name)); ?></a></li>
+                                                <li><a href="<?php echo make_url("logout"); ?>"> <?php _e("Logout");?></a> </li>
+                                            <?php } else { ?>
+                                                <li class="inline-flex">
+                                                    <a href="#" class="bg-secondary border border-white px-4 py-1 text-white rounded-md font-semibold  text-sm min-h-[34px]" id="login-link" title="<?php _e("Login");?>"> <?php _e("Login");?>
+                                                </span> 
+                                                    </a> 
+                                                </li>
+                                                <li class="inline-flex">
+                                                    <a href="#" class="bg-primary border-2 border-transparent px-4 py-1 text-white rounded-md font-semibold  text-sm min-h-[34px]"   id="register-link"> 
+                                                    <?php _e("Register");?>
+                                                    </a> 
+                                                </li>
+                                            <?php } ?>
+                                        </ul>
+                                        <?php endif; ?>
+                                    </li>
                                 <?php } ?>
                             </ul>
                         </div>
@@ -85,16 +129,24 @@
                     
                   <?php //$app['user_info']->id; ?>
                     <!-- login Section Start -->
-                        <div class="login-outer flex xl:flex-nowrap flex-wrap items-center justify-end lg:w-[27%] w-[40%] gap-5" >
+                        <div class="login-outer flex xl:flex-nowrap flex-wrap items-center justify-end 2xl:w-[30%] xl:w-[32%] lg:w-[40%] w-[31%] 2xl:gap-5 gap-3 lg:pe-0 pe-7">
                             <?php if (!in_array($page, $no_navigation_pages)): ?>
-                            <ul class="login-top flex gap-2.5">
+                            <ul class="login-top lg:flex hidden gap-2.5">
                                <?php if (isset($_SESSION['user_id'])) { ?>
                                <?php //pr($logged_in_user_info->first_name);?>
                                     <li><a href="<?php echo make_url("profile");?>" title=""> <?php _e("HEllO") ?> <?php echo strtoupper(html_entity_decode($logged_in_user_info->first_name . ' ' . $logged_in_user_info->last_name)); ?></a></li>
                                    <li><a href="<?php echo make_url("logout"); ?>"> <?php _e("Logout");?></a> </li>
                                <?php } else { ?>
-                                   <li><a href="#" class="bg-secondary px-5 inline-flex items-center justify-center text-white rounded-xl font-semibold text-base min-h-12" id="login-link" title="<?php _e("Login");?>"> <?php _e("Login");?> </a> </li>
-                                   <li><a href="#" class="bg-primary px-5 inline-flex items-center justify-center text-white rounded-xl font-semibold text-base min-h-12"   id="register-link"> <?php _e("Register");?> </a> </li>
+                                   <li>
+                                    <a href="#" class="bg-secondary 2xl:px-5 lg:px-4 lg:w-auto lg:h-auto w-10 h-10 inline-flex items-center justify-center text-white lg:rounded-xl rounded-md font-semibold 2xl:text-base text-sm lg:min-h-12" id="login-link" title="<?php _e("Login");?>"> <span class=""><?php _e("Login");?></span>
+                                   </span> 
+                                    </a> 
+                                   </li>
+                                   <li>
+                                    <a href="#" class="bg-primary 2xl:px-5 lg:px-4  lg:w-auto lg:h-auto w-10 h-10 inline-flex items-center justify-center text-white lg:rounded-xl rounded-md font-semibold 2xl:text-base text-sm lg:min-h-12"   id="register-link"> 
+                                    <span class=""><?php _e("Register");?></span>
+                                    </a> 
+                                    </li>
                                <?php } ?>
                            </ul>
                            <?php endif; ?>
@@ -102,9 +154,17 @@
                                 <?php foreach($activeLangauges as $langauge_item){
                                     $language_switch_link = ($langauge_item->code == $app['language']) ? "javascript:void()" : make_url('switch_langauge',array('code'=>$langauge_item->code, 'redirect'=> REDIRECT_QUERY_USER ));
                                     ?>
-                                    <li> <a href="<?php echo $language_switch_link;?>" title="<?php echo $langauge_item->name;?>"><img src="<?php echo DIR_WS_ASSETS_IMAGES.$langauge_item->code.'.png'; ?>"> </a> </li>
+                                    <li> <a href="<?php echo $language_switch_link;?>" title="<?php echo $langauge_item->name;?>"><img src="<?php echo DIR_WS_ASSETS_IMAGES.$langauge_item->code.'.png'; ?>" class="lg:w-auto w-7"> </a> </li>
                                 <?php } ?>
                             </ul>
+                        </div>
+
+                        <div class="absolute right-4  lg:hidden block">
+                            <button type="button" id="menutoggle">
+                              <svg width="20" height="20" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.5 6H10.5M1.5 3H10.5M1.5 9H10.5" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
+                              </svg>
+                            </button>
                         </div>
                    
                     <!-- Login Section End --> 

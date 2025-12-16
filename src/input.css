@@ -16,10 +16,13 @@ body{
 }
 body.active::before{
     content: "";
-    @apply top-0 left-0 bg-black/40 w-full h-full absolute;
+    @apply top-0 left-0 bg-black/40 w-full h-full absolute z-[1];
 }
 .panel-heading a.active{
      @apply bg-primary;
+}
+#navmenus.active{
+    @apply block;
 }
 @media(max-width:1669px){
     .iframe_call iframe {
@@ -86,13 +89,16 @@ body.active::before{
 }
 @media(max-width:767px){
     .tc_page li a{
-        @apply text-sm !important;
+        @apply text-[12px] !important;
     }
     .custom-prev svg,.custom-next svg{
-        @apply w-5 h-5;
+        @apply w-4 h-4;
     }
     .map-requests a{
         @apply break-all;
+    }
+    .map-requests p svg{
+        @apply w-5 h-5;
     }
 }
 

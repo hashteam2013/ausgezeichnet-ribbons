@@ -242,9 +242,9 @@
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -END- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 <footer class="border-t border-secondary">
         <div class="container-custom">
-            <div class="flex md:flex-nowrap flex-wrap py-14 items-center justify-between">
+            <div class="flex md:flex-nowrap flex-wrap md:py-14 py-6 md:flex-row flex-col md:gap-0 gap-4  items-center justify-between">
                 <div>
-                    <a href="<?php echo WS_PATH; ?>index.php" class="md:w-[420px] w-[285px] inline-block"> 
+                    <a href="<?php echo WS_PATH; ?>index.php" class="lg:w-[420px] md:w-[350px] w-[285px] inline-block"> 
                         <img src="<?php echo DIR_WS_ASSETS_IMAGES; ?>logo.jpg" class="w-full">
                     </a> 
                 </div>
@@ -289,14 +289,14 @@
      
    
 
-    <div class="footer-bootom py-5 bg-black">
+    <div class="footer-bootom md:py-5 py-4 bg-black">
         <div class="container-custom">
-            <div class="flex md:justify-between md:items-start items-center gap-10 md:flex-nowrap flex-wrap md:flex-row flex-col">
-                <div class="text-white md:text-lg  text-sm font-regular">
+            <div class="flex md:justify-between md:items-start items-center md:gap-10 gap-3 md:flex-nowrap flex-wrap md:flex-row flex-col">
+                <div class="text-white md:text-lg  text-[12px] font-regular">
                     <a href="http://www.hashsoftware.com/" target="_blank"><span><?php _e(""); ?></span></a>
                     &copy; <?php echo date("Y"); ?> <?php _e("Excellent.cc  |  All right reserved."); ?>
                 </div>
-                <div class="tc_page flex gap-7">
+                <div class="tc_page flex md:gap-7 gap-0">
                     <li class="text-white list-none font-medium"><?php _e("agblink "); ?></li>
                     <li class="list-none"><a href="javascript:void(0);" id="imprint-toggle" class="text-center text-white md:text-lg text-sm font-medium"><?php _e("Imprint"); ?></a></li>
                     <li class="text-white list-none font-medium"><?php _e("dataprotlink "); ?></li>
@@ -418,6 +418,10 @@ include("common_js.php");
             autoplaySpeed: 2000,
             prevArrow: $('.custom-prev'),
             nextArrow: $('.custom-next')
+    });
+    
+    $('#menutoggle').on('click',function(){
+       $('#navmenus').toggleClass('active');
     });
 
     $('#login-link,#register-link').on('click',function(){

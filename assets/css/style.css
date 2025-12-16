@@ -791,47 +791,16 @@ lag-top li {
     .search-outer {
         padding: 0px 0 20px;
     }
-    .login-top li {
-        width: auto;
-        float: none;
-        display: inline-block;
-    }
     .nav > li {
         position: relative;
         display: block;
         float: left;
         width: 100%;
     }
-    .login-top {
-         width: 100%;
-        float: none;
-        margin: 6px auto;
-        padding: 0px;
-        text-align: center;
-        display: inline-block;
-    }
 	.flag-top li {
     float: none;
     display: inline-block;
 }
-.login-outer {
-    width: 100%;
-    float: none;
-    padding: 0px 0;
-    margin: 0px auto 10px;
-    clear: both;
-    text-align: center;
-}
-.flag-top {
-    width: 100%;
-    float: left;
-    margin: 0px auto;
-    padding: 0px;
-    display: block;
-}
-    .main-nav-bar li a {
-        border-bottom: 5px solid transparent;
-    }
     h2.mob-matter {
         text-align: center;
     }
@@ -930,12 +899,6 @@ lag-top li {
     .main-nav-bar li a {
     font-size: 14px;
 }
-.main-nav-bar li.active a {
-    border-bottom: 2px solid #ED0000;
-}
-.main-nav-bar li:hover a {
-    border-bottom: 2px solid #ED0000!important;
-}
 .red-main-hd {
     font-size: 26px;
 }
@@ -955,7 +918,6 @@ body input.cart-slct.divider.hvr-float-shadow {
 body div#show_buttons input.delet-slct {
     max-width: 100% !important;  margin-top: 0px!important;
 }
-.main-nav-bar li a{border-bottom: 2px solid transparent!important;}
 .login-top li{border-right: 0;}
 }
 
