@@ -8,9 +8,6 @@
 body{
     @apply relative;
 }
-.red-main-hd{
-    @apply  uppercase text-xl text-dark font-semibold;
-}
 .iframe_call iframe{
     @apply rounded-2xl w-full;
 }
@@ -24,3 +21,78 @@ body.active::before{
 .panel-heading a.active{
      @apply bg-primary;
 }
+@media(max-width:1669px){
+    .iframe_call iframe {
+        @apply max-h-[370px];
+    }
+}
+@media(max-width:1519px){
+    .iframe_call iframe {
+        max-height: 350px;
+    }
+}
+@media(max-width:1430px){
+    .iframe_call iframe {
+        max-height: 310px;
+    }
+}
+@media(max-width:1299px){
+    .iframe_call iframe {
+        max-height: 280px;
+    }
+}
+@media(max-width:1199px){
+    .iframe_call iframe {
+        max-height: 260px;
+    }
+}
+@media(max-width:1023px){
+    .iframe_call iframe {
+        max-height: unset;
+    }
+}
+@media(max-width:767px){
+    .iframe_call iframe {
+        max-height: 320px;
+    }
+}
+@media(max-width:599px){
+    .iframe_call iframe {
+        max-height: 260px;
+    }
+}
+@media(max-width:499px){
+    .iframe_call iframe {
+        @apply rounded-xl max-h-[200px];
+    }
+}
+@media(max-width:399px){
+    .iframe_call iframe {
+        @apply max-h-[186px];
+    }
+}
+@media(max-width:359px){
+    .iframe_call iframe {
+        @apply max-h-[156px];
+    }
+}
+@media(max-width:1299px){
+    .custom-prev svg,.custom-next svg{
+         @apply w-6 h-6;
+    }
+    .map-requests p svg{
+        @apply w-6 h-6;
+    }
+}
+@media(max-width:767px){
+    .tc_page li a{
+        @apply text-sm !important;
+    }
+    .custom-prev svg,.custom-next svg{
+        @apply w-5 h-5;
+    }
+    .map-requests a{
+        @apply break-all;
+    }
+}
+

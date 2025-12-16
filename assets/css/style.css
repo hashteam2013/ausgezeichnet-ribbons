@@ -609,6 +609,14 @@ label.info-disc {
 form#register-form .form-group {
     position: relative;
 }
+@media(max-width:1199px){
+    .container-custom {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+}
 @media (min-width: 1200px){
     .container-custom {
         width: 96%;
@@ -1118,3 +1126,6 @@ input.cart-slct.divider.hvr-float-shadow {
 }
 
 /* New CSS */
+.bg-herobanner{
+    background-image: url('http://guarav.ausgezeichnet.cc//assets/images/banner.jpg');
+}

@@ -5,7 +5,7 @@
             <div class="portlet-title">
                 <div class="caption font-red-sunglo">
                     <i class="icon-user font-red-sunglo"></i>
-                    <span class="caption-subject bold uppercase"> Edit add_cat_sub</span>
+                    <span class="caption-subject bold uppercase"> Edit Additional Category Sub</span>
                 </div>
                 <div class="actions"></div>
             </div>
@@ -16,9 +16,9 @@
                             <div class="form-body">
                                 <div class="form-group">
 		      <?php echo $add_cat_sub->add_cat_id; ?>
-                                    <label>Choose add_cat</label><br/>
+                                    <label>Choose Additional Category</label><br/>
                                     <select name="add_cat">
-                                        <option value="">Select add_cat Name</option>
+                                        <option value="">Select Additional Category</option>
                                         <?php foreach($add_cat_name as $add_cat){ ?>
                                          <option <?php if($add_cat['id'] == $add_cat_sub->add_cat_id){?> selected="selected" <?php } ?> value="<?php echo $add_cat['id']; ?>"><?php echo $add_cat['name_en']; ?></option>
                                         <?php } ?>
@@ -45,7 +45,7 @@
                                 </div>
                                 </div>  
                                 <div class="form-actions">
-                                    <button type="submit" name="update" class="btn blue">Update add_cat_sub</button>
+                                    <button type="submit" name="update" class="btn blue">Update Additional Category Sub</button>
                                     <a class="btn default" href="<?php app_url('add_cat_sub','list','list');?>">Cancel</a>
                                 </div>
                             </div>

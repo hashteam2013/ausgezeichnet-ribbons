@@ -2,7 +2,7 @@
 Previous ~~ Bisherige
 Next ~~ Nächster
 Welcome content ~~ 
-products ~~ <h2 class="red-main-hd">Produkte</h2>
+products ~~ Produkte
 medals ~~ Originaldekorationen
 miniatures ~~ Deutsche Bandschnallen
 modular ribbons ~~ Vollmodulare Ordensspangen

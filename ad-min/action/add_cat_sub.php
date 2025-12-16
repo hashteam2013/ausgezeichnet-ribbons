@@ -8,7 +8,7 @@ switch ($action):
         if (isset($app['POST']['add'])) {
             $msg = '';
             if($app['POST']['add_cat'] == ''){
-               $msg = 'Please choose add_cat';  
+               $msg = 'Please choose additional category';  
             }elseif(trim($app['POST']['nameen']) == '') {
                 $msg = 'Please enter english name';
             }elseif (trim($app['POST']['namedr']) == '') {
@@ -30,13 +30,13 @@ switch ($action):
                         $query->Data['is_active'] = isset($app['POST']['active'])? $app['POST']['active']: '0';
                         $query->Data['is_deleted'] = isset($app['POST']['delete'])? $app['POST']['delete']: '0';
                         if ($query->Insert()) {
-                            set_alert('success', "New add_cat_sub added successfully");
+                            set_alert('success', "New additional category sub added successfully");
                             redirect(app_url('add_cat_sub','list','list',array(),true));
                         } else {
                             $msg = 'Error occurred while updating account info. Please try again!';
                         }
                         } else {
-                        $msg = 'add_cat_sub name already exist';   
+                        $msg = 'Additional category sub name already exists';   
                     }
             }
             set_alert('error', $msg);
@@ -51,7 +51,7 @@ switch ($action):
         if (isset($app['POST']['update'])) {
             $msg = '';
             if($app['POST']['add_cat'] == ''){
-                $msg = 'Please choose add_cat';  
+                $msg = 'Please choose additional category';  
             }elseif (trim($app['POST']['nameen']) == '') {
                 $msg = 'Please enter english name';
             }elseif (trim($app['POST']['namedr']) == '') {

@@ -5,7 +5,7 @@
             <div class="portlet-title">
                 <div class="caption font-red-sunglo">
                     <i class="icon-users font-red-sunglo"></i>
-                    <span class="caption-subject bold uppercase"> Manage add_cat_sub</span>
+                    <span class="caption-subject bold uppercase"> Manage Additional Category Sub</span>
                 </div>
                 <div class="actions"></div>
             </div>
@@ -34,8 +34,8 @@
                                 else { echo 'Not Active' ;}
                                 ?></td>
                                 <td>
-                                    <a class="btn btn-info btn-sm" href="<?php echo app_url('add_cat_sub','edit','edit',array('id'=>$add_cat_sub->id));?>" title="Edit add_cat_sub"><i class="fa fa-pencil"></i> Edit</a>&nbsp;&nbsp;
-                                    <a class="btn btn-danger btn-sm" href="<?php echo app_url('add_cat_sub','delete_add_cat_sub','list',array('del'=>$add_cat_sub->id));?>" onclick="return confirm('Are you sure you want to delete this category?');" title="Delete add_cat_sub"><i class="fa fa-trash"></i> Delete</a>&nbsp;&nbsp;
+                                    <a class="btn btn-info btn-sm" href="<?php echo app_url('add_cat_sub','edit','edit',array('id'=>$add_cat_sub->id));?>" title="Edit Additional Category Sub"><i class="fa fa-pencil"></i> Edit</a>&nbsp;&nbsp;
+                                    <a class="btn btn-danger btn-sm" href="<?php echo app_url('add_cat_sub','delete_add_cat_sub','list',array('del'=>$add_cat_sub->id));?>" onclick="return confirm('Are you sure you want to delete this additional category sub?');" title="Delete Additional Category Sub"><i class="fa fa-trash"></i> Delete</a>&nbsp;&nbsp;
                                 </td>
                             </tr>
                             <?php } ?>
