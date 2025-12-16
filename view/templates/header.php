@@ -36,7 +36,13 @@
 <!-- Include all compiled plugins (below), or include individual files as needed --> 
 <script src="<?= DIR_WS_ASSETS_JS; ?>bootstrap.min.js"></script>
     </head>
-    <body class="<?php echo ($app['language'] === 'de' ? 'german-active' : ''); ?>">
+    <?php
+        // Normalize language code to avoid case-sensitivity issues (e.g. "DE" vs "de")
+        $currentLang = isset($app['language']) ? strtolower($app['language']) : '';
+        $bodyClass = ($currentLang === 'de') ? 'german-active' : 'english';
+    ?>
+    <body class="<?php echo $bodyClass; ?>">
+
         <div class="ajax-load-image" style="display:none;"><img src="/assets/images/ajax.svg"></div>
         <header class="header-top lg:py-5 py-2 bg-white relative">
             <input type="hidden" id="WS_PATH" value="<?php echo WS_PATH;?>"/>

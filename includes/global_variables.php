@@ -126,7 +126,8 @@ global $language_code;
 $language_code = createGlobalLangaugeCode();
 $app['default_language'] = getDefaultLanguageCode();
 if (isset($_COOKIE["lang"])) {
-    $app['language'] = $_COOKIE["lang"];
+    // Normalize language code to lowercase for consistency
+    $app['language'] = strtolower(trim($_COOKIE["lang"]));
 } else{
     setcookie('lang',$app['default_language'],time()+31556926, "/");
     $app['language'] = $app['default_language'];

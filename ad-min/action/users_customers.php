@@ -9,10 +9,8 @@ $limit = PAGE_CONTENT_LIMIT;
 switch ($action):
     case 'search':
     if (isset($app['POST']['search'])) {
-
-
-      		$query = new query('customers');
-      		$query->Field = " customers.first_name, customers.last_name, customers.user_id, users.first_name as user_first_name, users.last_name as user_last_name, users.id as userid,orders.id as orderid ";
+        $query = new query('customers');
+      	$query->Field = " customers.first_name, customers.last_name, customers.user_id, users.first_name as user_first_name, users.last_name as user_last_name, users.id as userid,orders.id as orderid ";
 		$query->Where = " LEFT JOIN users ON customers.user_id = users.id  LEFT JOIN orders ON orders.user_id = users.id";
 		
 		// Build WHERE conditions
@@ -161,9 +159,9 @@ switch ($action):
 
 
         $query = new query('users');
-      $query->Field = " users.id as id, users.is_deleted as is_deleted, users.first_name as first_name, users.last_name as last_name, users.email as email, users.is_verified as is_verified, users.date_upd as date_upd, users.accepted_dsgvo1 as accepted_dsgvo1, users.accepted_eMail as accepted_eMail, users.accepted_phone as accepted_phone, o.total as total, cb.batches_total as batches_total";
+        $query->Field = " users.id as id, users.is_deleted as is_deleted, users.first_name as first_name, users.last_name as last_name, users.email as email, users.is_verified as is_verified, users.date_upd as date_upd, users.accepted_dsgvo1 as accepted_dsgvo1, users.accepted_eMail as accepted_eMail, users.accepted_phone as accepted_phone, o.total as total, cb.batches_total as batches_total";
         $query->Where = " LEFT JOIN (SELECT orders.user_id, SUM(if(orders.is_order_valid=1,orders.grand_total,0)) as total FROM orders GROUP BY orders.user_id)  o ON (users.id = o.user_id) LEFT JOIN (SELECT customer_batches.user_id, COUNT(customer_batches.id) as batches_total  FROM customer_batches GROUP BY customer_batches.user_id)  cb ON (users.id = cb.user_id)  where users.is_deleted = 0 GROUP BY users.id ORDER BY users.id desc ";
-         $users_customers = $query->ListOfAllRecords('object');
+        $users_customers = $query->ListOfAllRecords('object');
         $data =   pagination('users',$limit,$page_no,$url='');
         $users= $data['show_record'];
         $pagination = $data['pagination'];
@@ -172,27 +170,27 @@ switch ($action):
    default:
     case 'list':
         $query = new query('users');
-      $query->Field = " users.id as id, users.is_deleted as is_deleted, users.first_name as first_name, users.last_name as last_name, users.email as email, users.is_verified as is_verified, users.date_upd as date_upd, users.accepted_dsgvo1 as accepted_dsgvo1, users.accepted_eMail as accepted_eMail, users.accepted_phone as accepted_phone, o.total as total, cb.batches_total as batches_total, users.comment as comment ";
+        $query->Field = " users.id as id, users.is_deleted as is_deleted, users.first_name as first_name, users.last_name as last_name, users.email as email, users.is_verified as is_verified, users.date_upd as date_upd, users.accepted_dsgvo1 as accepted_dsgvo1, users.accepted_eMail as accepted_eMail, users.accepted_phone as accepted_phone, o.total as total, cb.batches_total as batches_total, users.comment as comment ";
         $query->Where = " LEFT JOIN (SELECT orders.user_id, ROUND(SUM(if(orders.is_order_valid=1,orders.grand_total,0)),2) as total FROM orders GROUP BY orders.user_id)  o ON (users.id = o.user_id) LEFT JOIN (SELECT customer_batches.user_id, COUNT(customer_batches.id) as batches_total  FROM customer_batches GROUP BY customer_batches.user_id)  cb ON (users.id = cb.user_id)  where users.is_deleted = 0  GROUP BY users.id ORDER BY users.id desc ";
-         $users_customers = $query->ListOfAllRecords('object');
+        $users_customers = $query->ListOfAllRecords('object');
         $data =   pagination('users',$limit,$page_no,$url='');
         $users= $data['show_record'];
         $pagination = $data['pagination'];
 
 
-      $query = new query('users');
-      $query->Field = "  count(users.id) as users_verified ";
+       $query = new query('users');
+       $query->Field = "  count(users.id) as users_verified ";
        $query->Where = " WHERE users.is_verified=1 AND users.is_deleted=0";
        $users_customers2 = $query->DisplayOne();
-        $users_verified=$users_customers2->users_verified;
+       $users_verified=$users_customers2->users_verified;
 
 
 
-      $query3 = new query('users');
-      $query3->Field = " count(users.id) as users_dsgvo  ";
+       $query3 = new query('users');
+       $query3->Field = " count(users.id) as users_dsgvo  ";
        $query3->Where = " WHERE users.accepted_dsgvo1=1 ";
        $users_customers3 = $query3->DisplayOne();
-	$users_dsgvo=$users_customers3->users_dsgvo;
+	   $users_dsgvo=$users_customers3->users_dsgvo;
 
-        break;
+       break;
 endswitch;
