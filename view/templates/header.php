@@ -41,7 +41,7 @@
         $currentLang = isset($app['language']) ? strtolower($app['language']) : '';
         $bodyClass = ($currentLang === 'de') ? 'german-active' : 'english';
     ?>
-    <body class="<?php echo $bodyClass; ?>">
+    <body class="<?php echo $bodyClass; ?> testing-body">
 
         <div class="ajax-load-image" style="display:none;"><img src="/assets/images/ajax.svg"></div>
         <header class="header-top lg:py-5 py-2 bg-white relative">
