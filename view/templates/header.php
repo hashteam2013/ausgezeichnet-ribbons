@@ -39,7 +39,8 @@
     <?php
         // Normalize language code to avoid case-sensitivity issues (e.g. "DE" vs "de")
         $currentLang = isset($app['language']) ? strtolower($app['language']) : '';
-        $bodyClass = ($currentLang === 'de') ? 'german-active' : 'english';
+        // Treat English explicitly; everything else (e.g. "dr" for German) uses the German body class
+        $bodyClass = ($currentLang === 'en') ? 'english' : 'german-active';
     ?>
     <body class="<?php echo $bodyClass; ?> testing-body">
 
