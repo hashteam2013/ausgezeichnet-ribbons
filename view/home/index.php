@@ -66,7 +66,7 @@
         <div class="flex flex-col 2xl:gap-16 md:gap-10 gap-6">
             <div class="flex flex-col md:items-center items-start md:gap-5 gap-2">
                 <h5 class="2xl:text-xl text-lg text-dark font-semibold uppercase"><?php _e('how it works'); ?></h5>
-                <h2 class="md:text-center text-left text-primary 2xl:text-6xl 2xl:leading-[80px] xl:text-[40px] xl:leading-[54px] md:text-4xl md:leading-[50px] text-2xl leading-[38px] font-gothic font-normal max-w-[1250px] md:break-normal break-all"><?php _e('below shop main heading')?></h2>
+                <h2 class="md:text-center text-left text-primary 2xl:text-6xl 2xl:leading-[80px] xl:text-[40px] xl:leading-[54px] md:text-4xl md:leading-[50px] text-2xl leading-[38px] font-gothic font-normal max-w-[1250px] break-words"><?php _e('below shop main heading')?></h2>
             </div>
             <div class="flex flex-wrap 2xl:gap-10 xl:gap-8 w-full">
                 <div class="flex xl:gap-14 md:gap-8 gap-6 lg:flex-row flex-col">
@@ -241,7 +241,7 @@
     <div class="flex items-center justify-center relative">
         <div class="container-custom">
             <div class="flex flex-col items-center justify-center max-w-[1060px] mx-auto gap-5">
-                <h2 class="text-white md:break-normal break-all font-gothic font-normal 2xl:text-6xl 2xl:leading-[75px] xl:text-[40px] xl:leading-[54px] xl:max-w-[700px] max-w-[900px] md:text-4xl md:leading-[48px] text-2xl leading-[38px] mx-auto"><?php _e('cta_heading') ?></h2>
+                <h2 class="text-white break-words font-gothic font-normal 2xl:text-6xl 2xl:leading-[75px] xl:text-[40px] xl:leading-[54px] xl:max-w-[700px] max-w-[900px] md:text-4xl md:leading-[48px] text-2xl leading-[38px] mx-auto"><?php _e('cta_heading') ?></h2>
                 <p class="text-[#E5E6E8] xl:text-xl font-normal xl:leading-[35px] md:text-lg md:leading-[32px] text-base leading-[30px]"><?php _e('cta_desc') ?></p>
                 <a href="<?php echo make_url('shop'); ?>" class="text-white bg-primary text-base font-semibold px-7 inline-flex items-center justify-center rounded-xl min-h-12"><font><?php _e("Shop Now"); ?></font></a>
             </div>
@@ -254,7 +254,7 @@
     <div class="container-custom">
         <div class="xl:mb-14 md:mb-10 mb-6 flex flex-col">
             <h5 class="text-dark 2xl:text-xl text-lg font-semibold uppercase md:mb-5 mb-2"><?php _e("team member"); ?></h5>
-            <h2 class="capitalize text-left md:break-normal break-all text-primary 2xl:text-6xl 2xl:leading-[80px] xl:text-[40px] xl:leading-[54px] md:text-4xl md:leading-[48px] text-2xl leading-[38px] font-gothic font-normal"><?php _e('faces_behind')?></h2>
+            <h2 class="capitalize text-left break-words text-primary 2xl:text-6xl 2xl:leading-[80px] xl:text-[40px] xl:leading-[54px] md:text-4xl md:leading-[48px] text-2xl leading-[38px] font-gothic font-normal"><?php _e('faces_behind')?></h2>
         </div>
         
         <div class="flex w-full md:flex-nowrap flex-wrap md:flex-row flex-col items-start md:mb-14 mb-7">

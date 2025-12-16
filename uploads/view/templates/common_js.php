@@ -252,7 +252,8 @@
         /*-----------------------------------Add customer----------------------------------------------------*/
     $(".add_cust").click(function () {
         if (log_in) {
-            $('#custmodal').modal('show');
+           
+            $('#custmodal').css({"opacity": "1","display":"block"});
             $("#cust-submit").click(function (e) {
                 var data = {"action": "add_customer"};
                 data = $("#customer_add_form").serialize() + "&" + $.param(data);
@@ -296,7 +297,7 @@
                 });
             });
         } else {
-            $('#myModal').modal('show');
+            $('#loginmodal').css({"opacity": "1","display":"block"});
             $('.customer_url').val("add_to_cust");
         }
     });

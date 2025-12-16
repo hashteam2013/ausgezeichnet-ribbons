@@ -24,6 +24,9 @@ body.active::before{
 #navmenus.active{
     @apply block;
 }
+.main-nav-bar li.active a{
+    @apply text-primary;
+}
 @media(max-width:1669px){
     .iframe_call iframe {
         @apply max-h-[370px];
@@ -99,6 +102,9 @@ body.active::before{
     }
     .map-requests p svg{
         @apply w-5 h-5;
+    }
+    .german-active .break-words{
+        @apply break-all;
     }
 }
 

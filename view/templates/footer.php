@@ -1,11 +1,11 @@
 ﻿
-<div class="login-phase mx-auto left-0 right-0 max-w-[630px] fixed top-10 opacity-0 hidden z-[9]" id="loginmodal">
-    <div class="modal-dialog modal-lg">
+<div class="login-phase mx-auto left-0 right-0  fixed top-0 opacity-0 hidden z-[9] pt-10 pb-5 px-5 overflow-y-auto  w-full h-full" id="loginmodal">
+    <div class="mx-auto max-w-[630px]">
                 <div class="panel panel-login">
-                    <div class="panel-heading bg-black flex relative"> 
-                        <a href="javascript:void(0)" class="active text-white text-center py-5 px-4 w-1/2 text-base font-medium" id="login-form-link"><?php _e("Login"); ?></a>
-                        <a href="javascript:void(0)" class="text-white text-center px-4 py-5  w-1/2 text-base font-medium" id="register-form-link"><?php _e("Register"); ?></a>
-                        <button type="button" id="closelogin" class="close rounded-full bg-black border border-white text-[33px] leading-[33px] font-light text-white absolute w-10 h-10 bg-gray-900 -top-3 -right-3 pull-right">×</button>
+                    <div class="panel-heading bg-black flex items-stretch relative"> 
+                        <a href="javascript:void(0)" class="active text-white inline-flex items-center justify-center text-center py-5 px-4 w-1/2 md:text-base text-sm font-medium" id="login-form-link"><?php _e("Login"); ?></a>
+                        <a href="javascript:void(0)" class="text-white text-center inline-flex items-center justify-center px-4 py-5  w-1/2 md:text-base text-sm font-medium" id="register-form-link"><?php _e("Register"); ?></a>
+                        <button type="button" id="closelogin" class="close rounded-full bg-black border border-white md:text-[33px] md:leading-[33px] font-light text-white absolute md:w-10 md:h-10 w-6 h-6 text-2xl leading-[21px]  lead bg-gray-900 -top-3 -right-3 pull-right">×</button>
                     </div>
                     <div class="panel-body bg-white flex flex-col p-5">
                                 <form id="login-form" action="" method="post" role="form" style="display: block;">
@@ -16,12 +16,12 @@
                                     <div id="msg_login"></div>
                                     <div class="box-sow flex flex-col gap-4">
                                         <div class="form-group flex flex-col gap-1.5">
-                                            <label class="text-base text-dark font-normal w-full"><?php _e("Email Address"); ?><font color="red">*</font></label>
-                                            <input type="email" name="email" value="<?php echo isset($app['POST']['email']) ? $app['POST']['email'] : ''; ?>" class="w-full border-[#b1b1b1] px-4 min-h-12 border rounded-lg focus:outline-none" placeholder="<?php _e("Enter your email"); ?>"> 
+                                            <label class="md:text-base text-sm text-dark font-normal w-full"><?php _e("Email Address"); ?><font color="red">*</font></label>
+                                            <input type="email" name="email" value="<?php echo isset($app['POST']['email']) ? $app['POST']['email'] : ''; ?>" class="w-full border-[#b1b1b1] px-4 md:min-h-12 min-h-10 md:text-base text-sm border rounded-lg focus:outline-none" placeholder="<?php _e("Enter your email"); ?>"> 
                                         </div>
                                         <div class="form-group flex flex-col gap-1.5">
-                                            <label class="text-base text-dark font-normal w-full"><?php _e("Password"); ?><font color="red">*</font></label>
-                                            <input type="password" name="password" value="<?php echo isset($app['POST']['password']) ? $app['POST']['password'] : ''; ?>" class="w-full border-[#b1b1b1] px-4 min-h-12 border rounded-lg focus:outline-none"  placeholder="<?php _e("Enter your password"); ?>"/>
+                                            <label class="md:text-base text-sm text-dark font-normal w-full"><?php _e("Password"); ?><font color="red">*</font></label>
+                                            <input type="password" name="password" value="<?php echo isset($app['POST']['password']) ? $app['POST']['password'] : ''; ?>" class="w-full border-[#b1b1b1] px-4 md:min-h-12 min-h-10 md:text-base text-sm border rounded-lg focus:outline-none"  placeholder="<?php _e("Enter your password"); ?>"/>
                                         </div>
                                         <div class="form-group flex items-center">
                                             <input type="checkbox" tabindex="3" class="" name="remember" id="remember">
@@ -29,8 +29,8 @@
                                         </div>
                                         <div class="form-group">
                                             <div class="flex gap-5 justify-between items-center">
-                                                <button type="submit" name="login-submit"  class="bg-primary px-5 inline-flex items-center justify-center text-white rounded-xl font-semibold text-base min-h-12 text-white hover:bg-secondary" tabindex="4" id="login-submit" ><?php _e("Log In"); ?></button>
-                                                <a href="javascript:void(0)" tabindex="5" class="forgot-password text-dark" id="tog-blok"><?php _e("Forgot Password?"); ?></a>
+                                                <button type="submit" name="login-submit"  class="bg-primary px-5 inline-flex items-center justify-center text-white rounded-xl font-semibold md:text-base text-sm md:min-h-12 min-h-10 text-white hover:bg-secondary" tabindex="4" id="login-submit" ><?php _e("Log In"); ?></button>
+                                                <a href="javascript:void(0)" tabindex="5" class="forgot-password md:text-base text-[13px] text-dark" id="tog-blok"><?php _e("Forgot Password?"); ?></a>
                                             </div>
                                         </div>
                                     </div>
@@ -39,76 +39,76 @@
                                     <div id="msg_forgot"></div>
                                     <div class="box-confrm flex flex-col gap-4">
                                         <div class="form-group flex flex-col gap-1.5">
-                                            <label class="text-base text-dark font-normal w-full"><?php _e("Email Address"); ?><font color="red">*</font></label>
-                                            <input type="email" name="email" id="username" tabindex="1" class="w-full border-[#b1b1b1] px-4 min-h-12 border rounded-lg focus:outline-none" placeholder="<?php _e("Enter your email"); ?>">
+                                            <label class="md:text-base text-sm text-dark font-normal w-full"><?php _e("Email Address"); ?><font color="red">*</font></label>
+                                            <input type="email" name="email" id="username" tabindex="1" class="w-full border-[#b1b1b1] px-4 md:min-h-12 min-h-10 md:text-base text-sm border rounded-lg focus:outline-none" placeholder="<?php _e("Enter your email"); ?>">
                                         </div>
-                                        <div class="form-group flex items-center justify-between gap-5">
-                                            <input type="button" name="forgot_submit" id="forgot-submit" tabindex="4" class="bg-primary px-5 inline-flex items-center justify-center text-white rounded-xl font-semibold text-base min-h-12 text-white hover:bg-secondary btn btn-login cursor-pointer" value="<?php _e("Get Access Info"); ?>">
-                                            <a href="#" id="back" class="becker bg-secondary px-5 inline-flex items-center justify-center text-white rounded-xl font-semibold text-base min-h-12 text-white"><?php _e("Back to Login Page"); ?></a>
+                                        <div class="form-group flex md:flex-nowrap flex-wrap items-center justify-between md:gap-5 gap-3">
+                                            <input type="button" name="forgot_submit" id="forgot-submit" tabindex="4" class="bg-primary px-5 inline-flex items-center justify-center text-white rounded-xl font-semibold md:text-base text-sm md:min-h-12 min-h-10 text-white hover:bg-secondary btn btn-login cursor-pointer" value="<?php _e("Get Access Info"); ?>">
+                                            <a href="#" id="back" class="becker bg-secondary px-5 inline-flex items-center justify-center text-white rounded-xl font-semibold md:text-base text-sm md:min-h-12 min-h-10 text-white"><?php _e("Back to Login Page"); ?></a>
                                         </div>
                                     </div>
                                 </form>
                                 <form id="register-form" action="" method="post" role="form" style="display: none;">
                                     <div id="msg_register"></div>
                                     <div class="form-body flex flex-wrap justify-between gap-4">
-                                        <div class="form-group flex flex-col gap-1.5 w-[calc(50%-8px)]">
-                                            <label class="text-base text-dark font-normal w-full"><?php _e("Firstname"); ?><font color="red">*</font></label>
-                                            <input type="text" name="firstname" value="<?php echo isset($app['POST']['firstname']) ? $app['POST']['firstname'] : ''; ?>" class="w-full border-[#b1b1b1] px-4 min-h-12 border rounded-lg focus:outline-none" placeholder="<?php _e("Firstname"); ?>"> 
+                                        <div class="form-group flex flex-col gap-1.5 md:w-[calc(50%-8px)] w-full">
+                                            <label class="md:text-base text-sm text-dark font-normal w-full"><?php _e("Firstname"); ?><font color="red">*</font></label>
+                                            <input type="text" name="firstname" value="<?php echo isset($app['POST']['firstname']) ? $app['POST']['firstname'] : ''; ?>" class="w-full border-[#b1b1b1] px-4 md:min-h-12 min-h-10 md:text-base text-sm border rounded-lg focus:outline-none" placeholder="<?php _e("Firstname"); ?>"> 
                                         </div>
-                                        <div class="form-group flex flex-col gap-1.5 w-[calc(50%-8px)]">
-                                            <label class="text-base text-dark font-normal w-full"><?php _e("Lastname"); ?><font color="red">*</font></label>
-                                            <input type="text" name="lastname" value="<?php echo isset($app['POST']['lastname']) ? $app['POST']['lastname'] : ''; ?>" class="w-full border-[#b1b1b1] px-4 min-h-12 border rounded-lg focus:outline-none" placeholder="<?php _e("Lastname"); ?>"> 
+                                        <div class="form-group flex flex-col gap-1.5 md:w-[calc(50%-8px)] w-full">
+                                            <label class="md:text-base text-sm text-dark font-normal w-full"><?php _e("Lastname"); ?><font color="red">*</font></label>
+                                            <input type="text" name="lastname" value="<?php echo isset($app['POST']['lastname']) ? $app['POST']['lastname'] : ''; ?>" class="w-full border-[#b1b1b1] px-4 md:min-h-12 min-h-10 md:text-base text-sm border rounded-lg focus:outline-none" placeholder="<?php _e("Lastname"); ?>"> 
                                         </div>
-                                        <div class="form-group flex flex-col gap-1.5 w-[calc(50%-8px)]">
-                                            <label class="text-base text-dark font-normal w-full"><?php _e("Email"); ?><font color="red">*</font></label>
-                                            <input type="email" name="email" value="<?php echo isset($app['POST']['email']) ? $app['POST']['email'] : ''; ?>" class="w-full border-[#b1b1b1] px-4 min-h-12 border rounded-lg focus:outline-none" placeholder="<?php _e("Email"); ?>"> 
+                                        <div class="form-group flex flex-col gap-1.5 md:w-[calc(50%-8px)] w-full">
+                                            <label class="md:text-base text-sm text-dark font-normal w-full"><?php _e("Email"); ?><font color="red">*</font></label>
+                                            <input type="email" name="email" value="<?php echo isset($app['POST']['email']) ? $app['POST']['email'] : ''; ?>" class="w-full border-[#b1b1b1] px-4 md:min-h-12 min-h-10 md:text-base text-sm border rounded-lg focus:outline-none" placeholder="<?php _e("Email"); ?>"> 
                                         </div>
-                                        <div class="form-group flex flex-col gap-1.5 w-[calc(50%-8px)]">
-                                            <label class="text-base text-dark font-normal w-full"><?php _e("Password"); ?><font color="red">*</font></label>
-                                            <input type="password" name='password' class="w-full border-[#b1b1b1] px-4 min-h-12 border rounded-lg focus:outline-none" placeholder="<?php _e("password"); ?>"> 
+                                        <div class="form-group flex flex-col gap-1.5 md:w-[calc(50%-8px)] w-full">
+                                            <label class="md:text-base text-sm text-dark font-normal w-full"><?php _e("Password"); ?><font color="red">*</font></label>
+                                            <input type="password" name='password' class="w-full border-[#b1b1b1] px-4 md:min-h-12 min-h-10 md:text-base text-sm border rounded-lg focus:outline-none" placeholder="<?php _e("password"); ?>"> 
                                         </div>
-                                        <div class="form-group flex flex-col gap-1.5 w-[calc(50%-8px)]">
-                                            <label class="text-base text-dark font-normal w-full"><?php _e("Confirm Password"); ?><font color="red">*</font></label>
-                                            <input type="password" name='cpassword' class="w-full border-[#b1b1b1] px-4 min-h-12 border rounded-lg focus:outline-none" placeholder="<?php _e("confirm password"); ?>"> 
+                                        <div class="form-group flex flex-col gap-1.5 md:w-[calc(50%-8px)] w-full">
+                                            <label class="md:text-base text-sm text-dark font-normal w-full"><?php _e("Confirm Password"); ?><font color="red">*</font></label>
+                                            <input type="password" name='cpassword' class="w-full border-[#b1b1b1] px-4 md:min-h-12 min-h-10 md:text-base text-sm border rounded-lg focus:outline-none" placeholder="<?php _e("confirm password"); ?>"> 
                                         </div>
                                         <?php $get_districts = getDistrict(); ?>
-                                        <div class="form-group flex flex-col gap-1.5 w-[calc(50%-8px)]">
-                                            <label class="text-base text-dark font-normal w-full">Staat / Bundesland auswählen<font color="red">*</font></label>
-                                            <select name="name_dist" id="name_dist" class='w-full border-[#b1b1b1] px-4 min-h-12 border rounded-lg focus:outline-none'>
+                                        <div class="form-group flex flex-col gap-1.5 md:w-[calc(50%-8px)] w-full">
+                                            <label class="md:text-base text-sm text-dark font-normal w-full">Staat / Bundesland auswählen<font color="red">*</font></label>
+                                            <select name="name_dist" id="name_dist" class='w-full border-[#b1b1b1] px-4 md:min-h-12 min-h-10 md:text-base text-sm border rounded-lg focus:outline-none'>
                                                 <option value=""><?php _e('Select district'); ?></option>
                                                 <?php foreach ($get_districts as $dis) { ?>
                                                     <option value="<?php echo $dis['id']; ?>"><?php echo $dis['full_name']; ?></option>
                                                 <?php } ?>
                                             </select>
                                         </div>
-                                        <div class="form-group flex flex-col gap-1.5 w-[calc(50%-8px)]">
+                                        <div class="form-group flex flex-col gap-1.5 md:w-[calc(50%-8px)] w-full">
                                             <div class="flex gap-1">
-                                                <label class="text-base text-dark font-normal">Bezirk auswählen</label>
+                                                <label class="md:text-base text-sm text-dark font-normal">Bezirk auswählen</label>
                                                 <label class="info-disc"><span><i class="fa fa-info-circle" aria-hidden="true"></i></span><font><?php _e("DistrictNotNeeded"); ?></font></label>
                                             </div>
-                                            <select name="name_subdist" id="name_subdist" class='w-full border-[#b1b1b1] px-4 min-h-12 border rounded-lg focus:outline-none'>
+                                            <select name="name_subdist" id="name_subdist" class='w-full border-[#b1b1b1] px-4 md:min-h-12 min-h-10 md:text-base text-sm border rounded-lg focus:outline-none'>
                                                 <option value=""><?php _e('Select sub district'); ?></option>
                                             </select>
                                         </div>
-                                        <div class="form-group flex flex-col gap-1.5 w-[calc(50%-8px)]">
+                                        <div class="form-group flex flex-col gap-1.5 md:w-[calc(50%-8px)] w-full">
                                             <div class="flex gap-1">
-                                                <label class="text-base text-dark font-normal">Gemeinde auswählen</label>
+                                                <label class="md:text-base text-sm text-dark font-normal">Gemeinde auswählen</label>
                                                 <label class="info-disc"><span><i class="fa fa-info-circle" aria-hidden="true"></i></span><font><?php _e("CommunityNotNeeded"); ?></font></label>
                                             </div>
-                                            <select name="name_comm" id="name_comm" class='w-full border-[#b1b1b1] px-4 min-h-12 border rounded-lg focus:outline-none'>
+                                            <select name="name_comm" id="name_comm" class='w-full border-[#b1b1b1] px-4 md:min-h-12 min-h-10 md:text-base text-sm border rounded-lg focus:outline-none'>
                                                 <option value=""><?php _e('Select community'); ?></option>
                                             </select>
                                         </div>
-                                        <div class="form-group flex flex-col gap-1.5 w-[calc(50%-8px)]">
+                                        <div class="form-group flex flex-col gap-1.5 md:w-[calc(50%-8px)] w-full">
                                             <div class="flex gap-1">
-                                            <label class="text-base text-dark font-normal">Ortsteil auswählen</label>
+                                            <label class="md:text-base text-sm text-dark font-normal">Ortsteil auswählen</label>
 			                                <label class="info-disc"><span><i class="fa fa-info-circle" aria-hidden="true"></i></span><font><?php _e("BoroughNotNeeded"); ?></font></label>
                                             </div>
-                                            <select name="name_boro" id="name_boro" class='w-full border-[#b1b1b1] px-4 min-h-12 border rounded-lg focus:outline-none'>
+                                            <select name="name_boro" id="name_boro" class='w-full border-[#b1b1b1] px-4 md:min-h-12 min-h-10 md:text-base text-sm border rounded-lg focus:outline-none'>
                                                 <option value=""><?php _e('Select Borough'); ?></option>
                                             </select>
                                         </div>
-                                        <div class="form-group flex gap-1.5 w-[calc(50%-8px)] items-center">
+                                        <div class="form-group flex gap-1.5 md:w-[calc(50%-8px)] w-full items-center">
                                                <label class="text-dark w-full text-sm font-normal text-dark" for="agreeAGB">
                                                 <input type="checkbox" tabindex="1"  name="agreeAGB" id="agreeAGB" style="margin-right: 10px;" value="1"><?php _e("I agree all terms and conditions"); ?></label>    
                                         </div>
@@ -120,7 +120,7 @@
                                             <label for="agreePhone" class="text-sm text-dark font-normal w-full gap-1.5" ><input type="checkbox" tabindex="4" class="" name="agreePhone" id="agreePhone"  style="margin-right: 10px;" value="1"><?php _e("I agree phone2"); ?></label>    
                                         </div>
                                         <div class="form-group flex justify-start">
-                                            <input type="submit" name="register-submit" id="register-submit" tabindex="4" class="bg-primary px-5 inline-flex items-center justify-center text-white rounded-xl font-semibold text-base min-h-12 text-white hover:bg-secondary cursor-pointer" value="<?php _e("Register Now"); ?>">
+                                            <input type="submit" name="register-submit" id="register-submit" tabindex="4" class="bg-primary px-5 inline-flex items-center justify-center text-white rounded-xl font-semibold md:text-base text-sm md:min-h-12 min-h-10 text-white hover:bg-secondary cursor-pointer" value="<?php _e("Register Now"); ?>">
                                         </div>
                                     </div>
                                 </form>
@@ -130,33 +130,35 @@
 
     </div>
 </div>
-<div class="login-phase fixed top-10 left-0 mx-auto max-w-[400px] right-0 opacity-0 hidden" id="custmodal" >
-    <div class="bg-black relative px-5 py-3 flex justify-between items-center">
-        <h4 class="text-white text-xl font-medium">
-            <a href="javascript:void(0)" class="active capitalize blinker text-white" id="login-form-link">
-                <?php _e("Add customer"); ?>
-            </a>
-        </h4>
-        <button type="button" class="close pull-right rounded-full bg-black text-[33px] leading-[33px] font-light text-white  w-10 h-10 relative -right-2 top-0 x" id="custmodalclose">×</button>
-    </div>
-    <div class="bg-white p-5">
-        <form role="form" action="<?php app_url('customers', 'add', 'add'); ?>" id="customer_add_form" method="POST">
-            <div id="msg"></div>
-            <div class="form-body flex flex-col gap-4 w-full">
-                <div class="form-group flex flex-col gap-1.5">
-                    <input type="hidden" name="id" id="id" value="<?php echo $logged_in_user_info->id; ?>" />
-                    <label class="text-base text-dark font-normal"><?php _e("Firstname"); ?><font color="red">*</font></label>
-                    <input type="text"  name="firstname" value="" class="form-control fname w-full border-[#b1b1b1] px-4 min-h-12 border rounded-lg focus:outline-none" placeholder="<?php _e("Firstname"); ?>"> 
+<div class="login-phase fixed top-0 left-0 right-0 opacity-0 hidden pt-10 pb-5 px-5 overflow-y-auto  w-full h-full" id="custmodal" >
+    <div class="mx-auto max-w-[400px] w-full">
+        <div class="bg-black relative px-5 py-3 flex justify-between items-center">
+            <h4 class="text-white text-xl font-medium">
+                <a href="javascript:void(0)" class="active capitalize blinker text-white" id="login-form-link">
+                    <?php _e("Add customer"); ?>
+                </a>
+            </h4>
+            <button type="button" class="close pull-right rounded-full bg-black text-[33px] leading-[33px] font-light text-white  w-10 h-10 relative -right-2 top-0 x" id="custmodalclose">×</button>
+        </div>
+        <div class="bg-white p-5">
+            <form role="form" action="<?php app_url('customers', 'add', 'add'); ?>" id="customer_add_form" method="POST">
+                <div id="msg"></div>
+                <div class="form-body flex flex-col gap-4 w-full">
+                    <div class="form-group flex flex-col gap-1.5">
+                        <input type="hidden" name="id" id="id" value="<?php echo $logged_in_user_info->id; ?>" />
+                        <label class="md:text-base text-sm text-dark font-normal"><?php _e("Firstname"); ?><font color="red">*</font></label>
+                        <input type="text"  name="firstname" value="" class="form-control md:text-base text-sm fname w-full border-[#b1b1b1] px-4 md:min-h-12 min-h-10 border rounded-lg focus:outline-none" placeholder="<?php _e("Firstname"); ?>"> 
+                    </div>
+                    <div class="form-group flex flex-col gap-1.5">
+                        <label class="md:text-base text-sm text-dark font-normal"><?php _e("Lastname"); ?><font color="red">*</font></label>
+                        <input type="text"  name="lastname" value="" class="form-control fname md:text-base text-sm w-full border-[#b1b1b1] px-4 md:min-h-12 min-h-10 border rounded-lg focus:outline-none" placeholder="<?php _e("Lastname"); ?>"> 
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" name="cust-submit"  class="form-control bg-primary px-5 inline-flex items-center justify-center text-white rounded-xl font-semibold text-base md:min-h-12 min-h-10 md:text-base text-sm text-white hover:bg-secondary" tabindex="4" id="cust-submit" ><?php _e("Add Customer"); ?></button>
+                    </div>
                 </div>
-                <div class="form-group flex flex-col gap-1.5">
-                    <label class="text-base text-dark font-normal"><?php _e("Lastname"); ?><font color="red">*</font></label>
-                    <input type="text"  name="lastname" value="" class="form-control fname w-full border-[#b1b1b1] px-4 min-h-12 border rounded-lg focus:outline-none" placeholder="<?php _e("Lastname"); ?>"> 
-                </div>
-                <div class="form-group">
-                    <button type="submit" name="cust-submit"  class="form-control bg-primary px-5 inline-flex items-center justify-center text-white rounded-xl font-semibold text-base min-h-12 text-white hover:bg-secondary" tabindex="4" id="cust-submit" ><?php _e("Add Customer"); ?></button>
-                </div>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
 </div>
 <div id="condition" class="modal fade hidden " role="dialog">
@@ -176,14 +178,17 @@
         </div>
     </div>
 </div>
-<div id="imprint" class="fixed top-10 opacity-0 hidden z-[9] left-0 right-0 mx-auto max-w-[500px]">
-    <div class="bg-black px-5 py-4 relative">
-        <button type="button" id="imprint-close" class="close rounded-full bg-black text-[33px] leading-[33px] font-light text-white  w-10 h-10 relative -right-2 -top-1.5 pull-right">×</button>
-        <h4 class="text-white text-xl font-medium"><?php _e("Imprint"); ?></h4>
+<div id="imprint" class="fixed top-0 opacity-0 hidden z-[9] left-0 right-0 pt-10 pb-5 px-5 overflow-y-auto  w-full h-full">
+    <div class="mx-auto max-w-[500px]">
+        <div class="bg-black px-5 py-4 relative">
+            <button type="button" id="imprint-close" class="close rounded-full bg-black text-[33px] leading-[33px] font-light text-white  w-10 h-10 relative -right-2 -top-1.5 pull-right">×</button>
+            <h4 class="text-white text-xl font-medium"><?php _e("Imprint"); ?></h4>
+        </div>
+        <div class="bg-white p-5 text-dark text-base flex flex-col gap-3">
+            <?php _e("Imprint content"); ?>
+        </div>
     </div>
-    <div class="bg-white p-5 text-dark text-base flex flex-col gap-3">
-        <?php _e("Imprint content"); ?>
-    </div>
+    
 
 </div>
 

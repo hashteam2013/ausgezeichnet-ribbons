@@ -662,10 +662,6 @@ video {
   top: 0px;
 }
 
-.top-10 {
-  top: 2.5rem;
-}
-
 .top-full {
   top: 100%;
 }
@@ -779,6 +775,18 @@ video {
   height: 100%;
 }
 
+.h-\[18px\] {
+  height: 18px;
+}
+
+.h-5 {
+  height: 1.25rem;
+}
+
+.h-7 {
+  height: 1.75rem;
+}
+
 .max-h-\[156px\] {
   max-height: 156px;
 }
@@ -795,12 +803,12 @@ video {
   max-height: 370px;
 }
 
-.min-h-12 {
-  min-height: 3rem;
+.min-h-10 {
+  min-height: 2.5rem;
 }
 
-.min-h-8 {
-  min-height: 2rem;
+.min-h-12 {
+  min-height: 3rem;
 }
 
 .min-h-\[34px\] {
@@ -851,16 +859,16 @@ video {
   width: 69%;
 }
 
-.w-\[calc\(50\%-8px\)\] {
-  width: calc(50% - 8px);
-}
-
 .w-auto {
   width: auto;
 }
 
 .w-full {
   width: 100%;
+}
+
+.w-\[18px\] {
+  width: 18px;
 }
 
 .max-w-\[1060px\] {
@@ -935,6 +943,10 @@ video {
   align-items: center;
 }
 
+.items-stretch {
+  align-items: stretch;
+}
+
 .justify-start {
   justify-content: flex-start;
 }
@@ -991,6 +1003,10 @@ video {
   gap: 1.75rem;
 }
 
+.overflow-y-auto {
+  overflow-y: auto;
+}
+
 .truncate {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1001,8 +1017,8 @@ video {
   white-space: nowrap;
 }
 
-.break-all {
-  word-break: break-all;
+.break-words {
+  overflow-wrap: break-word;
 }
 
 .rounded {
@@ -1063,13 +1079,13 @@ video {
   border-color: rgb(45 45 42 / var(--tw-border-opacity, 1));
 }
 
+.border-transparent {
+  border-color: transparent;
+}
+
 .border-white {
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity, 1));
-}
-
-.border-transparent {
-  border-color: transparent;
 }
 
 .bg-black {
@@ -1114,6 +1130,10 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
 }
 
+.bg-primary\/10 {
+  background-color: rgb(237 0 0 / 0.1);
+}
+
 .bg-herobanner {
   background-image: url('/ribbons/assets/images/banner.jpg');
 }
@@ -1132,6 +1152,10 @@ video {
 
 .bg-no-repeat {
   background-repeat: no-repeat;
+}
+
+.fill-primary {
+  fill: #ED0000;
 }
 
 .p-1 {
@@ -1156,14 +1180,14 @@ video {
   padding-right: 1.25rem;
 }
 
-.px-6 {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-}
-
 .px-7 {
   padding-left: 1.75rem;
   padding-right: 1.75rem;
+}
+
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
 }
 
 .py-10 {
@@ -1199,16 +1223,6 @@ video {
 .py-6 {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
-}
-
-.px-1 {
-  padding-left: 0.25rem;
-  padding-right: 0.25rem;
-}
-
-.py-1 {
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
 }
 
 .pb-10 {
@@ -1250,6 +1264,10 @@ video {
 
 .text-\[12px\] {
   font-size: 12px;
+}
+
+.text-\[13px\] {
+  font-size: 13px;
 }
 
 .text-\[33px\] {
@@ -1302,6 +1320,10 @@ video {
 
 .capitalize {
   text-transform: capitalize;
+}
+
+.leading-\[21px\] {
+  line-height: 21px;
 }
 
 .leading-\[28px\] {
@@ -1417,6 +1439,11 @@ body.active::before{
   display: block;
 }
 
+.main-nav-bar li.active a {
+  --tw-text-opacity: 1;
+  color: rgb(237 0 0 / var(--tw-text-opacity, 1));
+}
+
 @media(max-width:1669px){
   .iframe_call iframe {
     max-height: 370px;
@@ -1514,6 +1541,10 @@ body.active::before{
     height: 1.25rem;
     width: 1.25rem;
   }
+
+  .german-active .break-words {
+    word-break: break-all;
+  }
 }
 
 .hover\:bg-primary:hover {
@@ -1582,12 +1613,28 @@ body.active::before{
     margin-top: 2rem;
   }
 
+  .md\:hidden {
+    display: none;
+  }
+
+  .md\:h-10 {
+    height: 2.5rem;
+  }
+
   .md\:h-12 {
     height: 3rem;
   }
 
+  .md\:min-h-12 {
+    min-height: 3rem;
+  }
+
   .md\:w-1\/2 {
     width: 50%;
+  }
+
+  .md\:w-10 {
+    width: 2.5rem;
   }
 
   .md\:w-12 {
@@ -1604,6 +1651,10 @@ body.active::before{
 
   .md\:w-\[calc\(50\%-10px\)\] {
     width: calc(50% - 10px);
+  }
+
+  .md\:w-\[calc\(50\%-8px\)\] {
+    width: calc(50% - 8px);
   }
 
   .md\:w-auto {
@@ -1656,11 +1707,6 @@ body.active::before{
 
   .md\:gap-8 {
     gap: 2rem;
-  }
-
-  .md\:break-normal {
-    overflow-wrap: normal;
-    word-break: normal;
   }
 
   .md\:p-5 {
@@ -1724,6 +1770,15 @@ body.active::before{
     line-height: 1;
   }
 
+  .md\:text-\[33px\] {
+    font-size: 33px;
+  }
+
+  .md\:text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
   .md\:text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem;
@@ -1740,6 +1795,10 @@ body.active::before{
 
   .md\:leading-\[32px\] {
     line-height: 32px;
+  }
+
+  .md\:leading-\[33px\] {
+    line-height: 33px;
   }
 
   .md\:leading-\[40px\] {
@@ -1804,10 +1863,6 @@ body.active::before{
 
   .lg\:min-h-12 {
     min-height: 3rem;
-  }
-
-  .lg\:min-h-8 {
-    min-height: 2rem;
   }
 
   .lg\:w-1\/2 {
