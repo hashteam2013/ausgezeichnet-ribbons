@@ -359,7 +359,7 @@
                             $('.batch').html(custData);
                         });
                         if (data.result != '') {
-                            $('#show_buttons').html('<input type="button" class="delet-slct hvr-float-shadow delete" value="<?php _e("Delete Selected"); ?>"><input type="button" class="delet-slct hvr-float-shadow select" value="<?php _e("Select All"); ?>"><a href="javascript:void(0)"><input type="button" class="cart-slct divider hvr-float-shadow add_to_cart_ribbon" value="<?php _e("Add to Cart"); ?>"></a><a href="<?php echo make_url('cart'); ?>"><input type="button" class="cart-slct divider buy hvr-float-shadow view_cart" value="<?php _e("View Cart"); ?>"></a>');
+                            $('#show_buttons').html('<select id="action-dropdown" class="delet-slct hvr-float-shadow"><option value=""><?php _e("Select Action");?></option><option value="delete"><?php _e("Delete Selected"); ?></option><option value="select"><?php _e("Select All"); ?></option></select><a href="javascript:void(0)"><input type="button" class="cart-slct divider hvr-float-shadow add_to_cart_ribbon" value="<?php _e("Add to Cart"); ?>"></a><a href="<?php echo make_url('cart'); ?>"><input type="button" class="cart-slct divider buy hvr-float-shadow view_cart" value="<?php _e("View Cart"); ?>"></a>');
                             badgeFilterByLevel(cust_id);
                         }
                     }
@@ -397,7 +397,7 @@
                                 return false;
                             }
                             if (data != '') {
-                                $('#show_buttons').html('<input type="button" class="delet-slct hvr-float-shadow delete" value="<?php _e("Delete Selected"); ?>"><input type="button" class="delet-slct hvr-float-shadow select" value="<?php _e('Select All'); ?>"><a href="javascript:void(0)"><input type="button" class="cart-slct divider hvr-float-shadow add_to_cart_ribbon" value="<?php _e("Add to Cart"); ?>"></a><a href="<?php echo make_url('cart'); ?>"><input type="button" class="cart-slct divider buy hvr-float-shadow view_cart" value="<?php _e("View Cart"); ?>"></a>');
+                                $('#show_buttons').html('<select id="action-dropdown" class="delet-slct hvr-float-shadow"><option value=""><?php _e("Select Action");?></option><option value="delete"><?php _e("Delete Selected"); ?></option><option value="select"><?php _e('Select All'); ?></option></select><a href="javascript:void(0)"><input type="button" class="cart-slct divider hvr-float-shadow add_to_cart_ribbon" value="<?php _e("Add to Cart"); ?>"></a><a href="<?php echo make_url('cart'); ?>"><input type="button" class="cart-slct divider buy hvr-float-shadow view_cart" value="<?php _e("View Cart"); ?>"></a>');
                                 badgeFilterByLevel(cust_id);
                             }
                         }
@@ -507,7 +507,7 @@
                     });
                     $('.batch').html(htmlData);
                     if (htmlData != '') {
-                        $('#show_buttons').html('<input type="button" class="delet-slct hvr-float-shadow delete" value="<?php _e('Delete Selected'); ?>"><input type="button" class="delet-slct hvr-float-shadow select" value="<?php _e('Select All'); ?>"><a href="javascript:void(0)"><input type="button" class="cart-slct divider hvr-float-shadow add_to_cart_ribbon" value="<?php _e("Add to Cart"); ?>"></a><a href="<?php echo make_url('cart'); ?>"><input type="button" class="cart-slct divider buy hvr-float-shadow view_cart" value="<?php _e("View Cart"); ?>"></a>');
+                        $('#show_buttons').html('<select id="action-dropdown" class="delet-slct hvr-float-shadow"><option value=""><?php _e("Select Action");?></option><option value="delete"><?php _e('Delete Selected'); ?></option><option value="select"><?php _e('Select All'); ?></option></select><a href="javascript:void(0)"><input type="button" class="cart-slct divider hvr-float-shadow add_to_cart_ribbon" value="<?php _e("Add to Cart"); ?>"></a><a href="<?php echo make_url('cart'); ?>"><input type="button" class="cart-slct divider buy hvr-float-shadow view_cart" value="<?php _e("View Cart"); ?>"></a>');
                         var badgeData = '';
                         $(data).each(function (index, value) {
                             badgeData += value.ribbon_type;
