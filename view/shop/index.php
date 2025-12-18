@@ -159,9 +159,11 @@
                                     <input type="button" class="delet-slct  select" value="<?php _e("Select All");?>">
                                     <input type="button" class="delet-slct  select_w" value="<?php _e("Select wearables");?>">
                                     <input type="button" class="delet-slct  select_n" value="<?php _e("Select New");?>">
-                                    <a href = "javascript:void(0)"><input type="button" class="cart-slct divider  add_to_cart_ribbon" value="<?php _e("Add to Cart"); ?>"></a>
-                                    <a href = "<?php echo make_url('cart');?>"><input type="button" class="cart-slct divider buy  view_cart" value="<?php _e("View Cart"); ?>"></a>
-                                    <?php } ?>
+                                       <?php } ?>
+                                    </div>
+                                    <div class="flex gap-5">
+                                        <a href = "javascript:void(0)"><input type="button" class="cart-slct divider  add_to_cart_ribbon" value="<?php _e("Add to Cart"); ?>"></a>
+                                        <a href = "<?php echo make_url('cart');?>"><input type="button" class="cart-slct divider buy  view_cart" value="<?php _e("View Cart"); ?>"></a>
                                     </div>
                                 </div>
                         </div>
