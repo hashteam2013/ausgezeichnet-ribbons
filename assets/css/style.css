@@ -161,29 +161,10 @@ input.add-list:hover {
     margin-top: 10px;
     width: 100%;
 }
-input.btn.srch-btn:hover {
-    background-color:  #242427;
-}
-input.delet-slct {
-    color: #242427;
-    border: 0px;
-    border-radius: 30px;
-    max-width: 49%;
-    width: 100%;
-    font-weight: 100;
-    outline: none;
-    line-height: 20px;
-    border: 1px solid #242427;
-    background: #fff;
-    margin: 8px 0px;
-}
-input.delet-slct:hover{ background-color: #242427; color: #fff;}
 input.cart-slct.divider.buy.hvr-float-shadow {
    margin-right: 0px;
-   float: right;
 }
 input.cart-slct.divider.hvr-float-shadow {
-    float: left;
     width: auto;
     font-size: 13px;
     max-width: 49%;
@@ -191,12 +172,10 @@ input.cart-slct.divider.hvr-float-shadow {
 }
 input.cart-slct.divider.buy.hvr-float-shadow {
    margin-right: 0px;
-   float: right;
    background-image: none;
 }
 
 .middle-alinger {
-    float: left !important;
     width: 120px !important;
     margin-left: 20%;
     font-weight: 700;
@@ -218,17 +197,6 @@ width: 100%;
     width: 455px;
 }*/
 
-input.cart-slct {
-   background: #fff url(../images/cart.png) no-repeat 94% 50%;
-   color: #ED0000;
-   font-size: 16px;
-   border: 1px solid #ED0000;
-   width: 100%;
-   padding: 8px;    background-size: 20px;
-   padding-right: 30px;
-   border-radius: 10px;
-   margin-bottom: 10px;
-}
 .single-flag {
     margin: auto;
     display: block;

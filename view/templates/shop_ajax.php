@@ -464,7 +464,7 @@ $('.cat_class').change(function () {
                             $('.batch').html(custData);
                         });
                         if (data.result != '') {
-                            $('#show_buttons').html('<input type="button" class="delet-slct hvr-float-shadow delete append-data" value="<?php _e("Delete Selected"); ?>"><input type="button" class="delet-slct hvr-float-shadow select" value="<?php _e("Select All"); ?>"><input type="button" class="delet-slct hvr-float-shadow select_w" value="<?php _e("Select wearables");?>"><input type="button" class="delet-slct hvr-float-shadow select_n" value="<?php _e("Select New");?>">');
+                            $('#show_buttons').html('<input type="button" class="delet-slct hvr-float-shadow delete append-data" value="<?php _e("Delete Selected"); ?>"><input type="button" class="delet-slct hvr-float-shadow select" value="<?php _e("Select All"); ?>"><input type="button" class="delet-slct hvr-float-shadow select_n" value="<?php _e("Select New");?>">');
                             badgeFilterByLevel(cust_id);
                         }
                     }
@@ -521,7 +521,7 @@ $('.cat_class').change(function () {
                             $('.batch').html(custData);
                         });
                         if (data.result != '') {
-                            $('#show_buttons').html('<input type="button" class="delet-slct hvr-float-shadow delete" value="<?php _e("Delete Selected"); ?>"><input type="button" class="delet-slct hvr-float-shadow select" value="<?php _e("Select All"); ?>"><input type="button" class="delet-slct hvr-float-shadow select_w" value="<?php _e("Select wearables");?>"><input type="button" class="delet-slct hvr-float-shadow select_n" value="<?php _e("Select New");?>">');
+                            $('#show_buttons').html('<input type="button" class="delet-slct hvr-float-shadow delete" value="<?php _e("Delete Selected"); ?>"><input type="button" class="delet-slct hvr-float-shadow select" value="<?php _e("Select All"); ?>"><input type="button" class="delet-slct hvr-float-shadow select_n" value="<?php _e("Select New");?>">');
                             badgeFilterByLevel(cust_id);
                         }
                     }
@@ -559,7 +559,7 @@ $('.cat_class').change(function () {
                                 return false;
                             }
                             if (data != '') {
-                                $('#show_buttons').html('<input type="button" class="delet-slct hvr-float-shadow delete" value="<?php _e("Delete Selected"); ?>"><input type="button" class="delet-slct hvr-float-shadow select" value="<?php _e('Select All'); ?>"><input type="button" class="delet-slct hvr-float-shadow select_w" value="<?php _e("Select wearables");?>"><input type="button" class="delet-slct hvr-float-shadow select_n" value="<?php _e("Select New");?>">');
+                                $('#show_buttons').html('<input type="button" class="delet-slct hvr-float-shadow delete" value="<?php _e("Delete Selected"); ?>"><input type="button" class="delet-slct hvr-float-shadow select" value="<?php _e('Select All'); ?>"><input type="button" class="delet-slct hvr-float-shadow select_n" value="<?php _e("Select New");?>">');
                                 badgeFilterByLevel(cust_id);
                             }
                         }
@@ -672,7 +672,7 @@ $('.cat_class').change(function () {
                     });
                     $('.batch').html(htmlData);
                     if (htmlData != '') {
-                        $('#show_buttons').html('<input type="button" class="delet-slct hvr-float-shadow delete" value="<?php _e('Delete Selected'); ?>"><input type="button" class="delet-slct hvr-float-shadow select" value="<?php _e('Select All'); ?>"><input type="button" class="delet-slct hvr-float-shadow select_w" value="<?php _e("Select wearables");?>"><input type="button" class="delet-slct hvr-float-shadow select_n"  value="<?php _e("Select New");?>">');
+                        $('#show_buttons').html('<input type="button" class="delet-slct hvr-float-shadow delete" value="<?php _e('Delete Selected'); ?>"><input type="button" class="delet-slct hvr-float-shadow select" value="<?php _e('Select All'); ?>"<input type="button" class="delet-slct hvr-float-shadow select_n"  value="<?php _e("Select New");?>">');
                         var badgeData = '';
                         $(data).each(function (index, value) {
                             badgeData += value.ribbon_type;

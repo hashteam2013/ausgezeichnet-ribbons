@@ -107,6 +107,15 @@
                                         <input type="button" class="add-btn rounded-lg cursor-pointer text-base font-semibold inline-flex items-center bg-primary min-h-[46px] text-white ps-[44px] pe-5  add_cust" value="<?php _e("Add Customer");?>">
                                     </div>
                                 </div>
+                                <div id='show_buttons'>
+                                    <?php 
+                                    if (isset($app['logged_in_user']) && $app['logged_in_user'] != '' &&  !empty($selected_customer_batches)) { ?>
+                                    <input type="button" class="delet-slct  delete" value="<?php _e("Delete Selected");?>">
+                                    <input type="button" class="delet-slct  select" value="<?php _e("Select All");?>">
+                                    <!-- <input type="button" class="delet-slct  select_w" value="<?php _e("Select wearables");?>"> -->
+                                    <input type="button" class="delet-slct  select_n" value="<?php _e("Select New");?>">
+                                       <?php } ?>
+                                </div>
                                 <div class="check-tag bg-white rounded-[10px] p-5 border border-[#D9D9D9]">
                                     <div>
                                         <ul class="batch flex flex-col">
@@ -152,19 +161,10 @@
                                             <?php } ?>
                                         </ul>
                                     </div>
-                                    <div id='show_buttons'>
-                                    <?php 
-                                    if (isset($app['logged_in_user']) && $app['logged_in_user'] != '' &&  !empty($selected_customer_batches)) { ?>
-                                    <input type="button" class="delet-slct  delete" value="<?php _e("Delete Selected");?>">
-                                    <input type="button" class="delet-slct  select" value="<?php _e("Select All");?>">
-                                    <input type="button" class="delet-slct  select_w" value="<?php _e("Select wearables");?>">
-                                    <input type="button" class="delet-slct  select_n" value="<?php _e("Select New");?>">
-                                       <?php } ?>
-                                    </div>
-                                    <div class="flex gap-5">
-                                        <a href = "javascript:void(0)"><input type="button" class="cart-slct divider  add_to_cart_ribbon" value="<?php _e("Add to Cart"); ?>"></a>
-                                        <a href = "<?php echo make_url('cart');?>"><input type="button" class="cart-slct divider buy  view_cart" value="<?php _e("View Cart"); ?>"></a>
-                                    </div>
+                                </div>
+                                <div class="flex gap-5 mt-10">
+                                        <a href = "javascript:void(0)" class="flex-1"><input type="button" class="cursor-pointer cart-slct w-full text-white font-medium rounded-lg  hover:bg-primary min-h-[46px] text-base bg-secondary divider  add_to_cart_ribbon" value="<?php _e("Add to Cart"); ?>"></a>
+                                        <a class="flex-1" href = "<?php echo make_url('cart');?>"><input type="button" class="cart-slct w-full text-white rounded-lg cursor-pointer hover:bg-primary min-h-[46px] text-base bg-secondary font-medium divider buy  view_cart" value="<?php _e("View Cart"); ?>"></a>
                                 </div>
                         </div>
                     </div>
