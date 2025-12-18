@@ -245,7 +245,7 @@
 
 
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -END- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-<footer class="border-t border-secondary">
+<footer class="border-t border-secondary flex flex-wrap w-full">
         <div class="container-custom">
             <div class="flex md:flex-nowrap flex-wrap md:py-14 py-6 md:flex-row flex-col md:gap-0 gap-4  items-center justify-between">
                 <div>
@@ -294,7 +294,7 @@
      
    
 
-    <div class="footer-bootom md:py-5 py-4 bg-black">
+    <div class="footer-bootom md:py-5 py-4 bg-black w-full">
         <div class="container-custom">
             <div class="flex md:justify-between md:items-start items-center md:gap-10 gap-3 md:flex-nowrap flex-wrap md:flex-row flex-col">
                 <div class="text-white md:text-lg  text-[12px] font-regular">

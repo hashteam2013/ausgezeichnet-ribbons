@@ -67,6 +67,7 @@ Management Engineering contact ~~ <span><svg width="35" height="35" viewBox="0 0
 Shop Now  ~~ Jetzt einkaufen
 
 // shop page
+search ~~ Suchen
 Collections ~~ Verschiedenes
 Our Ribbon Gallery ~~ Übersicht
 Categories ~~ Kategorien

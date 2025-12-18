@@ -55,15 +55,7 @@ h2{font-size:24px; float: left; width:100%; }
     float: none;
     max-width: 100%;
 }
-input.my-srch {
-    background: #efefef;
-    border: 1px solid #ccc;
-    padding: 7px;
-    border-top-left-radius: 50px;
-    border-bottom-left-radius: 50px;
-    font-weight: 100;
-    width: 90%;outline: none;
-}
+
 .carousel-inner > .item img {
     width: 100%;
 }
@@ -110,46 +102,8 @@ margin: auto;}
     float: left;
     width: 100%;
 }
-input.btn.srch-btn {
-    outline: none;
-    background: #ED0000 url(../images/srch.png) no-repeat 46% 49%;
-    border: 0px;
-    height: 36px;
-    width: 45px;
-    border-top-right-radius: 50px;
-    border-bottom-right-radius: 50px;
-    padding: 0px 0px 0px 0px;
-    margin-bottom: 4px;
-}
-.srch-result {
-    float: right;    margin-top: 20px;
-
-}
 input.add-btn.hvr-float-shadow.add_cust.mar0 {
     margin: 0px;
-}
-
-.check-tag li div {
-    width: 150px;
-    float: left;    position: relative;
-
-}
-/*.ribbon_outer {
-    position: relative;
-    float: left;
-    max-width: 148px;
-    min-height:50px;
-}*/
-.ribbon_outer {
-    position: relative;
-    float: none;
-    max-width: 113px;
-    /* max-width: 148px; */
-    min-height: 60px;
-    width: auto;
-    text-align: center;
-    margin: auto;
-    display: inline-block;
 }
 div#no-more-tables .table-bordered td .ribbon_outer { 
     min-height: auto !important;  
@@ -157,18 +111,6 @@ div#no-more-tables .table-bordered td .ribbon_outer {
     width: 100%;    
     max-width: 100%;
 }
-
-/*.ribbon_outer {
-    position: relative;
-    float: left;
-    max-width: 113px;
-    max-width: 148px;
-    min-height: 60px;
-    width: auto;
-    text-align: center;
-    margin: auto;
-    display: inline-block;
-}*/
 span.number {
     position: absolute;
     top: 0;
@@ -183,49 +125,8 @@ span.number {
     width: 20px;
     border-radius: 100%;
 }
-.categories {
-    float: left;
-    width: 100%;
-    background: #f6f6f6;
-    border: 1px solid #ccc;
-}
-.categories .cat-heading {font-family: Avenir-lt;
-                          background: #242427;   
-	         text-transform: uppercase;
-                          padding: 10px;
-                          color: #fff;
-}
-.add-to-list {    float: right !important;    border: 0px !important;}
-.categories ul {
-    padding-top: 20px;
-}
-.categories ul li {
-    padding: 0 8px;
-    line-height: 31px;
-}
-.categories ul li input[type="checkbox"] {
-    float: left;
-    margin: 9px 9px;
-}
-.srch-heading {
-    background:  #242427;
-    padding: 10px;    font-family: Avenir-lt;
-    color: #fff;    text-transform: uppercase;
-}
-.conurty-nm {
-    background: #929292;
-    padding: 10px;
-    color: #fff;    float: left;
-    width: 100%;
-}
 .flag-sec ul li div {
     float: left;
-
-}
-.flag-sec ul li div img.img-responsive {
-    border: 1px solid #8f8f8f;
-    margin: 3px;
-    max-width: 144px;
 }
 input.add-list {
 float: right;
@@ -253,78 +154,12 @@ float: right;
     padding-right: 31px;
     padding-left: 10px;
 }
-.flag-sec p {font-family: PT-Sans-Caption;font-size: 14px;
-             float: left;    margin-bottom: 0px;
-             width: 100%;
-}
-.srch-reslt {
-    float: left;
-    width: 100%;
-}
-.flag-sec ul li {
-    line-height: 3;
-    padding: 10px 10px 0;
-    float: left;
-    width: 100%;
-}
-.flag-sec ul li:nth-child(even){background:#e8e8e8;}
 input.add-list:hover {
     background-color: #ED0000;
 }
-.bdr{border:1px solid #ccc;    float: left;
-     width: 100%;}
-.mar-top-10{    margin-top: 10px;
-                float: left;
-                width: 100%;
-}
-.srch-reslt.slect {
-    background: #f6f6f6;
-    border: 1px solid #ccc;
-}
-input.add-btn {
-    float: right;
-    background: #363636 url(../images/add.png) no-repeat 89% 50%;
-    color: #fff;
-    border: 1px solid #000;
-    margin: 20px 0px;
-    padding: 7px 31px 7px 0px;
-    max-width: 170px;
-    width: 100%;
-}
-input.add-btn:hover{background-color:#c50c1d; border: 1px solid #c50c1d}
-.srch-reslt.slect select {
-    max-width: 153px;
-    width: 100%;margin: 20px 0px;
-    padding: 6px;
-    text-align: center;
-    font-size: 16px;
-}
-.padd-side {
-    padding: 0px 15px;
-}
-ul li label{font-family: PT-Sans-Caption;font-size: 14px;}
-.check-tag label {
-    float: left;
-    width: 100%;font-family: PT-Sans-Caption;font-size: 14px;
+.mar-top-10{    
     margin-top: 10px;
-}
-
-.check-tag label input[type="checkbox"] {
-    float: left;
-    margin: 3px 9px;
-}
-.check-tag img.img-responsive {    width: 97%;
-                                   border: 1px solid #8f8f8f;
-                                   margin: 3px;
-}
-.check-tag li {
-    border: 1px solid #444;
-    float: left;    padding: 5px;
-    width: 100%; border-bottom:0px;
-}
-.check-tag li:last-child{border-bottom: 1px solid #444;}
-.check-tag li:hover {
-    background: #d0d4de;
+    width: 100%;
 }
 input.btn.srch-btn:hover {
     background-color:  #242427;
@@ -371,7 +206,6 @@ input.cart-slct.divider.buy.hvr-float-shadow {
 
 .inner{
 max-height: 818px;
-float: left;
 overflow-y: auto;
 width: 100%;   
 
@@ -395,25 +229,6 @@ input.cart-slct {
    border-radius: 10px;
    margin-bottom: 10px;
 }
-
-input.cart-slct:hover{ background: #ED0000  url(../images/cart-hover.png) no-repeat 94% 50%; color: #fff;  background-size: 20px;}
-.flag-contaner {
-    background: #ffffff;
-    padding: 20px 0px 20px 0px;
-    margin: 0;
-    float: left;
-    width: 100%;
-    text-align: center;
-    border: 1px solid #242427;
-}
-.flag-contaner img {
-    display: inline-block;
-    margin: 0;
-    width: auto;
-    max-width: 140px;
-    float: left;
-}
-
 .single-flag {
     margin: auto;
     display: block;
@@ -430,16 +245,6 @@ input.cart-slct:hover{ background: #ED0000  url(../images/cart-hover.png) no-rep
 }
 .dubble-flag img.img-responsive {
     width: 49%;
-}
-.check-tag {
-    float: left;
-    width: 100%;
-}
-.srch-bar {
-    float: left;
-    max-width:100%;
-    margin: 24px 0px 30px;
-    width: 100%;
 }
 a.topgo {
     position: absolute;
@@ -556,7 +361,6 @@ input#testff { float: right; background: #ED0000;  color: #fff; font-size: 17px;
 input#testff:hover { background: #242427;}
 .plusminus { float:right; }
 
-.contract {margin: 1px 0px 2px 0px;}
 div#no-more-tables .table-bordered tr td p {
 /*    max-width: 280px;*/
     float: right;
@@ -642,9 +446,6 @@ form#register-form .form-group {
     }*/
 }
 @media (max-width:1200px){
-    .srch-reslt.slect select {
-        max-width: 110px;
-    }
     input.add-btn {
         padding: 7px 19px 7px 0px;
         max-width: 200px;
@@ -694,9 +495,6 @@ td.cust-name {
         padding: 7px 19px 7px 0px;
         max-width: 100%;
         margin-top: 0px;
-    }
-    .srch-reslt.slect select {
-        max-width: 100%;
     }
     input.add-list {
         float: left;
@@ -764,10 +562,6 @@ footer >div {
 		.flag-contaner img {
     max-height: 50px;
 }
-    .srch-reslt.slect select {
-        max-width: auto;
-        min-width: 160px;
-    }
     .shop-inner-sec {
         text-align: center;
     }
@@ -874,10 +668,6 @@ lag-top li {
         width: 100%;
         margin-bottom: 28px;
     }
-    .srch-reslt.slect select {
-        max-width: auto;
-        min-width: 140px;
-    }
     .srch-bar {
         float: left;
         margin-bottom: 0;
@@ -927,10 +717,6 @@ input.add-btn {
     input.add-list {
         float: left;}
 
-    .srch-reslt.slect select {
-        max-width: auto;
-        min-width: 106px;
-    }
      input.my-srch {margin-left:0px;
     }
      div#no-more-tables button.btn.btn-info.btn-sm {
@@ -970,21 +756,6 @@ input.all-cat.add-btn.hvr-float-shadow:hover
     z-index: 99999999;
     left: 45%;
 }
-a.all-cat font {
-    display: inline-block;
-    margin-top: -5px;
-    margin-right: 4px;
-}
-.dist_notice{
-    font-weight: 300;
-}
-.druken-btn {
-    float: left;
-    width: 100%;padding: 10px;
-}
-.druken-btn a.add-btn.hvr-float-shadow {
-    color: #ED0000;
-}
 /*********************** new *******************************/
 .spot-a h3 {
     display: block;
@@ -1010,11 +781,6 @@ a.all-cat font {
     margin-right: 4px;
 }
 
-@media (min-width:1348px){
-input.btn.srch-btn {
-     margin: 0px 0px 3px 0px;
-}
-}
 
 @media (max-width:992px){
 div#show_buttons {
@@ -1075,12 +841,6 @@ input.cart-slct.divider.hvr-float-shadow {
 	font-weight: bold;
 
 }
-
-.ribbon_shop
-{
-	border-bottom: 1px solid rgb(50,50,50);
-}
-
 /* New CSS */
 .bg-herobanner{
     background-image: url('http://guarav.ausgezeichnet.cc//assets/images/banner.jpg');

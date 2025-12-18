@@ -27,6 +27,37 @@ body.active::before{
 .main-nav-bar li.active a{
     @apply text-primary;
 }
+.srch-bar input::-webkit-input-placeholder{
+    @apply text-secondary/70;
+}
+.checkmark::before {
+    content: "";
+    @apply absolute w-[15px] h-2 border-[1.5] border-solid border-l border-b border-body left-[5px] top-1.5 -rotate-45 opacity-0;
+}
+.smallcheck::before{
+    content: "";
+    @apply absolute w-2 h-1 border-[1.5] border-solid border-l border-b border-body left-1 top-1 -rotate-45 opacity-0;
+} 
+.shop-cat-list input[type="checkbox"]:checked~.checkmark::before,
+.customer-list input[type="checkbox"]:checked~.smallcheck::before{
+    @apply opacity-[1];
+}
+.shop-cat-list input[type="checkbox"]:checked~.checkmark,
+.customer-list input[type="checkbox"]:checked~.smallcheck{
+    @apply bg-secondary;
+}
+.customer-list input[type="checkbox"]:checked~.smallcheck{
+    @apply border-secondary;
+}
+.customer-list .ribbon_outer img{
+    @apply max-w-[90px];
+}
+.customer-list .ribbon_outer{
+    @apply -mt-1.5;
+}
+.flag-contaner .ribbon_outer{
+    @apply w-[calc(50%-10px)] flex items-center;
+}
 @media(max-width:1669px){
     .iframe_call iframe {
         @apply max-h-[370px];

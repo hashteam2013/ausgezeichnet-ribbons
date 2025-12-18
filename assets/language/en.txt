@@ -68,6 +68,7 @@ Management Marketing & Sales contact ~~ <span><svg width="35" height="35" viewBo
 
 
 // shop page
+search ~~ Search
 Our Ribbon Gallery ~~ Gallery
 Categories ~~ Categories
 Districts ~~  Districts

@@ -94,14 +94,14 @@ $('.cat_class').change(function () {
                                     if (countt != 0) {
                                         cat_list += "</div>";
                                     }
-                                    cat_list += "<div class='conurty-nm cat_" + remove_id + " contract'>" + v.org_name + "<div class='plusminus'>+</div></div><div class='inner'style='display: none;'>";
+                                    cat_list += "<div class='conurty-nm bg-[#d9d9d9] justify-between text-base text-black font-normal rounded-[10px] px-5 inline-flex items-center w-full min-h-[46px] cat_" + remove_id + " contract'>" + v.org_name + "<div class='plusminus'><svg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M4.5 6.75L9 11.25L13.5 6.75' stroke='#343434' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/></svg></div></div><div class='inner mt-5'style='display: none;'>";
                                     countt++;
                                 } else if (v.org_name == null && orgname == 0) {
                                     orgname = 1;
                                     if (countt != 0) {
                                         cat_list += "</div>";
                                     }
-                                    cat_list += "<div class='conurty-nm cat_" + remove_id + " contract '>" + cat_name + " <div class='plusminus'>+</div> </div><div class='inner' style='display: none;'>";
+                                    cat_list += "<div class='conurty-nm cat_" + remove_id + " contract '>" + cat_name + " <div class='plusminus'><svg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M4.5 6.75L9 11.25L13.5 6.75' stroke='#343434' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/></svg></div> </div><div class='inner mt-5' style='display: none;'>";
                                     countt++;
                                 }
                                 status = v.org_id;
@@ -113,14 +113,14 @@ $('.cat_class').change(function () {
 				
 				if(v.ItemType!=='10')
 				{
-                                cat_list += "<ul class='cat_" + remove_id + "'><li class='ribbon_shop'" + gray + "><div><img src=<?php echo DIR_WS_UPLOADS; ?>batch/" + v.batch_image + " class='img-responsive'></div><div class='add-to-list'><input type='button' class='add-list' " + disabledvalue + " value='" + valuebecome + "' data-batch-id='" + v.batch_id + "' data-batch-type=" + v.type + "></div><div class='price_shop'>EUR " + CurrencyFormatted(v.unit_price) + "</div><p>" + v.webshop_title_en + "</p><br><p style='color:blue' >" + v.comment + "</p> </li></ul>";
+                                cat_list += "<ul class='border border-[#b1b1b1] rounded-[10px] p-5 cat_" + remove_id + "'><li class='ribbon_shop'" + gray + "><div><img src=<?php echo DIR_WS_UPLOADS; ?>batch/" + v.batch_image + " class='img-responsive'></div><div class='add-to-list'><input type='button' class='add-list' " + disabledvalue + " value='" + valuebecome + "' data-batch-id='" + v.batch_id + "' data-batch-type=" + v.type + "></div><div class='price_shop'>EUR " + CurrencyFormatted(v.unit_price) + "</div><p>" + v.webshop_title_en + "</p><br><p style='color:blue' >" + v.comment + "</p> </li></ul>";
 				}
 				else
 				{
 
-var cust_id = $("#custm").val();
+                  var cust_id = $("#custm").val();
 
-                                cat_list += "<ul class='cat_" + remove_id + "'><li class='ribbon_shop'" + gray + "><div><img src=<?php echo DIR_WS_UPLOADS; ?>batch/" + v.batch_image + " class='img-responsive'></div><div class='add-to-list'><input type='button' name='rename_cust'  data-toggle='modal' data-target='#Type10' onclick='RenameFunction(" + cust_id +", " + v.batch_id + ")' data-cid ='" + cust_id + "' class='add-list2'" + " value='" + valuebecome + "' data-batch-id='" + v.batch_id + "' data-batch-type=10></div><div class='price_shop'>EUR " + CurrencyFormatted(v.unit_price) + "</div><p>" + v.webshop_title_en + "</p><br><p style='color:blue' >" + v.comment + "</p> </li></ul>";
+                                cat_list += "<ul class='border border-[#b1b1b1] rounded-[10px] p-5 cat_" + remove_id + "'><li class='ribbon_shop'" + gray + "><div><img src=<?php echo DIR_WS_UPLOADS; ?>batch/" + v.batch_image + " class='img-responsive'></div><div class='add-to-list'><input type='button' name='rename_cust'  data-toggle='modal' data-target='#Type10' onclick='RenameFunction(" + cust_id +", " + v.batch_id + ")' data-cid ='" + cust_id + "' class='add-list2'" + " value='" + valuebecome + "' data-batch-id='" + v.batch_id + "' data-batch-type=10></div><div class='price_shop'>EUR " + CurrencyFormatted(v.unit_price) + "</div><p>" + v.webshop_title_en + "</p><br><p style='color:blue' >" + v.comment + "</p> </li></ul>";
 
 				}
 
@@ -231,7 +231,7 @@ var cust_id = $("#custm").val();
                                     if (countt != 0) {
                                         cat_list += "</div>";
                                     }
-                                    cat_list += "<div class='conurty-nm dist-related dist_" + dist_remove_id + " contract'>" + v.cat + "<div class='plusminus'>+</div></div><div class='inner'style='display: none;'>";
+                                    cat_list += "<div class='conurty-nm dist-related dist_" + dist_remove_id + " contract'>" + v.cat + "<div class='plusminus'><svg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M4.5 6.75L9 11.25L13.5 6.75' stroke='#343434' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/></svg></div></div><div class='inner mt-5'style='display: none;'>";
                                     countt++;
                                 }
                             } else {
@@ -240,14 +240,14 @@ var cust_id = $("#custm").val();
                                     if (countt != 0) {
                                         cat_list += "</div>";
                                     }
-                                    cat_list += "<div class='conurty-nm dist-related dist_" + dist_remove_id + " contract'>" + v.org_name + "<div class='plusminus'>+</div></div><div class='inner'style='display: none;'>";
+                                    cat_list += "<div class='conurty-nm dist-related dist_" + dist_remove_id + " contract'>" + v.org_name + "<div class='plusminus'><svg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M4.5 6.75L9 11.25L13.5 6.75' stroke='#343434' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/></svg></div></div><div class='inner mt-5'style='display: none;'>";
                                     countt++;
                                 } else if (v.org_name == null && orgname == 0) {
                                     orgname = 1;
                                     if (countt != 0) {
                                         cat_list += "</div>";
                                     }
-                                    cat_list += "<div class='conurty-nm dist-related dist_" + dist_remove_id + " contract'>" + v.name_en + "<div class='plusminus'>+</div></div><div class='inner'style='display: none;'>";
+                                    cat_list += "<div class='conurty-nm dist-related dist_" + dist_remove_id + " contract'>" + v.name_en + "<div class='plusminus'><svg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M4.5 6.75L9 11.25L13.5 6.75' stroke='#343434' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/></svg></div></div><div class='inner'style='display: none;'>";
                                     countt++;
                                 }
                                 status = v.org_id;
@@ -306,7 +306,7 @@ var cust_id = $("#custm").val();
         }
         if (id != '') {
             var district_related = 0;
-	var show_closed = $(this).attr("showclosed");
+	        var show_closed = $(this).attr("showclosed");
             var district_ids = [];
 
             $("#" + position_id).prop("disabled", true);
@@ -331,7 +331,7 @@ var cust_id = $("#custm").val();
 
                     $(data).each(function (index, value) {
 
-			var countt = 0;
+			            var countt = 0;
                         $(value).each(function (i, v) {
                             console.log(v);
                             if (v.batch_image !== null) {
@@ -348,14 +348,14 @@ var cust_id = $("#custm").val();
                                     if (countt != 0) {
                                         cat_list += "</div>";
                                     }
-                                    cat_list += "<div class='conurty-nm cat_" + remove_id + " contract'>" + v.add_cat_sub_name + "<div class='plusminus'>+</div></div><div class='inner'style='display: none;'>";
+                                    cat_list += "<div class='conurty-nm cat_" + remove_id + " contract'>" + v.add_cat_sub_name + "<div class='plusminus'><svg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M4.5 6.75L9 11.25L13.5 6.75' stroke='#343434' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/></svg></div></div><div class='inner mt-5'style='display: none;'>";
                                     countt++;
                                 } else if (v.add_cat_sub_name == null && add_cat_subname == 0) {
                                     add_cat_subname = 1;
                                     if (countt != 0) {
                                         cat_list += "</div>";
                                     }
-                                    cat_list += "<div class='conurty-nm cat_" + remove_id + " contract '>" + add_cat_name + " <div class='plusminus'>+</div> </div><div class='inner' style='display: none;'>";
+                                    cat_list += "<div class='conurty-nm cat_" + remove_id + " contract '>" + add_cat_name + " <div class='plusminus'><svg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M4.5 6.75L9 11.25L13.5 6.75' stroke='#343434' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/></svg></div> </div><div class='inner mt-5' style='display: none;'>";
                                     countt++;
                                 }
                                 status = v.add_cat_sub_id;
@@ -365,16 +365,16 @@ var cust_id = $("#custm").val();
                                 //console.log(valuebecome);
 
 				
-				if(v.ItemType!=='10')
-				{
-                                cat_list += "<ul class='cat_" + remove_id + "'><li class='ribbon_shop'" + gray + "><div><img src=<?php echo DIR_WS_UPLOADS; ?>batch/" + v.batch_image + " class='img-responsive'></div><div class='add-to-list'><input type='button' class='add-list' " + disabledvalue + " value='" + valuebecome + "' data-batch-id='" + v.batch_id + "' data-batch-type=" + v.type + "></div><div class='price_shop'>EUR " + CurrencyFormatted(v.unit_price) + "</div><p>" + v.webshop_title_en + "</p><br><p style='color:blue' >" + v.comment + "</p> </li></ul>";
-				}
-				else
-				{
+                                    if(v.ItemType!=='10')
+                                    {
+                                cat_list += "<ul class='border border-[#b1b1b1] rounded-[10px] p-5 cat_" + remove_id + "'><li class='ribbon_shop'" + gray + "><div><img src=<?php echo DIR_WS_UPLOADS; ?>batch/" + v.batch_image + " class='img-responsive'></div><div class='add-to-list'><input type='button' class='add-list' " + disabledvalue + " value='" + valuebecome + "' data-batch-id='" + v.batch_id + "' data-batch-type=" + v.type + "></div><div class='price_shop'>EUR " + CurrencyFormatted(v.unit_price) + "</div><p>" + v.webshop_title_en + "</p><br><p style='color:blue' >" + v.comment + "</p> </li></ul>";
+                                                }
+                                                else
+                                                {
 
-var cust_id = $("#custm").val();
+                                var cust_id = $("#custm").val();
 
-                                cat_list += "<ul class='cat_" + remove_id + "'><li class='ribbon_shop'" + gray + "><div><img src=<?php echo DIR_WS_UPLOADS; ?>batch/" + v.batch_image + " class='img-responsive'></div><div class='add-to-list'><input type='button' name='rename_cust'  data-toggle='modal' data-target='#Type10' onclick='RenameFunction(" + cust_id +", " + v.batch_id + ")' data-cid ='" + cust_id + "' class='add-list2'" + " value='" + valuebecome + "' data-batch-id='" + v.batch_id + "' data-batch-type=10></div><div class='price_shop'>EUR " + CurrencyFormatted(v.unit_price) + "</div><p>" + v.webshop_title_en + "</p><br><p style='color:blue' >" + v.comment + "</p> </li></ul>";
+                                cat_list += "<ul class='border border-[#b1b1b1] rounded-[10px] p-5 cat_" + remove_id + "'><li class='ribbon_shop flex '" + gray + "><div><img src=<?php echo DIR_WS_UPLOADS; ?>batch/" + v.batch_image + " class='img-responsive'></div><div class='add-to-list'><input type='button' name='rename_cust'  data-toggle='modal' data-target='#Type10' onclick='RenameFunction(" + cust_id +", " + v.batch_id + ")' data-cid ='" + cust_id + "' class='add-list2'" + " value='" + valuebecome + "' data-batch-id='" + v.batch_id + "' data-batch-type=10></div><div class='price_shop'>EUR " + CurrencyFormatted(v.unit_price) + "</div><p>" + v.webshop_title_en + "</p><br><p style='color:blue' >" + v.comment + "</p> </li></ul>";
 
 				}
 
@@ -827,7 +827,7 @@ var cust_id = $("#custm").val();
 		strNotShown += '<div class= "ribbonsnotshownsection"> Ihnen werden ' + (totalBeforePreSortIntegrity  - totalBeforePreSort) + ' Ihrer ' + totalBeforePreSortIntegrity + ' Auszeichnungen nicht angezeigt,da diese Dekorationen seitens Ihrer Organisation nicht zum Tragen zugelassen sind. <a class="add-btn hvr-float-shadow" href="?page=profile" title="ribbonsnotshown">Einstellungen &auml;ndern</a></div>';
 	}
 
-                $('.badges').html('<div class = srch-reslt slect mar-top-10><div class=srch-heading><?php _e("Badges Placed"); ?></div>'+'<div class="druken-btn"><a class="add-btn hvr-float-shadow  pull-left" href="<?php echo WS_PATH; ?>?page=printBadgesPlaced&id=' + customer_id + '" title="invoice">Ansicht Drucken</a> <a class="add-btn hvr-float-shadow pull-right" href="<?php echo WS_PATH; ?>?page=printFullBadgesPlaced&id=' + customer_id + '" title="invoice">Alle Drucken</a></div>'+'<div class=flag-contaner>' +  strNotShown  + ' F&uumlr diese Spange ben&oumltigen Sie ' + LConnectors + " L&aumlngsverbinder und " + QConnectors + " Querverbinder. Wir empfehlen " + nails + " N&aumlgel. Bitte passen Sie die St&uumlckzahlen im Warenkorb an.   </p>"  + badgeData + '</div></div></div>');
+                $('.badges').html('<div class = "srch-reslt slect mar-top-10 ajax"><div class=srch-heading><?php _e("Badges Placed"); ?></div>'+'<div class="druken-btn"><a class="add-btn hvr-float-shadow  pull-left" href="<?php echo WS_PATH; ?>?page=printBadgesPlaced&id=' + customer_id + '" title="invoice">Ansicht Drucken</a> <a class="add-btn hvr-float-shadow pull-right" href="<?php echo WS_PATH; ?>?page=printFullBadgesPlaced&id=' + customer_id + '" title="invoice">Alle Drucken</a></div>'+'<div class=flag-contaner>' +  strNotShown  + ' F&uumlr diese Spange ben&oumltigen Sie ' + LConnectors + " L&aumlngsverbinder und " + QConnectors + " Querverbinder. Wir empfehlen " + nails + " N&aumlgel. Bitte passen Sie die St&uumlckzahlen im Warenkorb an.   </p>"  + badgeData + '</div></div></div>');
                                 }
                             });
 
