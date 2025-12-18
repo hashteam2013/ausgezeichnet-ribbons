@@ -148,10 +148,7 @@
 
                                             <li class="mb-5 pb-5 border-b border-[#D9D9D9] last:pb-0 last:mb-0 last:border-none flex gap-2.5 customer-list" id="ribbon_<?php echo $batch['id'] . $ordered_str ?>>
 
-                                                <label class="relative">
-                                                    <input type="checkbox" class="chkid min-w-4 h-4 absolute left-0 z-[1] opacity-0" name="o<?php echo $ordered_int ?>" value="<?php echo $batch['id']; ?>">
-                                                    <span class="smallcheck relative min-w-4 h-4 border border-[#B1B1B1] inline-flex rounded-[2px]"></span>
-                                                </label>
+                                                <label class='relative'><input type='checkbox' class='chkid min-w-4 h-4 absolute left-0 z-[1] opacity-0' name='o<?php echo $ordered_int ?>' value='<?php echo $batch['id']; ?>'><span class='smallcheck relative min-w-4 h-4 border border-[#B1B1B1] inline-flex rounded-[2px]'></span></label>
 
 
                                                 <?php echo show_ribbon_images($batch['type'],$batch['batch_image'],$batch['number'],$batch['country'],$batch['batch_id']); ?>
