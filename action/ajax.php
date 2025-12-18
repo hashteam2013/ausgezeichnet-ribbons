@@ -641,7 +641,7 @@ switch ($action):
                         }
 
 
-                        $ordered_str = 'style="background-color: #F6F6FF;"';
+                        $ordered_str = '';
                         $ordered_int = 0;
                         foreach ($customer_order_items as $ordered_item) {
 

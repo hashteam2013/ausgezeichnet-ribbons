@@ -53,10 +53,25 @@ body.active::before{
     @apply max-w-[90px];
 }
 .customer-list .ribbon_outer{
-    @apply -mt-1.5;
+    @apply -mt-2;
+}
+.flag-sec .list .inner{
+    @apply flex flex-col gap-5 pe-1;
 }
 .flag-contaner .ribbon_outer{
-    @apply w-[calc(50%-10px)] flex items-center;
+    @apply relative max-w-[113px] min-h-[60px] w-auto text-center m-auto inline-block;
+}
+.flag-contaner .ribbon_outer img{
+    @apply inline-block max-w-[140px] w-auto;
+}
+.list .inner::-webkit-scrollbar{
+   @apply w-1.5;
+}
+.list .inner::-webkit-scrollbar-thumb{
+    @apply bg-primary/60 rounded-xl;
+}
+.list .inner::-webkit-scrollbar-track{
+    @apply bg-body rounded-xl;
 }
 @media(max-width:1669px){
     .iframe_call iframe {

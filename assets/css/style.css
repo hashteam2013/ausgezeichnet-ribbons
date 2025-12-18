@@ -125,51 +125,6 @@ span.number {
     width: 20px;
     border-radius: 100%;
 }
-.flag-sec ul li div {
-    float: left;
-}
-input.add-list {
-float: right;
-    background: #363636 url(../images/list.png) no-repeat 90% 50%;
-    color: #fff;
-    border: 0px;
-    border-radius: 30px;
-    width: auto;
-    font-weight: 100;
-    outline: none;
-    line-height: 20px;
-    padding-right: 31px;
-    padding-left: 10px;
-}
-input.add-list2 {
-float: right;
-    background: #363636 url(../images/list.png) no-repeat 90% 50%;
-    color: #fff;
-    border: 0px;
-    border-radius: 30px;
-    width: auto;
-    font-weight: 100;
-    outline: none;
-    line-height: 20px;
-    padding-right: 31px;
-    padding-left: 10px;
-}
-input.add-list:hover {
-    background-color: #ED0000;
-}
-.mar-top-10{    
-    margin-top: 10px;
-    width: 100%;
-}
-input.cart-slct.divider.buy.hvr-float-shadow {
-   margin-right: 0px;
-}
-input.cart-slct.divider.hvr-float-shadow {
-    width: auto;
-    font-size: 13px;
-    max-width: 49%;
-    width: 100%;
-}
 input.cart-slct.divider.buy.hvr-float-shadow {
    margin-right: 0px;
    background-image: none;
@@ -678,12 +633,9 @@ body div#show_buttons input.delet-slct {
     margin: 0px !important; 
 }
 input.add-btn {
-    float: left;
     margin-top: 0;
 }
 }
-    input.add-list {
-        float: left;}
 
      input.my-srch {margin-left:0px;
     }
@@ -785,30 +737,7 @@ input.cart-slct.divider.hvr-float-shadow {
 
 }
 
-.ribbonsnotshownsection
-{
 
-  	 font-size: 16px;
-  	 border: 1px solid #ED0000;
-	width: 90%;
-	left: 5%;
-	padding: 2px;
-	background-size: 20px;
-	padding-right: 30px;
-	border-radius: 10px;
-	margin-bottom: 5px;
-	position: relative;
-}
-
-.price_shop
-{
-	float: right  !important;
-	clear: right;
-	text-align: right;
-	font-size: large;
-	font-weight: bold;
-
-}
 /* New CSS */
 .bg-herobanner{
     background-image: url('http://guarav.ausgezeichnet.cc//assets/images/banner.jpg');

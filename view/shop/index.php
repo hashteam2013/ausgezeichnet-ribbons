@@ -57,7 +57,7 @@
                 <!-- <div class="srch-heading"><?php _e("Search Result by category!"); ?></div> -->
                 <div class="bdr">
                     <div class="flag-sec">
-                        <div class="list">
+                        <div class="list flex flex-col gap-5">
                         </div>
                     </div>
                     <div class=" mar-top-10">
@@ -107,16 +107,19 @@
                                         <input type="button" class="add-btn rounded-lg cursor-pointer text-base font-semibold inline-flex items-center bg-primary min-h-[46px] text-white ps-[44px] pe-5  add_cust" value="<?php _e("Add Customer");?>">
                                     </div>
                                 </div>
-                                <div id='show_buttons'>
-                                    <?php 
-                                    if (isset($app['logged_in_user']) && $app['logged_in_user'] != '' &&  !empty($selected_customer_batches)) { ?>
-                                    <select id="action-dropdown" class="delet-slct min-h-[46px] focus:outline-none cursor-pointer text-black text-base font-regular rounded-[10px] px-5 border border-[#D9D9D9]">
-                                        <option value=""><?php _e("Select Action");?></option>
-                                        <option value="delete"><?php _e("Delete Selected");?></option>
-                                        <option value="select"><?php _e("Select All");?></option>
-                                        <option value="select_n"><?php _e("Select New");?></option>
-                                    </select>
-                                       <?php } ?>
+                                <div class="mb-5 flex gap-2.5 items-center justify-between">
+                                    <h4 class="text-secondary text-xl font-medium font-gothic">Filter</h4>
+                                    <div id='show_buttons'>
+                                        <?php 
+                                        if (isset($app['logged_in_user']) && $app['logged_in_user'] != '' &&  !empty($selected_customer_batches)) { ?>
+                                        <select id="action-dropdown" class="delet-slct min-h-[46px] focus:outline-none cursor-pointer text-black text-base font-regular rounded-[10px] px-5 border border-[#D9D9D9]">
+                                            <option value=""><?php _e("Select Action");?></option>
+                                            <option value="delete"><?php _e("Delete Selected");?></option>
+                                            <option value="select"><?php _e("Select All");?></option>
+                                            <option value="select_n"><?php _e("Select New");?></option>
+                                        </select>
+                                        <?php } ?>
+                                    </div>
                                 </div>
                                 <div class="check-tag bg-white rounded-[10px] p-5 border border-[#D9D9D9]">
                                     <div>
@@ -268,7 +271,7 @@
 		strNotShown += '<div class= "ribbonsnotshownsection"> Ihnen werden ' + (totalBeforePreSortIntegrity  - totalBeforePreSort) + ' Ihrer ' + totalBeforePreSortIntegrity + ' Auszeichnungen nicht angezeigt, da diese Dekorationen seitens Ihrer Organisation nicht zum Tragen zugelassen sind. <a class="add-btn hvr-float-shadow" href="?page=profile" title="ribbonsnotshown">Einstellungen &auml;ndern</a></div>';
 	}
                 
-                $('.badges').html('<div class = "srch-reslt slect mar-top-10 flex flex-col">'+ '<p class="text-base text-black font-normal">' + strNotShown  + ' F&uumlr diese Spange ben&oumltigen Sie ' + LConnectors + " L&aumlngsverbinder und " + QConnectors + " Querverbinder. Wir empfehlen " + nails + " N&aumlgel. Bitte passen Sie die St&uumlckzahlen im Warenkorb an.  </p>" + '<div class="druken-btn flex gap-5 justify-between mt-5 mb-2.5"><a class="add-btn  text-base text-primary font-normal" href="https://www.ausgezeichnet.cc/?page=printBadgesPlaced&id=' + customer_id + '" title="invoice">Ansicht Drucken</a> <a class="add-btn text-base text-primary font-normal" href="https://www.ausgezeichnet.cc/?page=printFullBadgesPlaced&id=' + customer_id + '" title="invoice">Alle Drucken</a></div>'+'<div class="flag-contaner border border-[#D9D9D9] p-5 rounded-[10px] bg-white flex flex-wrap gap-5">' +  badgeData + '</div></div></div>');
+                $('.badges').html('<div class = "srch-reslt slect mar-top-10 flex flex-col">'+ '<p class="text-base text-black font-normal">' + strNotShown  + ' F&uumlr diese Spange ben&oumltigen Sie ' + LConnectors + " L&aumlngsverbinder und " + QConnectors + " Querverbinder. Wir empfehlen " + nails + " N&aumlgel. Bitte passen Sie die St&uumlckzahlen im Warenkorb an.  </p>" + '<div class="druken-btn flex gap-5 justify-between mt-5 mb-2.5"><a class="add-btn  text-base text-primary font-normal" href="https://www.ausgezeichnet.cc/?page=printBadgesPlaced&id=' + customer_id + '" title="invoice">Ansicht Drucken</a> <a class="add-btn text-base text-primary font-normal" href="https://www.ausgezeichnet.cc/?page=printFullBadgesPlaced&id=' + customer_id + '" title="invoice">Alle Drucken</a></div>'+'<div class="flag-contaner border border-[#D9D9D9] p-5 rounded-[10px] bg-white text-center">' +  badgeData + '</div></div></div>');
                 if (total == '1') {
                     $(".flag-contaner img").css("max-width", "140px");
                     $(".flag-contaner").find(".ribbon_outer").addClass('opacity');
