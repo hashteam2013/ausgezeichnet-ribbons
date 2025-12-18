@@ -877,7 +877,7 @@ switch ($action):
 			$name_addition=' "' . $currentCustomer->ShownName . '"'; 
 		}
 
-		$ordered_str = 'style="background-color: #F6F6F6;"';
+		$ordered_str = '';
 		$ordered_int = 0;
 		foreach($customer_order_items as $ordered_item)
 		{

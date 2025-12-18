@@ -94,14 +94,14 @@ $('.cat_class').change(function () {
                                     if (countt != 0) {
                                         cat_list += "</div>";
                                     }
-                                    cat_list += "<div class='conurty-nm bg-[#d9d9d9] justify-between text-base text-black font-normal rounded-[10px] px-5 inline-flex items-center w-full min-h-[46px] cat_" + remove_id + " contract'>" + v.org_name + "<div class='plusminus'><svg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M4.5 6.75L9 11.25L13.5 6.75' stroke='#343434' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/></svg></div></div><div class='inner mt-5'style='display: none;'>";
+                                    cat_list += "<div class='conurty-nm bg-[#d9d9d9] justify-between text-base text-black font-normal rounded-[10px] px-5 inline-flex items-center w-full min-h-[46px] cat_" + remove_id + " contract'>" + v.org_name + "<div class='plusminus'><svg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M4.5 6.75L9 11.25L13.5 6.75' stroke='#343434' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/></svg></div></div><div class='inner'style='display: none;'>";
                                     countt++;
                                 } else if (v.org_name == null && orgname == 0) {
                                     orgname = 1;
                                     if (countt != 0) {
                                         cat_list += "</div>";
                                     }
-                                    cat_list += "<div class='conurty-nm cat_" + remove_id + " contract '>" + cat_name + " <div class='plusminus'><svg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M4.5 6.75L9 11.25L13.5 6.75' stroke='#343434' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/></svg></div> </div><div class='inner mt-5' style='display: none;'>";
+                                    cat_list += "<div class='conurty-nm bg-[#d9d9d9] justify-between text-base text-black font-normal rounded-[10px] px-5 inline-flex items-center w-full min-h-[46px] cat_" + remove_id + " contract '>" + cat_name + " <div class='plusminus'><svg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M4.5 6.75L9 11.25L13.5 6.75' stroke='#343434' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/></svg></div> </div><div class='inner' style='display: none;'>";
                                     countt++;
                                 }
                                 status = v.org_id;
@@ -111,23 +111,23 @@ $('.cat_class').change(function () {
                                 //console.log(valuebecome);
 
 				
-				if(v.ItemType!=='10')
-				{
-                                cat_list += "<ul class='border border-[#b1b1b1] rounded-[10px] p-5 cat_" + remove_id + "'><li class='ribbon_shop'" + gray + "><div><img src=<?php echo DIR_WS_UPLOADS; ?>batch/" + v.batch_image + " class='img-responsive'></div><div class='add-to-list'><input type='button' class='add-list' " + disabledvalue + " value='" + valuebecome + "' data-batch-id='" + v.batch_id + "' data-batch-type=" + v.type + "></div><div class='price_shop'>EUR " + CurrencyFormatted(v.unit_price) + "</div><p>" + v.webshop_title_en + "</p><br><p style='color:blue' >" + v.comment + "</p> </li></ul>";
-				}
-				else
-				{
+                                if(v.ItemType!=='10')
+                                {
+                                                cat_list += "<ul class='border border-[#b1b1b1] rounded-[10px] p-5 cat_" + remove_id + "'><li class='ribbon_shop flex gap-5'" + gray + "><div><img src=<?php echo DIR_WS_UPLOADS; ?>batch/" + v.batch_image + " class='max-w-[140px]'></div><div class='flex-auto flex gap-5 justify-between'><div class='flex flex-col'><p class='mb-2.5 font-gothic text-black text-base'>" + v.webshop_title_en + "</p><div class='price_shop text-lg text-secondary font-normal'>EUR " + CurrencyFormatted(v.unit_price) + "</div><p style='color:blue' >" + v.comment + "</p></div><div class='add-to-list'><input type='button' class='add-list font-medium px-5 cursor-pointer hover:bg-primary py-2.5 text-white bg-secondary rounded-md text-sm' " + disabledvalue + " value='" + valuebecome + "' data-batch-id='" + v.batch_id + "' data-batch-type=" + v.type + "></div></div> </li></ul>";
+                                }
+                                else
+                                {
 
-                  var cust_id = $("#custm").val();
+                                    var cust_id = $("#custm").val();
 
-                                cat_list += "<ul class='border border-[#b1b1b1] rounded-[10px] p-5 cat_" + remove_id + "'><li class='ribbon_shop'" + gray + "><div><img src=<?php echo DIR_WS_UPLOADS; ?>batch/" + v.batch_image + " class='img-responsive'></div><div class='add-to-list'><input type='button' name='rename_cust'  data-toggle='modal' data-target='#Type10' onclick='RenameFunction(" + cust_id +", " + v.batch_id + ")' data-cid ='" + cust_id + "' class='add-list2'" + " value='" + valuebecome + "' data-batch-id='" + v.batch_id + "' data-batch-type=10></div><div class='price_shop'>EUR " + CurrencyFormatted(v.unit_price) + "</div><p>" + v.webshop_title_en + "</p><br><p style='color:blue' >" + v.comment + "</p> </li></ul>";
+                                                cat_list += "<ul class='border border-[#b1b1b1] rounded-[10px] p-5 cat_" + remove_id + "'><li class='ribbon_shop'" + gray + "><div><img src=<?php echo DIR_WS_UPLOADS; ?>batch/" + v.batch_image + " class='img-responsive'></div><div class='add-to-list'><input type='button' name='rename_cust'  data-toggle='modal' data-target='#Type10' onclick='RenameFunction(" + cust_id +", " + v.batch_id + ")' data-cid ='" + cust_id + "' class='add-list2'" + " value='" + valuebecome + "' data-batch-id='" + v.batch_id + "' data-batch-type=10></div><div class='price_shop'>EUR " + CurrencyFormatted(v.unit_price) + "</div><p>" + v.webshop_title_en + "</p><br><p style='color:blue' >" + v.comment + "</p> </li></ul>";
 
-				}
+                                }
 
                             } else {
                             }
                         });
-                        $('.list').append("<span class='outer_" + position_id + "'>" + cat_list + "</span>");
+                        $('.list').append("<span class='flex flex-col gap-5 outer_" + position_id + "'>" + cat_list + "</span>");
 
                         var emp = $('.list').find('span').sort(sortMe);
 
@@ -154,7 +154,7 @@ $('.cat_class').change(function () {
                     /*district specified is closed **/
                    if (show_closed == 0) { 
                         $(".contract").next(".inner").slideDown(300);
-                        $(".contract").children(".plusminus").text('-');
+                        $(".contract").children(".plusminus").html('<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.5 6.75L9 11.25L13.5 6.75" stroke="#343434" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>');
                        } 
                 }
             });
@@ -191,7 +191,7 @@ $('.cat_class').change(function () {
         }
         var cat_id = "";
         var at_id = '';
-        $('input[class="cat_class"]').each(function () {
+        $('input.cat_class').each(function () {
             if ($(this).attr("dist-attr") == '1') {
                 cat_id = $(this).val();
                 at_id = $(this).attr('id');
@@ -231,7 +231,7 @@ $('.cat_class').change(function () {
                                     if (countt != 0) {
                                         cat_list += "</div>";
                                     }
-                                    cat_list += "<div class='conurty-nm dist-related dist_" + dist_remove_id + " contract'>" + v.cat + "<div class='plusminus'><svg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M4.5 6.75L9 11.25L13.5 6.75' stroke='#343434' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/></svg></div></div><div class='inner mt-5'style='display: none;'>";
+                                    cat_list += "<div class='conurty-nm bg-[#d9d9d9] justify-between text-base text-black font-normal rounded-[10px] px-5 inline-flex items-center w-full min-h-[46px] dist-related dist_" + dist_remove_id + " contract'>" + v.cat + "<div class='plusminus'><svg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M4.5 6.75L9 11.25L13.5 6.75' stroke='#343434' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/></svg></div></div><div class='inner'style='display: none;'>";
                                     countt++;
                                 }
                             } else {
@@ -240,7 +240,7 @@ $('.cat_class').change(function () {
                                     if (countt != 0) {
                                         cat_list += "</div>";
                                     }
-                                    cat_list += "<div class='conurty-nm dist-related dist_" + dist_remove_id + " contract'>" + v.org_name + "<div class='plusminus'><svg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M4.5 6.75L9 11.25L13.5 6.75' stroke='#343434' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/></svg></div></div><div class='inner mt-5'style='display: none;'>";
+                                    cat_list += "<div class='conurty-nm bg-[#d9d9d9] justify-between text-base text-black font-normal rounded-[10px] px-5 inline-flex items-center w-full min-h-[46px] dist-related dist_" + dist_remove_id + " contract'>" + v.org_name + "<div class='plusminus'><svg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M4.5 6.75L9 11.25L13.5 6.75' stroke='#343434' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/></svg></div></div><div class='inner'style='display: none;'>";
                                     countt++;
                                 } else if (v.org_name == null && orgname == 0) {
                                     orgname = 1;
@@ -262,7 +262,7 @@ $('.cat_class').change(function () {
                         } else {
                         }
                     });
-                    $('.list').append("<span class='outer_" + at_id + "'>" + cat_list + "</span>");
+                    $('.list').append("<span class='flex flex-col gap-5 outer_" + at_id + "'>" + cat_list + "</span>");
 
                     var emp = $('.list').find('span').sort(sortMe);
 
@@ -348,14 +348,14 @@ $('.cat_class').change(function () {
                                     if (countt != 0) {
                                         cat_list += "</div>";
                                     }
-                                    cat_list += "<div class='conurty-nm cat_" + remove_id + " contract'>" + v.add_cat_sub_name + "<div class='plusminus'><svg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M4.5 6.75L9 11.25L13.5 6.75' stroke='#343434' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/></svg></div></div><div class='inner mt-5'style='display: none;'>";
+                                    cat_list += "<div class='conurty-nm bg-[#d9d9d9] justify-between text-base text-black font-normal rounded-[10px] px-5 inline-flex items-center w-full min-h-[46px] cat_" + remove_id + " contract'>" + v.add_cat_sub_name + "<div class='plusminus'><svg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M4.5 6.75L9 11.25L13.5 6.75' stroke='#343434' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/></svg></div></div><div class='inner'style='display: none;'>";
                                     countt++;
                                 } else if (v.add_cat_sub_name == null && add_cat_subname == 0) {
                                     add_cat_subname = 1;
                                     if (countt != 0) {
                                         cat_list += "</div>";
                                     }
-                                    cat_list += "<div class='conurty-nm cat_" + remove_id + " contract '>" + add_cat_name + " <div class='plusminus'><svg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M4.5 6.75L9 11.25L13.5 6.75' stroke='#343434' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/></svg></div> </div><div class='inner mt-5' style='display: none;'>";
+                                    cat_list += "<div class='conurty-nm bg-[#d9d9d9] justify-between text-base text-black font-normal rounded-[10px] px-5 inline-flex items-center w-full min-h-[46px] cat_" + remove_id + " contract '>" + add_cat_name + " <div class='plusminus'><svg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M4.5 6.75L9 11.25L13.5 6.75' stroke='#343434' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/></svg></div> </div><div class='inner' style='display: none;'>";
                                     countt++;
                                 }
                                 status = v.add_cat_sub_id;
@@ -381,7 +381,7 @@ $('.cat_class').change(function () {
                             } else {
                             }
                         });
-                        $('.list').append("<span class='outer_" + position_id + "'>" + cat_list + "</span>");
+                        $('.list').append("<span class='flex flex-col gap-5 outer_" + position_id + "'>" + cat_list + "</span>");
 
                         var emp = $('.list').find('span').sort(sortMe);
 
@@ -408,7 +408,7 @@ $('.cat_class').change(function () {
                     /*district specified is closed **/
                    if (show_closed == 0) { 
                         $(".contract").next(".inner").slideDown(300);
-                        $(".contract").children(".plusminus").text('-');
+                        $(".contract").children(".plusminus").html('<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.5 6.75L9 11.25L13.5 6.75" stroke="#343434" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>');
                        } 
                 }
             });
@@ -449,7 +449,7 @@ $('.cat_class').change(function () {
                         'user_id': user_id,
                         'cust_id': cust_id,
                         'batch_id': batch_id,
-	        'batchType': batchType
+	                    'batchType': batchType
                     },
                     success: function (data) {
                         $('.ajax-load-image').css('display', 'none');
@@ -460,11 +460,11 @@ $('.cat_class').change(function () {
                             toastr['error'](data.msg);
                         }
                         $(data.result).each(function (index, value) {
-                            custData += '<li id=ribbon_' + data.custId + '" ' + value.ordered_str + '><div>' + value.ribbon_type + '</div><span><label><input type=checkbox checked=checked class=chkid name=o' + value.ordered + ' value=' + value.custId + '>' + value.ribbon_name_en + value.name_addition + '</label></span></li>';
+                            custData += '<li class="mb-5 pb-5 border-b border-[#D9D9D9] last:pb-0 last:mb-0 last:border-none flex gap-2.5 customer-list" id=ribbon_' + data.custId + '" ' + value.ordered_str + '><label class="relative"><input type=checkbox checked=checked class="chkid min-w-4 h-4 absolute left-0 z-[1] opacity-0" name=o' + value.ordered + ' value=' + value.custId + '><span class="smallcheck relative min-w-4 h-4 border border-[#B1B1B1] inline-flex rounded-[2px]"></span></label>' + value.ribbon_type + '<div><span class="text-sm font-medium text-black">' + value.ribbon_name_en + value.name_addition + '</span></div></li>';
                             $('.batch').html(custData);
                         });
                         if (data.result != '') {
-                            $('#show_buttons').html('<select id="action-dropdown" class="delet-slct hvr-float-shadow"><option value=""><?php _e("Select Action");?></option><option value="delete"><?php _e("Delete Selected"); ?></option><option value="select"><?php _e("Select All"); ?></option><option value="select_n"><?php _e("Select New");?></option></select>');
+                            $('#show_buttons').html('<select id="action-dropdown" class="delet-slct  min-h-[46px] focus:outline-none cursor-pointer text-black text-base font-regular rounded-[10px] px-5 border border-[#D9D9D9]"><option value=""><?php _e("Select Action");?></option><option value="delete"><?php _e("Delete Selected"); ?></option><option value="select"><?php _e("Select All"); ?></option><option value="select_n"><?php _e("Select New");?></option></select>');
                             badgeFilterByLevel(cust_id);
                         }
                     }
@@ -506,7 +506,7 @@ $('.cat_class').change(function () {
                         'user_id': user_id,
                         'cust_id': cust_id,
                         'batch_id': batch_id,
-	        'batchType': batchType
+	                    'batchType': batchType
                     },
                     success: function (data) {
                         $('.ajax-load-image').css('display', 'none');
@@ -521,7 +521,7 @@ $('.cat_class').change(function () {
                             $('.batch').html(custData);
                         });
                         if (data.result != '') {
-                            $('#show_buttons').html('<select id="action-dropdown" class="delet-slct hvr-float-shadow"><option value=""><?php _e("Select Action");?></option><option value="delete"><?php _e("Delete Selected"); ?></option><option value="select"><?php _e("Select All"); ?></option><option value="select_n"><?php _e("Select New");?></option></select>');
+                            $('#show_buttons').html('<select id="action-dropdown" class="delet-slct  min-h-[46px] focus:outline-none cursor-pointer text-black text-base font-regular rounded-[10px] px-5 border border-[#D9D9D9]"><option value=""><?php _e("Select Action");?></option><option value="delete"><?php _e("Delete Selected"); ?></option><option value="select"><?php _e("Select All"); ?></option><option value="select_n"><?php _e("Select New");?></option></select>');
                             badgeFilterByLevel(cust_id);
                         }
                     }
@@ -553,7 +553,7 @@ $('.cat_class').change(function () {
                         success: function (data) {
                             $('.ajax-load-image').css('display', 'none');
                             if (data.status == 'Sucessfully') {
-                                $('.batch').append('<li id= ribbon_' + data.custId  + '><div>' + data.ribbon_type + '</div><span><label><input type=checkbox checked=checked class=chkid value=' + data.custId + '>' + data.ribbon_name_en + '</label></span></li>');
+                                $('.batch').append('<li id= ribbon_' + data.custId  + '><label><input type=checkbox checked=checked class=chkid value=' + data.custId + '><span class="smallcheck relative min-w-4 h-4 border border-[#B1B1B1] inline-flex rounded-[2px]"></span></label><div>' + data.ribbon_type + '</div> <div><span>'+ data.ribbon_name_en +'</span></div></li>');
                             } else {
                                 toastr['error'](data.msg);
                                 return false;
@@ -634,7 +634,7 @@ $('.cat_class').change(function () {
                 $('.ajax-load-image').css('display', 'none');
                 if (data.status == 'Sucessfully') {
 
-                    $('.batch').append('<li id=ribbon_' + data.custId + '" '  + '><div>' + data.ribbon_type + '</div><span><label><input type=checkbox checked=checked class=chkid value=' + data.custId + '>' + data.ribbon_name_en + '</label></span></li>');
+                    $('.batch').append('<li id= ribbon_' + data.custId  + '><label><input type=checkbox checked=checked class=chkid value=' + data.custId + '><span class="smallcheck relative min-w-4 h-4 border border-[#B1B1B1] inline-flex rounded-[2px]"></span></label><div>' + data.ribbon_type + '</div> <div><span>'+ data.ribbon_name_en +'</span></div></li>');
                 } else {
                     toastr['error'](data.msg);
                     return false;
@@ -830,7 +830,7 @@ $('.cat_class').change(function () {
 		strNotShown += '<div class= "ribbonsnotshownsection"> Ihnen werden ' + (totalBeforePreSortIntegrity  - totalBeforePreSort) + ' Ihrer ' + totalBeforePreSortIntegrity + ' Auszeichnungen nicht angezeigt,da diese Dekorationen seitens Ihrer Organisation nicht zum Tragen zugelassen sind. <a class="add-btn hvr-float-shadow" href="?page=profile" title="ribbonsnotshown">Einstellungen &auml;ndern</a></div>';
 	}
 
-                $('.badges').html('<div class = "srch-reslt slect mar-top-10 ajax"><div class=srch-heading><?php _e("Badges Placed"); ?></div>'+'<div class="druken-btn"><a class="add-btn hvr-float-shadow  pull-left" href="<?php echo WS_PATH; ?>?page=printBadgesPlaced&id=' + customer_id + '" title="invoice">Ansicht Drucken</a> <a class="add-btn hvr-float-shadow pull-right" href="<?php echo WS_PATH; ?>?page=printFullBadgesPlaced&id=' + customer_id + '" title="invoice">Alle Drucken</a></div>'+'<div class=flag-contaner>' +  strNotShown  + ' F&uumlr diese Spange ben&oumltigen Sie ' + LConnectors + " L&aumlngsverbinder und " + QConnectors + " Querverbinder. Wir empfehlen " + nails + " N&aumlgel. Bitte passen Sie die St&uumlckzahlen im Warenkorb an.   </p>"  + badgeData + '</div></div></div>');
+                $('.badges').html('<div class = "srch-reslt slect mar-top-10 flex flex-col">' + '<p class="text-base text-black font-normal">' + strNotShown  + ' F&uumlr diese Spange ben&oumltigen Sie ' + LConnectors + " L&aumlngsverbinder und " + QConnectors + " Querverbinder. Wir empfehlen " + nails + " N&aumlgel. Bitte passen Sie die St&uumlckzahlen im Warenkorb an. </p>" +  '<div class="druken-btn flex gap-5 justify-between mt-5 mb-2.5"><a class="add-btn text-base text-primary font-normal" href="<?php echo WS_PATH; ?>?page=printBadgesPlaced&id=' + customer_id + '" title="invoice">Ansicht Drucken</a> <a class="add-btn text-base text-primary font-normal" href="<?php echo WS_PATH; ?>?page=printFullBadgesPlaced&id=' + customer_id + '" title="invoice">Alle Drucken</a></div>'+'<div class="flag-contaner">' + badgeData + '</div></div></div>');
                                     }
                                 });
 
@@ -996,7 +996,7 @@ $('.cat_class').change(function () {
 		strNotShown += '<div class= "ribbonsnotshownsection"> Ihnen werden ' + (totalBeforePreSortIntegrity  - totalBeforePreSort) + ' Ihrer ' + totalBeforePreSortIntegrity + ' Auszeichnungen nicht angezeigt, da diese Dekorationen seitens Ihrer Organisation nicht zum Tragen zugelassen sind. <a class="add-btn hvr-float-shadow" href="?page=profile" title="ribbonsnotshown">Einstellungen &auml;ndern</a></div>';
 	}
                 
-                $('.badges').html('<div class = srch-reslt slect mar-top-10><div class=srch-heading><?php _e("Badges Placed"); ?></div>'+'<div class="druken-btn"><a class="add-btn hvr-float-shadow  pull-left" href="<?php echo WS_PATH; ?>?page=printBadgesPlaced&id=' + customer_id + '" title="invoice">Ansicht Drucken</a> <a class="add-btn hvr-float-shadow pull-right" href="<?php echo WS_PATH; ?>?page=printFullBadgesPlaced&id=' + customer_id + '" title="invoice">Alle Drucken</a></div>'+'<div class=flag-contaner>' + '<p>' + strNotShown  + ' F&uumlr diese Spange ben&oumltigen Sie ' + LConnectors + " L&aumlngsverbinder und " + QConnectors + " Querverbinder. Wir empfehlen " + nails + " N&aumlgel. Bitte passen Sie die St&uumlckzahlen im Warenkorb an.   </p>" + badgeData + '</div></div></div>');
+                $('.badges').html('<div class = "srch-reslt slect mar-top-10 flex flex-col">' + '<p class="text-base text-black font-normal">' + strNotShown  + ' F&uumlr diese Spange ben&oumltigen Sie ' + LConnectors + " L&aumlngsverbinder und " + QConnectors + " Querverbinder. Wir empfehlen " + nails + " N&aumlgel. Bitte passen Sie die St&uumlckzahlen im Warenkorb an. </p>" +  '<div class="druken-btn flex gap-5 justify-between mt-5 mb-2.5"><a class="add-btn text-base text-primary font-normal" href="<?php echo WS_PATH; ?>?page=printBadgesPlaced&id=' + customer_id + '" title="invoice">Ansicht Drucken</a> <a class="add-btn text-base text-primary font-normal" href="<?php echo WS_PATH; ?>?page=printFullBadgesPlaced&id=' + customer_id + '" title="invoice">Alle Drucken</a></div>'+'<div class="flag-contaner border border-[#D9D9D9] p-5 rounded-[10px] bg-white text-center">' + badgeData + '</div></div></div>');
                 if (total == '1') {
                     $(".flag-contaner img").css("max-width", "140px");
                     $(".flag-contaner").find(".ribbon_outer").addClass('opacity');
@@ -1028,10 +1028,10 @@ $('.cat_class').change(function () {
     $(".list").on("click", ".contract", function () {
         if ($(this).next(".inner").is(':visible')) {
             $(this).next(".inner").slideUp(300);
-            $(this).children(".plusminus").text('+');
+            $(this).children(".plusminus").html('<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.5 6.75L9 11.25L13.5 6.75" stroke="#343434" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>');
         } else {
             $(this).next(".inner").slideDown(300);
-            $(this).children(".plusminus").text('-');
+            $(this).children(".plusminus").html('<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.5 6.75L9 11.25L13.5 6.75" stroke="#343434" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>');
         }
     });
     /***********ajax load functoin*******/
