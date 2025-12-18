@@ -27,11 +27,11 @@
 
                     if (current_url == "add_to_list" || customer_url == 'add_to_cust') {
                         log_in = true;
-                        $('#myModal').modal('hide');
-                        $("#logged").remove();
-                        $("#reg").remove();
-                        $(".login-top").html(' <li><a href="<?php echo make_url("info"); ?>"> <?php _e("HELLO"); ?> ' + response.first_name + '</a></li><li><a href="<?php echo make_url("logout"); ?>"><?php _e("Logout"); ?></a> </li>');
-                        $("#ajax_reg").append('<li><a href="<?php echo make_url("logout"); ?>">Logout</a></li>');
+                            $('#myModal').modal('hide');
+                            $("#logged").remove();
+                            $("#reg").remove();
+                            $(".login-top").html(' <li><a href="<?php echo make_url("info"); ?>"> <?php _e("HELLO"); ?> ' + response.first_name + '</a></li><li><a href="<?php echo make_url("logout"); ?>"><?php _e("Logout"); ?></a> </li>');
+                            $("#ajax_reg").append('<li><a href="<?php echo make_url("logout"); ?>">Logout</a></li>');
                         var options = '';
                         $(response.customers).each(function (i, v) {
                             options += "<option value='" + v.id + "'>" + v.first_name + ' ' + v.last_name + "</option>";
