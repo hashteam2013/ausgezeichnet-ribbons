@@ -110,10 +110,12 @@
                                 <div id='show_buttons'>
                                     <?php 
                                     if (isset($app['logged_in_user']) && $app['logged_in_user'] != '' &&  !empty($selected_customer_batches)) { ?>
-                                    <input type="button" class="delet-slct  delete" value="<?php _e("Delete Selected");?>">
-                                    <input type="button" class="delet-slct  select" value="<?php _e("Select All");?>">
-                                    <!-- <input type="button" class="delet-slct  select_w" value="<?php _e("Select wearables");?>"> -->
-                                    <input type="button" class="delet-slct  select_n" value="<?php _e("Select New");?>">
+                                    <select id="action-dropdown" class="delet-slct min-h-[46px] focus:outline-none cursor-pointer text-black text-base font-regular rounded-[10px] px-5 border border-[#D9D9D9]">
+                                        <option value=""><?php _e("Select Action");?></option>
+                                        <option value="delete"><?php _e("Delete Selected");?></option>
+                                        <option value="select"><?php _e("Select All");?></option>
+                                        <option value="select_n"><?php _e("Select New");?></option>
+                                    </select>
                                        <?php } ?>
                                 </div>
                                 <div class="check-tag bg-white rounded-[10px] p-5 border border-[#D9D9D9]">

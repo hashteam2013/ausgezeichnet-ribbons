@@ -464,7 +464,7 @@ $('.cat_class').change(function () {
                             $('.batch').html(custData);
                         });
                         if (data.result != '') {
-                            $('#show_buttons').html('<input type="button" class="delet-slct hvr-float-shadow delete append-data" value="<?php _e("Delete Selected"); ?>"><input type="button" class="delet-slct hvr-float-shadow select" value="<?php _e("Select All"); ?>"><input type="button" class="delet-slct hvr-float-shadow select_n" value="<?php _e("Select New");?>">');
+                            $('#show_buttons').html('<select id="action-dropdown" class="delet-slct hvr-float-shadow"><option value=""><?php _e("Select Action");?></option><option value="delete"><?php _e("Delete Selected"); ?></option><option value="select"><?php _e("Select All"); ?></option><option value="select_n"><?php _e("Select New");?></option></select>');
                             badgeFilterByLevel(cust_id);
                         }
                     }
@@ -521,7 +521,7 @@ $('.cat_class').change(function () {
                             $('.batch').html(custData);
                         });
                         if (data.result != '') {
-                            $('#show_buttons').html('<input type="button" class="delet-slct hvr-float-shadow delete" value="<?php _e("Delete Selected"); ?>"><input type="button" class="delet-slct hvr-float-shadow select" value="<?php _e("Select All"); ?>"><input type="button" class="delet-slct hvr-float-shadow select_n" value="<?php _e("Select New");?>">');
+                            $('#show_buttons').html('<select id="action-dropdown" class="delet-slct hvr-float-shadow"><option value=""><?php _e("Select Action");?></option><option value="delete"><?php _e("Delete Selected"); ?></option><option value="select"><?php _e("Select All"); ?></option><option value="select_n"><?php _e("Select New");?></option></select>');
                             badgeFilterByLevel(cust_id);
                         }
                     }
@@ -559,7 +559,7 @@ $('.cat_class').change(function () {
                                 return false;
                             }
                             if (data != '') {
-                                $('#show_buttons').html('<input type="button" class="delet-slct hvr-float-shadow delete" value="<?php _e("Delete Selected"); ?>"><input type="button" class="delet-slct hvr-float-shadow select" value="<?php _e('Select All'); ?>"><input type="button" class="delet-slct hvr-float-shadow select_n" value="<?php _e("Select New");?>">');
+                                $('#show_buttons').html('<select id="action-dropdown" class="delet-slct hvr-float-shadow"><option value=""><?php _e("Select Action");?></option><option value="delete"><?php _e("Delete Selected"); ?></option><option value="select"><?php _e('Select All'); ?></option><option value="select_n"><?php _e("Select New");?></option></select>');
                                 badgeFilterByLevel(cust_id);
                             }
                         }
@@ -672,7 +672,7 @@ $('.cat_class').change(function () {
                     });
                     $('.batch').html(htmlData);
                     if (htmlData != '') {
-                        $('#show_buttons').html('<input type="button" class="delet-slct hvr-float-shadow delete" value="<?php _e('Delete Selected'); ?>"><input type="button" class="delet-slct hvr-float-shadow select" value="<?php _e('Select All'); ?>"<input type="button" class="delet-slct hvr-float-shadow select_n"  value="<?php _e("Select New");?>">');
+                        $('#show_buttons').html('<select id="action-dropdown" class="delet-slct hvr-float-shadow"><option value=""><?php _e("Select Action");?></option><option value="delete"><?php _e('Delete Selected'); ?></option><option value="select"><?php _e('Select All'); ?></option><option value="select_n"><?php _e("Select New");?></option></select>');
                         var badgeData = '';
                         $(data).each(function (index, value) {
                             badgeData += value.ribbon_type;
@@ -688,100 +688,103 @@ $('.cat_class').change(function () {
             });
         }
     });
-    /*-------------------------------------on select-----------------------------------------------------------------------------------*/
-    $(document.body).on('click', ".select", function (e) {
-        if ($(".chkid").length == $(".chkid:checked").length) {
-            $('.chkid').prop("checked", false);
-            $(this).val("<?php _e('Select All'); ?>");
-        } else {
-            $('.chkid').prop("checked", true);
-            $(this).val("<?php _e('Deselect All'); ?>");
+    /*-------------------------------------on dropdown change-----------------------------------------------------------------------------------*/
+    $(document.body).on('change', "#action-dropdown", function (e) {
+        var action = $(this).val();
+        if (action === '') {
+            return;
         }
-    });
-
-    /*-------------------------------------on select new items-----------------------------------------------------------------------------------*/
-    $(document.body).on('click', ".select_n", function (e) {      
-        $('input[class="chkid"]').each( function () {
-           if (this.name=="o0")
-	{
-		this.checked=true;
-	}
-	else if (this.name=="o1")
-	{
-		this.checked=false;
-
-	}
-        });
-
-    });
-
-
-
-    /*-----------------Delete----------------------------------*/
-    $(document.body).on('click', ".delete", function (e) {
-        var cust_id = $("#custm").val();
-        var values = [];
-        $.each($("input[class='chkid']:checked"), function () {
-            values.push($(this).val());
-        });
-        if (values == '') {
-            toastr['error']("<?php _e('Please check at least one batch!'); ?>");
-        } else {
-            var r = confirm("<?php _e('Are you sure? You want to delete this badge!') ?>");
-            if (r == true) {
-                if (values) {
-                    $.ajax({
-                        url: "<?php echo make_url('ajax', array("action" => "delete_customer")); ?>",
-                        type: "post",
-                        dataType: "json",
-                        data: {
-                            'values': values,
-                            'cust_id': cust_id
-                        },
-                        success: function (data) {
-                            $.each(values, function (key, value) {
-                                $('#ribbon_' + value).remove();
-                            });
-                            var htmlBatch = $('ul.batch').html();
-                            if ($.trim(htmlBatch) == '') {
-                                $('#show_buttons').html('');
-                                $('.badges').html('');
-                            }
-                            /*********get all updated badge after delete one or more together************/
-                            $.ajax({
-                                url: "<?php echo make_url('ajax', array("action" => "show_list_1")); ?>",
-                                type: "post",
-                                dataType: "json",
-                                data: {
-                                    'customer_id': cust_id,
-                                },
-                                success: function (data) {
-                                    //console.log(data);
-                                    var total, placementOne = '', badgeData = '';
-                                    total = data.length-2;
-                                                                      
-                                    $(data).each(function (index, value) {
-      
-                                    if(index<total)
-                                    {
-                                        badgeData += value.ribbon_type;
-      
-      
-                                        if (total % 3 == 1 && index == 0) {
-                                            var oneR1 = '<div class="ribbon_outer1"></div>';
-                                            badgeData = oneR1 + badgeData + oneR1;
-                                        }
-                                        else if (total % 3 == 2) {
-                                            if (index === 0) {
-                                                var twoR1 = '<div class="ribbon_outer2"></div>';
-                                                badgeData = twoR1 + badgeData;
+        
+        if (action === 'select') {
+            if ($(".chkid").length == $(".chkid:checked").length) {
+                $('.chkid').prop("checked", false);
+            } else {
+                $('.chkid').prop("checked", true);
+            }
+            $(this).val(''); // Reset dropdown
+        } else if (action === 'select_n') {
+            $('input[class="chkid"]').each( function () {
+                if (this.name=="o0") {
+                    this.checked=true;
+                } else if (this.name=="o1") {
+                    this.checked=false;
+                }
+            });
+            $(this).val(''); // Reset dropdown
+        } else if (action === 'select_w') {
+            $('input[class="chkid"]').each( function () {
+                if (this.name=="o1") {
+                    this.checked=true;
+                } else if (this.name=="o0") {
+                    this.checked=false;
+                }
+            });
+            $(this).val(''); // Reset dropdown
+        } else if (action === 'delete') {
+            var cust_id = $("#custm").val();
+            var values = [];
+            $.each($("input[class='chkid']:checked"), function () {
+                values.push($(this).val());
+            });
+            if (values == '') {
+                toastr['error']("<?php _e('Please check at least one batch!'); ?>");
+                $(this).val(''); // Reset dropdown
+            } else {
+                var r = confirm("<?php _e('Are you sure? You want to delete this badge!') ?>");
+                if (r == true) {
+                    if (values) {
+                        $.ajax({
+                            url: "<?php echo make_url('ajax', array("action" => "delete_customer")); ?>",
+                            type: "post",
+                            dataType: "json",
+                            data: {
+                                'values': values,
+                                'cust_id': cust_id
+                            },
+                            success: function (data) {
+                                $.each(values, function (key, value) {
+                                    $('#ribbon_' + value).remove();
+                                });
+                                var htmlBatch = $('ul.batch').html();
+                                if ($.trim(htmlBatch) == '') {
+                                    $('#show_buttons').html('');
+                                    $('.badges').html('');
+                                }
+                                /*********get all updated badge after delete one or more together************/
+                                $.ajax({
+                                    url: "<?php echo make_url('ajax', array("action" => "show_list_1")); ?>",
+                                    type: "post",
+                                    dataType: "json",
+                                    data: {
+                                        'customer_id': cust_id,
+                                    },
+                                    success: function (data) {
+                                        //console.log(data);
+                                        var total, placementOne = '', badgeData = '';
+                                        total = data.length-2;
+                                                                              
+                                        $(data).each(function (index, value) {
+          
+                                        if(index<total)
+                                        {
+                                            badgeData += value.ribbon_type;
+          
+          
+                                            if (total % 3 == 1 && index == 0) {
+                                                var oneR1 = '<div class="ribbon_outer1"></div>';
+                                                badgeData = oneR1 + badgeData + oneR1;
                                             }
-                                            if (index === 1) {
-                                                var twoR2 = '<div class="ribbon_outer2"></div>';
-                                                badgeData = badgeData + twoR2;
+                                            else if (total % 3 == 2) {
+                                                if (index === 0) {
+                                                    var twoR1 = '<div class="ribbon_outer2"></div>';
+                                                    badgeData = twoR1 + badgeData;
+                                                }
+                                                if (index === 1) {
+                                                    var twoR2 = '<div class="ribbon_outer2"></div>';
+                                                    badgeData = badgeData + twoR2;
+                                                }
                                             }
-                                        }
-                                        }
+                                            }
               else if(index===total)
                 {
                     totalBeforePreSort=value;
@@ -791,30 +794,30 @@ $('.cat_class').change(function () {
                     totalBeforePreSortIntegrity=value;
                 }
 
-                                    });
-                                    
-                                       tempvar1 = total % 3;
-                                        tempvar2 = total - tempvar1;
-                                        tempvar3 = tempvar2 * 2 / 3;
-                                        tempvar4 = sign(tempvar1);
-                                        tempvar5 = sign(3 * sign(tempvar3) + tempvar1 - 1);
-                                        tempvar6 = tempvar3 + tempvar4;
-                                        LConnectors = tempvar5 + tempvar6 - 1;
-                                        QConnectors = ((total - 3) + (total - 3) * sign(total - 3)) / 2;
-                                        if (total == 4 || total == 7 || total == 10 || total == 13 || total == 16)
-                                        {
-                                            QConnectors = QConnectors + 1;
-                                        }
+                                        });
+                                        
+                                           tempvar1 = total % 3;
+                                            tempvar2 = total - tempvar1;
+                                            tempvar3 = tempvar2 * 2 / 3;
+                                            tempvar4 = sign(tempvar1);
+                                            tempvar5 = sign(3 * sign(tempvar3) + tempvar1 - 1);
+                                            tempvar6 = tempvar3 + tempvar4;
+                                            LConnectors = tempvar5 + tempvar6 - 1;
+                                            QConnectors = ((total - 3) + (total - 3) * sign(total - 3)) / 2;
+                                            if (total == 4 || total == 7 || total == 10 || total == 13 || total == 16)
+                                            {
+                                                QConnectors = QConnectors + 1;
+                                            }
 
-                                        if (total < 8)
-                                        {
-                                            nails = 2;
-                                        }
-                                        else
-                                        {
-                                            nails = 4;
-                                        }
-                                    
+                                            if (total < 8)
+                                            {
+                                                nails = 2;
+                                            }
+                                            else
+                                            {
+                                                nails = 4;
+                                            }
+                                        
 	var strNotShown;
 
 	strNotShown = "";
@@ -828,16 +831,20 @@ $('.cat_class').change(function () {
 	}
 
                 $('.badges').html('<div class = "srch-reslt slect mar-top-10 ajax"><div class=srch-heading><?php _e("Badges Placed"); ?></div>'+'<div class="druken-btn"><a class="add-btn hvr-float-shadow  pull-left" href="<?php echo WS_PATH; ?>?page=printBadgesPlaced&id=' + customer_id + '" title="invoice">Ansicht Drucken</a> <a class="add-btn hvr-float-shadow pull-right" href="<?php echo WS_PATH; ?>?page=printFullBadgesPlaced&id=' + customer_id + '" title="invoice">Alle Drucken</a></div>'+'<div class=flag-contaner>' +  strNotShown  + ' F&uumlr diese Spange ben&oumltigen Sie ' + LConnectors + " L&aumlngsverbinder und " + QConnectors + " Querverbinder. Wir empfehlen " + nails + " N&aumlgel. Bitte passen Sie die St&uumlckzahlen im Warenkorb an.   </p>"  + badgeData + '</div></div></div>');
-                                }
-                            });
+                                    }
+                                });
 
-                            toastr['success']("<?php _e('Batch has been deleted successfully!'); ?>");
-                        }
-                    });
+                                toastr['success']("<?php _e('Batch has been deleted successfully!'); ?>");
+                            }
+                        });
+                    }
+                } else {
+                    $(this).val(''); // Reset dropdown if cancelled
                 }
             }
         }
     });
+
     /*------------------------------------Add to cart-------------------------------------------------------------------*/
     $(document.body).on('click', ".add_to_cart_ribbon", function (e) {
         var customer_id = $("#custm option:selected").val();
