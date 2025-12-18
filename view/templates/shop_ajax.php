@@ -703,7 +703,7 @@ $('.cat_class').change(function () {
             }
             $(this).val(''); // Reset dropdown
         } else if (action === 'select_n') {
-            $('input[class="chkid"]').each( function () {
+            $('input.chkid').each( function () {
                 if (this.name=="o0") {
                     this.checked=true;
                 } else if (this.name=="o1") {
@@ -712,7 +712,7 @@ $('.cat_class').change(function () {
             });
             $(this).val(''); // Reset dropdown
         } else if (action === 'select_w') {
-            $('input[class="chkid"]').each( function () {
+            $('input.chkid').each( function () {
                 if (this.name=="o1") {
                     this.checked=true;
                 } else if (this.name=="o0") {
@@ -723,9 +723,9 @@ $('.cat_class').change(function () {
         } else if (action === 'delete') {
             var cust_id = $("#custm").val();
             var values = [];
-            $.each($("input[class='chkid']:checked"), function () {
-                values.push($(this).val());
-            });
+            $("input.chkid:checked").each(function () {
+                values.push(this.value);
+                });
             if (values == '') {
                 toastr['error']("<?php _e('Please check at least one batch!'); ?>");
                 $(this).val(''); // Reset dropdown

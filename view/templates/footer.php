@@ -130,7 +130,7 @@
 
     </div>
 </div>
-<div class="login-phase fixed top-0 left-0 right-0 opacity-0 hidden pt-10 pb-5 px-5 overflow-y-auto  w-full h-full" id="custmodal" >
+<div class="login-phase fixed top-0 left-0 right-0 opacity-0 z-[1] hidden pt-10 pb-5 px-5 overflow-y-auto  w-full h-full" id="custmodal" >
     <div class="mx-auto max-w-[400px] w-full">
         <div class="bg-black relative px-5 py-3 flex justify-between items-center">
             <h4 class="text-white text-xl font-medium">
