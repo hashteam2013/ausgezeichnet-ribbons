@@ -73,6 +73,9 @@ body.active::before{
 .list .inner::-webkit-scrollbar-track{
     @apply bg-body rounded-xl;
 }
+.flag-sec .list .inner .ribbon_shop p br{
+    @apply hidden;
+}
 @media(max-width:1669px){
     .iframe_call iframe {
         @apply max-h-[370px];
@@ -151,6 +154,9 @@ body.active::before{
     }
     .german-active .break-words{
         @apply break-all;
+    }
+    .customer-list .ribbon_outer img{
+        @apply max-w-[60px];
     }
 }
 

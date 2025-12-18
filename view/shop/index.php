@@ -14,12 +14,12 @@
         </div>
     </div>
 </div>
-<div class="flex py-16 w-full">
+<div class="flex xl:py-16 md:py-12 py-10 w-full">
     <div class="container-custom">
-        <div class="flex gap-14">
+        <div class="flex lg:flex-row flex-col 2xl:gap-14 xl:gap-10 gap-5">
             <!-----------------------Side-bar------------------------->
-            <div class="high flex flex-col gap-5 w-[22%]">
-                <h3 class="text-3xl text-black font-gothic">Filters</h3>
+            <div class="high flex flex-col gap-5 lg:w-[22%] w-full">
+                <h3 class="xl:text-3xl lg:text-2xl text-xl text-black font-gothic">Filters</h3>
                 <div class="flex flex-col bg-body rounded-xl p-5 gap-5">
                     <div class="categories">
                         <div class="cat-heading text-[22px] leading-[32px] text-black font-semibold"><?php _e("Categories"); ?></div>
@@ -52,8 +52,8 @@
                 </div> 
             </div> 
             <!-----------------------Side-bar-end------------------------->
-            <div class="srch-reslt flex flex-col gap-5 w-[47%]">
-                <h3 class="text-3xl text-black font-gothic">Product Categories</h3>
+            <div class="srch-reslt flex flex-col gap-5 lg:w-[47%] w-full">
+                <h3 class="xl:text-3xl text-2xl text-black font-gothic">Product Categories</h3>
                 <!-- <div class="srch-heading"><?php _e("Search Result by category!"); ?></div> -->
                 <div class="bdr">
                     <div class="flag-sec">
@@ -77,16 +77,16 @@
                 </div>    
             </div>
 
-            <div class="w-[31%] flex flex-col gap-5">
-                <h3 class="text-3xl text-black font-gothic">Customer Listing</h3>
+            <div class="lg:w-[31%] w-full flex flex-col gap-5">
+                <h3 class="xl:text-3xl lg:text-2xl text-xl text-black font-gothic">Customer Listing</h3>
                 <!-- <div class="srch-heading"><?php _e("Selected Items"); ?></div> -->
                 <div class="bg-body p-5 rounded-[20px] border border-[#D9D9D9]">
                     <div class="srch-reslt slect">
                             <div class="padd-side">
-                                <div class="flex items-center gap-5 mb-5">
+                                <div class="flex xl:flex-row lg:flex-col flex-row xl:items-center gap-5 mb-5">
                                     <?php if (isset($app['logged_in_user']) && $app['logged_in_user'] != '') { //pr($customers);?>
                                     <?php if(!empty($customers)){ ?>
-                                        <select id="custm" class="min-h-[46px] focus:outline-none cursor-pointer flex-1 text-black text-base font-regular rounded-[10px] px-5 max-w-[227px] border border-[#D9D9D9]"><?php
+                                        <select id="custm" class="min-h-[46px] focus:outline-none cursor-pointer flex-1 text-black text-base font-regular rounded-[10px] 2xl:px-5 px-2 max-w-[227px] w-full border border-[#D9D9D9]"><?php
                                             foreach ($customers as $cust){ //pr($cust);
                                                 if(!empty($cust)){ ?>
                                                 <option value="<?php echo $cust['id']; ?>"><?php echo $cust['first_name'].' '.$cust['last_name'] ;  ?></option>
@@ -108,11 +108,11 @@
                                     </div>
                                 </div>
                                 <div class="mb-5 flex gap-2.5 items-center justify-between">
-                                    <h4 class="text-secondary text-xl font-medium font-gothic">Filter</h4>
+                                    <h4 class="text-secondary xl:text-xl text-lg font-medium font-gothic">Filter</h4>
                                     <div id='show_buttons'>
                                         <?php 
                                         if (isset($app['logged_in_user']) && $app['logged_in_user'] != '' &&  !empty($selected_customer_batches)) { ?>
-                                        <select id="action-dropdown" class="delet-slct min-h-[46px] focus:outline-none cursor-pointer text-black text-base font-regular rounded-[10px] px-5 border border-[#D9D9D9]">
+                                        <select id="action-dropdown" class="delet-slct min-h-[46px]  2xl:w-auto w-full focus:outline-none cursor-pointer text-black text-base font-regular rounded-[10px] xl:px-5 px-2.5 border border-[#D9D9D9]">
                                             <option value=""><?php _e("Select Action");?></option>
                                             <option value="delete"><?php _e("Delete Selected");?></option>
                                             <option value="select"><?php _e("Select All");?></option>
@@ -121,9 +121,9 @@
                                         <?php } ?>
                                     </div>
                                 </div>
-                                <div class="check-tag bg-white rounded-[10px] p-5 border border-[#D9D9D9]">
-                                    <div>
-                                        <ul class="batch flex flex-col">
+                                <div class="check-tag flex flex-wrap bg-white rounded-[10px] p-5 border border-[#D9D9D9]">
+                                    <div class="w-full">
+                                        <ul class="batch w-full flex flex-col">
                                                  <?php 
                                                 foreach($selected_customer_batches as $batch)
                                                 {
@@ -157,14 +157,14 @@
 
 
                                                 <?php echo show_ribbon_images($batch['type'],$batch['batch_image'],$batch['number'],$batch['country'],$batch['batch_id']); ?>
-                                                <div><span class="text-sm font-medium text-black"><?php echo $batch['ribbon_name_'.$app['language']]; ?></span>
+                                                <div><span class="text-sm font-medium text-black 2xl:break-normal break-all"><?php echo $batch['ribbon_name_'.$app['language']]; ?></span>
                                                 </div>
                                             </li>
                                             <?php } ?>
                                         </ul>
                                     </div>
                                 </div>
-                                <div class="flex gap-5 mt-10">
+                                <div class="flex xl:gap-5 gap-2.5 mt-10 w-full">
                                         <a href = "javascript:void(0)" class="flex-1"><input type="button" class="cursor-pointer cart-slct w-full text-white font-medium rounded-lg  hover:bg-primary min-h-[46px] text-base bg-secondary divider  add_to_cart_ribbon" value="<?php _e("Add to Cart"); ?>"></a>
                                         <a class="flex-1" href = "<?php echo make_url('cart');?>"><input type="button" class="cart-slct w-full text-white rounded-lg cursor-pointer hover:bg-primary min-h-[46px] text-base bg-secondary font-medium divider buy  view_cart" value="<?php _e("View Cart"); ?>"></a>
                                 </div>
@@ -174,7 +174,7 @@
 
                  </div>
                  <div class="srch-heading ">
-                        <h3 class="text-3xl text-black font-gothic capitalize"><?php _e("Badges Placed");?></h3>
+                        <h3 class="xl:text-3xl lg:text-2xl text-xl text-black font-gothic capitalize"><?php _e("Badges Placed");?></h3>
                   </div>
                   <div class='badges bg-body p-5 rounded-[20px] border border-[#D9D9D9]'>
                         <?php //foreach($selected_customer_batches as $custID){}

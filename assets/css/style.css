@@ -83,25 +83,6 @@ margin: auto;}
     float: left;
     width: 100%;
 }
-.tag_line{
-    background: #929292;
-    padding: 10px;
-    color: #fff;    float: left;
-    width: 100%;
-
-}
-.teriff {
-    float: right;
-    background: #ED0000;
-    border: 0px;
-}
-#tagg {
-    background: #929292;
-    padding: 10px;
-    color: #fff;
-    float: left;
-    width: 100%;
-}
 input.add-btn.hvr-float-shadow.add_cust.mar0 {
     margin: 0px;
 }
@@ -362,21 +343,6 @@ form#register-form .form-group {
 }
 }
 
-@media (min-width:1600px){
-
-/*    .container {
-        width: 1500px;
-    }*/
-}
-@media (max-width:1200px){
-    input.add-btn {
-        padding: 7px 19px 7px 0px;
-        max-width: 200px;
-    }
-    input.my-srch {
-        width: 87%;
-    }
-}
 @media (max-width:1200px) and (min-width:992px){
     input.delet-slct {
         margin: 12px auto;
@@ -410,15 +376,6 @@ td.cust-name {
 
 
 @media (max-width:992px) and (min-width:767px){
-    .pull-left {
-        float: left !important;
-        width: 100%;
-    }
-    input.add-btn {
-        padding: 7px 19px 7px 0px;
-        max-width: 100%;
-        margin-top: 0px;
-    }
     input.add-list {
         float: left;
         margin-top: 20px;
@@ -428,9 +385,6 @@ td.cust-name {
         width: 100%;
         line-height: 17px !important;
         margin: 10px 0px;
-    }
-    input.my-srch {
-        width: 84%;
     }
 
 }
@@ -457,10 +411,6 @@ div#no-more-tables .table-bordered tbody tr:last-child td{
 }
 body input.cart-slct.divider.hvr-float-shadow {
     max-width: 49%!important;
-}
-.druken-btn {
-    float: left;
-    width: 100%;padding: 10px;
 }
 }
 @media (max-width:680px){
@@ -531,15 +481,6 @@ lag-top li {
 }
 .btn-cart {
     margin-bottom: 20px;
-}
-.badges .srch-reslt { 
-    float: left;    width: 100%;    text-align: center;
-}
-.srch-reslt .srch-heading {
-    /*max-width: 450px;*/    float: none;    margin: auto;    margin-top: 40px;
-}
-.srch-reslt .flag-contaner { 
-    max-width: 450px;    margin: auto;    float: none;    display: inline-block;
 }
 .col-md-4.mob-blancer {
     float: left;

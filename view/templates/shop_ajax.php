@@ -257,7 +257,7 @@ $('.cat_class').change(function () {
                             var gray = v.is_active == '0' ? "style='filter: grayscale(100%) opacity(.5);'" : "";
                             var disabledvalue = v.is_active == '0' ? 'disabled' : '';
                             var valuebecome = v.is_active == '0' ? '<?php _e('Not Available'); ?>' : '<?php _e('Add to list'); ?>';
-                            cat_list += "<ul class='dist-related dist_" + dist_remove_id + "' ><li class='ribbon_shop' " + gray + "><div><img src=<?php echo DIR_WS_UPLOADS; ?>batch/" + v.batch_image + " class='img-responsive'></div><div class='add-to-list'><input type='button' class='add-list' " + disabledvalue + " value='" + valuebecome + "' data-batch-id='" + v.batch_id + "' data-batch-type=" + v.type + "></div><div class='price_shop'>EUR " + CurrencyFormatted(v.unit_price) + "</div><p>" + v.webshop_title_en + "</p><br><p style='color:blue' >" + v.comment + "</p> </li></ul>";
+                            cat_list += "<ul class='dist-related border border-[#b1b1b1] rounded-[10px] p-5  dist_" + dist_remove_id + "' ><li class='flex gap-5 ribbon_shop' " + gray + "><div><img src=<?php echo DIR_WS_UPLOADS; ?>batch/" + v.batch_image + " class='max-w-[140px]'></div><div class='flex-auto flex gap-5 justify-between'><div class='flex flex-col'><p class='mb-2.5 font-gothic text-black text-base'>" + v.webshop_title_en + "</p><div class='price_shop text-lg text-secondary font-normal'>EUR " + CurrencyFormatted(v.unit_price) + "</div><p style='color:blue' >" + v.comment + "</p></div><div class='add-to-list '><input type='button' class='add-list font-medium px-5 cursor-pointer hover:bg-primary py-2.5 text-white bg-secondary rounded-md text-sm' " + disabledvalue + " value='" + valuebecome + "' data-batch-id='" + v.batch_id + "' data-batch-type=" + v.type + "></div></div> </li></ul>";
                             countt++;
                         } else {
                         }
@@ -271,6 +271,20 @@ $('.cat_class').change(function () {
                         return a.className > b.className;
                     }
                     $('.list').append(emp);
+
+                    // Remove any empty "inner" containers that were created without content
+                    $('.list .inner').each(function () {
+                    if ($.trim($(this).html()) === '') {
+                    $(this).remove();
+                    }
+                    });
+                    
+                    // Remove any span.test-265 wrappers that ended up empty after cleanup
+                    $('.list span').each(function () {
+                    if ($.trim($(this).html()) === '') {
+                    $(this).remove();
+                    }
+                    });
                     var height_div = $('.high').height();
                     var numItems = $(".list").find(".outer").length;
                     var sr = 0;
@@ -367,14 +381,14 @@ $('.cat_class').change(function () {
 				
                                     if(v.ItemType!=='10')
                                     {
-                                cat_list += "<ul class='border border-[#b1b1b1] rounded-[10px] p-5 cat_" + remove_id + "'><li class='ribbon_shop'" + gray + "><div><img src=<?php echo DIR_WS_UPLOADS; ?>batch/" + v.batch_image + " class='img-responsive'></div><div class='add-to-list'><input type='button' class='add-list' " + disabledvalue + " value='" + valuebecome + "' data-batch-id='" + v.batch_id + "' data-batch-type=" + v.type + "></div><div class='price_shop'>EUR " + CurrencyFormatted(v.unit_price) + "</div><p>" + v.webshop_title_en + "</p><br><p style='color:blue' >" + v.comment + "</p> </li></ul>";
-                                                }
-                                                else
-                                                {
+                                cat_list += "<ul class='border border-[#b1b1b1] rounded-[10px] p-5 cat_" + remove_id + "'><li class='ribbon_shop flex gap-5'" + gray + "><div><img src=<?php echo DIR_WS_UPLOADS; ?>batch/" + v.batch_image + " class='max-w-[140px]'></div><div class='flex-auto flex gap-5 justify-between'><div class='flex flex-col'><p class='mb-2.5 font-gothic text-black text-base'>" + v.webshop_title_en + "</p><div class='price_shop text-lg text-secondary font-normal'>EUR " + CurrencyFormatted(v.unit_price) + "</div><p class='text-black text-base font-normal mt-1.5' >" + v.comment + "</p></div><div class='add-to-list'><input type='button' class='add-list font-medium px-5 cursor-pointer hover:bg-primary py-2.5 text-white bg-secondary rounded-md text-sm' " + disabledvalue + " value='" + valuebecome + "' data-batch-id='" + v.batch_id + "' data-batch-type=" + v.type + "></div></div>  </li></ul>";
+                                }
+                                else
+                                {
 
                                 var cust_id = $("#custm").val();
 
-                                cat_list += "<ul class='border border-[#b1b1b1] rounded-[10px] p-5 cat_" + remove_id + "'><li class='ribbon_shop flex '" + gray + "><div><img src=<?php echo DIR_WS_UPLOADS; ?>batch/" + v.batch_image + " class='img-responsive'></div><div class='add-to-list'><input type='button' name='rename_cust'  data-toggle='modal' data-target='#Type10' onclick='RenameFunction(" + cust_id +", " + v.batch_id + ")' data-cid ='" + cust_id + "' class='add-list2'" + " value='" + valuebecome + "' data-batch-id='" + v.batch_id + "' data-batch-type=10></div><div class='price_shop'>EUR " + CurrencyFormatted(v.unit_price) + "</div><p>" + v.webshop_title_en + "</p><br><p style='color:blue' >" + v.comment + "</p> </li></ul>";
+                                cat_list += "<ul class='border border-[#b1b1b1] rounded-[10px] p-5 cat_" + remove_id + "'><li class='ribbon_shop flex gap-5'" + gray + "><div><img src=<?php echo DIR_WS_UPLOADS; ?>batch/" + v.batch_image + " class='max-w-[140px]'></div><div class='flex-auto flex gap-5 justify-between'><div class='flex flex-col'><p class='mb-2.5 font-gothic text-black text-base'>" + v.webshop_title_en + "</p><div class='price_shop text-lg text-secondary font-normal'>EUR " + CurrencyFormatted(v.unit_price) + "</div><p class='text-black text-base font-normal mt-1.5' >" + v.comment + "</p></div><div class='add-to-list'><input type='button' class='add-list font-medium px-5 cursor-pointer hover:bg-primary py-2.5 text-white bg-secondary rounded-md text-sm' " + disabledvalue + " value='" + valuebecome + "' data-batch-id='" + v.batch_id + "' data-batch-type=" + v.type + "></div></div>  </li></ul>";
 
 				}
 
@@ -460,11 +474,11 @@ $('.cat_class').change(function () {
                             toastr['error'](data.msg);
                         }
                         $(data.result).each(function (index, value) {
-                            custData += '<li class="mb-5 pb-5 border-b border-[#D9D9D9] last:pb-0 last:mb-0 last:border-none flex gap-2.5 customer-list" id=ribbon_' + data.custId + '" ' + value.ordered_str + '><label class="relative"><input type=checkbox checked=checked class="chkid min-w-4 h-4 absolute left-0 z-[1] opacity-0" name=o' + value.ordered + ' value=' + value.custId + '><span class="smallcheck relative min-w-4 h-4 border border-[#B1B1B1] inline-flex rounded-[2px]"></span></label>' + value.ribbon_type + '<div><span class="text-sm font-medium text-black">' + value.ribbon_name_en + value.name_addition + '</span></div></li>';
+                            custData += '<li class="mb-5 pb-5 border-b border-[#D9D9D9] last:pb-0 last:mb-0 last:border-none flex gap-2.5 customer-list" id=ribbon_' + data.custId + '" ' + value.ordered_str + '><label class="relative"><input type=checkbox checked=checked class="chkid min-w-4 h-4 absolute left-0 z-[1] opacity-0" name=o' + value.ordered + ' value=' + value.custId + '><span class="smallcheck relative min-w-4 h-4 border border-[#B1B1B1] inline-flex rounded-[2px]"></span></label>' + value.ribbon_type + '<div><span class="text-sm 2xl:break-normal break-all font-medium text-black">' + value.ribbon_name_en + value.name_addition + '</span></div></li>';
                             $('.batch').html(custData);
                         });
                         if (data.result != '') {
-                            $('#show_buttons').html('<select id="action-dropdown" class="delet-slct  min-h-[46px] focus:outline-none cursor-pointer text-black text-base font-regular rounded-[10px] px-5 border border-[#D9D9D9]"><option value=""><?php _e("Select Action");?></option><option value="delete"><?php _e("Delete Selected"); ?></option><option value="select"><?php _e("Select All"); ?></option><option value="select_n"><?php _e("Select New");?></option></select>');
+                            $('#show_buttons').html('<select id="action-dropdown" class="delet-slct 2xl:w-auto w-full  min-h-[46px] focus:outline-none cursor-pointer text-black text-base font-regular rounded-[10px] px-5 border border-[#D9D9D9]"><option value=""><?php _e("Select Action");?></option><option value="delete"><?php _e("Delete Selected"); ?></option><option value="select"><?php _e("Select All"); ?></option><option value="select_n"><?php _e("Select New");?></option></select>');
                             badgeFilterByLevel(cust_id);
                         }
                     }
@@ -521,7 +535,7 @@ $('.cat_class').change(function () {
                             $('.batch').html(custData);
                         });
                         if (data.result != '') {
-                            $('#show_buttons').html('<select id="action-dropdown" class="delet-slct  min-h-[46px] focus:outline-none cursor-pointer text-black text-base font-regular rounded-[10px] px-5 border border-[#D9D9D9]"><option value=""><?php _e("Select Action");?></option><option value="delete"><?php _e("Delete Selected"); ?></option><option value="select"><?php _e("Select All"); ?></option><option value="select_n"><?php _e("Select New");?></option></select>');
+                            $('#show_buttons').html('<select id="action-dropdown" class="delet-slct 2xl:w-auto w-full min-h-[46px] focus:outline-none cursor-pointer text-black text-base font-regular rounded-[10px] px-5 border border-[#D9D9D9]"><option value=""><?php _e("Select Action");?></option><option value="delete"><?php _e("Delete Selected"); ?></option><option value="select"><?php _e("Select All"); ?></option><option value="select_n"><?php _e("Select New");?></option></select>');
                             badgeFilterByLevel(cust_id);
                         }
                     }
@@ -559,7 +573,7 @@ $('.cat_class').change(function () {
                                 return false;
                             }
                             if (data != '') {
-                                $('#show_buttons').html('<select id="action-dropdown" class="delet-slct hvr-float-shadow"><option value=""><?php _e("Select Action");?></option><option value="delete"><?php _e("Delete Selected"); ?></option><option value="select"><?php _e('Select All'); ?></option><option value="select_n"><?php _e("Select New");?></option></select>');
+                                $('#show_buttons').html('<select id="action-dropdown" class="delet-slct 2xl:w-auto w-full hvr-float-shadow"><option value=""><?php _e("Select Action");?></option><option value="delete"><?php _e("Delete Selected"); ?></option><option value="select"><?php _e('Select All'); ?></option><option value="select_n"><?php _e("Select New");?></option></select>');
                                 badgeFilterByLevel(cust_id);
                             }
                         }
@@ -672,7 +686,7 @@ $('.cat_class').change(function () {
                     });
                     $('.batch').html(htmlData);
                     if (htmlData != '') {
-                        $('#show_buttons').html('<select id="action-dropdown" class="delet-slct hvr-float-shadow"><option value=""><?php _e("Select Action");?></option><option value="delete"><?php _e('Delete Selected'); ?></option><option value="select"><?php _e('Select All'); ?></option><option value="select_n"><?php _e("Select New");?></option></select>');
+                        $('#show_buttons').html('<select id="action-dropdown" class="delet-slct 2xl:w-auto w-full hvr-float-shadow"><option value=""><?php _e("Select Action");?></option><option value="delete"><?php _e('Delete Selected'); ?></option><option value="select"><?php _e('Select All'); ?></option><option value="select_n"><?php _e("Select New");?></option></select>');
                         var badgeData = '';
                         $(data).each(function (index, value) {
                             badgeData += value.ribbon_type;
@@ -891,13 +905,13 @@ $('.cat_class').change(function () {
                 var html = "";
                 if (data != '') {
                     var tag_line = '';
-                    tag_line = "<div class='tag_line_" + count + "' id='tagg'>Search results <input type='button' class='teriff' id='testff_" + count + "' data-count ='" + count + "' name='X' value='X'></div>";
+                    tag_line = "<div class='bg-[#d9d9d9] justify-between text-base text-black font-normal rounded-[10px] px-5 inline-flex items-center w-full min-h-[46px] tag_line_" + count + "' id='tagg'>Search results <input type='button' class='teriff cursor-pointer text-sm' id='testff_" + count + "' data-count ='" + count + "' name='X' value='X'></div>";
                     html = tag_line;
                     $(data).each(function (i, v) {
                         var gray = v.is_active == '0' ? "style='filter: grayscale(100%) opacity(.5);'" : "";
                         var disabledvalue = v.is_active == '0' ? 'disabled' : '';
                         var valuebecome = v.is_active == '0' ? '<?php _e('Not Available'); ?>' : '<?php _e('Add to list'); ?>';
-                        html += "<ul class='search-out_" + count + "'><li "+gray+"><div><img src=<?php echo DIR_WS_UPLOADS; ?>batch/" + v.batch_image + " class='img-responsive'></div><div class='add-to-list'><input type='button' class='add-list' " + disabledvalue + " value='" + valuebecome + "' data-batch-id='" + v.id + "' data-batch-type=" + v.type + "></div><p>" + v.desc_en + "</p></li></ul>";
+                        html += "<ul class='border border-[#b1b1b1] rounded-[10px] p-5 search-out_" + count + "'><li class='flex gap-5' "+gray+"><div><img src=<?php echo DIR_WS_UPLOADS; ?>batch/" + v.batch_image + " class='max-w-[140px]'></div><div class='flex-auto flex gap-5 justify-between'><div class='flex flex-col'><p class='mb-2.5 font-gothic text-black text-base'>" + v.desc_en + "</p></div><div class='add-to-list'><input type='button' class='add-list font-medium px-5 cursor-pointer hover:bg-primary py-2.5 text-white bg-secondary rounded-md text-sm' " + disabledvalue + " value='" + valuebecome + "' data-batch-id='" + v.id + "' data-batch-type=" + v.type + "></div></div></li></ul>";
                     });
                     $(".list").prepend(html);
                 } else {
