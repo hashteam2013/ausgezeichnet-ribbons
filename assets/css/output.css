@@ -767,6 +767,14 @@ video {
   margin-top: auto;
 }
 
+.mt-1 {
+  margin-top: 0.25rem;
+}
+
+.mt-1\.5 {
+  margin-top: 0.375rem;
+}
+
 .block {
   display: block;
 }
@@ -919,20 +927,12 @@ video {
   width: 15px;
 }
 
-.w-\[22\%\] {
-  width: 22%;
-}
-
 .w-\[285px\] {
   width: 285px;
 }
 
 .w-\[31\%\] {
   width: 31%;
-}
-
-.w-\[47\%\] {
-  width: 47%;
 }
 
 .w-\[69\%\] {
@@ -995,6 +995,10 @@ video {
   max-width: 500px;
 }
 
+.max-w-\[60px\] {
+  max-width: 60px;
+}
+
 .max-w-\[630px\] {
   max-width: 630px;
 }
@@ -1038,6 +1042,10 @@ video {
 
 .list-none {
   list-style-type: none;
+}
+
+.flex-row {
+  flex-direction: row;
 }
 
 .flex-col {
@@ -1092,10 +1100,6 @@ video {
   gap: 0.375rem;
 }
 
-.gap-14 {
-  gap: 3.5rem;
-}
-
 .gap-2 {
   gap: 0.5rem;
 }
@@ -1140,6 +1144,10 @@ video {
 
 .break-words {
   overflow-wrap: break-word;
+}
+
+.break-all {
+  word-break: break-all;
 }
 
 .rounded {
@@ -1347,6 +1355,16 @@ video {
   padding: 1.25rem;
 }
 
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.px-2\.5 {
+  padding-left: 0.625rem;
+  padding-right: 0.625rem;
+}
+
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -1375,11 +1393,6 @@ video {
 .py-14 {
   padding-top: 3.5rem;
   padding-bottom: 3.5rem;
-}
-
-.py-16 {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
 }
 
 .py-2 {
@@ -1464,11 +1477,6 @@ video {
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
-}
-
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
 }
 
 .text-\[12px\] {
@@ -1767,6 +1775,10 @@ body.active::before{
   background-color: rgb(255 237 237 / var(--tw-bg-opacity, 1));
 }
 
+.flag-sec .list .inner .ribbon_shop p br {
+  display: none;
+}
+
 @media(max-width:1669px){
   .iframe_call iframe {
     max-height: 370px;
@@ -1867,6 +1879,10 @@ body.active::before{
 
   .german-active .break-words {
     word-break: break-all;
+  }
+
+  .customer-list .ribbon_outer img {
+    max-width: 60px;
   }
 }
 
@@ -2054,6 +2070,11 @@ body.active::before{
     padding-bottom: 0.25rem;
   }
 
+  .md\:py-12 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
   .md\:py-14 {
     padding-top: 3.5rem;
     padding-bottom: 3.5rem;
@@ -2208,8 +2229,16 @@ body.active::before{
     width: 6rem;
   }
 
+  .lg\:w-\[22\%\] {
+    width: 22%;
+  }
+
   .lg\:w-\[27\%\] {
     width: 27%;
+  }
+
+  .lg\:w-\[31\%\] {
+    width: 31%;
   }
 
   .lg\:w-\[40\%\] {
@@ -2222,6 +2251,10 @@ body.active::before{
 
   .lg\:w-\[420px\] {
     width: 420px;
+  }
+
+  .lg\:w-\[47\%\] {
+    width: 47%;
   }
 
   .lg\:w-\[48\%\] {
@@ -2242,6 +2275,10 @@ body.active::before{
 
   .lg\:flex-row {
     flex-direction: row;
+  }
+
+  .lg\:flex-col {
+    flex-direction: column;
   }
 
   .lg\:flex-nowrap {
@@ -2298,6 +2335,11 @@ body.active::before{
 
   .lg\:pe-0 {
     padding-inline-end: 0px;
+  }
+
+  .lg\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 
   .lg\:text-xl {
@@ -2360,8 +2402,16 @@ body.active::before{
     max-width: 700px;
   }
 
+  .xl\:flex-row {
+    flex-direction: row;
+  }
+
   .xl\:flex-nowrap {
     flex-wrap: nowrap;
+  }
+
+  .xl\:items-center {
+    align-items: center;
   }
 
   .xl\:gap-10 {
@@ -2374,6 +2424,10 @@ body.active::before{
 
   .xl\:gap-32 {
     gap: 8rem;
+  }
+
+  .xl\:gap-5 {
+    gap: 1.25rem;
   }
 
   .xl\:gap-7 {
@@ -2399,6 +2453,16 @@ body.active::before{
   .xl\:px-36 {
     padding-left: 9rem;
     padding-right: 9rem;
+  }
+
+  .xl\:px-5 {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .xl\:py-16 {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
   }
 
   .xl\:py-24 {
@@ -2502,6 +2566,10 @@ body.active::before{
     gap: 3rem;
   }
 
+  .\32xl\:gap-14 {
+    gap: 3.5rem;
+  }
+
   .\32xl\:gap-16 {
     gap: 4rem;
   }
@@ -2512,6 +2580,11 @@ body.active::before{
 
   .\32xl\:gap-60 {
     gap: 15rem;
+  }
+
+  .\32xl\:break-normal {
+    overflow-wrap: normal;
+    word-break: normal;
   }
 
   .\32xl\:p-10 {
