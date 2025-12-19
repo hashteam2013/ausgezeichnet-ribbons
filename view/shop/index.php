@@ -76,13 +76,13 @@
                     </div>
                 </div>    
             </div>
-
+            <?php// echo "ddd"pr($app['logged_in_user']); ?>
             <div class="lg:w-[31%] w-full flex flex-col gap-5">
                 <h3 class="xl:text-3xl lg:text-2xl text-xl text-black font-gothic">Customer Listing</h3>
                 <!-- <div class="srch-heading"><?php _e("Selected Items"); ?></div> -->
                 <div class="bg-body p-5 rounded-[20px] border border-[#D9D9D9]">
                     <div class="srch-reslt slect">
-                            <div class="padd-side">
+                            <div class="padd-side view-shops">
                                 <div class="flex xl:flex-row lg:flex-col flex-row xl:items-center gap-5 mb-5">
                                     <?php if (isset($app['logged_in_user']) && $app['logged_in_user'] != '') { //pr($customers);?>
                                     <?php if(!empty($customers)){ ?>
@@ -107,6 +107,7 @@
                                         <input type="button" class="add-btn rounded-lg cursor-pointer text-base font-semibold inline-flex items-center bg-primary min-h-[46px] text-white ps-[44px] pe-5  add_cust" value="<?php _e("Add Customer");?>">
                                     </div>
                                 </div>
+                                <?php if (isset($app['logged_in_user']) && $app['logged_in_user']!="") { ?>
                                 <div class="mb-5 flex gap-2.5 items-center justify-between">
                                     <h4 class="text-secondary xl:text-xl text-lg font-medium font-gothic">Filter</h4>
                                     <div id='show_buttons'>
@@ -168,12 +169,16 @@
                                         <a href = "javascript:void(0)" class="flex-1"><input type="button" class="cursor-pointer cart-slct w-full text-white font-medium rounded-lg  hover:bg-primary min-h-[46px] text-base bg-secondary divider  add_to_cart_ribbon" value="<?php _e("Add to Cart"); ?>"></a>
                                         <a class="flex-1" href = "<?php echo make_url('cart');?>"><input type="button" class="cart-slct w-full text-white rounded-lg cursor-pointer hover:bg-primary min-h-[46px] text-base bg-secondary font-medium divider buy  view_cart" value="<?php _e("View Cart"); ?>"></a>
                                 </div>
-                        </div>
+                                <?php }?>
+                           </div>
                     </div>
                     
 
                  </div>
-                 <div class="srch-heading ">
+                
+                 <?php if (isset($app['logged_in_user']) && $app['logged_in_user'] != '') { ?>
+
+                  <div class="srch-heading">
                         <h3 class="xl:text-3xl lg:text-2xl text-xl text-black font-gothic capitalize"><?php _e("Badges Placed");?></h3>
                   </div>
                   <div class='badges bg-body p-5 rounded-[20px] border border-[#D9D9D9]'>
@@ -186,6 +191,7 @@
                             </div>
                         </div>
                    </div>
+                   <?php } ?>
             </div>
         </div>
     </div>
