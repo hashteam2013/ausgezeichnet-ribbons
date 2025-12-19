@@ -119,7 +119,6 @@ $('.cat_class').change(function () {
                                 {
 
                                     var cust_id = $("#custm").val();
-
                                                 cat_list += "<ul class='border border-[#b1b1b1] rounded-[10px] p-5 cat_" + remove_id + "'><li class='ribbon_shop'" + gray + "><div><img src=<?php echo DIR_WS_UPLOADS; ?>batch/" + v.batch_image + " class='img-responsive'></div><div class='add-to-list'><input type='button' name='rename_cust'  data-toggle='modal' data-target='#Type10' onclick='RenameFunction(" + cust_id +", " + v.batch_id + ")' data-cid ='" + cust_id + "' class='add-list2'" + " value='" + valuebecome + "' data-batch-id='" + v.batch_id + "' data-batch-type=10></div><div class='price_shop'>EUR " + CurrencyFormatted(v.unit_price) + "</div><p>" + v.webshop_title_en + "</p><br><p style='color:blue' >" + v.comment + "</p> </li></ul>";
 
                                 }

@@ -95,10 +95,10 @@
                                             <?php } } ?>
                                         </select> 
                                     <?php } else {?>
-                                    <select id="custm" style="display: none;"></select>
+                                    <select id="custm" class="min-h-[46px] focus:outline-none cursor-pointer flex-1 text-black text-base font-regular rounded-[10px] 2xl:px-5 px-2 max-w-[227px] w-full border border-[#D9D9D9]" style="display: none;"></select>
                                     <?php } ?>
                                     <?php } else { ?>
-                                     <select id="custm"><option><?php _e("Guest"); ?></option></select> 
+                                     <select id="custm" class="min-h-[46px] focus:outline-none cursor-pointer flex-1 text-black text-base font-regular rounded-[10px] 2xl:px-5 px-2 max-w-[227px] w-full border border-[#D9D9D9]"><option><?php _e("Guest"); ?></option></select> 
                                      <?php } ?>
                                     <div class="relative">
                                         <svg width="18" height="18" class="absolute left-5 top-[14px] pointer-events-none" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
