@@ -924,8 +924,8 @@ $('.cat_class').change(function () {
     var tot;
     $(document.body).on('click', ".teriff", function () {
         tot = $(this).data('count');
-        $('.search-out_' + tot).html('');
-        $('.tag_line_' + tot).hide('');
+        $('.search-out_' + tot).remove();
+        $('.tag_line_' + tot).remove();
     });
 
     function badgeFilterByLevel(customer_id)
