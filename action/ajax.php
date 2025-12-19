@@ -598,24 +598,52 @@ switch ($action):
         break;
 
     case 'add_list':
-        if ($app['POST']['cust_id'] != '') {
+        // Validate user is logged in
+        if (!isset($app['logged_in_user']) || !$app['logged_in_user']) {
+            $output['msg'] = _e('Please log in to add items to your list', true);
+            $output['status'] = 'error';
+            echo json_encode($output);
+            break;
+        }
+        
+        // Validate cust_id is provided and is a valid integer (not 'guest')
+        if (!isset($app['POST']['cust_id']) || $app['POST']['cust_id'] == '' || $app['POST']['cust_id'] == 'guest' || !is_numeric($app['POST']['cust_id'])) {
+            $output['msg'] = _e('Please add customer first', true);
+            $output['status'] = 'error';
+            echo json_encode($output);
+            break;
+        }
+        
+        // Convert to integers for database operations
+        $user_id = intval($app['POST']['user_id']);
+        $cust_id = intval($app['POST']['cust_id']);
+        $batch_id = intval($app['POST']['batch_id']);
 
+        $query = new query("customers as customers");
+        $query->Field = " ShownName ";
+        $query->Where = " WHERE id = " . $cust_id;
+        $currentCustomer = $query->DisplayOne();
+        
+        // Validate customer exists and belongs to logged in user
+        if (empty($currentCustomer)) {
+            $output['msg'] = _e('Customer not found', true);
+            $output['status'] = 'error';
+            echo json_encode($output);
+            break;
+        }
+        
+        $name_addition = "";
 
-            $query = new query("customers as customers");
-            $query->Field = " ShownName ";
-            $query->Where = " WHERE id = '" . $app['POST']['cust_id'] . "'";
-            $currentCustomer = $query->DisplayOne();
-            $name_addition = "";
-
-            $object = new query('customer_batches');
-            $object->Where = "Where user_id =" . $app['POST']['user_id'] . " and customer_id =" . $app['POST']['cust_id'] . " and batch_id=" . $app['POST']['batch_id'];
+        $object = new query('customer_batches');
+        // Use integer values directly (no quotes needed for integers)
+        $object->Where = "Where user_id = " . $user_id . " and customer_id = " . $cust_id . " and batch_id = " . $batch_id;
             // $object->print=1;
             $record = $object->ListOfAllRecords();
-            if (empty($record) || $app['POST']['batch_id'] == '548' || $app['POST']['batch_id'] == '549' || $app['POST']['batch_id'] == '551' || $app['POST']['batch_id'] == '188') {
+            if (empty($record) || $batch_id == 548 || $batch_id == 549 || $batch_id == 551 || $batch_id == 188) {
                 $query = new query('customer_batches');
-                $query->Data['user_id'] = $app['POST']['user_id'];
-                $query->Data['customer_id'] = $app['POST']['cust_id'];
-                $query->Data['batch_id'] = $app['POST']['batch_id'];
+                $query->Data['user_id'] = $user_id;
+                $query->Data['customer_id'] = $cust_id;
+                $query->Data['batch_id'] = $batch_id;
                 $query->Data['type'] = isset($app['POST']['batchType']) ? $app['POST']['batchType'] : '0';
                 $query->Data['date_add'] = '1';
                 if ($query->Insert()) {
@@ -623,11 +651,11 @@ switch ($action):
                     $query = new query("customer_batches as cust_detail");
                     $query->Field = "batch.id,batch.batch_image,batch.type,batch.value,batch.ribbon_name_" . $app['language'] . " as batchname,cust_detail.id,cust_detail.type,cust_detail.batch_id, batch.ItemType as ItemType";
                     $query->Where = "LEFT JOIN batches as batch ON batch.id = cust_detail.batch_id";
-                    $query->Where .= " where cust_detail.customer_id = '" . $app['POST']['cust_id'] . "' order by batch.value DESC";
+                    $query->Where .= " where cust_detail.customer_id = " . $cust_id . " order by batch.value DESC";
                     $show_batch = $query->ListOfAllRecords();
 
 
-                    $show = $app['POST']['cust_id'];
+                    $show = $cust_id;
                     $query2 = new query('order_items');
                     $query2->Field = "order_items.id, order_items.customer_id, order_items.order_id , order_items.product_id,  orders.is_order_valid ";
                     $query2->Where = " LEFT JOIN batches on order_items.product_id=batches.id LEFT JOIN orders on order_items.order_id=orders.id WHERE orders.is_order_valid='1'  AND order_items.customer_id IN(Select customers.id from customers WHERE customers.id=$show)  ORDER BY order_id ";
@@ -677,7 +705,7 @@ switch ($action):
                 $query = new query("customer_batches as cust_detail");
                 $query->Field = "batch.id,batch.batch_image,batch.type,batch.value,batch.ribbon_name_" . $app['language'] . " as batchname,cust_detail.id as cust_id,cust_detail.type,  batch.ItemType as ItemType ";
                 $query->Where = "LEFT JOIN batches as batch ON batch.id = cust_detail.batch_id ";
-                $query->Where .= " where cust_detail.customer_id = '" . $app['POST']['cust_id'] . "' order by batch.value DESC";
+                $query->Where .= " where cust_detail.customer_id = " . $cust_id . " order by batch.value DESC";
                 //$query->print= 1;
                 $show_batch = $query->ListOfAllRecords();
                 //pr($show_batch);
@@ -700,10 +728,6 @@ switch ($action):
                     $output['status'] = 'error';
                 }
             }
-        } else {
-            $output['msg'] = _e('Please add customer first', true);
-            $output['status'] = 'error';
-        }
         echo json_encode($output);
         break;
 
@@ -721,7 +745,11 @@ switch ($action):
             if (!empty($record_q)) {
                 //echo $app['POST']['cust_id']."<br/>".$app['POST']['number']."<br/>".$app['POST']['batch_id'];
                 $object = new query('customer_batches');
-                $object->Where = "Where customer_id =" . $app['POST']['cust_id'] . " and number =" . $app['POST']['number'] . " and batch_id=" . $app['POST']['batch_id'];
+                // Properly escape and quote values to prevent SQL injection and syntax errors
+                $cust_id_escaped = mysqli_real_escape_string($app['mysqllink'], $app['POST']['cust_id']);
+                $number_escaped = mysqli_real_escape_string($app['mysqllink'], $app['POST']['number']);
+                $batch_id_escaped = mysqli_real_escape_string($app['mysqllink'], $app['POST']['batch_id']);
+                $object->Where = "Where customer_id = '" . $cust_id_escaped . "' and number = '" . $number_escaped . "' and batch_id = '" . $batch_id_escaped . "'";
                 //$object->print=1;
                 $record = $object->ListOfAllRecords();
                 //echo "<pre>";print_r($record);
@@ -789,11 +817,18 @@ switch ($action):
     case 'add_list_country':
         if (isset($app['POST']['loc_val'])) {
             $object_q = new query('batch_images');
-            $object_q->Where = "Where location_id =" . $app['POST']['loc_val'] . " and batch_id =" . $app['POST']['batch_id'] . "";
+            // Properly escape and quote values to prevent SQL injection and syntax errors
+            $loc_val_escaped = mysqli_real_escape_string($app['mysqllink'], $app['POST']['loc_val']);
+            $batch_id_escaped_q = mysqli_real_escape_string($app['mysqllink'], $app['POST']['batch_id']);
+            $object_q->Where = "Where location_id = '" . $loc_val_escaped . "' and batch_id = '" . $batch_id_escaped_q . "'";
             $record_q = $object_q->ListOfAllRecords();
             if (!empty($record_q)) {
                 $object = new query('customer_batches');
-                $object->Where = "Where customer_id =" . $app['POST']['cust_id'] . " and batch_id =" . $app['POST']['batch_id'] . " and country = '" . $app['POST']['loc_val'] . "'";
+                // Properly escape and quote values to prevent SQL injection and syntax errors
+                $cust_id_escaped = mysqli_real_escape_string($app['mysqllink'], $app['POST']['cust_id']);
+                $batch_id_escaped = mysqli_real_escape_string($app['mysqllink'], $app['POST']['batch_id']);
+                $loc_val_escaped = mysqli_real_escape_string($app['mysqllink'], $app['POST']['loc_val']);
+                $object->Where = "Where customer_id = '" . $cust_id_escaped . "' and batch_id = '" . $batch_id_escaped . "' and country = '" . $loc_val_escaped . "'";
                 $record = $object->ListOfAllRecords();
                 //print_r($record);
                 if (empty($record)) {
