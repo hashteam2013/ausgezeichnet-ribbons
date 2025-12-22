@@ -375,20 +375,6 @@ td.cust-name {
 }
 
 
-@media (max-width:992px) and (min-width:767px){
-    input.add-list {
-        float: left;
-        margin-top: 20px;
-    }
-    .flag-sec p {
-        float: left;
-        width: 100%;
-        line-height: 17px !important;
-        margin: 10px 0px;
-    }
-
-}
-
 @media (min-width:767px){
 div#no-more-tables .table-bordered tbody tr:last-child td{
     width: 50%;
@@ -518,9 +504,6 @@ lag-top li {
 	.ribbon_outer {
     width: 33%;
 }
-    input.my-srch {
-        max-width: 222px;margin-left: 20px;
-    }
 
     input.delet-slct {
         margin: 12px auto;
@@ -531,13 +514,6 @@ lag-top li {
         float: left;
         width: 100%;
         margin-bottom: 28px;
-    }
-    .srch-bar {
-        float: left;
-        margin-bottom: 0;
-        width: 100%;
-        margin: 0 auto 20px;
-        text-align: center;
     }
     .login-outer {
         width: auto;margin-left: 0px;
@@ -577,9 +553,6 @@ input.add-btn {
     margin-top: 0;
 }
 }
-
-     input.my-srch {margin-left:0px;
-    }
      div#no-more-tables button.btn.btn-info.btn-sm {
     margin: 0px 15px 13px 0px !IMPORTANT;
 }
