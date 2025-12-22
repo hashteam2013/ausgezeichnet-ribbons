@@ -879,6 +879,10 @@ video {
   min-height: 60px;
 }
 
+.min-h-\[38px\] {
+  min-height: 38px;
+}
+
 .w-1 {
   width: 0.25rem;
 }
@@ -995,6 +999,10 @@ video {
   max-width: 50px;
 }
 
+.max-w-\[55px\] {
+  max-width: 55px;
+}
+
 .max-w-\[630px\] {
   max-width: 630px;
 }
@@ -1021,10 +1029,6 @@ video {
 
 .max-w-xs {
   max-width: 20rem;
-}
-
-.max-w-\[55px\] {
-  max-width: 55px;
 }
 
 .flex-1 {
@@ -1268,6 +1272,11 @@ video {
   border-color: rgb(255 255 255 / var(--tw-border-opacity, 1));
 }
 
+.border-\[\#d9d9d9\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(217 217 217 / var(--tw-border-opacity, 1));
+}
+
 .bg-\[\#d9d9d9\] {
   --tw-bg-opacity: 1;
   background-color: rgb(217 217 217 / var(--tw-bg-opacity, 1));
@@ -1413,6 +1422,11 @@ video {
   padding-bottom: 0.625rem;
 }
 
+.py-20 {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
 .py-3 {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
@@ -1431,6 +1445,11 @@ video {
 .py-6 {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
+}
+
+.py-7 {
+  padding-top: 1.75rem;
+  padding-bottom: 1.75rem;
 }
 
 .py-8 {
@@ -1489,6 +1508,11 @@ video {
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
 }
 
 .text-\[12px\] {
@@ -1787,6 +1811,13 @@ body.active::before{
   word-break: break-all;
 }
 
+.side-bar ul li.selected a {
+  --tw-bg-opacity: 1;
+  background-color: rgb(237 0 0 / var(--tw-bg-opacity, 1));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
 @media(max-width:1669px){
   .iframe_call iframe {
     max-height: 370px;
@@ -1963,6 +1994,11 @@ body.active::before{
 .hover\:text-primary:hover {
   --tw-text-opacity: 1;
   color: rgb(237 0 0 / var(--tw-text-opacity, 1));
+}
+
+.hover\:text-white:hover {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
 .focus\:bg-primary:focus {
@@ -2618,6 +2654,11 @@ body.active::before{
 
   .xl\:pt-24 {
     padding-top: 6rem;
+  }
+
+  .xl\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 
   .xl\:text-3xl {

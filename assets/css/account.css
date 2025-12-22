@@ -1,43 +1,8 @@
 @charset "utf-8";
-.filter-bar h1 {
-    font-size: 32px;
-    font-size: 32px;
-    color: #c8151f;
-    margin-bottom: 10px;
-    float: left;
-    width: 100%;
-    text-align: center;
-}
-	span.clickable.filter {
+
+span.clickable.filter {
     margin-top: -15px;
     float: right;
-}
-.side-bar ul {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-}
-.side-bar ul li a {
-    color: #ccc;
-    line-height: 34px;
-    background: #333;
-    width: 100%;
-    float: left; transition:0.62s;
-    padding-left: 20px;
-    border-bottom: 1px solid #c8151f;
-}
-.side-bar ul li a:hover {
-    color: #fff;
-    background: #c8151f;
-}
-.side-bar ul li.selected a{ text-decoration:none;
-    color: #fff;
-    background: #c8151f;
-	
-}
-.side-bar {
-    background: #f0f0f3;    float: left;
-    width: 100%;    margin: 30px 0px;
 }
 .right-part p{
     background: #f7f7f7;
@@ -46,19 +11,6 @@
     border: 1px solid #ddd;
 }
 
-.form-group lebel {
-    float: left;
-    width: 100%;
-    margin-bottom: 10px;
-    margin-top: 20px;
-}
-input.feild-a {
-    float: left;
-    width: 100%;
-    background: #fff;
-    padding: 8px;
-    outline: 0px;
-}
 table.table.table-hover.osm {
     margin: 50px 0px;
     background: #f9f9f9;
@@ -162,14 +114,6 @@ input.cc-hh {
     width: 20px;
     text-align: left;
 }
-.spot-a {
-    background:#f0f0f3;
-    padding: 0px 15px 15px 15px;
-    border: 1px solid #ccc;
-    margin: 30px 0px;
-    float: left;
-    width: 100%;
-}
 	textarea.feild-a {
     float: left;
     width: 100%;
@@ -217,29 +161,4 @@ input.cc-hh {
 }
 	.side-bar img.img-responsive {
     margin: auto;
-}
-.form-group .all-cat:hover{color: #fff;}
-.form-group .all-cat { background: #fff;
-    text-align: center; height: auto;
-    margin: 10px auto;
-    float: none; padding: 7px 0px;
-    display: inline-block; text-align: center;
-    font-size: 21px;
-    border: 2px solid #c8151f;
-    color: #c8151f;
-    text-decoration: none;
-}
-button.all-cat.add-btn.hvr-float-shadow{background: #fff;
-    text-align: center;
-    height: auto;
-    margin: 10px auto;
-    float: none;
-    padding: 7px 11px;
-    display: inline-block;
-    text-align: center;
-    font-size: 16px;
-    border: 2px solid #c8151f;
-    color: #c8151f;
-    text-decoration: none;
-    margin: 16px auto 0;
 }

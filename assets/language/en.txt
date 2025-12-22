@@ -69,6 +69,10 @@ Management Marketing & Sales contact ~~ <span><svg width="35" height="35" viewBo
 
 // shop page
 search ~~ Search
+product_categories~~Product Categories
+customer_listing~~Customer Listing
+select_action ~~ Select Action 
+filters ~~ Filters
 Our Ribbon Gallery ~~ Gallery
 Categories ~~ Categories
 Districts ~~  Districts
@@ -255,7 +259,7 @@ About Us ~~ About us
 Contact ~~ Contact
 
 //side nav
-Basic Info ~~ my profile
+Basic Info ~~ My Profile
 Change Password ~~ Change password
 Customers ~~ Customers
 Orders ~~ Orders

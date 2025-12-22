@@ -79,7 +79,9 @@ body.active::before{
 .german-active .inner ul li p{
     @apply break-all;
 }
-
+.side-bar ul li.selected a{
+    @apply bg-primary text-white;
+}
 @media(max-width:1669px){
     .iframe_call iframe {
         @apply max-h-[370px];

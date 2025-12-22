@@ -1,4 +1,4 @@
-<div class="filter-bar sampewr">
+<div class="filter-bar sampewr bg-body">
     <div class="container">
         <div class="row">
             <div class="col-md-12">

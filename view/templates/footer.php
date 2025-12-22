@@ -451,6 +451,30 @@ include("common_js.php");
         $('body').removeClass('active');
         $('#custmodal').css({"opacity": "0","display":"none"});
     });
+
+    function _shouldToggleSidebarFilter() {
+        return window.innerWidth < 1024;
+    }
+
+    // Toggle only on smaller viewports (below 1024px)
+    $('#filterBtn').on('click', function () {
+        if (_shouldToggleSidebarFilter()) {
+            $('#sibebarfilter').slideToggle();
+        }
+    });
+
+    // Ensure sidebar filter is visible on desktop (>=1024px)
+    $(document).ready(function () {
+        if (!_shouldToggleSidebarFilter()) {
+            $('#sibebarfilter').show();
+        }
+    });
+
+    $(window).on('resize', function () {
+        if (!_shouldToggleSidebarFilter()) {
+            $('#sibebarfilter').show();
+        }
+    });
 </script>
 
 

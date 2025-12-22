@@ -8,7 +8,7 @@
                 <svg width="24" height="24" class="absolute left-5 md:w-6 md:h-6 w-4 h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M21 21L16.65 16.65M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z" stroke="#2D4D7E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-                <input type="text" id="search-box" class="my-srch w-full rounded-xl bg-white focus:outline-none border-[#b1b1b1] border md:min-h-14 min-h-10 md:ps-[52px] ps-10 md:text-base text-sm text-secondary font-medium" placeholder="Search">
+                <input type="text" id="search-box" class="my-srch w-full rounded-xl bg-white focus:outline-none border-[#b1b1b1] border md:min-h-14 min-h-10 md:ps-[52px] ps-10 md:text-base text-sm text-secondary font-medium" placeholder="<?php _e('search') ?>">
             </div>
            <input type="button" value="<?php _e('search') ?>" class="btn flex-1 xs:w-auto w-full xs:max-w-[200px] md:min-h-14 min-h-10 md:text-lg text-sm font-medium cursor-pointer rounded-lg srch-btn search_ribbon bg-primary text-white">
         </div>
@@ -19,8 +19,15 @@
         <div class="flex lg:flex-row flex-col 2xl:gap-14 xl:gap-6 gap-5">
             <!-----------------------Side-bar------------------------->
             <div class="high flex flex-col gap-5 lg:w-[22%] w-full">
-                <h3 class="xl:text-3xl lg:text-2xl text-xl text-black font-gothic">Filters</h3>
-                <div class="flex flex-col bg-body rounded-xl xl:p-5 lg:p-3 p-5 gap-5">
+                <h3 class="xl:text-3xl lg:text-2xl text-xl text-black font-gothic lg:block hidden"><?php _e("filters") ?></h3>
+                <button class="flex items-center text-lg font-gothic cursor-pointer justify-between lg:hidden flex w-full py-2" id="filterBtn">
+                    <span class="text-black font-gothic xl:text-2xl lg:text-xl text-lg font-medium"><?php _e("filters") ?></span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 9L12 15L18 9" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+
+                </button>
+                <div class="flex flex-col bg-body rounded-xl xl:p-5 lg:p-3 p-5 gap-5 " id="sibebarfilter">
                     <div class="categories">
                         <div class="cat-heading xl:text-[22px] xl:leading-[32px] lg:text-xl text-lg text-black font-semibold"><?php _e("Categories"); ?></div>
                         <ul class="mt-5 flex flex-col gap-4 w-full">
@@ -53,7 +60,7 @@
             </div> 
             <!-----------------------Side-bar-end------------------------->
             <div class="srch-reslt flex flex-col gap-5 lg:w-[47%] w-full">
-                <h3 class="xl:text-3xl lg:text-2xl  text-xl text-black font-gothic">Product Categories</h3>
+                <h3 class="xl:text-3xl lg:text-2xl  text-xl text-black font-gothic"><?php _e("product_categories") ?></h3>
                 <!-- <div class="srch-heading"><?php _e("Search Result by category!"); ?></div> -->
                 <div class="bdr">
                     <div class="flag-sec">
@@ -78,7 +85,7 @@
             </div>
            
             <div class="lg:w-[31%] w-full flex flex-col gap-5">
-                <h3 class="xl:text-3xl lg:text-2xl text-xl text-black font-gothic">Customer Listing</h3>
+                <h3 class="xl:text-3xl lg:text-2xl text-xl text-black font-gothic"><?php _e("customer_listing")?></h3>
                 <!-- <div class="srch-heading"><?php _e("Selected Items"); ?></div> -->
                 <div class="bg-body 2xl:p-5 p-3 rounded-[20px] border border-[#D9D9D9]">
                     <div class="srch-reslt slect">
@@ -109,12 +116,12 @@
                                 </div>
                                 <?php if (isset($app['logged_in_user']) && $app['logged_in_user']!="") { ?>
                                 <div class="mb-5 flex gap-2.5 items-center lg:justify-between">
-                                    <h4 class="text-secondary xl:text-xl text-lg font-medium font-gothic">Filter</h4>
+                                    <h4 class="text-secondary xl:text-xl text-lg font-medium font-gothic"><?php _e("filters") ?></h4>
                                     <div id='show_buttons'>
                                         <?php 
                                         if (isset($app['logged_in_user']) && $app['logged_in_user'] != '' &&  !empty($selected_customer_batches)) { ?>
                                         <select id="action-dropdown" class="delet-slct min-h-[46px]  2xl:w-auto w-full focus:outline-none cursor-pointer text-black text-base font-regular rounded-[10px] xl:px-5 px-2.5 border border-[#D9D9D9]">
-                                            <option value=""><?php _e("Select Action");?></option>
+                                            <option value=""><?php _e("select_action");?></option>
                                             <option value="delete"><?php _e("Delete Selected");?></option>
                                             <option value="select"><?php _e("Select All");?></option>
                                             <option value="select_n"><?php _e("Select New");?></option>

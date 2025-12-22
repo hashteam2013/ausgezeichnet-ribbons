@@ -304,9 +304,6 @@ label.info-disc:hover font {
     z-index: 999;
     box-shadow: 7px 0 27px rgba(0, 0, 0, 0.15);
 }
-label.info-disc {
-    float: none;
-}
 .y-order table tr.total td {
     font-size: 17px;
     font-weight: 500;
@@ -591,26 +588,6 @@ input.all-cat.add-btn.hvr-float-shadow:hover
     left: 45%;
 }
 /*********************** new *******************************/
-.spot-a h3 {
-    display: block;
-    float: left;
-    width: 100%;
-}
-.spot-a label {
-    font-weight: 300;
-
-}
-.form-group lebel::first-letter {
-    text-transform: uppercase;
-}
-.form-group lebel:nth-last-child(3) {
-    text-transform: capitalize;
-}
-.spot-a .form-group {
-    margin-bottom: 15px;
-    float: left;
-    width: 100%;
-}
 .btn-info i {
     margin-right: 4px;
 }
