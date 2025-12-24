@@ -1,68 +1,67 @@
-<div class="filter-bar sampewr">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h1><?php _e("My Orders") ?></h1>
-            </div>
-        </div>
+<div class="filter-bar sampewr bg-body py-7 flex w-full">
+    <div class="container-custom">
+        <h1 class="text-3xl font-gothic text-black text-center"><?php _e("My Orders") ?></h1>
     </div>
 </div>
-<div class="container ac-onword">
-    <div class="row">
-        <div class="col-sm-4">
-            <?php include_once (DIR_FS_VIEW_TEMPLATES . 'sidebar_navigation.php'); ?>
-        </div>
+<div class="ac-onword py-20">
+    <div class="container-custom">
+         
+        <?php include_once (DIR_FS_VIEW_TEMPLATES . 'sidebar_navigation.php'); ?>
+        
         <?php if ($id == '') { ?>
-            <div class="col-sm-8" >
                 <div class="panel panel-primary">
                     <div class="panel-heading">
-                        <h3 class="panel-title"><?php _e("Your Orders"); ?></h3>
+                        <h3 class="panel-title text-3xl text-black font-gothic my-5"><?php _e("Your Orders"); ?></h3>
                     </div>
-                    <table class="table table-hover" id="dev-table">
-                        <thead>
-                            <tr>
-                                <th><?php _e("Sr no."); ?></th> 
-                                <th><?php _e("First Name"); ?></th> 
-                                <th><?php _e("Last Name"); ?></th> 
-                                <th><?php _e("Email"); ?></th> 
-                                <th><?php _e("Amount"); ?></th> 
-                                <th><?php _e("Date"); ?></th> 
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                            $count = 0;
-                            if (!empty($orders)) {
-                                foreach ($orders as $order) {
-			if($order['is_order_valid']=='1'){
-                                    ?>
-                                    <tr>
-                                        <td><?php echo ++$count; ?></td>
-
-                                        <td><?php echo $order['billing_firstname']; ?></td>
-                                        <td><?php echo $order['billing_lastname']; ?></td>
-                                        <td><?php echo $order['billing_email']; ?></td>
-                                        <td><?php echo show_price($order['grand_total']*(1-$order['discount'])+$order['total_shipping_amount']); ?></td>
-                                        <td><?php echo show_date($order['date_add']); ?></td>
-                                        <td>
-                                            <a class="btn btn-info btn-sm" href="<?php echo make_url('orders', array('id' => $order['id'])); ?>" title="<?php _e('details'); ?>"><i class="fa fa-pencil"></i><?php _e('More Detail'); ?></a>&nbsp;&nbsp;
-                                        </td>
-                                    </tr>
+                    <div class="bg-body rounded-[20px] border border-[#d9d9d9] p-5">
+                        <table class="table table-hover w-full table-fixed" id="dev-table">
+                            <thead>
+                                <tr>
+                                    <th class="text-left text-black pe-4 capitalize pb-3 text-lg font-semibold"><?php _e("Sr no."); ?></th> 
+                                    <th class="text-left text-black pe-4 capitalize pb-3 text-lg font-semibold"><?php _e("First Name"); ?></th> 
+                                    <th class="text-left text-black pe-4 capitalize pb-3 text-lg font-semibold"><?php _e("Last Name"); ?></th> 
+                                    <th class="text-left text-black pe-4 capitalize pb-3 text-lg font-semibold"><?php _e("Email"); ?></th> 
+                                    <th class="text-left text-black pe-4 capitalize pb-3 text-lg font-semibold"><?php _e("Amount"); ?></th> 
+                                    <th class="text-left text-black pe-4 capitalize pb-3 text-lg font-semibold"><?php _e("Date"); ?></th> 
+                                    <th class="text-left text-black pe-4 capitalize pb-3 text-lg font-semibold"><?php _e("action"); ?></th>
+                                </tr>
+                            </thead>
+                            <tbody>
                                 <?php
+                                $count = 0;
+                                if (!empty($orders)) {
+                                    foreach ($orders as $order) {
+                                    if($order['is_order_valid']=='1'){
+                                        ?>
+                                        <tr>
+                                            <td class="border-b border-[#d9d9d9] py-4 text-secondary font-medium text-base pe-4"><?php echo ++$count; ?></td>
+
+                                            <td class="border-b border-[#d9d9d9] py-4 text-secondary font-medium text-base pe-4"><?php echo $order['billing_firstname']; ?></td>
+                                            <td class="border-b border-[#d9d9d9] py-4 text-secondary font-medium text-base pe-4"><?php echo $order['billing_lastname']; ?></td>
+                                            <td class="border-b border-[#d9d9d9] py-4 text-secondary font-medium text-base pe-4"><?php echo $order['billing_email']; ?></td>
+                                            <td class="border-b border-[#d9d9d9] py-4 text-secondary font-medium text-base pe-4"><?php echo show_price($order['grand_total']*(1-$order['discount'])+$order['total_shipping_amount']); ?></td>
+                                            <td class="border-b border-[#d9d9d9] py-4 text-secondary font-medium text-base pe-4"><?php echo show_date($order['date_add']); ?></td>
+                                            <td class="border-b border-[#d9d9d9] py-4 text-secondary font-medium text-base pe-4">
+                                                <a class="btn btn-info btn-sm min-w-12 h-10 bg-white rounded-lg border border-[#d9d9d9] inline-flex justify-center items-center" href="<?php echo make_url('orders', array('id' => $order['id'])); ?>" title="<?php _e('details'); ?>"><svg width="20" height="20" class="pointer-events-none" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_714_1751)">
+                                                <path d="M9.16602 3.33332H3.33268C2.89065 3.33332 2.46673 3.50891 2.15417 3.82147C1.84161 4.13403 1.66602 4.55796 1.66602 4.99999V16.6667C1.66602 17.1087 1.84161 17.5326 2.15417 17.8452C2.46673 18.1577 2.89065 18.3333 3.33268 18.3333H14.9993C15.4414 18.3333 15.8653 18.1577 16.1779 17.8452C16.4904 17.5326 16.666 17.1087 16.666 16.6667V10.8333M15.416 2.08332C15.7475 1.7518 16.1972 1.56555 16.666 1.56555C17.1349 1.56555 17.5845 1.7518 17.916 2.08332C18.2475 2.41484 18.4338 2.86448 18.4338 3.33332C18.4338 3.80216 18.2475 4.2518 17.916 4.58332L9.99935 12.5L6.66602 13.3333L7.49935 9.99999L15.416 2.08332Z" stroke="#393C40" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_714_1751"><rect width="20" height="20" fill="white"></rect></clipPath></defs></svg></a>
+                                            </td>
+                                        </tr>
+                                    <?php
+                                    }
                                 }
-		}
-                            } else {
-                                ?>
-                                <tr><td colspan="4"><?php _e("No orders yet"); ?></td></tr>
-    <?php } ?>
-                        </tbody>
-                    </table>
+                                } else {
+                                    ?>
+                                    <tr><td colspan="4"><?php _e("No orders yet"); ?></td></tr>
+                                <?php } ?>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-            </div>
+            
             <?php } else { ?>
-            <div class="col-sm-4">
-    <?php include_once (DIR_FS_VIEW_TEMPLATES . 'sidebar_navigation.php'); ?>
-            </div>
+            
+            <?php include_once (DIR_FS_VIEW_TEMPLATES . 'sidebar_navigation.php'); ?>
+            
             <div class="col-md-8 col-sm-8">
                 <a href="<?php echo make_url('orders'); ?>"><button type="submit" name="update" class="all-cat add-btn righter hvr-float-shadow"><?php _e('Back To Orders');?></button></a>
                 <div class="tab-content">

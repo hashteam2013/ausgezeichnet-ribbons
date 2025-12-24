@@ -1,223 +1,225 @@
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <h1 class="cart-hdng"><?php _e("Cart"); ?></h1>
 
+<div class="flex flex-col gap-20">
+    <div class="bg-body py-7 flex w-full">
+        <div class="container-custom">
+            <h1 class="cart-hdng text-3xl font-gothic text-black text-center"><?php _e("Cart"); ?></h1>
         </div>
-        <div id="no-more-tables">
-            <form id="cart-form" action="<?php echo make_url("cart") ?>" method="post" role="form" style="display: block;">
-                <input type = "hidden" value="" name="conn_val" id="redirect_id">
-	<table class="col-md-12 table-bordered table-striped table-condensed cf">
-                    <thead class="cf">
-                        <tr>
-                            <th><?php _e("Product"); ?></th>
-                            <th class="numeric"><?php _e("Quantity"); ?></th>
-                            <th class="numeric"><?php _e("Price"); ?></th>
-                            <th class="numeric"><?php _e("Total"); ?></th>
-                            <th class="numeric">&nbsp; </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
-                        $customer_name = "";
-                        foreach ($cart_items as $record) {
-                            if ($customer_name != $record['customer_name']) {
+    </div>
 
-
-		$customer_items = listBatch($record['customer_id']);
-		if (is_array($customer_items))
-		{
-			$total = sizeof($customer_items)-2;
-		}
-		else
-		{
-			$total = 0;
-		}
-
-                                echo '<tr><td colspan="5" class="c-name">';
-                                echo $record['customer_name'] . '</td>' . '</tr>';
-                           //     foreach ($customer_items as $customer) {
-                          //          if ($customer->customer_id == $record['customer_id']) {
-                            //          $total = $customer->NumberOfItems;
-                                        $tempvar1 = $total % 3;
-                                        $tempvar2 = $total - $tempvar1;
-                                        $tempvar3 = $tempvar2 * 2 / 3;
-                                        //$tempvar4=$sign($tempvar1);
-                                        if ($tempvar1 == 0) {
-                                            $tempvar4 = 0;
-                                        } else if ($tempvar1 < 0) {
-                                            $tempvar4 = -1;
-                                        } else if ($tempvar1 > 0) {
-                                            $tempvar4 = 1;
-                                        }
-                                        //$sign($tempvar3)
-                                        if ($tempvar3 == 0) {
-                                            $tempvar8 = 0;
-                                        } else if ($tempvar3 < 0) {
-                                            $tempvar8 = -1;
-                                        } else if ($tempvar3 > 0) {
-                                            $tempvar8 = 1;
-                                        }
-                                        //$sign($total-3)
-                                        if ($total - 3 == 0) {
-                                            $tempvar9 = 0;
-                                        } else if ($total - 3 < 0) {
-                                            $tempvar9 = -1;
-                                        } else if ($total - 3 > 0) {
-                                            $tempvar9 = 1;
-                                        }
-                                        //sign(3*$tempvar8+$tempvar1-1)
-                                        if (3 * $tempvar8 + $tempvar1 - 1 == 0) {
-                                            $tempvar10 = 0;
-                                        } else if (3 * $tempvar8 + $tempvar1 - 1 < 0) {
-                                            $tempvar10 = -1;
-                                        } else if (3 * $tempvar8 + $tempvar1 - 1 > 0) {
-                                            $tempvar10 = 1;
-                                        }
-                                        $tempvar5 = $tempvar10;
-                                        $tempvar6 = $tempvar3 + $tempvar4;
-
-                                        $LConnectors = $tempvar5 + $tempvar6 - 1;
-
-                                        $QConnectors = (($total - 3) + ($total - 3) * $tempvar9) / 2;
-                                        if ($total == 4 || $total == 7 || $total == 10 || $total == 13 || $total == 16) {
-                                            $QConnectors = $QConnectors + 1;
-                                        }
-
-					if($LConnectors<0)
-					{
-						$LConnectors=0;
-					}
-
-                                        if ($total < 8) {
-                                            $nails = 2;
-                                        } else {
-                                            $nails = 4;
-                                        }
-					if($total==0)
-					{
-						$nails=0;
-					}
-
-
-                                        echo "<tr><td> Dieser Kunde wird " . $total . " Auszeichnungen tragen.";
-                                        echo 'Sie ben&oumltigen ' . $LConnectors . ' L&aumlngsverbinder und ' . $QConnectors . ' Querverbinder. Wir empfehlen ' . $nails . ' N&aumlgel. Bitte passen Sie die St&uumlckzahlen im Warenkorb an. F&uumlr Namensschilder ben&oumltigen Sie keine N&aumlgel.</td></tr>';
-                     //               }
-                    //          }
-                                $customer_name = $record['customer_name'];
-                              }
-                            echo '<tr>';
-                            echo '<td data-title="Product">';
-                            echo show_ribbon_images($record['type'], $record['batch_image'], $record['number'], $record['country'], $record['product_id']);
-                            
-				if($record['type']=='10')
-				{
-					echo $record['ribbon_name_en']."<b> ".$record['ShownName'] . "</b>";
-				}
-				else
-				{
-					echo $record['ribbon_name_en'];
-				}
-
-                            echo '</td>';
-                            echo '<td data-title="Quantity" class="numeric quant" >';
-                            ?>
+    <div class="flex w-full pb-24">
+        <div class="container-custom">
+        
+            <div id="no-more-tables">
+                <form id="cart-form" action="<?php echo make_url("cart") ?>" method="post" role="form" style="display: block;">
+                    <input type = "hidden" value="" name="conn_val" id="redirect_id">
+                    <table class="col-md-12 table-bordered table-striped table-condensed cf">
+                        <thead class="cf">
+                            <tr>
+                                <th><?php _e("Product"); ?></th>
+                                <th class="numeric"><?php _e("Quantity"); ?></th>
+                                <th class="numeric"><?php _e("Price"); ?></th>
+                                <th class="numeric"><?php _e("Total"); ?></th>
+                                <th class="numeric"><?php _e("action"); ?></th>
+                            </tr>
+                        </thead>
+                        <tbody>
                             <?php
-                            if ($record['level'] == '6') {
+                            $customer_name = "";
+                            foreach ($cart_items as $record) {
+                                if ($customer_name != $record['customer_name']) {
+
+                                    $customer_items = listBatch($record['customer_id']);
+                                    if (is_array($customer_items))
+                                    {
+                                        $total = sizeof($customer_items)-2;
+                                    }
+                                    else
+                                    {
+                                        $total = 0;
+                                    }
+
+                                    echo '<tr><td colspan="5" class="c-name">';
+                                    echo $record['customer_name'] . '</td>' . '</tr>';
+                                            //     foreach ($customer_items as $customer) {
+                                            //          if ($customer->customer_id == $record['customer_id']) {
+                                            //          $total = $customer->NumberOfItems;
+                                            $tempvar1 = $total % 3;
+                                            $tempvar2 = $total - $tempvar1;
+                                            $tempvar3 = $tempvar2 * 2 / 3;
+                                            //$tempvar4=$sign($tempvar1);
+                                            if ($tempvar1 == 0) {
+                                                $tempvar4 = 0;
+                                            } else if ($tempvar1 < 0) {
+                                                $tempvar4 = -1;
+                                            } else if ($tempvar1 > 0) {
+                                                $tempvar4 = 1;
+                                            }
+                                            //$sign($tempvar3)
+                                            if ($tempvar3 == 0) {
+                                                $tempvar8 = 0;
+                                            } else if ($tempvar3 < 0) {
+                                                $tempvar8 = -1;
+                                            } else if ($tempvar3 > 0) {
+                                                $tempvar8 = 1;
+                                            }
+                                            //$sign($total-3)
+                                            if ($total - 3 == 0) {
+                                                $tempvar9 = 0;
+                                            } else if ($total - 3 < 0) {
+                                                $tempvar9 = -1;
+                                            } else if ($total - 3 > 0) {
+                                                $tempvar9 = 1;
+                                            }
+                                            //sign(3*$tempvar8+$tempvar1-1)
+                                            if (3 * $tempvar8 + $tempvar1 - 1 == 0) {
+                                                $tempvar10 = 0;
+                                            } else if (3 * $tempvar8 + $tempvar1 - 1 < 0) {
+                                                $tempvar10 = -1;
+                                            } else if (3 * $tempvar8 + $tempvar1 - 1 > 0) {
+                                                $tempvar10 = 1;
+                                            }
+                                            $tempvar5 = $tempvar10;
+                                            $tempvar6 = $tempvar3 + $tempvar4;
+
+                                            $LConnectors = $tempvar5 + $tempvar6 - 1;
+
+                                            $QConnectors = (($total - 3) + ($total - 3) * $tempvar9) / 2;
+                                            if ($total == 4 || $total == 7 || $total == 10 || $total == 13 || $total == 16) {
+                                                $QConnectors = $QConnectors + 1;
+                                            }
+
+                                        if($LConnectors<0)
+                                        {
+                                            $LConnectors=0;
+                                        }
+
+                                                            if ($total < 8) {
+                                                                $nails = 2;
+                                                            } else {
+                                                                $nails = 4;
+                                                            }
+                                        if($total==0)
+                                        {
+                                            $nails=0;
+                                        }
+
+
+                                            echo "<tr><td> Dieser Kunde wird " . $total . " Auszeichnungen tragen.";
+                                            echo 'Sie ben&oumltigen ' . $LConnectors . ' L&aumlngsverbinder und ' . $QConnectors . ' Querverbinder. Wir empfehlen ' . $nails . ' N&aumlgel. Bitte passen Sie die St&uumlckzahlen im Warenkorb an. F&uumlr Namensschilder ben&oumltigen Sie keine N&aumlgel.</td></tr>';
+                                            //               }
+                                            //          }
+                                    $customer_name = $record['customer_name'];
+                                }
+                                echo '<tr>';
+                                echo '<td data-title="Product">';
+                                echo show_ribbon_images($record['type'], $record['batch_image'], $record['number'], $record['country'], $record['product_id']);
+                                
+                                if($record['type']=='10')
+                                {
+                                    echo $record['ribbon_name_en']."<b> ".$record['ShownName'] . "</b>";
+                                }
+                                else
+                                {
+                                    echo $record['ribbon_name_en'];
+                                }
+
+                                echo '</td>';
+                                echo '<td data-title="Quantity" class="numeric quant" >';
                                 ?>
-                            <select name="quant[<?php echo $record['id']; ?>]" id="p_<?php echo $record['id']; ?>" class="cart_sel" >
                                 <?php
-                                for ($i = 0; $i <= 15; $i++) {
+                                if ($record['level'] == '6') {
                                     ?>
-                                    <option value=<?php echo $i; ?>
-                                            <?php if ($record['quantity'] == $i) { ?> selected="selected"<?php } ?>>
-                                        <?php echo $i; ?></option>';
-                                <?php } ?>
+                                <select name="quant[<?php echo $record['id']; ?>]" id="p_<?php echo $record['id']; ?>" class="cart_sel" >
+                                    <?php
+                                    for ($i = 0; $i <= 15; $i++) {
+                                        ?>
+                                        <option value=<?php echo $i; ?>
+                                                <?php if ($record['quantity'] == $i) { ?> selected="selected"<?php } ?>>
+                                            <?php echo $i; ?></option>';
+                                    <?php } ?>
+                                    <?php
+                                    echo '</select>';
+                                } else {
+                                    echo $record['quantity'];
+                                }
+                                ?>
                                 <?php
-                                echo '</select>';
-                            } else {
-                                echo $record['quantity'];
+                                echo '<input type="hidden"  name="price[' . $record['id'] . ']" value=' . $record['unit_price'] . '>';
+                                echo '<td data-title="Price" class="numeric">';
+                                echo show_price($record['unit_price']);
+                                echo '</td>';
+                                echo '<td data-title="Total" class="numeric">';
+                                echo show_price($record['total_price_tax_excl']);
+                                echo '</td>';
+                                echo '<td data-title="" class="numeric">';
+                                echo '<a href="javascript:void(0);" class="btn btn-danger btn-sm del_cart" data-value=' . $record['id'] . '><i class="fa fa-trash-o"></i></a>';
+                                echo '</td>';
+                                echo '</tr>';
                             }
                             ?>
+
                             <?php
-                            echo '<input type="hidden"  name="price[' . $record['id'] . ']" value=' . $record['unit_price'] . '>';
-                            echo '<td data-title="Price" class="numeric">';
-                            echo show_price($record['unit_price']);
-                            echo '</td>';
-                            echo '<td data-title="Total" class="numeric">';
-                            echo show_price($record['total_price_tax_excl']);
-                            echo '</td>';
-                            echo '<td data-title="" class="numeric">';
-                            echo '<a href="javascript:void(0);" class="btn btn-danger btn-sm del_cart" data-value=' . $record['id'] . '><i class="fa fa-trash-o"></i></a>';
-                            echo '</td>';
-                            echo '</tr>';
-                        }
-                        ?>
-
-                        <?php
-                        $discount = $cart_detail->discount;
-                        echo '<tr>';
-                        echo '<td  colspan="4" class="text-right"><h3>';
-                        echo _e('Total');
-                        echo '</h3></td>';
-                        echo '<td class="text-right"><h3>';
-                        echo show_price(get_total());
-                        echo '</h3></td>';
-                        echo '</tr>';
-                        if ($discount <> 0) {
-                            echo "<tr>";
+                            $discount = $cart_detail->discount;
+                            echo '<tr>';
                             echo '<td  colspan="4" class="text-right"><h3>';
-                            echo '<b>Atkionspreis -' . ($discount * 100) . '% durch Code ' . $cart_detail->rabattcode . '</b>';
+                            echo _e('Total');
                             echo '</h3></td>';
-                            echo '<td class="text-right"><h3><strong>';
-                            echo show_price(get_total() * (1 - $discount));
-                            echo '</strong></h3></td>';
+                            echo '<td class="text-right"><h3>';
+                            echo show_price(get_total());
+                            echo '</h3></td>';
                             echo '</tr>';
-                        }
-                        ?>
-                        <tr>
-                            <td  colspan="4" class="text-right"><h3><?php _e('ShippingCost'); ?></h3></td>
-                            <td class="text-right"><h3><?php echo show_price(shipingCostWithArea(get_total() * (1 - $discount),$area)); ?></h3></td>
-                        </tr>
-                        <tr>
-                            <td  colspan="4" class="text-right"><h3><?php _e('TotalShipping'); ?></h3></td>
-                            <td class="text-right"><h3><strong><?php echo show_price(get_total() * (1 - $discount) + shipingCostWithArea(get_total() * (1 - $discount),$area)); ?></strong></h3></td>
-                        </tr>
-                        <tr>
-                            <td  colspan="4" class="text-right"><h3><?php echo SHIPPING_TIME_TITLE?></h3></td>
-                            <td class="text-right"><h3><strong>
-                                        <?php
-                                        if (get_discount_string() == '') {
-						echo SHIPPING_TIME_VALUE;
-                                        } else {
- 						 echo SHIPPING_TIME_VALUE;
-                                        }
-                                        ?></strong></h3></td>
-                        </tr>
-                        <tr>
-                            <td  colspan="6" class="text-right">
-                                <a class="btn cart-slct pull-left" href='<?php echo make_url("shop"); ?>'><i class="fa fa-angle-left"></i> <?php _e('Shop') ?></a>
+                            if ($discount <> 0) {
+                                echo "<tr>";
+                                echo '<td  colspan="4" class="text-right"><h3>';
+                                echo '<b>Atkionspreis -' . ($discount * 100) . '% durch Code ' . $cart_detail->rabattcode . '</b>';
+                                echo '</h3></td>';
+                                echo '<td class="text-right"><h3><strong>';
+                                echo show_price(get_total() * (1 - $discount));
+                                echo '</strong></h3></td>';
+                                echo '</tr>';
+                            }
+                            ?>
+                            <tr>
+                                <td  colspan="4" class="text-right"><h3><?php _e('ShippingCost'); ?></h3></td>
+                                <td class="text-right"><h3><?php echo show_price(shipingCostWithArea(get_total() * (1 - $discount),$area)); ?></h3></td>
+                            </tr>
+                            <tr>
+                                <td  colspan="4" class="text-right"><h3><?php _e('TotalShipping'); ?></h3></td>
+                                <td class="text-right"><h3><strong><?php echo show_price(get_total() * (1 - $discount) + shipingCostWithArea(get_total() * (1 - $discount),$area)); ?></strong></h3></td>
+                            </tr>
+                            <tr>
+                                <td  colspan="4" class="text-right"><h3><?php echo SHIPPING_TIME_TITLE?></h3></td>
+                                <td class="text-right"><h3><strong>
+                                    <?php
+                                    if (get_discount_string() == '') {
+                                        echo SHIPPING_TIME_VALUE;
+                                    } else {
+                                        echo SHIPPING_TIME_VALUE;
+                                    }
+                                    ?></strong></h3></td>
+                            </tr>
+                            <tr>
+                                <td  colspan="6" class="text-right">
+                                    <a class="btn cart-slct pull-left" href='<?php echo make_url("shop"); ?>'><i class="fa fa-angle-left"></i> <?php _e('Shop') ?></a>
 
-                                <button type='submit' name='clear' class="btn btn-info btn-sm update_quantity"><?php _e('Clear'); ?> <i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                                <a href='<?php echo make_url("checkout"); ?>' class="btn cart-slct"><?php _e('Checkout'); ?> <i class="fa fa-angle-right"></i></a>
-                            </td>
-                        </tr>
+                                    <button type='submit' name='clear' class="btn btn-info btn-sm update_quantity"><?php _e('Clear'); ?> <i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                    <a href='<?php echo make_url("checkout"); ?>' class="btn cart-slct"><?php _e('Checkout'); ?> <i class="fa fa-angle-right"></i></a>
+                                </td>
+                            </tr>
 
-                        <tr>
-
-                            <td  colspan="4" class="text-right">
-                                    
+                            <tr>
+                                <td  colspan="4" class="text-right">
                                     <input type="text" class="feild-a" name='rabattcode' value="<?php echo $cart_detail->rabattcode; ?>" placeholder="Rabattcode eingeben">
-                            </td>
-                            <td  colspan="6" class="text-right">
+                                </td>
+                                <td  colspan="6" class="text-right">
+                                    <button type='submit' name='sendrabatt' class="btn btn-info btn-sm update_quantity"><?php _e('usecode'); ?> <i class="fa fa-pencil" aria-hidden="true"></i></button>
+                                </td>
+                            </tr>
 
-                                 <button type='submit' name='sendrabatt' class="btn btn-info btn-sm update_quantity"><?php _e('usecode'); ?> <i class="fa fa-pencil" aria-hidden="true"></i></button>
-                       </td>
-                        </tr>
-
-                        </tbody>
-                </table>
-            </form>  
+                            </tbody>
+                    </table>
+                </form>  
+            </div>
         </div>
     </div>
 </div>

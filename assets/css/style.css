@@ -202,9 +202,6 @@ float: left;
     width: 100%;
     max-width: 99px;
 }
-table#dev-table th, table#dev-table td  {
-    text-align: center;
-}
 /*input.go , input.go_1 {
 width: 29px;
     padding: 0px;

@@ -82,6 +82,9 @@ body.active::before{
 .side-bar ul li.selected a{
     @apply bg-primary text-white;
 }
+#dev-table tbody tr:last-child td{
+    @apply border-0 pb-0;
+}
 @media(max-width:1669px){
     .iframe_call iframe {
         @apply max-h-[370px];

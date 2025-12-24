@@ -136,29 +136,10 @@ input.cc-hh {
     font-variant: small-caps;
     font-size: 17px;
 }
-.panel-primary > .panel-heading {
-    color: #fff;border-radius: 0px;
-    background-color: #333;
-    border-color: #000;
-}
 .container.ac-onword .tab-content {float: left;
     width: 100%;
     margin-top: 30px;
 }
-	.panel-primary{ border-color: #000; border-radius: 0px;     float: left;    width: 100%;  margin-top: 30px;}
-	input.badge-btn {
-    font-size: 16px;
-    background: #c8151f;
-    color: #fff;
-    text-decoration: none;
-    padding: 3px;
-    border-radius: 30px;
-    max-width: 117px;
-    width: 100%;
-    display: block;
-    text-align: center;
-    border: 0px;
-}
-	.side-bar img.img-responsive {
+.side-bar img.img-responsive {
     margin: auto;
 }

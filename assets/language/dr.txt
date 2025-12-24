@@ -106,6 +106,7 @@ Customers ~~ Kunden
 Filter Customer ~~ Filter Kunden
 First Name ~~ Vorname
 Last Name ~~ Nachname
+action~~ Aktion
 Badges ~~ Auszeichnungen
 Ribbons ~~ Spangen
 No customer added yet ~~ Noch kein Kunde angelegt

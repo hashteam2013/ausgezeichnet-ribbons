@@ -70,9 +70,6 @@
 .accordion .panel .panel-title .accordion-toggle.accordion-toggle-styled.collapsed {
     background-position: right 12px
 }
-.panel-heading {
-    background: #eee
-}
 .panel-heading a,
 .panel-heading a:active,
 .panel-heading a:focus,

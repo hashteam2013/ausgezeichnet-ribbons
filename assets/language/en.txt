@@ -101,9 +101,10 @@ Batch has been deleted successfully! ~~ Batch has been deleted successfully
 My Account ~~ My account
 Customers ~~ Customers
 Filter Customer ~~ Filter customers
-First Name ~~ Fist name
+First Name ~~ First name
 Last Name ~~ Last name
 Badges ~~ Ribbons
+action~~Action
 Ribbons ~~ Ribbons
 No customer added yet ~~ No customer added yet 
 
