@@ -37,10 +37,29 @@ body.active::before{
 .smallcheck::before{
     content: "";
     @apply absolute w-2 h-1 border-[1.5] border-solid border-l border-b border-body left-1 top-1 -rotate-45 opacity-0;
-} 
+}
+.sm_checkmark::before{
+    content: "";
+    @apply absolute w-2.5 h-[5px] border-solid border-l border-b border-t-0 border-r-0 border-white left-[3px] top-[3px] -rotate-45 opacity-0;
+}
+.radio input[type="radio"]:checked~.radiocheck::before{
+    content: "";
+    @apply w-2.5 h-2.5 absolute bg-[#0E5BD0] rounded-full left-[3px] top-[5px];
+}
+.german-active .billsum_heading{
+    @apply break-all;
+}
 .shop-cat-list input[type="checkbox"]:checked~.checkmark::before,
+.green_label input[type="checkbox"]:checked~.sm_checkmark::before,
+.radio input[type="radio"]:checked~.radiocheck::before,
 .customer-list input[type="checkbox"]:checked~.smallcheck::before{
     @apply opacity-[1];
+}
+.radio input[type="radio"]:checked~.radiocheck{
+    @apply border-[#0E5BD0];
+}
+.green_label input[type="checkbox"]:checked~.sm_checkmark{
+    @apply bg-[#02961D] border-[#02961D];
 }
 .shop-cat-list input[type="checkbox"]:checked~.checkmark,
 .customer-list input[type="checkbox"]:checked~.smallcheck{
@@ -84,6 +103,14 @@ body.active::before{
 }
 #dev-table tbody tr:last-child td{
     @apply border-0 pb-0;
+}
+#cart-form .ribbon_outer img,
+.y-order .ribbon_outer img,
+.portlet-body .ribbon_outer img{
+    @apply max-h-[40px];
+}
+#enquirypopup{
+    @apply !pl-[15px];
 }
 @media(max-width:1669px){
     .iframe_call iframe {

@@ -187,6 +187,8 @@ TotalShipping ~~ Gesamt inkl. USt und Versand
 usecode ~~ Code einlösen
 
 //checkout page
+bill_summary ~~ Rechnungszusammenfassung
+product_listing ~~ Produktliste
 Billing Details ~~ Rechnungsdetails
 Phone No. ~~ Telefonnummer
 Address ~~ Strasse
@@ -206,6 +208,7 @@ Place order ~~ Verbindlich bestellen
 Confirm ~~ Bestellung abschliessen
 Contact Number ~~Telefonnummer
 Payment Gateway ~~ Zahlungsmethode
+
 
 //forgot
 Reset Password ~~ Passwort zurücksetzen
@@ -362,3 +365,6 @@ explore_products_heading~~Entdecken Sie unsere Produkte
 // Shop CTA
 cta_heading~~ Ausgezeichnet.cc: Modulare deutsche Ribbon Bars
 cta_desc~~ Wir fertigen die fehlenden Bänder und Miniaturen, die zum Tragen österreichischer Auszeichnungen an deutschen Ordensspangen benötigt werden. Damit haben wir diese langjährige Marktlücke geschlossen!
+
+// update settings
+update_settings ~~ Einstellungen aktualisieren

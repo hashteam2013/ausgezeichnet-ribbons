@@ -172,6 +172,8 @@ ShippingCost ~~ Shipping costs
 TotalShipping ~~ Total incl. VAT and Shipping costs
 
 //checkout page
+bill_summary ~~ Bill Summary
+product_listing ~~ Product Listing
 Billing Details ~~ Billing details
 Phone No. ~~ Phone no.
 Address ~~ Address
@@ -185,6 +187,7 @@ Shipping Details ~~ Shipping details
 Order Comment ~~ Comment
 Your Order ~~ Your order
 Place order ~~ Place order
+Payment Gateway ~~ Payment Method
 
 //forgot
 Reset Password ~~ Reset password
@@ -320,3 +323,6 @@ explore_products_heading~~ Explore Our Products
 // Shop CTA
 cta_heading~~Ausgezeichnet.cc: Modular German Ribbon Bars
 cta_desc~~We produce the missing ribbons and miniatures needed to wear Austrian awards on German ribbon bars. We closed this long-standing gap in the market!
+
+// update settings
+update_settings ~~ Update Settings

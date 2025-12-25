@@ -1,6 +1,6 @@
-<div class="filter-bar sampewr bg-body py-7 flex w-full">
+<div class="filter-bar sampewr bg-body md:py-7 py-4 flex w-full">
     <div class="container-custom">
-        <h1 class="text-3xl font-gothic text-black text-center"><?php _e("My Orders") ?></h1>
+        <h1 class="md:text-3xl text-lg font-gothic text-black text-center"><?php _e("My Orders") ?></h1>
     </div>
 </div>
 <div class="ac-onword py-20">
@@ -62,222 +62,229 @@
             
             <?php include_once (DIR_FS_VIEW_TEMPLATES . 'sidebar_navigation.php'); ?>
             
-            <div class="col-md-8 col-sm-8">
-                <a href="<?php echo make_url('orders'); ?>"><button type="submit" name="update" class="all-cat add-btn righter hvr-float-shadow"><?php _e('Back To Orders');?></button></a>
+            <div class="w-full mt-5">
+                <div class="flex justify-end mb-5">
+                    <a href="<?php echo make_url('orders'); ?>"><button type="submit" name="update" class="all-cat add-btn righter min-h-[38px] text-sm px-4 hover:bg-primary text-white cursor-pointer rounded-md font-medium bg-secondary"><?php _e('Back To Orders');?></button></a>
+                </div>
                 <div class="tab-content">
-                    <div class="tab-pane active" id="tab_1">
-                        <div class="row">
-                            <div class="col-md-6 col-sm-12">
-                                <div class="portlet yellow-crusta box">
-                                    <div class="portlet-title">
-                                        <div class="caption">
-                                            <i class="fa fa-cogs"></i><?php _e("Order Details"); ?> </div>
-                                        <div class="actions"></div>
-                                    </div>
-                                    <div class="portlet-body">
-                                        <div class="row static-info">
-                                            <div class="col-md-5 name"><?php _e(" Order #:"); ?> </div>
-                                            <div class="col-md-7 value"><?php echo $orders->id; ?>
+                    <div class="tab-pane flex flex-col gap-14 active" id="tab_1">
+                        <div class="flex gap-10">
+                          <div class="w-[70%] flex flex-col gap-10">
+                            <div class="flex gap-10">
+                                <div class="w-1/2">
+                                    <div class="portlet yellow-crusta box flex flex-col gap-5 h-full">
+                                        <div class="portlet-title panel-title text-3xl text-black font-gothic">
+                                            <div class="caption">
+                                                <?php _e("Order Details"); ?> 
+                                            </div>
+                                            <div class="actions"></div>
+                                        </div>
+                                        <div class="portlet-body bg-body rounded-[20px] border border-[#d9d9d9] p-5 flex-1 flex flex-wrap gap-5">
+                                            <div class="static-info flex flex-col gap-2.5 w-[calc(50%-10px)]">
+                                                <div class="name text-sm text-black font-normal"><?php _e(" Order #:"); ?> </div>
+                                                <div class="value font-medium text-secondary text-base"><?php echo $orders->id; ?>
 
+                                                </div>
+                                            </div>
+                                            <div class="static-info flex flex-col gap-2.5 w-[calc(50%-10px)]">
+                                                <div class="name text-sm text-black font-normal"><?php _e(" Order Date &amp; Time:"); ?> </div>
+                                                <div class="value font-medium text-secondary text-base"><?php echo show_datetime($orders->date_add); ?></div>
+                                            </div>
+
+                                            <div class="static-info flex flex-col gap-2.5 w-[calc(50%-10px)]">
+                                                <div class="name text-sm text-black font-normal"><?php _e(" Grand Total:"); ?> </div>
+                                                <div class="value font-medium text-secondary text-base"><?php echo show_price($orders->grand_total*(1-$orders->discount)+$orders->total_shipping_amount); ?></div>
+                                            </div>
+                                            <div class="static-info flex flex-col gap-2.5 w-[calc(50%-10px)]">
+                                                <div class="name text-sm text-black font-normal"><?php _e(" Payment Information:"); ?> </div>
+                                                <div class="value font-medium text-secondary text-base"><?php if ($orders->is_payment_made == 0) {
+                                                    _e("Payment Pending");
+                                                } else if ($orders->is_payment_made == 1) {
+                                                    _e("Payment Done");
+                                                } ?></div>
                                             </div>
                                         </div>
-                                        <div class="row static-info">
-                                            <div class="col-md-5 name"><?php _e(" Order Date &amp; Time:"); ?> </div>
-                                            <div class="col-md-7 value"><?php echo show_datetime($orders->date_add); ?></div>
+                                    </div>
+                                </div>
+                                <div class="w-1/2">
+                                    <div class="portlet blue-hoki box flex flex-col gap-5 h-full">
+                                        <div class="portlet-title">
+                                            <div class="caption panel-title text-3xl text-black font-gothic">
+                                                <?php _e("Customer Information");?> 
+                                            </div>
+                                            <div class="actions"></div>
                                         </div>
-
-                                        <div class="row static-info">
-                                            <div class="col-md-5 name"><?php _e(" Grand Total:"); ?> </div>
-                                            <div class="col-md-7 value"><?php echo show_price($orders->grand_total*(1-$orders->discount)+$orders->total_shipping_amount); ?></div>
-                                        </div>
-                                        <div class="row static-info">
-                                            <div class="col-md-5 name"><?php _e(" Payment Information:"); ?> </div>
-                                            <div class="col-md-7 value"><?php if ($orders->is_payment_made == 0) {
-                                                _e("Payment Pending");
-                                            } else if ($orders->is_payment_made == 1) {
-                                                _e("Payment Done");
-                                            } ?></div>
+                                        <div class="portlet-body bg-body rounded-[20px] border border-[#d9d9d9] p-5 flex-1 flex flex-wrap gap-5">
+                                            <div class="flex flex-col gap-2.5 w-[calc(50%-10px)] static-info">
+                                                <div class="name font-normal text-black text-sm"><?php _e("Customer Name:"); ?> </div>
+                                                <div class="font-medium text-secondary text-base value"><?php echo $orders->billing_firstname.' '.$orders->billing_lastname; ?></div>
+                                            </div>
+                                            <div class="flex flex-col gap-2.5 w-[calc(50%-10px)] static-info">
+                                                <div class="name font-normal text-black text-sm"><?php _e(" Email:"); ?> </div>
+                                                <div class="font-medium text-secondary text-base value"><?php echo $orders->billing_email; ?></div>
+                                            </div>
+                                            <div class="flex flex-col gap-2.5 w-[calc(50%-10px)] static-info">
+                                                <div class="name font-normal text-black text-sm"><?php _e(" Phone Number:"); ?> </div>
+                                                <div class="font-medium text-secondary text-base value"><?php echo $orders->billing_mobile; ?></div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6 col-sm-12">
-                                <div class="portlet blue-hoki box">
-                                    <div class="portlet-title">
-                                        <div class="caption">
-                                            <i class="fa fa-cogs"></i><?php _e("Customer Information");?> </div>
-                                        <div class="actions">
-
+                            <div class="flex gap-10">
+                                <div class="w-1/2">
+                                    <div class="portlet green-meadow box flex flex-col gap-5 h-full">
+                                        <div class="portlet-title">
+                                            <div class="caption panel-title text-3xl text-black font-gothic">
+                                                <?php _e(" Billing Address"); ?> 
+                                            </div>
+                                        </div>
+                                        <div class="portlet-body bg-body rounded-[20px] border border-[#d9d9d9] p-5 flex-1 flex flex-wrap gap-5">
+                                            <div class="static-info">
+                                                <div class="value text-base text-secondary">
+                                                    <?php echo $orders->billing_company; ?>
+                                                    <br><?php echo $orders->billing_firstname; ?>  <?php echo $orders->billing_lastname; ?>
+                                                    <br><?php echo $orders->billing_address1 . ' ' . $orders->billing_address2; ?>
+                                                    <br><?php echo  $orders->billing_zip . ' ' . $orders->billing_city; ?>
+                                                    <br><?php echo $orders->billing_mobile; ?>
+                                                    <br><?php echo $orders->billing_email; ?>
+                                                    <br> </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="portlet-body">
-                                        <div class="row static-info">
-                                            <div class="col-md-5 name"><?php _e("Customer Name:"); ?> </div>
-                                            <div class="col-md-7 value"><?php echo $orders->billing_firstname.' '.$orders->billing_lastname; ?></div>
+                                </div>
+                                <div class="w-1/2">
+                                    <div class="portlet red-sunglo box flex flex-col gap-5 h-full">
+                                        <div class="portlet-title">
+                                            <div class="caption panel-title text-3xl text-black font-gothic">
+                                                <?php _e('Shipping Address');?> </div>
+                                            <div class="actions"></div>
                                         </div>
-                                        <div class="row static-info">
-                                            <div class="col-md-5 name"><?php _e(" Email:"); ?> </div>
-                                            <div class="col-md-7 value"><?php echo $orders->billing_email; ?></div>
-                                        </div>
-                                        <div class="row static-info">
-                                            <div class="col-md-5 name"><?php _e(" Phone Number:"); ?> </div>
-                                            <div class="col-md-7 value"><?php echo $orders->billing_mobile; ?></div>
+                                        <div class="portlet-body bg-body rounded-[20px] border border-[#d9d9d9] p-5 flex-1 flex flex-wrap gap-5">
+                                            <div class="static-info">
+                                                <div class="value text-base text-secondary">
+                                                <?php echo $orders->shipping_company; ?>
+                                                    <br><?php echo $orders->shipping_firstname; ?> <?php echo $orders->shipping_lastname; ?>
+                                                    <br><?php echo $orders->shipping_address1 . ' ' . $orders->shipping_address2; ?>
+                                                    <br><?php echo  $orders->shipping_zip . ' ' . $orders->shipping_city; ?>
+                                                    <br><?php echo $orders->shipping_mobile; ?>
+                                                    <br><?php echo $orders->shipping_email; ?>
+                                                    <br> </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6 col-sm-12">
-                                <div class="portlet green-meadow box">
-                                    <div class="portlet-title">
-                                        <div class="caption">
-                                            <i class="fa fa-cogs"></i><?php _e(" Billing Address"); ?> </div>
+                          </div>
+                          <div class="well w-[30%] mt-14">
+                            <div class="bg-body rounded-[20px] border border-[#d9d9d9] p-5 flex-1 flex flex-col gap-5 h-full">
+                                <div class="static-info align-reverse">
+                                    <div class="flex gap-2.5 justify-between mb-5 text-sm text-secondary font-normal">
+                                        <div class="name"><?php _e(" Grand Total:"); ?> </div>
+                                        <div class="value"><?php echo show_price($orders->grand_total); ?></div>
                                     </div>
-                                    <div class="portlet-body">
-                                        <div class="row static-info">
-                                            <div class="col-md-12 value">
-                                                <?php echo $orders->billing_company; ?>
-			     <br><?php echo $orders->billing_firstname; ?>  <?php echo $orders->billing_lastname; ?>
-                                                <br><?php echo $orders->billing_address1 . ' ' . $orders->billing_address2; ?>
-                                                <br><?php echo  $orders->billing_zip . ' ' . $orders->billing_city; ?>
-                                                <br><?php echo $orders->billing_mobile; ?>
-                                                <br><?php echo $orders->billing_email; ?>
-                                                <br> </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-sm-12">
-                                <div class="portlet red-sunglo box">
-                                    <div class="portlet-title">
-                                        <div class="caption">
-                                            <i class="fa fa-cogs"></i><?php _e('Shipping Address');?> </div>
-                                        <div class="actions">
 
+                                        <?php
+                                            if ($orders->discount<>0){
+                                            echo '<div class="flex gap-2.5 justify-between mb-5 text-sm text-secondary font-normal"> <div class="name">';
+                                            echo _e("TotalDisc") . " ( Minus " . $orders->discount *100 . "% " . " ) </div>";
+                                            echo '<div class="value">';
+                                            echo show_price($orders->grand_total*(1-$orders->discount)) . ' </div> </div>';
+                                            }
+                                        ?>
+                                        <div class="flex gap-2.5 justify-between mb-5 text-sm text-secondary font-normal">
+                                           <div class="name"><?php _e("ShippingCost"); ?> </div>
+                                            <div class="value"><?php echo show_price($orders->total_shipping_amount); ?></div>
                                         </div>
-                                    </div>
-                                    <div class="portlet-body">
-                                        <div class="row static-info">
-                                            <div class="col-md-12 value">
-                                             <?php echo $orders->shipping_company; ?>
-			   <br><?php echo $orders->shipping_firstname; ?> <?php echo $orders->shipping_lastname; ?>
-                                                <br><?php echo $orders->shipping_address1 . ' ' . $orders->shipping_address2; ?>
-                                                <br><?php echo  $orders->shipping_zip . ' ' . $orders->shipping_city; ?>
-                                                <br><?php echo $orders->shipping_mobile; ?>
-                                                <br><?php echo $orders->shipping_email; ?>
-                                                <br> </div>
+                                        <div class="flex gap-2.5 justify-between text-sm text-secondary font-normal">
+                                           <div class="name"><strong><?php _e("TotalShipping"); ?> </strong></div>
+                                            <div class="value"><?php echo show_price($orders->grand_total*(1-$orders->discount)+$orders->total_shipping_amount); ?></div>
                                         </div>
-                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12 col-sm-12">
-                                <div class="portlet grey-cascade box">
-                                    <div class="portlet-title">
-                                        <div class="caption">
-                                            <i class="fa fa-cogs"></i><?php _e("Shopping Cart"); ?></div>
-                                        <div class="actions"></div>
-                                    </div>
-                                    <div class="portlet-body">
-                                        <div class="table-responsive">
-                                            <table class="table table-hover table-bordered table-striped">
-                                                <thead>
-                                                    <tr>
-                                                        <th><?php _e(" Product Image"); ?></th>
-                                                        <th><?php _e(" Name"); ?></th>
-                                                        <th><?php _e(" Original Price"); ?> </th>
-                                                        <th><?php _e(" Quantity"); ?> </th>
-                                                        <th><?php _e(" Total"); ?> </th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                  <?php
-                                                    $count = 0;
-                                                    $customer_name = "";
-                                                    foreach ($orders_item as $order_item) {
-                                                        $cust_name = $order_item->firstname . ' ' . $order_item->lastname;
-                                                        if ($customer_name != $cust_name) {
-                                                            ?>
-                                                        <tr><td colspan="5" class="cust-name"><?php echo $cust_name; ?></td></tr>
-                                                                    <?php $customer_name = $cust_name; ?>
-                                                        <?php } ?>
-                                                        <tr>
-                                                            <td>
-                                                                <?php echo show_ribbon_images($order_item->type, $order_item->batch_image, $order_item->number, $order_item->country, $order_item->product_id); ?>
-                                                            </td>
-                                                            <td><?php echo $order_item->batch_name; ?></td>
-                                                            <td><?php echo show_price($order_item->unit_price); ?></td>
-                                                            <td><?php echo $order_item->quantity; ?></td>
-                                                            <td><?php echo show_price($order_item->unit_price * $order_item->quantity); ?></td>
-                                                        </tr>
-                                                        <?php } ?>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <?php if(!empty($orders->order_comment)){ ?>
-                        <div class="row">
-                        <div class="col-md-12 col-sm-12">
-                                <div class="portlet yellow-crusta box">
-                                    <div class="portlet-title">
-                                        <div class="caption">
-                                            <i class="fa fa-cogs"></i><?php _e("Order Comment"); ?> </div>
-                                        <div class="actions"></div>
-                                    </div>
-                                    <div class="portlet-body">
-                                      <?php echo $orders->order_comment; ?>  
-                                    </div>
-                                </div>
-                        </div>
-                        </div>
-                        <?php } ?>
-                        <div class="row">
-                            <div class="col-md-6"> </div>
-                            <div class="col-md-6">
-                                <div class="well">
-                                    <div class="row static-info align-reverse">
-                                        <div class="col-md-8 name"><?php _e(" Grand Total:"); ?> </div>
-                                        <div class="col-md-3 value"><?php echo show_price($orders->grand_total); ?></div>
-
-<?php
-			if ($orders->discount<>0){
-			echo ' <div class="col-md-8 name">';
-			echo _e("TotalDisc") . " ( Minus " . $orders->discount *100 . "% " . " ) </div>";
-			echo '<div class="col-md-3 value">';
-			echo show_price($orders->grand_total*(1-$orders->discount)) . ' </div>';
-			}
-?>
-
-			<div class="col-md-8 name"><?php _e("ShippingCost"); ?> </div>
-			<div class="col-md-3 value"><?php echo show_price($orders->total_shipping_amount); ?></div>
-			<div class="col-md-8 name"><strong><?php _e("TotalShipping"); ?> </strong></div>
-			<div class="col-md-3 value"><?php echo show_price($orders->grand_total*(1-$orders->discount)+$orders->total_shipping_amount); ?></div>
-                                    </div>
-                                        <?php //pr($orders->is_payment_made); ?>
-                                    <div class="row static-info align-reverse">
-                                        <div class="col-md-8 name"><?php _e(" Total Paid:"); ?> </div>
-                                    <?php if ($orders->is_payment_made == 1) { ?>
-                                            <div class="col-md-3 value"><?php echo show_price($orders->grand_total*(1-$orders->discount)+$orders->total_shipping_amount); ?></div>
-                                        <?php } else { ?>
-                                            <div class="col-md-3 value"><?php echo show_price('0'); ?></div>
-                                        <?php } ?>
-                                    </div>
-                                    <div class="row static-info align-reverse">
-                                        <div class="col-md-8 name"><?php _e(" Total Due: "); ?></div>
+                                <?php //pr($orders->is_payment_made); ?>
+                                <div class="row static-info align-reverse">
+                                    <div class="flex gap-2.5 justify-between text-sm text-secondary font-normal">
+                                        <div class="name"><?php _e(" Total Paid:"); ?> </div>
                                         <?php if ($orders->is_payment_made == 1) { ?>
-                                            <div class="col-md-3 value"><?php echo show_price('0'); ?></div>
+                                            <div class="value"><?php echo show_price($orders->grand_total*(1-$orders->discount)+$orders->total_shipping_amount); ?></div>
                                         <?php } else { ?>
-                                            <div class="col-md-3 value"><?php echo show_price($orders->grand_total*(1-$orders->discount)+$orders->total_shipping_amount); ?></div>
+                                            <div class="value"><?php echo show_price('0'); ?></div>
                                         <?php } ?>
                                     </div>
                                 </div>
+                                <div class="row static-info align-reverse">
+                                    <div class="flex gap-2.5 justify-between text-sm text-secondary font-normal">
+                                        <div class="name"><?php _e(" Total Due: "); ?></div>
+                                        <?php if ($orders->is_payment_made == 1) { ?>
+                                            <div class="value"><?php echo show_price('0'); ?></div>
+                                        <?php } else { ?>
+                                            <div class="value"><?php echo show_price($orders->grand_total*(1-$orders->discount)+$orders->total_shipping_amount); ?></div>
+                                        <?php } ?>
+                                    </div>
+                                </div>
+                               </div>
                             </div>
                         </div>
+                            
+                        <div class="portlet grey-cascade box flex flex-col gap-5">
+                            <div class="portlet-title">
+                                <div class="caption text-3xl text-black font-gothic">
+                                    <?php _e("Shopping Cart"); ?></div>
+                                <div class="actions"></div>
+                            </div>
+                            <div class="portlet-body bg-body rounded-[20px] border border-[#d9d9d9] p-5 flex-1 flex flex-wrap gap-5">
+                                <div class="table-responsive w-full">
+                                    <table class="table w-full">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-left text-black pe-4 capitalize pb-3 text-lg font-semibold"><?php _e(" Product Image"); ?></th>
+                                                <th class="text-left text-black pe-4 capitalize pb-3 text-lg font-semibold"><?php _e(" Name"); ?></th>
+                                                <th class="text-left text-black pe-4 capitalize pb-3 text-lg font-semibold"><?php _e(" Original Price"); ?> </th>
+                                                <th class="text-left text-black pe-4 capitalize pb-3 text-lg font-semibold"><?php _e(" Quantity"); ?> </th>
+                                                <th class="text-left text-black pe-4 capitalize pb-3 text-lg font-semibold"><?php _e(" Total"); ?> </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
+                                            $count = 0;
+                                            $customer_name = "";
+                                            foreach ($orders_item as $order_item) {
+                                                $cust_name = $order_item->firstname . ' ' . $order_item->lastname;
+                                                if ($customer_name != $cust_name) {
+                                                    ?>
+                                                <tr><td colspan="5" class="cust-name"><?php echo $cust_name; ?></td></tr>
+                                                            <?php $customer_name = $cust_name; ?>
+                                                <?php } ?>
+                                                <tr>
+                                                    <td class="text-base font-medium text-secondary py-4 pe-4">
+                                                        <?php echo show_ribbon_images($order_item->type, $order_item->batch_image, $order_item->number, $order_item->country, $order_item->product_id); ?>
+                                                    </td>
+                                                    <td class="text-base font-medium text-secondary py-4 pe-4"><?php echo $order_item->batch_name; ?></td>
+                                                    <td class="text-base font-medium text-secondary py-4 pe-4"><?php echo show_price($order_item->unit_price); ?></td>
+                                                    <td class="text-base font-medium text-secondary py-4 pe-4"><?php echo $order_item->quantity; ?></td>
+                                                    <td class="text-base font-medium text-secondary py-4 pe-4"><?php echo show_price($order_item->unit_price * $order_item->quantity); ?></td>
+                                                </tr>
+                                                <?php } ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <?php if(!empty($orders->order_comment)){ ?>
+                        
+                        <div class="portlet yellow-crusta box flex flex-col gap-5">
+                            <div class="portlet-title">
+                                <div class="caption text-3xl text-black font-gothic">
+                                    <?php _e("Order Comment"); ?> </div>
+                                <div class="actions"></div>
+                            </div>
+                            <div class="portlet-body bg-body rounded-[20px] border border-[#d9d9d9] p-5 flex-1 flex flex-wrap gap-5">
+                            <?php echo $orders->order_comment; ?>  
+                            </div>
+                        </div>
+                            
+                        <?php } ?>
                     </div>
                 </div>
             </div>

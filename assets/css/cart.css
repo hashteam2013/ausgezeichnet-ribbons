@@ -1,30 +1,12 @@
 @charset "utf-8";
-.filter-bar h1 {
-    font-size: 32px;
-    font-size: 32px;
-    color: #c8151f;
-    margin-bottom: 10px;
-    float: left;
-    width: 100%;
-    text-align: center;
-}
 span.clickable.filter {
     margin-top: -15px;
     float: right;
 }
-.cart-slct {
-    color: #c8151f;
-    font-size: 16px;
-    border: 1px solid #c8151f;
-    padding: 8px;
-    margin-bottom: 13px;
-    background: #fff;
-    max-width: 150px;
-}
+
 button.btn.btn-info.btn-sm.update_quantity font {
     float: left;    margin-right: 4px;
 }
-.cart-slct font {    display: contents;}
 .side-bar ul {
     margin: 0;
     padding: 0;
@@ -57,28 +39,6 @@ button.btn.btn-info.btn-sm.update_quantity font {
     padding: 20px;
     margin: 30px 0px;
     border: 1px solid #ddd;
-}
-.form-group .col-sm-6 {
-    padding-left: 0px;
-}
-div#billing_container .form-group .col-sm-6 {
-    padding-left: 15px;
-}
-div#shipping_container .form-group .col-sm-6 {
-    padding-left: 15px;
-}
-.form-group label {
-    float: left;
-    width: 100%;
-    margin-bottom: 10px;
-    margin-top: 20px;
-}
-input.feild-a {
-    float: left;
-    width: 100%;
-    background: #fff;
-    padding: 8px;
-    outline: 0px;
 }
 table.table.table-hover.osm {
     margin: 50px 0px;
@@ -115,14 +75,6 @@ button.btn.btn-success:hover{background-position: right bottom;}
 .media:first-child {
     margin-top: 0;
     min-width: 220px;
-}
-.spot-a p {
-    font-size: 16px;
-    color: #444444;
-    margin-top: 20px;
-    float: left;
-    width: 100%;
-    font-weight: 700;
 }
 .y-order h3 {
     float: left;
@@ -171,32 +123,11 @@ a.plc-ordr:hover{background-position: right bottom;}
     float: left;
     margin-bottom: 7px;
 }
-.spot-a select {
-    float: left;margin-bottom: 1px;
-    width: 100%;
-    background: #fff;
-    padding: 8px;
-    outline: 0px;
-}
+
 input.cc-hh {
     float: left;
     width: 20px;
     text-align: left;
-}
-.spot-a {
-    background:#f0f0f3;
-    padding: 0 15px;
-    border: 1px solid #ccc;
-    margin: 30px 0px;
-    float: left;
-    width: 100%;
-}
-textarea.feild-a {
-    float: left;
-    width: 100%;
-    background: #fff;
-    padding: 8px;
-    outline: 0px;
 }
 .cupon {
     float: left;
@@ -250,20 +181,7 @@ input.badge-btn {
                        color: #c8151f;
                        text-decoration: none;
 }
-button.all-cat.add-btn.hvr-float-shadow{background: #fff;
-                                        text-align: center;
-                                        height: auto;
-                                        margin: 10px auto;
-                                        float: none;
-                                        padding: 7px 11px;
-                                        display: inline-block;
-                                        text-align: center;
-                                        font-size: 16px;
-                                        border: 2px solid #c8151f;
-                                        color: #c8151f;
-                                        text-decoration: none;
-                                        margin: 16px auto 0;
-}
+
 
 
 
@@ -434,64 +352,23 @@ button.btn.btn-info.btn-sm:hover{background:#010036; color: #fff;}*/
     float: left;background: transparent;
 }
 
-    #no-more-tables td:before { 
-        /* Now like a table header */
-        position: absolute;
-        /* Top/left values mimic padding */
-        top: 6px;
-        left: 6px;
-        width: 45%; 
-        padding-right: 10px; 
-        white-space: nowrap;
-        text-align:left;
-        font-weight: bold;
-    }
-    #no-more-tables td:before { content: attr(data-title); }
+#no-more-tables td:before { 
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    top: 6px;
+    left: 6px;
+    width: 45%; 
+    padding-right: 10px; 
+    white-space: nowrap;
+    text-align:left;
+    font-weight: bold;
 }
-td.numeric input {
-    max-width: 63px;    margin: auto;
-}
-table.col-md-12.table-bordered.table-striped.table-condensed.cf td img {    
-    border: 1px solid #ccc;    
-    padding: 2px;   
-   max-width: 148px;
-   float: none; 
-   margin: auto;}
-td.c-name {
-    font-size: 18px;
-    font-weight: 700;
-    background: #eee;
-    color: #fff;
-    text-align: left;
-    color: #000;
+#no-more-tables td:before { content: attr(data-title); }
 }
 
-button.btn.cart-slct {
-    color: #c8151f;
-    font-size: 16px;
-    border: 1px solid #c8151f;
-    padding: 8px;
-    margin-bottom: 13px;
-    background: #fff;
-}
-button.btn.cart-slct:hover{
-    background: #c8151f;
-    color: #fff;}
-div#no-more-tables {
-    text-align: center;float: left;
-    width: 100%;
-}
 
-button.btn.btn-danger.btn-sm {
-    background: #c8151f;
-    border: 1px solid #c8151f;
-}
-button.btn.btn-info.btn-sm {
-    background: #fff;
-    border: 1px solid #010036;
-    font-size: 16px;
-    padding: 7px 7px 7px 14px;
-    margin-bottom:8px;
-    color: #010036;
-}
-button.btn.btn-info.btn-sm:hover{background:#010036; color: #fff;}
+
+
+
+
