@@ -92,7 +92,6 @@
 </div>
 
 
-
 <div id="enquirypopup" class="fixed top-0 left-0 right-0 z-[1]  pt-10 pb-5 px-5 overflow-y-auto  w-full h-full" role="dialog" style="display: none; padding-right: 15px;">
     <div class="mx-auto max-w-[600px] w-full">
         <input type="hidden" name="data-cid" id="data-cid" value="<?php echo $cust['id']; ?>"/>	
