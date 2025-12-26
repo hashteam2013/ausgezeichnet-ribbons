@@ -96,31 +96,31 @@
                         <div>
                             <ul class="batch">
                               <?php 
-		foreach($selected_customer_batches as $batch)
-		{
-			$found=0;
-			foreach($customer_order_items as $ordered_item)
-			{
-				$found=0;
-				if($ordered_item->product_id==$batch['batch_id'])
-				{
-					$ordered_str= '" style="background-color: #DDDDFF;"';
-					$ordered_int = 1;
-					$found=true;
-					break;
-				}
+                                    foreach($selected_customer_batches as $batch)
+                                    {
+                                        $found=0;
+                                        foreach($customer_order_items as $ordered_item)
+                                        {
+                                            $found=0;
+                                            if($ordered_item->product_id==$batch['batch_id'])
+                                            {
+                                                $ordered_str= ' ';
+                                                $ordered_int = 1;
+                                                $found=true;
+                                                break;
+                                            }
 
-			}
+                                        }
 
-			if($found==false)
-			{
-				$ordered_str = '" style="background-color: #F6F6F6;"';
-				$ordered_int = 0;
-			}
+                                        if($found==false)
+                                        {
+                                            $ordered_str = '';
+                                            $ordered_int = 0;
+                                        }
 
 
-		
-		?>
+                                    
+                                    ?>
 
                                 <li id="ribbon_<?php echo $batch['id'] . $ordered_str ?>>
 

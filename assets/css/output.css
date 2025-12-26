@@ -776,6 +776,10 @@ video {
   margin-bottom: 1.75rem;
 }
 
+.mt-1 {
+  margin-top: 0.25rem;
+}
+
 .mt-1\.5 {
   margin-top: 0.375rem;
 }
@@ -830,6 +834,10 @@ video {
 
 .table {
   display: table;
+}
+
+.grid {
+  display: grid;
 }
 
 .contents {
@@ -940,10 +948,6 @@ video {
   min-height: 46px;
 }
 
-.min-h-\[50vh\] {
-  min-height: 50vh;
-}
-
 .min-h-\[60px\] {
   min-height: 60px;
 }
@@ -1004,6 +1008,10 @@ video {
   width: 15px;
 }
 
+.w-\[1600px\] {
+  width: 1600px;
+}
+
 .w-\[285px\] {
   width: 285px;
 }
@@ -1034,14 +1042,6 @@ video {
 
 .w-full {
   width: 100%;
-}
-
-.w-\[1500px\] {
-  width: 1500px;
-}
-
-.w-\[1600px\] {
-  width: 1600px;
 }
 
 .min-w-10 {
@@ -1156,10 +1156,6 @@ video {
   table-layout: auto;
 }
 
-.table-fixed {
-  table-layout: fixed;
-}
-
 .-rotate-45 {
   --tw-rotate: -45deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -1247,10 +1243,6 @@ video {
 
 .gap-2\.5 {
   gap: 0.625rem;
-}
-
-.gap-20 {
-  gap: 5rem;
 }
 
 .gap-3 {
@@ -1665,10 +1657,6 @@ video {
   padding-bottom: 0.5rem;
 }
 
-.pb-24 {
-  padding-bottom: 6rem;
-}
-
 .pb-3 {
   padding-bottom: 0.75rem;
 }
@@ -1773,6 +1761,11 @@ video {
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
+}
+
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
 }
 
 .font-light {
@@ -1899,6 +1892,18 @@ body {
   position: relative;
 }
 
+
+.batch labelbody + div {
+  margin-top: -0.5rem;
+}
+
+@media(max-width:1299px){
+  
+   .batch labelbody + div {
+    margin-top: -0.25rem;
+  }
+}
+
 .iframe_call iframe {
   width: 100%;
   border-radius: 1rem;
@@ -2011,7 +2016,8 @@ body.active::before{
 .shop-cat-list input[type="checkbox"]:checked~.checkmark::before,
 .green_label input[type="checkbox"]:checked~.sm_checkmark::before,
 .radio input[type="radio"]:checked~.radiocheck::before,
-.customer-list input[type="checkbox"]:checked~.smallcheck::before {
+.customer-list input[type="checkbox"]:checked~.smallcheck::before,
+.batch li input[type="checkbox"]:checked~.smallcheck::before {
   opacity: 1;
 }
 
@@ -2028,21 +2034,25 @@ body.active::before{
 }
 
 .shop-cat-list input[type="checkbox"]:checked~.checkmark,
-.customer-list input[type="checkbox"]:checked~.smallcheck {
+.customer-list input[type="checkbox"]:checked~.smallcheck,
+.batch li input[type="checkbox"]:checked~.smallcheck {
   --tw-bg-opacity: 1;
   background-color: rgb(45 45 42 / var(--tw-bg-opacity, 1));
 }
 
-.customer-list input[type="checkbox"]:checked~.smallcheck {
+.customer-list input[type="checkbox"]:checked~.smallcheck,
+.batch li input[type="checkbox"]:checked~.smallcheck {
   --tw-border-opacity: 1;
   border-color: rgb(45 45 42 / var(--tw-border-opacity, 1));
 }
 
-.customer-list .ribbon_outer img {
+.customer-list .ribbon_outer img,
+.batch .ribbon_outer img {
   max-width: 90px;
 }
 
-.customer-list .ribbon_outer {
+.customer-list .ribbon_outer,
+.batch label.relative + div {
   margin-top: -0.5rem;
 }
 
@@ -2061,6 +2071,18 @@ body.active::before{
   width: auto;
   max-width: 113px;
   text-align: center;
+}
+
+
+.batch label.flag-contaner .ribbon_outer + div {
+  margin-top: -0.5rem;
+}
+
+@media(max-width:1299px){
+  
+   .batch label.flag-contaner .ribbon_outer + div {
+    margin-top: -0.25rem;
+  }
 }
 
 .flag-contaner .ribbon_outer img {
@@ -2114,6 +2136,10 @@ body.active::before{
   padding-left: 15px !important;
 }
 
+.batch li {
+  background-color: transparent !important;
+}
+
 @media(max-width:1669px){
   .iframe_call iframe {
     max-height: 370px;
@@ -2121,7 +2147,8 @@ body.active::before{
 }
 
 @media(max-width:1574px){
-  .customer-list .ribbon_outer img {
+  .customer-list .ribbon_outer img,
+    .batch .ribbon_outer img {
     max-width: 70px;
   }
 }
@@ -2147,11 +2174,13 @@ body.active::before{
     word-break: break-all;
   }
 
-  .customer-list .ribbon_outer img {
+  .customer-list .ribbon_outer img,
+    .batch .ribbon_outer img {
     max-width: 50px;
   }
 
-  .customer-list .ribbon_outer {
+  .customer-list .ribbon_outer,
+   .batch label.relative + div {
     margin-top: -0.25rem;
   }
 
@@ -2177,6 +2206,49 @@ body.active::before{
 
   .flag-contaner .ribbon_outer img {
     max-width: 120px;
+  }
+}
+
+@media(max-width:800px){
+  #no-more-tables #cart-form .prod-card {
+    grid-template-columns: 1fr 1fr;
+    display: grid;
+    grid-template-areas: "image action"
+        "quanity price"
+        "total total";
+    border-bottom: 1px solid #d9d9d9;
+  }
+
+  #no-more-tables #cart-form .prod-card:last-child {
+    border-bottom: none;
+  }
+
+  #no-more-tables #cart-form .prod-card .prod-title {
+    grid-area: image;
+  }
+
+  #no-more-tables #cart-form .prod-card .prod-action{
+    grid-area: action;
+    text-align: right;
+    padding-right: 0;
+  }
+
+  #no-more-tables #cart-form td.c-name{
+    margin-top: 8px;
+  }
+
+  #no-more-tables #cart-form .prod-card .prod-quantity {
+    grid-area: quanity;
+  }
+
+  #no-more-tables #cart-form .prod-card .prod-price {
+    grid-area: price;
+    text-align: right;
+    padding-right: 0;
+  }
+
+  #no-more-tables #cart-form .prod-card .prod-total {
+    grid-area: total;
   }
 }
 
@@ -2246,7 +2318,8 @@ body.active::before{
     word-break: break-all;
   }
 
-  .customer-list .ribbon_outer img {
+  .customer-list .ribbon_outer img,
+    .batch .ribbon_outer img {
     max-width: 50px;
   }
 
@@ -2356,6 +2429,10 @@ body.active::before{
     margin-bottom: 1.25rem;
   }
 
+  .md\:mt-0 {
+    margin-top: 0px;
+  }
+
   .md\:mt-10 {
     margin-top: 2.5rem;
   }
@@ -2390,6 +2467,10 @@ body.active::before{
 
   .md\:min-h-14 {
     min-height: 3.5rem;
+  }
+
+  .md\:min-h-\[50vh\] {
+    min-height: 50vh;
   }
 
   .md\:w-1\/2 {
@@ -2480,6 +2561,10 @@ body.active::before{
     gap: 2.5rem;
   }
 
+  .md\:gap-20 {
+    gap: 5rem;
+  }
+
   .md\:gap-3 {
     gap: 0.75rem;
   }
@@ -2556,6 +2641,10 @@ body.active::before{
 
   .md\:pb-16 {
     padding-bottom: 4rem;
+  }
+
+  .md\:pb-24 {
+    padding-bottom: 6rem;
   }
 
   .md\:ps-\[52px\] {
@@ -2691,6 +2780,10 @@ body.active::before{
 
   .lg\:w-1\/3 {
     width: 33.333333%;
+  }
+
+  .lg\:w-2\/3 {
+    width: 66.666667%;
   }
 
   .lg\:w-24 {
@@ -2896,10 +2989,6 @@ body.active::before{
 
   .xl\:max-w-\[700px\] {
     max-width: 700px;
-  }
-
-  .xl\:max-w-full {
-    max-width: 100%;
   }
 
   .xl\:flex-row {

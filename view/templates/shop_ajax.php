@@ -477,7 +477,7 @@ $('.cat_class').change(function () {
                             $('.batch').html(custData);
                         });
                         if (data.result != '') {
-                            $('#show_buttons').html('<select id="action-dropdown" class="delet-slct 2xl:w-auto w-full  min-h-[46px] focus:outline-none cursor-pointer text-black text-base font-regular rounded-[10px] px-5 border border-[#D9D9D9]"><option value=""><?php _e("Select Action");?></option><option value="delete"><?php _e("Delete Selected"); ?></option><option value="select"><?php _e("Select All"); ?></option><option value="select_n"><?php _e("Select New");?></option></select>');
+                            $('#show_buttons').html('<select id="action-dropdown" class="delet-slct 2xl:w-auto w-full  min-h-[46px] focus:outline-none cursor-pointer text-black text-base font-regular rounded-[10px] xl:px-5 px-2.5 border border-[#D9D9D9]"><option value=""><?php _e("Select Action");?></option><option value="delete"><?php _e("Delete Selected"); ?></option><option value="select"><?php _e("Select All"); ?></option><option value="select_n"><?php _e("Select New");?></option></select>');
                             badgeFilterByLevel(cust_id);
                         }
                     }
@@ -534,7 +534,7 @@ $('.cat_class').change(function () {
                             $('.batch').html(custData);
                         });
                         if (data.result != '') {
-                            $('#show_buttons').html('<select id="action-dropdown" class="delet-slct 2xl:w-auto w-full min-h-[46px] focus:outline-none cursor-pointer text-black text-base font-regular rounded-[10px] px-5 border border-[#D9D9D9]"><option value=""><?php _e("Select Action");?></option><option value="delete"><?php _e("Delete Selected"); ?></option><option value="select"><?php _e("Select All"); ?></option><option value="select_n"><?php _e("Select New");?></option></select>');
+                            $('#show_buttons').html('<select id="action-dropdown" class="delet-slct 2xl:w-auto w-full min-h-[46px] focus:outline-none cursor-pointer text-black text-base font-regular rounded-[10px] xl:px-5 px-2.5 border border-[#D9D9D9]"><option value=""><?php _e("Select Action");?></option><option value="delete"><?php _e("Delete Selected"); ?></option><option value="select"><?php _e("Select All"); ?></option><option value="select_n"><?php _e("Select New");?></option></select>');
                             badgeFilterByLevel(cust_id);
                         }
                     }
@@ -572,7 +572,7 @@ $('.cat_class').change(function () {
                                 return false;
                             }
                             if (data != '') {
-                                $('#show_buttons').html('<select id="action-dropdown" class="delet-slct 2xl:w-auto w-full hvr-float-shadow"><option value=""><?php _e("Select Action");?></option><option value="delete"><?php _e("Delete Selected"); ?></option><option value="select"><?php _e('Select All'); ?></option><option value="select_n"><?php _e("Select New");?></option></select>');
+                                $('#show_buttons').html('<select id="action-dropdown" class="delet-slct min-h-[46px]  2xl:w-auto w-full focus:outline-none cursor-pointer text-black text-base font-regular rounded-[10px] xl:px-5 px-2.5 border border-[#D9D9D9]"><option value=""><?php _e("Select Action");?></option><option value="delete"><?php _e("Delete Selected"); ?></option><option value="select"><?php _e('Select All'); ?></option><option value="select_n"><?php _e("Select New");?></option></select>');
                                 badgeFilterByLevel(cust_id);
                             }
                         }
@@ -681,11 +681,11 @@ $('.cat_class').change(function () {
                     $('.ajax-load-image').css('display', 'none');
                     var htmlData = '';
                     $(data).each(function (index, value) {
-                        htmlData += '<li id="ribbon_' + value.custId + '" ' + value.ordered_str + '><div>' + value.ribbon_type + '</div><span><label><input type=checkbox  class=chkid name=o' + value.ordered + ' value=' + value.custId + '>' + value.ribbon_name_en + value.name_addition  + '</label></span></li>'
+                        htmlData += '<li class="mb-5 pb-5 border-b border-[#D9D9D9] last:pb-0 last:mb-0 last:border-none flex gap-2.5" id="ribbon_' + value.custId + '" ' + value.ordered_str + '><label class="relative"><input type=checkbox  class="chkid min-w-4 h-4 absolute left-0 z-[1] opacity-0" name=o' + value.ordered + ' value=' + value.custId + '><span class="smallcheck relative min-w-4 h-4 border border-[#B1B1B1] inline-flex rounded-[2px]"></span></label><div>' + value.ribbon_type + '</div><div><span class="text-sm 2xl:break-normal break-all font-medium text-black">'  + value.ribbon_name_en + value.name_addition  + '</span></div></li>'
                     });
                     $('.batch').html(htmlData);
                     if (htmlData != '') {
-                        $('#show_buttons').html('<select id="action-dropdown" class="delet-slct 2xl:w-auto w-full hvr-float-shadow"><option value=""><?php _e("Select Action");?></option><option value="delete"><?php _e('Delete Selected'); ?></option><option value="select"><?php _e('Select All'); ?></option><option value="select_n"><?php _e("Select New");?></option></select>');
+                        $('#show_buttons').html('<select id="action-dropdown" class="delet-slct min-h-[46px]  2xl:w-auto w-full focus:outline-none cursor-pointer text-black text-base font-regular rounded-[10px] xl:px-5 px-2.5 border border-[#D9D9D9]"><option value=""><?php _e("Select Action");?></option><option value="delete"><?php _e('Delete Selected'); ?></option><option value="select"><?php _e('Select All'); ?></option><option value="select_n"><?php _e("Select New");?></option></select>');
                         var badgeData = '';
                         $(data).each(function (index, value) {
                             badgeData += value.ribbon_type;
@@ -798,14 +798,14 @@ $('.cat_class').change(function () {
                                                 }
                                             }
                                             }
-              else if(index===total)
-                {
-                    totalBeforePreSort=value;
-                }
-                else
-                {
-                    totalBeforePreSortIntegrity=value;
-                }
+                                            else if(index===total)
+                                                {
+                                                    totalBeforePreSort=value;
+                                                }
+                                                else
+                                                {
+                                                    totalBeforePreSortIntegrity=value;
+                                                }
 
                                         });
                                         
@@ -862,7 +862,7 @@ $('.cat_class').change(function () {
     $(document.body).on('click', ".add_to_cart_ribbon", function (e) {
         var customer_id = $("#custm option:selected").val();
         values = [];
-        $.each($("input[class='chkid']:checked"), function () {
+        $.each($("input.chkid:checked"), function () {
             values.push($(this).val());
         });
 
@@ -1031,9 +1031,10 @@ $('.cat_class').change(function () {
                 var badgeData = '';
                 var level = '';
                 $(data).each(function (index, value) {
-                    badgeData += "<li id=ribbon_" + value.custId + "><div>" + value.ribbon_type + "</div><span><label><input type=checkbox checked=checked class=chkid  value=" + value.custId + ">" + value.ribbon_name_en + value.name_addition + "</label></span></li>";
+                    badgeData += "<li class='mb-5 pb-5 border-b border-[#D9D9D9] last:pb-0 last:mb-0 last:border-none flex gap-2.5' id=ribbon_" + value.custId + "><label class='relative'><input type=checkbox checked=checked class='chkid min-w-4 h-4 absolute left-0 z-[1] opacity-0'  value=" + value.custId + "><span class='smallcheck relative min-w-4 h-4 border border-[#B1B1B1] inline-flex rounded-[2px]'></span></label><div>" + value.ribbon_type + "</div><div><span class='text-sm 2xl:break-normal break-all font-medium text-black'>" + value.ribbon_name_en + value.name_addition + "</span></div></li>";
                 });
                 $('.batch').append(badgeData);
+
             }
         });
     }

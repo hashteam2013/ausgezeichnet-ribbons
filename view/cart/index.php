@@ -1,18 +1,17 @@
 
-<div class="flex flex-col gap-20">
-    <div class="bg-body py-7 flex w-full">
+<div class="flex flex-col md:gap-20 gap-5">
+    <div class="bg-body md:py-7 py-4 flex w-full">
         <div class="container-custom">
-            <h1 class="cart-hdng text-3xl font-gothic text-black text-center"><?php _e("Cart"); ?></h1>
+            <h1 class="cart-hdng md:text-3xl text-lg font-gothic text-black text-center"><?php _e("Cart"); ?></h1>
         </div>
     </div>
 
-    <div class="flex w-full pb-24">
+    <div class="flex w-full md:pb-24 pb-5">
         <div class="container-custom">
-        
             <div id="no-more-tables">
-                <form id="cart-form"  action="<?php echo make_url("cart") ?>" method="post" role="form" class="flex gap-14 items-start">
+                <form id="cart-form"  action="<?php echo make_url("cart") ?>" method="post" role="form" class="flex xl:gap-14 gap-5 items-start lg:flex-row flex-col">
                     <input type = "hidden" value="" name="conn_val" id="redirect_id">
-                    <div class="bg-body rounded-[20px] border border-[#d9d9d9] p-5 w-2/3">
+                    <div class="bg-body rounded-[20px] border border-[#d9d9d9] p-5 lg:w-2/3 w-full">
                         <table class="cf">
                             <thead class="cf">
                                 <tr>
@@ -39,7 +38,7 @@
                                             $total = 0;
                                         }
 
-                                        echo '<tr><td colspan="5" class="c-name text-xl font-gothic text-black pb-2">';
+                                        echo '<tr><td colspan="5" class="c-name md:text-xl text-base font-gothic text-black pb-2">';
                                         echo $record['customer_name'] . '</td>' . '</tr>';
                                                 //     foreach ($customer_items as $customer) {
                                                 //          if ($customer->customer_id == $record['customer_id']) {
@@ -111,8 +110,8 @@
                                                 //          }
                                         $customer_name = $record['customer_name'];
                                     }
-                                    echo '<tr>';
-                                    echo '<td data-title="Product" class="text-sm font-medium text-black py-4 pe-4">';
+                                    echo '<tr class="prod-card">';
+                                    echo '<td data-title="Product" class="prod-title text-sm font-medium text-black md:py-4 py-2 pe-4">';
                                     echo show_ribbon_images($record['type'], $record['batch_image'], $record['number'], $record['country'], $record['product_id']);
                                     
                                     if($record['type']=='10')
@@ -125,7 +124,7 @@
                                     }
 
                                     echo '</td>';
-                                    echo '<td data-title="Quantity" class="numeric quant text-base font-medium py-4 pe-4" >';
+                                    echo '<td data-title="Quantity" class="prod-quantity numeric quant text-base font-medium md:py-4 py-2 pe-4" >';
                                     ?>
                                     <?php
                                     if ($record['level'] == '6') {
@@ -146,13 +145,13 @@
                                     ?>
                                     <?php
                                     echo '<input type="hidden"  name="price[' . $record['id'] . ']" value=' . $record['unit_price'] . '>';
-                                    echo '<td data-title="Price" class="numeric text-base font-medium text-secondary py-4 pe-4">';
+                                    echo '<td data-title="Price" class="numeric prod-price text-base font-medium text-secondary md:py-4 py-2 pe-4">';
                                     echo show_price($record['unit_price']);
                                     echo '</td>';
-                                    echo '<td data-title="Total" class="numeric text-base font-medium text-secondary py-4 pe-4">';
+                                    echo '<td data-title="Total" class="numeric prod-total text-base font-medium text-secondary md:py-4 py-2 pe-4">';
                                     echo show_price($record['total_price_tax_excl']);
                                     echo '</td>';
-                                    echo '<td data-title="" class="numeric text-base font-medium text-secondary py-4 pe-4">';
+                                    echo '<td data-title="" class="numeric prod-action text-base font-medium text-secondary md:py-4 py-2 pe-4">';
                                     echo '<a href="javascript:void(0);" class="btn btn-danger btn-sm del_cart min-w-12 h-10 bg-white rounded-lg border border-[#d9d9d9] inline-flex justify-center items-center" data-value=' . $record['id'] . '><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.3333 4.99999V4.33332C13.3333 3.3999 13.3333 2.93319 13.1517 2.57667C12.9919 2.26307 12.7369 2.0081 12.4233 1.84831C12.0668 1.66666 11.6001 1.66666 10.6667 1.66666H9.33333C8.39991 1.66666 7.9332 1.66666 7.57668 1.84831C7.26308 2.0081 7.00811 2.26307 6.84832 2.57667C6.66667 2.93319 6.66667 3.3999 6.66667 4.33332V4.99999M8.33333 9.58332V13.75M11.6667 9.58332V13.75M2.5 4.99999H17.5M15.8333 4.99999V14.3333C15.8333 15.7335 15.8333 16.4335 15.5608 16.9683C15.3212 17.4387 14.9387 17.8212 14.4683 18.0608C13.9335 18.3333 13.2335 18.3333 11.8333 18.3333H8.16667C6.76654 18.3333 6.06647 18.3333 5.53169 18.0608C5.06129 17.8212 4.67883 17.4387 4.43915 16.9683C4.16667 16.4335 4.16667 15.7335 4.16667 14.3333V4.99999" stroke="#393C40" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>';
                                     echo '</td>';
                                     echo '</tr>';
@@ -161,7 +160,7 @@
                                 </tbody>
                         </table>
                     </div>
-                    <div class="bg-body rounded-[20px] border border-[#d9d9d9] p-5 w-1/3">
+                    <div class="bg-body rounded-[20px] border border-[#d9d9d9] p-5 lg:w-1/3 w-full">
                         <div class="flex flex-col">
                             <div class="flex justify-end mb-3">
                                 <button type='submit' name='clear' class="btn btn-info btn-sm update_quantity text-sm text-primary"><?php _e('Clear'); ?></button>
@@ -195,11 +194,11 @@
                                         }
                                         ?> </p>
                             </div>
-                            <div class="flex gap-2.5 justify-between text-lg text-black font-medium pt-5 border-t border-[#d9d9d9] mb-6">
+                            <div class="flex gap-2.5 justify-between md:text-lg text-sm text-black font-medium pt-5 border-t border-[#d9d9d9] mb-6">
                                 <p><?php _e('TotalShipping'); ?></p>
                                 <p><?php echo show_price(get_total() * (1 - $discount) + shipingCostWithArea(get_total() * (1 - $discount),$area)); ?></p>
                             </div>
-                            <div class="flex gap-2.5 mb-5">
+                            <div class="flex xl:flex-nowrap flex-wrap gap-2.5 mb-5">
                                  <input type="text" class="feild-a flex-auto px-4 min-h-10 text-sm text-black font-normal focus:outline-none border border-[#d9d9d9] rounded-md" name='rabattcode' value="<?php echo $cart_detail->rabattcode; ?>" placeholder="Rabattcode eingeben">
                                 <button type='submit' name='sendrabatt' class="btn text-white rounded-md btn-info btn-sm update_quantity bg-primary min-h-10 text-sm px-4 font-medium hover:bg-secondary"><?php _e('usecode'); ?> </button>
                             </div>
