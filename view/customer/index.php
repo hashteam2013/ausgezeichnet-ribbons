@@ -25,10 +25,10 @@
                         <table class="table table-hover w-full md:table-fixed table-auto" id="dev-table">
                             <thead>
                                 <tr>
-                                    <th class="text-left text-black pe-4 capitalize pb-3 md:text-lg text-base font-semibold">#</th>
-                                    <th class="text-left text-black pe-4 capitalize pb-3 md:text-lg text-base font-semibold"><?php _e("First Name"); ?></th>
-                                    <th class="text-left text-black pe-4 capitalize pb-3 md:text-lg text-base font-semibold"><?php _e("Last Name"); ?></th>
-                                    <th class="text-left text-black pe-4 capitalize pb-3 md:text-lg text-base font-semibold"><?php _e("action"); ?></th>
+                                    <th class="text-left text-black pe-4 whitespace-nowrap capitalize pb-3 md:text-lg text-base font-semibold">#</th>
+                                    <th class="text-left text-black pe-4 whitespace-nowrap capitalize pb-3 md:text-lg text-base font-semibold"><?php _e("First Name"); ?></th>
+                                    <th class="text-left text-black pe-4 whitespace-nowrap capitalize pb-3 md:text-lg text-base font-semibold"><?php _e("Last Name"); ?></th>
+                                    <th class="text-left text-black pe-4 whitespace-nowrap capitalize pb-3 md:text-lg text-base font-semibold"><?php _e("action"); ?></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -99,7 +99,7 @@
         <div class="srch-reslt slect mar-top-10">
             <div class="srch-heading bg-black relative px-5 py-3 flex justify-between items-center">
              <h4 class="text-white text-xl font-medium"><?php _e("Badges Placed"); ?></h4>
-             <button type="button" class="close rounded-full bg-black text-[33px] leading-[33px] font-light text-white  w-10 h-10 relative -right-2 top-0" data-dismiss="modal">×</button>
+             <button type="button" id="enquiryclose" class="close rounded-full bg-black text-[33px] leading-[33px] font-light text-white  w-10 h-10 relative -right-2 top-0" data-dismiss="modal">×</button>
             </div>
             <div class="bdr bg-white py-5 " >
                 <div class="flag-sec">
@@ -118,18 +118,18 @@
                <h4 class="text-white text-xl font-medium">
                    <?php _e("Rename Customer"); ?>
                </h4>
-               <button type="button" class="close rounded-full bg-black text-[33px] leading-[33px] font-light text-white  w-10 h-10 relative -right-2 top-0" data-dismiss="modal">×</button>
+               <button type="button" id="renameclose" class="close rounded-full bg-black text-[33px] leading-[33px] font-light text-white  w-10 h-10 relative -right-2 top-0" data-dismiss="modal">×</button>
             </div>
             <div class="panel-body bg-white p-5">
                 <form role="form" action="" id="customer_add" method="POST">
                     <div id="msg"></div>
                     <div class="form-body flex flex-col gap-4 w-full">
                         <div class="form-group flex flex-col gap-1.5">
-                            <label><?php _e("Firstname"); ?><font color="red">*</font></label>
+                            <label class="md:text-base text-sm text-dark font-normal"><?php _e("Firstname"); ?><font color="red">*</font></label>
                             <input type="text"  name="firstname" id="fname" value="" class="form-control fname md:text-base text-sm fname w-full border-[#b1b1b1] px-4 md:min-h-12 min-h-10 border rounded-lg focus:outline-none" placeholder="<?php _e("Firstname"); ?>"> 
                         </div>
                         <div class="form-group flex flex-col gap-1.5">
-                            <label><?php _e("Lastname"); ?><font color="red">*</font></label>
+                            <label class="md:text-base text-sm text-dark font-normal"><?php _e("Lastname"); ?><font color="red">*</font></label>
                             <input type="text"  name="lastname" id="lname" value="" class="form-control fname md:text-base text-sm fname w-full border-[#b1b1b1] px-4 md:min-h-12 min-h-10 border rounded-lg focus:outline-none" placeholder="<?php _e("Lastname"); ?>"> 
                         </div>
                         <div class="form-group">
@@ -158,7 +158,7 @@
                 $(response).each(function (index, value) {
                     var ribbon = value.batchname;
                     var image = value.batch_image
-                    htmlData += '<li class="flex flex-col w-1/2 gap-2 px-3 pb-4 border-b border-[#d9d9d9]"><div><img src="<?php echo DIR_WS_UPLOADS; ?>batch/' + image + '" class="img-responsive max-h-24 min-h-24 object-cover object-left w-full"></div><p class="font-medium text-dark text-base ">' + ribbon + '</p></li>';
+                    htmlData += '<li class="flex flex-col sm:w-1/2 w-full gap-2 px-3 pb-4 border-b border-[#d9d9d9]"><div><img src="<?php echo DIR_WS_UPLOADS; ?>batch/' + image + '" class="img-responsive max-h-24 min-h-24 object-cover object-left w-full"></div><p class="font-medium text-dark text-base ">' + ribbon + '</p></li>';
                 });
                 $("#popup-react2").html(htmlData);
             }
@@ -182,13 +182,39 @@
         });
     }
 
-    jQuery('#enquiryinputbtn').on('click', function () {
+   jQuery('#enquirypopup').on('show.bs.modal', function () {
         jQuery('body').addClass('active');
-    });
-
-    jQuery('.close').on('click', function () {
+        });
+        jQuery('#enquirypopup').on('hidden.bs.modal', function(){
         jQuery('body').removeClass('active');
-    });
+        });
+        
+        jQuery('#renamepopup_Red').on('show.bs.modal', function () {
+        jQuery('body').addClass('active');
+        });
+        jQuery('#renamepopup_Red').on('hidden.bs.modal', function(){
+        jQuery('body').removeClass('active');
+        });
+        
+        // Fallback: Handle manual show/hide for modals that might not use Bootstrap events
+        jQuery(document).on('click', '[data-toggle="modal"][data-target="#enquirypopup"]', function () {
+        jQuery('body').addClass('active');
+        });
+        
+        jQuery(document).on('click', '[data-toggle="modal"][data-target="#renamepopup_Red"]', function () {
+        jQuery('body').addClass('active');
+        });
+        
+        // Handle close buttons
+        jQuery(document).on('click', '#enquirypopup .close[data-dismiss="modal"]', function () {
+        jQuery('#enquirypopup').hide();
+        jQuery('body').removeClass('active');
+        });
+        
+        jQuery(document).on('click', '#renamepopup_Red .close[data-dismiss="modal"]', function () {
+        jQuery('#renamepopup_Red').hide();
+        jQuery('body').removeClass('active');
+        });
 
     jQuery(document.body).on('click', "#cust-rename_Red", function (e) {
         e.preventDefault();

@@ -1036,6 +1036,14 @@ video {
   width: 100%;
 }
 
+.w-\[1500px\] {
+  width: 1500px;
+}
+
+.w-\[1600px\] {
+  width: 1600px;
+}
+
 .min-w-10 {
   min-width: 2.5rem;
 }
@@ -2313,6 +2321,12 @@ body.active::before{
   }
 }
 
+@media (min-width: 640px) {
+  .sm\:w-1\/2 {
+    width: 50%;
+  }
+}
+
 @media (min-width: 768px) {
   .md\:left-5 {
     left: 1.25rem;
@@ -2872,12 +2886,20 @@ body.active::before{
     width: 36%;
   }
 
+  .xl\:w-full {
+    width: 100%;
+  }
+
   .xl\:max-w-\[227px\] {
     max-width: 227px;
   }
 
   .xl\:max-w-\[700px\] {
     max-width: 700px;
+  }
+
+  .xl\:max-w-full {
+    max-width: 100%;
   }
 
   .xl\:flex-row {
@@ -2918,6 +2940,10 @@ body.active::before{
 
   .xl\:gap-8 {
     gap: 2rem;
+  }
+
+  .xl\:overflow-visible {
+    overflow: visible;
   }
 
   .xl\:whitespace-normal {
