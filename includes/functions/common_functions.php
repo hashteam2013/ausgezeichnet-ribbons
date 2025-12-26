@@ -437,30 +437,30 @@ function add_js($js_file_path) {
 }
 
 function show_price($price,$return = FALSE){
-$output = '';
-$price = round($price, '2'); 
-    if((substr($price, 0, 1)=='-')){
-        $output = '-';
-        
+    $output = '';
+    $price = round($price, '2'); 
+        if((substr($price, 0, 1)=='-')){
+            $output = '-';
+            
+        }
+         $strlen = strlen(substr(strrchr($price, "."), 2));
+         if($strlen == 1){
+             $price = $price.'0';
+             
+         }
+         $price = number_format((float)$price, 2, '.', '');
+        if(	CURRENCY_SYMBOL_LOCATION =='after'){
+            $output.= CURRENCY_SYMBOL.str_replace('-','',$price);
+        }else{
+             $output.= str_replace('-','',$price).CURRENCY_SYMBOL;
+        }
+             
+         if($return){
+              return $output;
+               } else{
+                    echo $output;
+         }
     }
-     $strlen = strlen(substr(strrchr($price, "."), 2));
-     if($strlen == 1){
-         $price = $price.'0';
-         
-     }
-     $price = number_format((float)$price, 2, '.', '');
-    if(	CURRENCY_SYMBOL_LOCATION =='after'){
-        $output.= CURRENCY_SYMBOL.str_replace('-','',$price);
-    }else{
-         $output.= str_replace('-','',$price).CURRENCY_SYMBOL;
-    }
-         
-     if($return){
-          return $output;
-           } else{
-                echo $output;
-     }
-}
 
 function show_date($sqldate) {
     $date = strtotime($sqldate);
