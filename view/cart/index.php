@@ -127,20 +127,13 @@
                                     echo '<td data-title="Quantity" class="prod-quantity numeric quant text-base font-medium md:py-4 py-2 pe-4" >';
                                     ?>
                                     <?php
-                                    if ($record['level'] == '6') {
-                                        ?>
-                                    <select name="quant[<?php echo $record['id']; ?>]" id="p_<?php echo $record['id']; ?>" class="cart_sel" >
-                                        <?php
-                                        for ($i = 0; $i <= 15; $i++) {
-                                            ?>
-                                            <option value=<?php echo $i; ?>
-                                                    <?php if ($record['quantity'] == $i) { ?> selected="selected"<?php } ?>>
-                                                <?php echo $i; ?></option>';
-                                        <?php } ?>
-                                        <?php
-                                        echo '</select>';
+                                   
+                                    if ($record['level'] == '6') { ?>
+
+                                   <input type="number" name="quant[<?php echo $record['id']; ?>]" id="p_<?php echo $record['id']; ?>" class="cart_sel" min="0" max="15" value="<?php echo $record['quantity']; ?>">
+                                    <?php
                                     } else {
-                                        echo $record['quantity'];
+                                       echo $record['quantity'];
                                     }
                                     ?>
                                     <?php
@@ -214,10 +207,10 @@
     </div>
 </div>
 <script>
-    $(document.body).on('change', ".cart_sel", function (e) {
-        var val = $(this).val();
-        var id = $(this).attr('id');
-        $("#redirect_id").val(id);
-        $("#cart-form").submit();
-    });
+ $(document.body).on('change', ".cart_sel", function (e) {
+var val = $(this).val();
+var id = $(this).attr('id');
+ $("#redirect_id").val(id);
+ $("#cart-form").submit();
+ });
 </script>

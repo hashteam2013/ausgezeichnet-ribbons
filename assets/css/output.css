@@ -784,10 +784,6 @@ video {
   margin-top: 0.375rem;
 }
 
-.mt-14 {
-  margin-top: 3.5rem;
-}
-
 .mt-2 {
   margin-top: 0.5rem;
 }
@@ -1016,10 +1012,6 @@ video {
   width: 285px;
 }
 
-.w-\[30\%\] {
-  width: 30%;
-}
-
 .w-\[31\%\] {
   width: 31%;
 }
@@ -1028,12 +1020,8 @@ video {
   width: 69%;
 }
 
-.w-\[70\%\] {
-  width: 70%;
-}
-
-.w-\[calc\(50\%-10px\)\] {
-  width: calc(50% - 10px);
+.w-\[767px\] {
+  width: 767px;
 }
 
 .w-auto {
@@ -1225,10 +1213,6 @@ video {
   gap: 0.375rem;
 }
 
-.gap-10 {
-  gap: 2.5rem;
-}
-
 .gap-14 {
   gap: 3.5rem;
 }
@@ -1263,6 +1247,10 @@ video {
 
 .gap-7 {
   gap: 1.75rem;
+}
+
+.gap-8 {
+  gap: 2rem;
 }
 
 .gap-y-4 {
@@ -1633,11 +1621,6 @@ video {
 .py-6 {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
-}
-
-.py-7 {
-  padding-top: 1.75rem;
-  padding-bottom: 1.75rem;
 }
 
 .py-8 {
@@ -2398,6 +2381,10 @@ body.active::before{
   .sm\:w-1\/2 {
     width: 50%;
   }
+
+  .sm\:flex-nowrap {
+    flex-wrap: nowrap;
+  }
 }
 
 @media (min-width: 768px) {
@@ -2513,6 +2500,10 @@ body.active::before{
     width: auto;
   }
 
+  .md\:w-full {
+    width: 100%;
+  }
+
   .md\:min-w-12 {
     min-width: 3rem;
   }
@@ -2579,6 +2570,10 @@ body.active::before{
 
   .md\:gap-8 {
     gap: 2rem;
+  }
+
+  .md\:gap-14 {
+    gap: 3.5rem;
   }
 
   .md\:overflow-visible {
@@ -2754,6 +2749,10 @@ body.active::before{
     margin-top: 0px;
   }
 
+  .lg\:mt-14 {
+    margin-top: 3.5rem;
+  }
+
   .lg\:block {
     display: block;
   }
@@ -2798,6 +2797,10 @@ body.active::before{
     width: 27%;
   }
 
+  .lg\:w-\[30\%\] {
+    width: 30%;
+  }
+
   .lg\:w-\[31\%\] {
     width: 31%;
   }
@@ -2824,6 +2827,10 @@ body.active::before{
 
   .lg\:w-\[52\%\] {
     width: 52%;
+  }
+
+  .lg\:w-\[70\%\] {
+    width: 70%;
   }
 
   .lg\:w-auto {
@@ -2866,8 +2873,17 @@ body.active::before{
     gap: 2.5rem;
   }
 
+  .lg\:gap-14 {
+    gap: 3.5rem;
+  }
+
   .lg\:gap-5 {
     gap: 1.25rem;
+  }
+
+  .lg\:break-normal {
+    overflow-wrap: normal;
+    word-break: normal;
   }
 
   .lg\:rounded-xl {
@@ -2913,6 +2929,11 @@ body.active::before{
   .lg\:text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;
+  }
+
+  .lg\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
   }
 
   .lg\:text-xl {
@@ -2979,6 +3000,10 @@ body.active::before{
     width: 36%;
   }
 
+  .xl\:w-\[calc\(50\%-10px\)\] {
+    width: calc(50% - 10px);
+  }
+
   .xl\:w-full {
     width: 100%;
   }
@@ -3029,6 +3054,10 @@ body.active::before{
 
   .xl\:gap-8 {
     gap: 2rem;
+  }
+
+  .xl\:gap-16 {
+    gap: 4rem;
   }
 
   .xl\:overflow-visible {

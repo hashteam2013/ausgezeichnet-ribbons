@@ -67,35 +67,35 @@
                     <a href="<?php echo make_url('orders'); ?>"><button type="submit" name="update" class="all-cat add-btn righter min-h-[38px] text-sm px-4 hover:bg-primary text-white cursor-pointer rounded-md font-medium bg-secondary"><?php _e('Back To Orders');?></button></a>
                 </div>
                 <div class="tab-content">
-                    <div class="tab-pane flex flex-col gap-14 active" id="tab_1">
-                        <div class="flex gap-10">
-                          <div class="w-[70%] flex flex-col gap-10">
-                            <div class="flex gap-10">
-                                <div class="w-1/2">
+                    <div class="tab-pane flex flex-col lg:gap-14 md:gap-10 gap-5 active" id="tab_1">
+                        <div class="flex lg:flex-nowrap flex-wrap md:gap-10 gap-5">
+                          <div class="lg:w-[70%] w-full flex flex-col md:gap-10 gap-5">
+                            <div class="flex sm:flex-nowrap flex-wrap md:gap-10 gap-5">
+                                <div class="sm:w-1/2 w-full">
                                     <div class="portlet yellow-crusta box flex flex-col gap-5 h-full">
-                                        <div class="portlet-title panel-title text-3xl text-black font-gothic">
+                                        <div class="portlet-title panel-title md:text-3xl text-xl text-black font-gothic">
                                             <div class="caption">
                                                 <?php _e("Order Details"); ?> 
                                             </div>
                                             <div class="actions"></div>
                                         </div>
                                         <div class="portlet-body bg-body rounded-[20px] border border-[#d9d9d9] p-5 flex-1 flex flex-wrap gap-5">
-                                            <div class="static-info flex flex-col gap-2.5 w-[calc(50%-10px)]">
+                                            <div class="static-info flex flex-col gap-2.5 w-full xl:w-[calc(50%-10px)] ">
                                                 <div class="name text-sm text-black font-normal"><?php _e(" Order #:"); ?> </div>
                                                 <div class="value font-medium text-secondary text-base"><?php echo $orders->id; ?>
 
                                                 </div>
                                             </div>
-                                            <div class="static-info flex flex-col gap-2.5 w-[calc(50%-10px)]">
+                                            <div class="static-info flex flex-col gap-2.5 w-full xl:w-[calc(50%-10px)]">
                                                 <div class="name text-sm text-black font-normal"><?php _e(" Order Date &amp; Time:"); ?> </div>
                                                 <div class="value font-medium text-secondary text-base"><?php echo show_datetime($orders->date_add); ?></div>
                                             </div>
 
-                                            <div class="static-info flex flex-col gap-2.5 w-[calc(50%-10px)]">
+                                            <div class="static-info flex flex-col gap-2.5 w-full xl:w-[calc(50%-10px)]">
                                                 <div class="name text-sm text-black font-normal"><?php _e(" Grand Total:"); ?> </div>
                                                 <div class="value font-medium text-secondary text-base"><?php echo show_price($orders->grand_total*(1-$orders->discount)+$orders->total_shipping_amount); ?></div>
                                             </div>
-                                            <div class="static-info flex flex-col gap-2.5 w-[calc(50%-10px)]">
+                                            <div class="static-info flex flex-col gap-2.5 w-full xl:w-[calc(50%-10px)]">
                                                 <div class="name text-sm text-black font-normal"><?php _e(" Payment Information:"); ?> </div>
                                                 <div class="value font-medium text-secondary text-base"><?php if ($orders->is_payment_made == 0) {
                                                     _e("Payment Pending");
@@ -106,24 +106,24 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="w-1/2">
+                                <div class="sm:w-1/2 w-full">
                                     <div class="portlet blue-hoki box flex flex-col gap-5 h-full">
                                         <div class="portlet-title">
-                                            <div class="caption panel-title text-3xl text-black font-gothic">
+                                            <div class="caption panel-title md:text-3xl text-xl text-black font-gothic">
                                                 <?php _e("Customer Information");?> 
                                             </div>
                                             <div class="actions"></div>
                                         </div>
                                         <div class="portlet-body bg-body rounded-[20px] border border-[#d9d9d9] p-5 flex-1 flex flex-wrap gap-5">
-                                            <div class="flex flex-col gap-2.5 w-[calc(50%-10px)] static-info">
+                                            <div class="flex flex-col gap-2.5 w-full xl:w-[calc(50%-10px)] static-info">
                                                 <div class="name font-normal text-black text-sm"><?php _e("Customer Name:"); ?> </div>
                                                 <div class="font-medium text-secondary text-base value"><?php echo $orders->billing_firstname.' '.$orders->billing_lastname; ?></div>
                                             </div>
-                                            <div class="flex flex-col gap-2.5 w-[calc(50%-10px)] static-info">
+                                            <div class="flex flex-col gap-2.5 w-full xl:w-[calc(50%-10px)] static-info">
                                                 <div class="name font-normal text-black text-sm"><?php _e(" Email:"); ?> </div>
-                                                <div class="font-medium text-secondary text-base value"><?php echo $orders->billing_email; ?></div>
+                                                <div class="font-medium text-secondary text-base break-all value"><?php echo $orders->billing_email; ?></div>
                                             </div>
-                                            <div class="flex flex-col gap-2.5 w-[calc(50%-10px)] static-info">
+                                            <div class="flex flex-col gap-2.5 w-full xl:w-[calc(50%-10px)] static-info">
                                                 <div class="name font-normal text-black text-sm"><?php _e(" Phone Number:"); ?> </div>
                                                 <div class="font-medium text-secondary text-base value"><?php echo $orders->billing_mobile; ?></div>
                                             </div>
@@ -131,11 +131,11 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="flex gap-10">
-                                <div class="w-1/2">
+                            <div class="flex sm:flex-nowrap flex-wrap md:gap-10 gap-5">
+                                <div class="sm:w-1/2 w-full">
                                     <div class="portlet green-meadow box flex flex-col gap-5 h-full">
                                         <div class="portlet-title">
-                                            <div class="caption panel-title text-3xl text-black font-gothic">
+                                            <div class="caption panel-title md:text-3xl text-xl text-black font-gothic">
                                                 <?php _e(" Billing Address"); ?> 
                                             </div>
                                         </div>
@@ -153,10 +153,10 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="w-1/2">
+                                <div class="sm:w-1/2 w-full">
                                     <div class="portlet red-sunglo box flex flex-col gap-5 h-full">
                                         <div class="portlet-title">
-                                            <div class="caption panel-title text-3xl text-black font-gothic">
+                                            <div class="caption panel-title lg:text-3xl text-xl text-black font-gothic">
                                                 <?php _e('Shipping Address');?> </div>
                                             <div class="actions"></div>
                                         </div>
@@ -176,7 +176,7 @@
                                 </div>
                             </div>
                           </div>
-                          <div class="well w-[30%] mt-14">
+                          <div class="well lg:w-[30%] w-full lg:mt-14">
                             <div class="bg-body rounded-[20px] border border-[#d9d9d9] p-5 flex-1 flex flex-col gap-5 h-full">
                                 <div class="static-info align-reverse">
                                     <div class="flex gap-2.5 justify-between mb-5 text-sm text-secondary font-normal">
@@ -228,20 +228,20 @@
                             
                         <div class="portlet grey-cascade box flex flex-col gap-5">
                             <div class="portlet-title">
-                                <div class="caption text-3xl text-black font-gothic">
+                                <div class="caption md:text-3xl text-xl text-black font-gothic">
                                     <?php _e("Shopping Cart"); ?></div>
                                 <div class="actions"></div>
                             </div>
                             <div class="portlet-body bg-body rounded-[20px] border border-[#d9d9d9] p-5 flex-1 flex flex-wrap gap-5">
-                                <div class="table-responsive w-full">
-                                    <table class="table w-full">
+                                <div class="table-responsive w-full md:overflow-visible overflow-x-auto">
+                                    <table class="table md:w-full w-[767px]">
                                         <thead>
                                             <tr>
-                                                <th class="text-left text-black pe-4 capitalize pb-3 text-lg font-semibold"><?php _e(" Product Image"); ?></th>
-                                                <th class="text-left text-black pe-4 capitalize pb-3 text-lg font-semibold"><?php _e(" Name"); ?></th>
-                                                <th class="text-left text-black pe-4 capitalize pb-3 text-lg font-semibold"><?php _e(" Original Price"); ?> </th>
-                                                <th class="text-left text-black pe-4 capitalize pb-3 text-lg font-semibold"><?php _e(" Quantity"); ?> </th>
-                                                <th class="text-left text-black pe-4 capitalize pb-3 text-lg font-semibold"><?php _e(" Total"); ?> </th>
+                                                <th class="text-left text-black pe-4 capitalize pb-3 md:text-lg text-base font-semibold"><?php _e(" Product Image"); ?></th>
+                                                <th class="text-left text-black pe-4 capitalize pb-3 md:text-lg text-base font-semibold"><?php _e(" Name"); ?></th>
+                                                <th class="text-left text-black pe-4 capitalize pb-3 md:text-lg text-base font-semibold"><?php _e(" Original Price"); ?> </th>
+                                                <th class="text-left text-black pe-4 capitalize pb-3 md:text-lg text-base font-semibold"><?php _e(" Quantity"); ?> </th>
+                                                <th class="text-left text-black pe-4 capitalize pb-3 md:text-lg text-base font-semibold"><?php _e(" Total"); ?> </th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -256,13 +256,13 @@
                                                             <?php $customer_name = $cust_name; ?>
                                                 <?php } ?>
                                                 <tr>
-                                                    <td class="text-base font-medium text-secondary py-4 pe-4">
+                                                    <td class="md:text-base text-sm font-medium text-secondary md:py-4 py-2.5 pe-4">
                                                         <?php echo show_ribbon_images($order_item->type, $order_item->batch_image, $order_item->number, $order_item->country, $order_item->product_id); ?>
                                                     </td>
-                                                    <td class="text-base font-medium text-secondary py-4 pe-4"><?php echo $order_item->batch_name; ?></td>
-                                                    <td class="text-base font-medium text-secondary py-4 pe-4"><?php echo show_price($order_item->unit_price); ?></td>
-                                                    <td class="text-base font-medium text-secondary py-4 pe-4"><?php echo $order_item->quantity; ?></td>
-                                                    <td class="text-base font-medium text-secondary py-4 pe-4"><?php echo show_price($order_item->unit_price * $order_item->quantity); ?></td>
+                                                    <td class="md:text-base text-sm font-medium text-secondary md:py-4 py-2.5 pe-4"><?php echo $order_item->batch_name; ?></td>
+                                                    <td class="md:text-base text-sm font-medium text-secondary md:py-4 py-2.5 pe-4"><?php echo show_price($order_item->unit_price); ?></td>
+                                                    <td class="md:text-base text-sm font-medium text-secondary md:py-4 py-2.5 pe-4"><?php echo $order_item->quantity; ?></td>
+                                                    <td class="md:text-base text-sm font-medium text-secondary md:py-4 py-2.5 pe-4"><?php echo show_price($order_item->unit_price * $order_item->quantity); ?></td>
                                                 </tr>
                                                 <?php } ?>
                                         </tbody>
@@ -275,7 +275,7 @@
                         
                         <div class="portlet yellow-crusta box flex flex-col gap-5">
                             <div class="portlet-title">
-                                <div class="caption text-3xl text-black font-gothic">
+                                <div class="caption text-xl md:text-3xl text-black font-gothic">
                                     <?php _e("Order Comment"); ?> </div>
                                 <div class="actions"></div>
                             </div>
