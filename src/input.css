@@ -1,279 +1,362 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-:root{
+
+:root {
     --poppins: "Poppins", sans-serif;
-    --gothic : "Special Gothic Expanded One", sans-serif;
+    --gothic: "Special Gothic Expanded One", sans-serif;
 }
-body{
+
+body {
     @apply relative;
 }
-.iframe_call iframe{
+
+.iframe_call iframe {
     @apply rounded-2xl w-full;
 }
-.crousal-outer .slick-arrow::before{
+
+.crousal-outer .slick-arrow::before {
     @apply hidden;
 }
-body.active::before{
+
+body.active::before {
     content: "";
     @apply top-0 left-0 bg-black/40 w-full h-full absolute z-[1];
 }
-.panel-heading a.active{
-     @apply bg-primary;
+
+.panel-heading a.active {
+    @apply bg-primary;
 }
-#navmenus.active{
+
+#navmenus.active {
     @apply block;
 }
-.main-nav-bar li.active a{
+
+.main-nav-bar li.active a {
     @apply text-primary;
 }
-.srch-bar input::-webkit-input-placeholder{
+
+.srch-bar input::-webkit-input-placeholder {
     @apply text-secondary/70;
 }
+
 .checkmark::before {
     content: "";
     @apply absolute w-[15px] h-2 border-[1.5] border-solid border-l border-b border-body left-[5px] top-1.5 -rotate-45 opacity-0;
 }
-.smallcheck::before{
+
+.smallcheck::before {
     content: "";
     @apply absolute w-2 h-1 border-[1.5] border-solid border-l border-b border-body left-1 top-1 -rotate-45 opacity-0;
 }
-.sm_checkmark::before{
+
+.sm_checkmark::before {
     content: "";
     @apply absolute w-2.5 h-[5px] border-solid border-l border-b border-t-0 border-r-0 border-white left-[3px] top-[3px] -rotate-45 opacity-0;
 }
-.radio input[type="radio"]:checked~.radiocheck::before{
+
+.radio input[type="radio"]:checked~.radiocheck::before {
     content: "";
     @apply w-2.5 h-2.5 absolute bg-[#0E5BD0] rounded-full left-[3px] top-[5px];
 }
-.german-active .billsum_heading{
+
+.german-active .billsum_heading {
     @apply break-all;
 }
+
 .shop-cat-list input[type="checkbox"]:checked~.checkmark::before,
 .green_label input[type="checkbox"]:checked~.sm_checkmark::before,
 .radio input[type="radio"]:checked~.radiocheck::before,
 .customer-list input[type="checkbox"]:checked~.smallcheck::before,
-.batch li input[type="checkbox"]:checked~.smallcheck::before{
+.batch li input[type="checkbox"]:checked~.smallcheck::before {
     @apply opacity-[1];
 }
-.radio input[type="radio"]:checked~.radiocheck{
+
+.radio input[type="radio"]:checked~.radiocheck {
     @apply border-[#0E5BD0];
 }
-.green_label input[type="checkbox"]:checked~.sm_checkmark{
+
+.green_label input[type="checkbox"]:checked~.sm_checkmark {
     @apply bg-[#02961D] border-[#02961D];
 }
+
 .shop-cat-list input[type="checkbox"]:checked~.checkmark,
 .customer-list input[type="checkbox"]:checked~.smallcheck,
-.batch li input[type="checkbox"]:checked~.smallcheck{
+.batch li input[type="checkbox"]:checked~.smallcheck {
     @apply bg-secondary;
 }
+
 .customer-list input[type="checkbox"]:checked~.smallcheck,
-.batch li input[type="checkbox"]:checked~.smallcheck{
+.batch li input[type="checkbox"]:checked~.smallcheck {
     @apply border-secondary;
 }
+
 .customer-list .ribbon_outer img,
-.batch .ribbon_outer img{
+.batch .ribbon_outer img {
     @apply max-w-[90px];
 }
+
 .customer-list .ribbon_outer,
-.batch label.relative + div{
+.batch label.relative+div {
     @apply -mt-2;
 }
-.flag-sec .list .inner{
+
+.flag-sec .list .inner {
     @apply flex flex-col gap-5 pe-1;
 }
-.flag-contaner .ribbon_outer{
+
+.flag-contaner .ribbon_outer {
     @apply relative max-w-[113px] min-h-[60px] w-auto text-center m-auto inline-block;
 }
-.flag-contaner .ribbon_outer img{
+
+.flag-contaner .ribbon_outer img {
     @apply inline-block max-w-[140px] w-auto;
 }
-.list .inner::-webkit-scrollbar{
-   @apply w-1.5;
+
+.list .inner::-webkit-scrollbar {
+    @apply w-1.5;
 }
-.list .inner::-webkit-scrollbar-thumb{
+
+.list .inner::-webkit-scrollbar-thumb {
     @apply bg-black/80 rounded-xl;
 }
-.list .inner::-webkit-scrollbar-track{
+
+.list .inner::-webkit-scrollbar-track {
     @apply bg-body rounded-xl;
 }
-.flag-sec .list .inner .ribbon_shop p br{
+
+.flag-sec .list .inner .ribbon_shop p br {
     @apply hidden;
 }
-.german-active .inner ul li p{
+
+.german-active .inner ul li p {
     @apply break-all;
 }
-.side-bar ul li.selected a{
+
+.side-bar ul li.selected a {
     @apply bg-primary text-white;
 }
-#dev-table tbody tr:last-child td{
+
+#dev-table tbody tr:last-child td {
     @apply border-0 pb-0;
 }
+
 #cart-form .ribbon_outer img,
 .y-order .ribbon_outer img,
-.portlet-body .ribbon_outer img{
+.portlet-body .ribbon_outer img {
     @apply max-h-[40px];
 }
-#enquirypopup{
+
+#enquirypopup {
     @apply !pl-[15px];
 }
-.batch li{
+
+.batch li {
     @apply !bg-transparent;
 }
-@media(max-width:1669px){
+
+input.qty-input[type=number]::-webkit-inner-spin-button,
+input.qty-input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+@media(max-width:1669px) {
     .iframe_call iframe {
         @apply max-h-[370px];
     }
 }
-@media(max-width:1574px){
+
+@media(max-width:1574px) {
+
     .customer-list .ribbon_outer img,
-    .batch .ribbon_outer img{
+    .batch .ribbon_outer img {
         @apply max-w-[70px];
     }
 }
-@media(max-width:1519px){
+
+@media(max-width:1519px) {
     .iframe_call iframe {
         max-height: 350px;
     }
 }
-@media(max-width:1430px){
+
+@media(max-width:1430px) {
     .iframe_call iframe {
         max-height: 310px;
     }
 }
-@media(max-width:1299px){
+
+@media(max-width:1299px) {
     .iframe_call iframe {
         max-height: 280px;
     }
-    .german-active ul li.shop-cat-list label{
+
+    .german-active ul li.shop-cat-list label {
         @apply break-all;
     }
+
     .customer-list .ribbon_outer img,
     .batch .ribbon_outer img {
-      @apply max-w-[50px];
-   }
-   .customer-list .ribbon_outer,
-   .batch label.relative + div{
-       @apply -mt-1;
-   }
-   .flag-contaner .ribbon_outer{
-      @apply min-h-[40px];
-   }
-   .flag-contaner .ribbon_outer img {
-    @apply max-w-[75px];
-   }
+        @apply max-w-[50px];
+    }
+
+    .customer-list .ribbon_outer,
+    .batch label.relative+div {
+        @apply -mt-1;
+    }
+
+    .flag-contaner .ribbon_outer {
+        @apply min-h-[40px];
+    }
+
+    .flag-contaner .ribbon_outer img {
+        @apply max-w-[75px];
+    }
 }
-@media(max-width:1199px){
+
+@media(max-width:1199px) {
     .iframe_call iframe {
         max-height: 260px;
     }
 }
-@media(max-width:1023px){
+
+@media(max-width:1023px) {
     .iframe_call iframe {
         max-height: unset;
     }
-    .flag-contaner .ribbon_outer img{
+
+    .flag-contaner .ribbon_outer img {
         @apply max-w-[120px];
     }
 }
-@media(max-width:800px){
-#no-more-tables #cart-form .prod-card {
-    grid-template-columns: 1fr 1fr;
-    display: grid;
-    grid-template-areas: "image action"
-        "quanity price"
-        "total total";
-    border-bottom: 1px solid #d9d9d9;
+
+@media(max-width:800px) {
+    #no-more-tables #cart-form .prod-card {
+        grid-template-columns: 1fr 1fr;
+        display: grid;
+        grid-template-areas: "image action"
+            "quanity price"
+            "total total";
+        border-bottom: 1px solid #d9d9d9;
+    }
+
+    #no-more-tables #cart-form .prod-card:last-child {
+        border-bottom: none;
+    }
+
+    #no-more-tables #cart-form .prod-card .prod-title {
+        grid-area: image;
+    }
+
+    #no-more-tables #cart-form .prod-card .prod-action {
+        grid-area: action;
+        text-align: right;
+        padding-right: 0;
+    }
+
+    #no-more-tables #cart-form td.c-name {
+        margin-top: 8px;
+    }
+
+    #no-more-tables #cart-form .prod-card .prod-quantity {
+        grid-area: quanity;
+        text-align: left;
+    }
+
+    #no-more-tables #cart-form .prod-card .prod-price {
+        grid-area: price;
+        text-align: right;
+        padding-right: 0;
+    }
+
+    #no-more-tables #cart-form .prod-card .prod-total {
+        grid-area: total;
+    }
 }
-#no-more-tables #cart-form .prod-card:last-child {
-    border-bottom: none;
-}
-#no-more-tables #cart-form .prod-card .prod-title {
-    grid-area: image;
-}
-#no-more-tables #cart-form .prod-card .prod-action{
-    grid-area: action;
-    text-align: right;
-    padding-right: 0;
-}
-#no-more-tables #cart-form td.c-name{
-    margin-top: 8px;
-}
-#no-more-tables #cart-form .prod-card .prod-quantity {
-    grid-area: quanity;
-}
-#no-more-tables #cart-form .prod-card .prod-price {
-    grid-area: price;
-    text-align: right;
-    padding-right: 0;
-}
-#no-more-tables #cart-form .prod-card .prod-total {
-    grid-area: total;
-}
-}
-@media(max-width:767px){
+
+@media(max-width:767px) {
     .iframe_call iframe {
         max-height: 320px;
     }
 }
-@media(max-width:599px){
+
+@media(max-width:599px) {
     .iframe_call iframe {
         max-height: 260px;
     }
 }
-@media(max-width:499px){
+
+@media(max-width:499px) {
     .iframe_call iframe {
         @apply rounded-xl max-h-[200px];
     }
 }
-@media(max-width:399px){
+
+@media(max-width:399px) {
     .iframe_call iframe {
         @apply max-h-[186px];
     }
 }
-@media(max-width:359px){
+
+@media(max-width:359px) {
     .iframe_call iframe {
         @apply max-h-[156px];
     }
 }
-@media(max-width:1299px){
-    .custom-prev svg,.custom-next svg{
-         @apply w-6 h-6;
+
+@media(max-width:1299px) {
+
+    .custom-prev svg,
+    .custom-next svg {
+        @apply w-6 h-6;
     }
-    .map-requests p svg{
+
+    .map-requests p svg {
         @apply w-6 h-6;
     }
 }
-@media(max-width:767px){
-    .tc_page li a{
+
+@media(max-width:767px) {
+    .tc_page li a {
         @apply text-[12px] !important;
     }
-    .custom-prev svg,.custom-next svg{
+
+    .custom-prev svg,
+    .custom-next svg {
         @apply w-4 h-4;
     }
-    .map-requests a{
+
+    .map-requests a {
         @apply break-all;
     }
-    .map-requests p svg{
+
+    .map-requests p svg {
         @apply w-5 h-5;
     }
-    .german-active .break-words{
+
+    .german-active .break-words {
         @apply break-all;
     }
+
     .customer-list .ribbon_outer img,
-    .batch .ribbon_outer img{
+    .batch .ribbon_outer img {
         @apply max-w-[50px];
     }
+
     .flag-contaner .ribbon_outer img {
-      @apply max-w-[70px];
-   }
-}
-@media(max-width:480px){
-    .flag-contaner .ribbon_outer{
-        @apply w-1/3;
-    }
-    .ribbon_outer{
-        @apply w-auto;
+        @apply max-w-[70px];
     }
 }
 
+@media(max-width:480px) {
+    .flag-contaner .ribbon_outer {
+        @apply w-1/3;
+    }
+
+    .ribbon_outer {
+        @apply w-auto;
+    }
+}

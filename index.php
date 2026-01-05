@@ -33,6 +33,7 @@ if (!in_array($page, $no_direct_access_pages)):
         require_once(DIR_FS_CONTROLLER . "404.php");
     endif;
     // html files
+
     if (!in_array($page, $no_html_pages)):
         include_once (DIR_FS_VIEW_TEMPLATES . 'header.php');
         if (!in_array($page, $no_navigation_pages)):

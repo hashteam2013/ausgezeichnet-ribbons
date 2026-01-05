@@ -499,17 +499,22 @@
                                 <?php
                                 if ($confirmation_needed == 1) {
                                     ?>
-                                    <div class="form-group">
-                                        <label for="agreeInfo"> <input type="checkbox" class="" name="agreeInfo" id="agreeInfo1"
-                                                value="1"><?php _e("I read and understood all additional infomation provided above"); ?></label>
+                                    <div class="form-group mt-2.5 mb-2">
+                                        <label for="agreeInfo" class="flex items-center gap-2.5 text-sm text-black/55 font-medium  green_label relative"> 
+                                            <input type="checkbox" class="opacity-0 absolute z-[1] left-0 w-4 h-4" name="agreeInfo" id="agreeInfo1" value="1">
+                                            <span class="sm_checkmark relative min-w-4 h-4 inline-flex border border-solid border-[#b1b1b1] rounded-[3px]"></span>
+                                            <span><?php _e("I read and understood all additional infomation provided above"); ?></span>
+                                        </label>
                                     </div>
                                     <?php
                                 } else {
 
                                     ?>
                                     <div class="form-group">
-                                        <label for="agreeInfo"> <input type="checkbox" style="visibility: hidden" class=""
-                                                name="agreeInfo" id="agreeInfo1" value="1" checked></label>
+                                        <label for="agreeInfo"> 
+                                            <input type="checkbox" style="visibility: hidden" 
+                                                name="agreeInfo" id="agreeInfo1" value="1" checked>
+                                        </label>
                                     </div>
                                     <?php
                                 }

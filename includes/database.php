@@ -115,7 +115,7 @@ class Connection {
 
 }
 
-;
+
 $conn = new Connection();
 
 class query extends Connection {
