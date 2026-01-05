@@ -1,5 +1,4 @@
-﻿
-<div class="login-phase mx-auto left-0 right-0  fixed top-0 opacity-0 hidden z-[9] pt-10 pb-5 px-5 overflow-y-auto  w-full h-full" id="loginmodal">
+﻿<div class="login-phase mx-auto left-0 right-0  fixed top-0 opacity-0 hidden z-[9] pt-10 pb-5 px-5 overflow-y-auto  w-full h-full" id="loginmodal">
     <div class="mx-auto max-w-[630px]">
                 <div class="panel panel-login">
                     <div class="panel-heading bg-black flex items-stretch relative"> 
@@ -476,11 +475,6 @@ include("common_js.php");
         }
     });
 </script>
-
-
-
-
-
 </body>
 </html>
 
