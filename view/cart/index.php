@@ -13,42 +13,50 @@
                     class="flex xl:gap-14 gap-5 items-start lg:flex-row flex-col">
                     <input type="hidden" value="" name="conn_val" id="redirect_id">
                     <div class="bg-body rounded-[20px] border border-[#d9d9d9] p-5 lg:w-2/3 w-full">
-                        <table class="cf">
-                            <thead class="cf">
-                                <tr>
-                                    <th class="text-left text-black pe-4 capitalize pb-3 text-lg font-semibold">
-                                        <?php _e("Product"); ?>
-                                    </th>
-                                    <th
-                                        class="numeric text-center text-black pe-4 capitalize pb-3 text-lg font-semibold">
-                                        <?php _e("Quantity"); ?>
-                                    </th>
-                                    <th class="numeric text-left text-black pe-4 capitalize pb-3 text-lg font-semibold">
-                                        <?php _e("Price"); ?>
-                                    </th>
-                                    <th class="numeric text-left text-black pe-4 capitalize pb-3 text-lg font-semibold">
-                                        <?php _e("Total"); ?>
-                                    </th>
-                                    <th class="numeric text-left text-black pe-4 capitalize pb-3 text-lg font-semibold">
-                                        <?php _e("action"); ?>
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php
-                                $customer_name = "";
-                                foreach ($cart_items as $record) {
-                                    if ($customer_name != $record['customer_name']) {
+                        <?php
+                        $customer_name = "";
+                        $first_customer = true;
+                        foreach ($cart_items as $record) {
+                            if ($customer_name != $record['customer_name']) {
+                                // Close previous customer's table if not the first customer
+                                if (!$first_customer) {
+                                    echo '</tbody></table></div>';
+                                }
+                                
+                                // Start new customer section
+                                $first_customer = false;
+                                echo '<div class="customer-section' . ($customer_name != "" ? ' mt-8 pt-8 border-t-2 border-[#d9d9d9]' : '') . '">';
+                                echo '<table class="cf w-full">';
+                                echo '<thead class="cf">';
+                                echo '<tr>';
+                                echo '<th class="text-left text-black pe-4 capitalize pb-3 text-lg font-semibold">';
+                                echo _e("Product");
+                                echo '</th>';
+                                echo '<th class="numeric text-center text-black pe-4 capitalize pb-3 text-lg font-semibold">';
+                                echo _e("Quantity");
+                                echo '</th>';
+                                echo '<th class="numeric text-left text-black pe-4 capitalize pb-3 text-lg font-semibold">';
+                                echo _e("Price");
+                                echo '</th>';
+                                echo '<th class="numeric text-left text-black pe-4 capitalize pb-3 text-lg font-semibold">';
+                                echo _e("Total");
+                                echo '</th>';
+                                echo '<th class="numeric text-left text-black pe-4 capitalize pb-3 text-lg font-semibold">';
+                                echo _e("action");
+                                echo '</th>';
+                                echo '</tr>';
+                                echo '</thead>';
+                                echo '<tbody>';
 
-                                        $customer_items = listBatch($record['customer_id']);
-                                        if (is_array($customer_items)) {
-                                            $total = sizeof($customer_items) - 2;
-                                        } else {
-                                            $total = 0;
-                                        }
+                                $customer_items = listBatch($record['customer_id']);
+                                if (is_array($customer_items)) {
+                                    $total = sizeof($customer_items) - 2;
+                                } else {
+                                    $total = 0;
+                                }
 
-                                        echo '<tr><td colspan="5" class="c-name text-xl font-gothic text-black pb-2">';
-                                        echo $record['customer_name'] . '</td>' . '</tr>';
+                                echo '<tr><td colspan="5" class="c-name text-xl font-gothic text-black pb-2">';
+                                echo $record['customer_name'] . '</td>' . '</tr>';
                                         //     foreach ($customer_items as $customer) {
                                         //          if ($customer->customer_id == $record['customer_id']) {
                                         //          $total = $customer->NumberOfItems;
@@ -185,9 +193,11 @@
                                     echo '</td>';
                                     echo '</tr>';
                                 }
+                                // Close the last customer's table after the loop
+                                if (!$first_customer) {
+                                    echo '</tbody></table></div>';
+                                }
                                 ?>
-                            </tbody>
-                        </table>
                     </div>
                     <div class="bg-body rounded-[20px] border border-[#d9d9d9] p-5 w-1/3">
                         <div class="flex flex-col">
