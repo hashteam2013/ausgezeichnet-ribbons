@@ -467,7 +467,7 @@
                                     <input type="radio" class="min-w-4 h-4 opacity-0 absolute left-0" <?php echo (DEFAULT_PAYMENT_GATEWAY == 'banktransfer') ? "checked" : "" ?> name="payment_gateway"
                                         value="banktransfer" />
                                     <span class="radiocheck min-w-4 h-4 border border-[#b1b1b1] rounded-full"></span>
-                                    Vorauskasse
+                                    <?php _e("payin_advance"); ?>
                                 </label>
                                 <?php
                                 if ($logged_in_user_info->is_trustworthy == 1) {
@@ -476,14 +476,14 @@
                                         <input type="radio" class="min-w-4 h-4 opacity-0 absolute left-0" <?php echo (DEFAULT_PAYMENT_GATEWAY == 'onaccount') ? "checked" : "" ?> name="payment_gateway"
                                             value="onaccount" />
                                         <span class="radiocheck min-w-4 h-4 border border-[#b1b1b1] rounded-full"></span>
-                                        Auf Rechnung
+                                        <?php _e("on_bill"); ?>
                                     </label>
                                 <?php } ?>
                                 <label class="radio text-sm text-secondary font-regular gap-2 flex items-center relative">
                                     <input type="radio" class="w-4 h-4 opacity-0 absolute left-0" <?php echo (DEFAULT_PAYMENT_GATEWAY == 'Sofort') ? "checked" : "" ?> name="payment_gateway"
                                         value="Sofort" disabled="disabled" />
                                     <span class="radiocheck min-w-4 h-4 border border-[#b1b1b1] rounded-full"></span>
-                                    Sofort - aus technischen Gründen derzeit nicht verfügbar
+                                    <?php _e("currrently_unavailabel"); ?>
                                 </label>
                             </div>
 

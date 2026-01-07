@@ -292,11 +292,13 @@ div#shipping_container {
 label.info-disc:hover font {
     display: block;
     position: absolute;
-    background: #fff;font-weight: 300;
+    background: #fff;
+    font-weight: 300;
     padding: 4px;
     border: 1px solid #dedede;    top: 19px;
     z-index: 999;
     box-shadow: 7px 0 27px rgba(0, 0, 0, 0.15);
+    min-width: 150px;
 }
 .y-order table tr.total td {
     font-size: 17px;
@@ -394,6 +396,13 @@ body input.cart-slct.divider.hvr-float-shadow {
 @media (max-width:767px){
     footer >div a.text-center {
     float: none !important;margin: 10px;
+}
+label.info-disc:hover font {
+    width: 100px;
+    right: -20px;
+}
+label.info-disc.right:hover font{
+    right:-60px;
 }
 footer >div {
     width: 100% !important;
@@ -609,6 +618,12 @@ input.cart-slct.divider.hvr-float-shadow {
 
 
 /* New CSS */
-.bg-herobanner{
-    background-image: url('http://guarav.ausgezeichnet.cc//assets/images/banner.jpg');
+.bg-herobanner {
+    background-image: url('../images/banner.jpg');
+}
+.bg-shop{
+    background-image: url('../images/shop.jpg');
+}
+.bg-map{
+    background-image: url('../images/map.jpg');
 }

@@ -113,15 +113,18 @@ body.active::before {
     @apply inline-block max-w-[140px] w-auto;
 }
 
-.list .inner::-webkit-scrollbar {
+.list .inner::-webkit-scrollbar,
+.check-tag::-webkit-scrollbar {
     @apply w-1.5;
 }
 
-.list .inner::-webkit-scrollbar-thumb {
+.list .inner::-webkit-scrollbar-thumb,
+.check-tag::-webkit-scrollbar-thumb {
     @apply bg-black/80 rounded-xl;
 }
 
-.list .inner::-webkit-scrollbar-track {
+.list .inner::-webkit-scrollbar-track,
+.check-tag::-webkit-scrollbar-track {
     @apply bg-body rounded-xl;
 }
 
@@ -162,7 +165,12 @@ input.qty-input[type=number]::-webkit-outer-spin-button {
     appearance: none;
     margin: 0;
 }
-
+label.info-disc > :not(span) {
+    @apply text-[13px];
+}
+label.info-disc{
+    @apply relative;
+}
 @media(max-width:1669px) {
     .iframe_call iframe {
         @apply max-h-[370px];

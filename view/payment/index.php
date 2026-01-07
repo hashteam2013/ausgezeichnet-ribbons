@@ -26,13 +26,9 @@
                     align="center">
                     <h3
                         class="capitalize text-primary xl:text-[40px] xl:leading-[54px] md:text-4xl md:leading-[50px] text-2xl leading-[38px] font-gothic font-normal">
-                        Vielen Dank f&uumlr Ihre Bestellung Nr. <?php echo $order_detail->id ?></h3>
+                        <?php _e('thank_you') ?> <?php echo $order_detail->id ?></h3>
                     <div>
-                        <p class="text-dark font-normal lg:text-xl md:text-lg text-base">Wir werden Ihre Bestellung pr&uumlfen
-                            und Ihnen
-                            Ihre
-                            Rechnung
-                            per Mail zukommen lassen </p>
+                        <p class="text-dark font-normal lg:text-xl md:text-lg text-base"><?php _e('invoice_mail')?></p>
                     </div>
                     <a href='<?php echo make_url("payment", array('banktransfer' => '1')); ?>'
                         class="plc-ordr all-cat add-btn inline-flex bg-primary text-white min-h-12 px-5 rounded-xl capitalize items-center justify-center text-base font-semibold hover:bg-secondary mt-5"><?php echo _e("Confirm"); ?></a>
@@ -44,10 +40,9 @@
                     <div class="flex flex-col w-full min-h-[65vh] justify-center items-center gap-5" id="loading " align="center">
                         <h3
                             class="capitalize text-primary xl:text-[40px] xl:leading-[54px] md:text-4xl md:leading-[50px] text-2xl leading-[38px] font-gothic font-normal">
-                            Vielen Dank fuer Ihre Bestellung 10<?php echo $order_detail->id ?></h3>
+                            <?php _e('thank_you') ?> 10<?php echo $order_detail->id ?></h3>
                         <div>
-                            <p class="text-dark font-normal lg:text-xl md:text-lg text-base">Wir werden Ihre Bestellung bearbeiten
-                                und auf Rechnung zukommen lassen.</p>
+                            <p class="text-dark font-normal lg:text-xl md:text-lg text-base"><?php _e('process_order') ?></p>
                         </div>
                         <a href='<?php echo make_url("payment", array('onaccount' => '1')); ?>'
                             class="plc-ordr all-cat add-btn inline-flex bg-primary text-white min-h-12 px-5 rounded-xl capitalize items-center justify-center text-base font-semibold hover:bg-secondary mt-5"><?php echo _e("Confirm"); ?></a>

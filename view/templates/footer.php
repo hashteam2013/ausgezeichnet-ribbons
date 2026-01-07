@@ -64,15 +64,15 @@
                                         </div>
                                         <div class="form-group flex flex-col gap-1.5 md:w-[calc(50%-8px)] w-full">
                                             <label class="md:text-base text-sm text-dark font-normal w-full"><?php _e("Password"); ?><font color="red">*</font></label>
-                                            <input type="password" name='password' class="w-full border-[#b1b1b1] px-4 md:min-h-12 min-h-10 md:text-base text-sm border rounded-lg focus:outline-none" placeholder="<?php _e("password"); ?>"> 
+                                            <input type="password" name='password' class="w-full border-[#b1b1b1] px-4 md:min-h-12 min-h-10 md:text-base text-sm border rounded-lg focus:outline-none" placeholder="<?php _e("Password"); ?>"> 
                                         </div>
                                         <div class="form-group flex flex-col gap-1.5 md:w-[calc(50%-8px)] w-full">
                                             <label class="md:text-base text-sm text-dark font-normal w-full"><?php _e("Confirm Password"); ?><font color="red">*</font></label>
-                                            <input type="password" name='cpassword' class="w-full border-[#b1b1b1] px-4 md:min-h-12 min-h-10 md:text-base text-sm border rounded-lg focus:outline-none" placeholder="<?php _e("confirm password"); ?>"> 
+                                            <input type="password" name='cpassword' class="w-full border-[#b1b1b1] px-4 md:min-h-12 min-h-10 md:text-base text-sm border rounded-lg focus:outline-none" placeholder="<?php _e("Confirm Password"); ?>"> 
                                         </div>
                                         <?php $get_districts = getDistrict(); ?>
                                         <div class="form-group flex flex-col gap-1.5 md:w-[calc(50%-8px)] w-full">
-                                            <label class="md:text-base text-sm text-dark font-normal w-full">Staat / Bundesland auswählen<font color="red">*</font></label>
+                                            <label class="md:text-base text-sm text-dark font-normal w-full"><?php _e('Select district'); ?><font color="red">*</font></label>
                                             <select name="name_dist" id="name_dist" class='w-full border-[#b1b1b1] px-4 md:min-h-12 min-h-10 md:text-base text-sm border rounded-lg focus:outline-none'>
                                                 <option value=""><?php _e('Select district'); ?></option>
                                                 <?php foreach ($get_districts as $dis) { ?>
@@ -82,7 +82,7 @@
                                         </div>
                                         <div class="form-group flex flex-col gap-1.5 md:w-[calc(50%-8px)] w-full">
                                             <div class="flex gap-1">
-                                                <label class="md:text-base text-sm text-dark font-normal">Bezirk auswählen</label>
+                                                <label class="md:text-base text-sm text-dark font-normal"><?php _e('Select sub district'); ?></label>
                                                 <label class="info-disc"><span><i class="fa fa-info-circle" aria-hidden="true"></i></span><font><?php _e("DistrictNotNeeded"); ?></font></label>
                                             </div>
                                             <select name="name_subdist" id="name_subdist" class='w-full border-[#b1b1b1] px-4 md:min-h-12 min-h-10 md:text-base text-sm border rounded-lg focus:outline-none'>
@@ -91,16 +91,16 @@
                                         </div>
                                         <div class="form-group flex flex-col gap-1.5 md:w-[calc(50%-8px)] w-full">
                                             <div class="flex gap-1">
-                                                <label class="md:text-base text-sm text-dark font-normal">Gemeinde auswählen</label>
+                                                <label class="md:text-base text-sm text-dark font-normal"><?php _e('Select Community')?></label>
                                                 <label class="info-disc"><span><i class="fa fa-info-circle" aria-hidden="true"></i></span><font><?php _e("CommunityNotNeeded"); ?></font></label>
                                             </div>
                                             <select name="name_comm" id="name_comm" class='w-full border-[#b1b1b1] px-4 md:min-h-12 min-h-10 md:text-base text-sm border rounded-lg focus:outline-none'>
-                                                <option value=""><?php _e('Select community'); ?></option>
+                                                <option value=""><?php _e('Select Community'); ?></option>
                                             </select>
                                         </div>
                                         <div class="form-group flex flex-col gap-1.5 md:w-[calc(50%-8px)] w-full">
                                             <div class="flex gap-1">
-                                            <label class="md:text-base text-sm text-dark font-normal">Ortsteil auswählen</label>
+                                            <label class="md:text-base text-sm text-dark font-normal"><?php _e('Select Borough'); ?></label>
 			                                <label class="info-disc"><span><i class="fa fa-info-circle" aria-hidden="true"></i></span><font><?php _e("BoroughNotNeeded"); ?></font></label>
                                             </div>
                                             <select name="name_boro" id="name_boro" class='w-full border-[#b1b1b1] px-4 md:min-h-12 min-h-10 md:text-base text-sm border rounded-lg focus:outline-none'>

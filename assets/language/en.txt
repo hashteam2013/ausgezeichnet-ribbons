@@ -116,6 +116,7 @@ Update Password ~~ Update password
 
 
 // login-register-msges
+dsgvo1 ~~ Data protection, revocation
 HEllO ~~ Welcome
 Logout ~~ Log out
 Login ~~ Log in
@@ -133,7 +134,13 @@ Lastname ~~ Lastname
 Email ~~ Email
 Password ~~ Password
 Confirm Password ~~ Confirm Password
+I agree DSGVO ~~ I agree that the data I have entered will be processed in accordance with our <a href="https://ausgezeichnet.cc/datenschutzerklaerung.pdf" target="_blank">Privacy Policy</a>. This consent can be revoked at any time in the "My Profile" section.
+dataprotlink ~~ <a href="https://ausgezeichnet.cc/datenschutzerklaerung.pdf" class="text-center" style="color: inherit; font-size: 18px; ">Privacy Policy</a>
+NoPhoneWarning ~~ Attention: If you do not agree to this statement, we will not be able to contact you by phone. This means, for example, that we cannot ask direct follow-up questions if there are any questions regarding your order.
 I agree all terms and conditions ~~ I agree to all terms and conditions
+I agree phone2 ~~ I agree to be contacted by telephone. This will only occur if necessary to clarify details during order processing. You will NOT receive any advertising calls from us. This consent can be revoked at any time.
+NoDSGVOWarning ~~ Attention: If you do not agree to this statement, we are obliged to delete your data (and therefore your entire account). By default, this will happen within two weeks of you withdrawing your consent. Should you wish for faster deletion, please contact us.
+I agree DSGVO2 ~~ I agree that the data I have entered will be processed in accordance with our <a href="https://ausgezeichnet.cc/datenschutzerklaerung.pdf" target="_blank">Privacy Policy</a>. This consent can be revoked at any time.
 Register Now ~~ Register now
 Add customer ~~ Add customer
 Terms and Conditions ~~ Terms and Conditions 
@@ -168,8 +175,17 @@ Total ~~ Total incl. VAT
 Shop ~~ Shop
 Update ~~ Update
 Checkout ~~ Checkout
+usecode ~~ Redeem code
+enter_discount ~~ Enter discount code
 ShippingCost ~~ Shipping costs
 TotalShipping ~~ Total incl. VAT and Shipping costs
+customer_desc1 ~~ This customer will be wearing
+customer_desc2 ~~ badges.
+customer_desc3 ~~ They need
+customer_desc4 ~~ Longitudinal connectors and
+customer_desc5 ~~ Cross connectors. We recommend
+customer_desc6 ~~ Nails. Please adjust the quantity in your shopping cart. You do not need nails for name badges.
+
 
 //checkout page
 bill_summary ~~ Bill Summary
@@ -177,17 +193,25 @@ product_listing ~~ Product Listing
 Billing Details ~~ Billing details
 Phone No. ~~ Phone no.
 Address ~~ Address
+Address2 ~~ House Number
 Permanent Address ~~ Address
 Country ~~ Country
 Town / City ~~ Town / City
 State ~~ State
 Zip Code ~~ Zip Code
+Zipcode ~~ Postal code
 Same billing shipping ~~ shipping address = billing address
 Shipping Details ~~ Shipping details
 Order Comment ~~ Comment
 Your Order ~~ Your order
 Place order ~~ Place order
 Payment Gateway ~~ Payment Method
+payin_advance ~~ Payment in advance
+on_bill ~~ On Bill
+Confirm ~~ Complete Order
+currrently_unavailabel ~~ Immediately - currently unavailable due to technical reasons
+
+
 
 //forgot
 Reset Password ~~ Reset password
@@ -233,8 +257,18 @@ TotalDiscounted ~~ Discounted price:
 //payment
 We are redirecting you to paypal..... ~~ Redirecting to paypal.....
 BUY NOW ~~ BUY NOW
+thank_you ~~ Thank you for your order no.
+invoice_mail ~~ We will review your order and send you your invoice by email.
+process_order ~~ We will process your order and send it to you with an invoice.
+
 
 //profile
+DistrictNotNeeded ~~ If your district is not displayed, please leave this setting blank.
+profile_submit ~~ Submit
+all_awards ~~ I still want to wear all the awards.
+use_setting ~~ Use recommended settings
+ranking ~~ Information for the correct ranking
+billing_address ~~ Billing Address
 My Account ~~ My account
 Company ~~ Company
 Contact Number ~~ Contact Number
@@ -243,17 +277,27 @@ Street Address 2 ~~ Street address 2
 City ~~ City
 State ~~ State
 Country ~~ Country
+Department2 ~~ Second organization (if applicable)
+Select Department2 ~~ Select second organization
+No Department2 ~~ No secondary organization (standard)
 Departments ~~ Organisation
 Select Department ~~ Select organisation
 District ~~ District
 Select District ~~ Select district
+Select district ~~ Select state/province
 update ~~ update
 Select Community ~~ Select community
 Select Subdistrict ~~ Select subdistrict
+Choose Borough ~~  District
+Select Borough ~~  Select District
 Community ~~ Community
 Subdistrict ~~ Subdistrict
 Rename Customer ~~ Rename Customer
 Delete Customer ~~ Delete Customer
+Select sub district ~~ Select Subdistrict
+CommunityNotNeeded ~~ If your municipality is not displayed, please leave this setting blank.
+BoroughNotNeeded ~~ If your district is not displayed, please leave this setting blank.
+Department2Info ~~ Please only use this option if you actually belong to two organizations (e.g., the Austrian Armed Forces and the fire department).
 
 // navigation
 Home ~~ Home
@@ -299,6 +343,7 @@ New ribbon added successfully ~~ New ribbon added successfully
 Error occurred while updating account info. Please try again! ~~ Error occurred while updating account info. Please try again
 This ribbon already added to this customer! ~~ This ribbon already added to this customer
 Please add ribbon first! ~~ Please add ribbon first
+I read and understood all additional infomation provided above ~~ I understand and agree to all the additional information highlighted in red.
 
 banner heading~~Crafting Excellence, Delivered Simply.
 banner tag1~~ Modular by Design

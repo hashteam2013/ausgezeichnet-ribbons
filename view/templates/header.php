@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/x-icon" href="assets/images/favicon.png">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
         <title><?php echo ucwords($page).' | '.SITE_NAME;?></title>
         <?php if ($page == 'home') { ?>
@@ -30,11 +31,9 @@
        endif;
        ?>
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
-
-
-<!-- Include all compiled plugins (below), or include individual files as needed --> 
-<script src="<?= DIR_WS_ASSETS_JS; ?>bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+            <!-- Include all compiled plugins (below), or include individual files as needed --> 
+        <script src="<?= DIR_WS_ASSETS_JS; ?>bootstrap.min.js"></script>
     </head>
     <?php
         // Normalize language code to avoid case-sensitivity issues (e.g. "DE" vs "de")
@@ -43,7 +42,6 @@
         $bodyClass = ($currentLang === 'en') ? 'english' : 'german-active';
     ?>
     <body class="<?php echo $bodyClass; ?> testing-body">
-
         <div class="ajax-load-image" style="display:none;"><img src="/assets/images/ajax.svg"></div>
         <header class="header-top lg:py-5 py-2 bg-white relative">
             <input type="hidden" id="WS_PATH" value="<?php echo WS_PATH;?>"/>

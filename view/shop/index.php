@@ -129,7 +129,7 @@
                                         <?php } ?>
                                     </div>
                                 </div>
-                                <div class="check-tag flex flex-wrap bg-white rounded-[10px] xl:p-5 p-3 border border-[#D9D9D9]">
+                                <div class="check-tag flex overflow-y-auto max-h-[400px] flex-wrap bg-white rounded-[10px] xl:p-5 p-3 border border-[#D9D9D9]">
                                     <div class="w-full">
                                         <ul class="batch w-full flex flex-col">
                                                  <?php 
