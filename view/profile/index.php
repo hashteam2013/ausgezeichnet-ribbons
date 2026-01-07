@@ -28,7 +28,7 @@
                 ?>
 
                 <form role="form" action="<?php make_url('orders'); ?>" method="POST">
-                    <h3 class="md:text-3xl text-xl text-black font-gothic mb-5">Rechnungsanschrift</h3>
+                    <h3 class="md:text-3xl text-xl text-black font-gothic mb-5"><?php _e('billing_address')?></h3>
                     <div class="spot-a p-5 rounded-[20px] border border-[#d9d9d9] border-solid  flex flex-col">
                         <div class="form-group mb-7 flex flex-col gap-2.5">
                                 <label class="text-base font-medium text-dark"><?php _e(" Company"); ?></label>
@@ -36,28 +36,28 @@
                         </div>
                         <div class="form-group mb-7 flex flex-col gap-2.5">
                                 <label class="text-base font-medium text-dark"><?php _e(" First Name"); ?><font color="red">*</font></label>
-                                <input type="text" class="feild-a min-h-[46px] bg-white px-4 text-base text-black border border-solid border-[#d9d9d9] focus:outline-none rounded-[10px]" name="firstname" value="<?php echo isset($app['POST']['firstname']) ? $app['POST']['firstname'] : $app['user_info']->first_name; ?>" placeholder="First Name*">
+                                <input type="text" class="feild-a min-h-[46px] bg-white px-4 text-base text-black border border-solid border-[#d9d9d9] focus:outline-none rounded-[10px]" name="firstname" value="<?php echo isset($app['POST']['firstname']) ? $app['POST']['firstname'] : $app['user_info']->first_name; ?>" placeholder="<?php _e(" First Name"); ?>*">
                         </div>
                         <div class="form-group mb-7 flex flex-col gap-2.5">
                                 <label class="text-base font-medium text-dark"><?php _e(" Last Name"); ?><font color="red">*</font></label>
-                                <input type="text" class="feild-a min-h-[46px] bg-white px-4 text-base text-black border border-solid border-[#d9d9d9] focus:outline-none rounded-[10px]" name="lastname" value="<?php echo isset($app['POST']['lastname']) ? $app['POST']['lastname'] : $app['user_info']->last_name; ?>" placeholder="Last Name*">
+                                <input type="text" class="feild-a min-h-[46px] bg-white px-4 text-base text-black border border-solid border-[#d9d9d9] focus:outline-none rounded-[10px]" name="lastname" value="<?php echo isset($app['POST']['lastname']) ? $app['POST']['lastname'] : $app['user_info']->last_name; ?>" placeholder="<?php _e(" Last Name"); ?>*">
                             
                         </div>
                         <div class="form-group mb-7 flex flex-col gap-2.5">
                                 <label class="text-base font-medium text-dark"><?php _e("Address"); ?></label>
-                                <input type="text" class="feild-a min-h-[46px] bg-white px-4 text-base text-black border border-solid border-[#d9d9d9] focus:outline-none rounded-[10px]" name="address1" value="<?php echo isset($app['POST']['address1']) ? $app['POST']['address1'] : $app['user_info']->address1; ?>" placeholder="Strasse">
+                                <input type="text" class="feild-a min-h-[46px] bg-white px-4 text-base text-black border border-solid border-[#d9d9d9] focus:outline-none rounded-[10px]" name="address1" value="<?php echo isset($app['POST']['address1']) ? $app['POST']['address1'] : $app['user_info']->address1; ?>" placeholder="<?php _e("Address"); ?>">
                         </div>
                         <div class="form-group mb-7 flex flex-col gap-2.5">
                                 <label class="text-base font-medium text-dark"><?php _e("Address2"); ?></label>
-                                <input type="text" class="feild-a min-h-[46px] bg-white px-4 text-base text-black border border-solid border-[#d9d9d9] focus:outline-none rounded-[10px]" name="address2" value="<?php echo isset($app['POST']['address2']) ? $app['POST']['address2'] : $app['user_info']->address2; ?>" placeholder="Hausnummer">
+                                <input type="text" class="feild-a min-h-[46px] bg-white px-4 text-base text-black border border-solid border-[#d9d9d9] focus:outline-none rounded-[10px]" name="address2" value="<?php echo isset($app['POST']['address2']) ? $app['POST']['address2'] : $app['user_info']->address2; ?>" placeholder="<?php _e("Address2"); ?>">
                         </div>
                         <div class="form-group mb-7 flex flex-col gap-2.5">
                                 <label class="text-base font-medium text-dark"><?php _e(" Zipcode"); ?><font color="red">*</font></label>
-                                <input type="text" class="feild-a min-h-[46px] bg-white px-4 text-base text-black border border-solid border-[#d9d9d9] focus:outline-none rounded-[10px]" name="zip" value="<?php echo isset($app['POST']['zip']) ? $app['POST']['zip'] : $app['user_info']->zipcode; ?>" placeholder="Postleitzahl*">
+                                <input type="text" class="feild-a min-h-[46px] bg-white px-4 text-base text-black border border-solid border-[#d9d9d9] focus:outline-none rounded-[10px]" name="zip" value="<?php echo isset($app['POST']['zip']) ? $app['POST']['zip'] : $app['user_info']->zipcode; ?>" placeholder="<?php _e('Zipcode');?>*">
                         </div>
                         <div class="form-group mb-7 flex flex-col gap-2.5">
                                 <label class="text-base font-medium text-dark"><?php _e(" City"); ?></label>
-                                <input type="text" class="feild-a min-h-[46px] bg-white px-4 text-base text-black border border-solid border-[#d9d9d9] focus:outline-none rounded-[10px]" name="city" value="<?php echo isset($app['POST']['city']) ? $app['POST']['city'] : $app['user_info']->city; ?>" placeholder="Ort*">
+                                <input type="text" class="feild-a min-h-[46px] bg-white px-4 text-base text-black border border-solid border-[#d9d9d9] focus:outline-none rounded-[10px]" name="city" value="<?php echo isset($app['POST']['city']) ? $app['POST']['city'] : $app['user_info']->city; ?>" placeholder="<?php _e(" City"); ?>">
                         </div>
                         <div class="form-group mb-7 flex flex-col gap-2.5">
                                 <label class="text-base font-medium text-dark"><?php _e(" Email"); ?></label>
@@ -65,10 +65,10 @@
                         </div>
                         <div class="form-group mb-7 flex flex-col gap-2.5">
                                 <label class="text-base font-medium text-dark"><?php _e(" Contact Number"); ?></label>
-                                <input type="text"  class="feild-a min-h-[46px] bg-white px-4 text-base text-black border border-solid border-[#d9d9d9] focus:outline-none rounded-[10px]" name="fone" value="<?php echo isset($app['POST']['fone']) ? $app['POST']['fone'] : $app['user_info']->phone; ?>" placeholder="Telefonnummer">
+                                <input type="text"  class="feild-a min-h-[46px] bg-white px-4 text-base text-black border border-solid border-[#d9d9d9] focus:outline-none rounded-[10px]" name="fone" value="<?php echo isset($app['POST']['fone']) ? $app['POST']['fone'] : $app['user_info']->phone; ?>" placeholder="<?php _e(" Contact Number"); ?>">
                         </div>
 
-                       <h3>Informationen f&uumlr die korrekte Rangordnung</h3>
+                       <h3><?php _e('ranking')?></h3>
 		
 
 	                   <div class="form-group mb-7  flex flex-col gap-2.5">
@@ -80,10 +80,14 @@
                                     echo '<select name="forcewearall" id="forcewearall" class="min-h-[46px] bg-white px-4 text-base text-black border border-solid border-[#d9d9d9] rounded-[10px]" >';
 
                                         $strselected=($app['user_info']->forcewearall=='0') ? "selected" : "";
-                                                            echo '<option ' . $strselected . ' value="0">Empfohlene Einstellungen verwenden</option>';
+                                                            echo '<option ' . $strselected . ' value="0">';
+                                                             _e('use_setting');
+                                                            echo '</option>';
 
                                         $strselected=($app['user_info']->forcewearall=='1') ? "selected" : "";
-                                                            echo '<option ' . $strselected . ' value="1">Ich will trotzdem alle Auszeichnungen tragen</option>';
+                                                            echo '<option ' . $strselected . ' value="1">';
+                                                            _e('all_awards');
+                                                            echo '</option>';
                                                         echo '</select>';
                                     }
                             ?>
@@ -128,7 +132,7 @@
                         </div>
                         <div class="form-group mb-7 flex flex-col gap-2.5">
                                 <div class="flex gap-1"><label class="text-base font-medium text-dark"><?php _e("Subdistrict"); ?></label>
-                                <label class="info-disc"><span><i class="fa fa-info-circle" aria-hidden="true"></i></span><font><?php _e("DistrictNotNeeded"); ?></font></label></div>
+                                <label class="info-disc right"><span><i class="fa fa-info-circle" aria-hidden="true"></i></span><font><?php _e("DistrictNotNeeded"); ?></font></label></div>
                                 <select name="subdist" id ="name_subdist" class="min-h-[46px] bg-white px-4 text-base text-black border border-solid border-[#d9d9d9] rounded-[10px]">
                                     <option value=""><?php _e('Select Subdistrict'); ?></option>
                                         <?php //if(isset($user_subdist->id)){  ?>
@@ -154,7 +158,7 @@
                                 </select>                       
                         </div>
                         <div class="form-group mb-7 flex flex-col gap-2.5 ">
-                            <div class="flex gap-1"><label class="text-base font-medium text-dark"><?php _e("Choose Borough");?></label><label class="info-disc"><span><i class="fa fa-info-circle" aria-hidden="true"></i></span><font><?php _e("BoroughNotNeeded"); ?></font></label></div>
+                            <div class="flex gap-1"><label class="text-base font-medium text-dark"><?php _e("Choose Borough");?></label><label class="info-disc right"><span><i class="fa fa-info-circle" aria-hidden="true"></i></span><font><?php _e("BoroughNotNeeded"); ?></font></label></div>
                             <select name="name_boro" id="name_boro" class='form-control min-h-[46px] bg-white px-4 text-base text-black border border-solid border-[#d9d9d9] rounded-[10px]'>
                                 <option value=""><?php _e('Select Borough'); ?></option>
                                 <?php foreach($get_boro as $boro){ ?> 
@@ -165,7 +169,7 @@
                         </div>
 
                         <div class="form-group">
-                            <input type="submit" class="all-cat add-btn bg-secondary hover:bg-primary rounded-md px-5 min-h-10 text-sm text-white cursor-pointer font-medium" name="update">
+                            <input type="submit" class="all-cat add-btn bg-secondary hover:bg-primary rounded-md px-5 min-h-10 text-sm text-white cursor-pointer font-medium" name="update" value="<?php _e('profile_submit') ?>">
                         </div>
                         </div>
                 </form>

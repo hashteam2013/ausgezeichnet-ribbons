@@ -111,8 +111,18 @@
                                         }
 
 
-                                        echo "<tr><td colspan='5' class='text-secondary font-medium text-sm pb-4'> Dieser Kunde wird " . $total . " Auszeichnungen tragen.";
-                                        echo 'Sie ben&oumltigen ' . $LConnectors . ' L&aumlngsverbinder und ' . $QConnectors . ' Querverbinder. Wir empfehlen ' . $nails . ' N&aumlgel. Bitte passen Sie die St&uumlckzahlen im Warenkorb an. F&uumlr Namensschilder ben&oumltigen Sie keine N&aumlgel.</td></tr>';
+                                        echo "<tr><td colspan='5' class='text-secondary font-medium text-sm pb-4'>";
+                                          _e('customer_desc1'); 
+                                        echo " ". $total . " ";
+                                        _e('customer_desc2');
+                                        _e('customer_desc3');
+                                        echo ' ' . $LConnectors . ' ' ;
+                                        _e('customer_desc4');
+                                        echo " " . $QConnectors . ' '; 
+                                        _e('customer_desc5');
+                                        echo " ". $nails . ' ';
+                                        _e('customer_desc6');
+                                        echo '</td></tr>';
                                         //               }
                                         //          }
                                         $customer_name = $record['customer_name'];
@@ -225,7 +235,7 @@
                                 <input type="text"
                                     class="feild-a flex-auto px-4 min-h-10 text-sm text-black font-normal focus:outline-none border border-[#d9d9d9] rounded-md"
                                     name='rabattcode' value="<?php echo $cart_detail->rabattcode; ?>"
-                                    placeholder="Rabattcode eingeben">
+                                    placeholder="<?php _e('enter_discount'); ?>">
                                 <button type='submit' name='sendrabatt'
                                     class="btn text-white rounded-md btn-info btn-sm update_quantity bg-primary min-h-10 text-sm px-4 font-medium hover:bg-secondary"><?php _e('usecode'); ?>
                                 </button>

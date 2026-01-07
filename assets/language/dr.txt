@@ -185,6 +185,13 @@ Checkout ~~ Bestellen
 ShippingCost ~~ Versandkosten
 TotalShipping ~~ Gesamt inkl. USt und Versand
 usecode ~~ Code einlösen
+enter_discount ~~ Rabattcode eingeben
+customer_desc1 ~~ Dieser Kunde wird
+customer_desc2 ~~ Auszeichnungen tragen.
+customer_desc3 ~~ Sie ben&oumltigen
+customer_desc4 ~~ L&aumlngsverbinder und
+customer_desc5 ~~ Querverbinder. Wir empfehlen
+customer_desc6 ~~ N&aumlgel. Bitte passen Sie die St&uumlckzahlen im Warenkorb an. F&uumlr Namensschilder ben&oumltigen Sie keine N&aumlgel.
 
 //checkout page
 bill_summary ~~ Rechnungszusammenfassung
@@ -208,6 +215,9 @@ Place order ~~ Verbindlich bestellen
 Confirm ~~ Bestellung abschliessen
 Contact Number ~~Telefonnummer
 Payment Gateway ~~ Zahlungsmethode
+payin_advance ~~ Vorauskasse
+on_bill ~~ Auf Rechnung
+currrently_unavailabel ~~ Sofort - aus technischen Gründen derzeit nicht verfügbar
 
 
 //forgot
@@ -256,8 +266,17 @@ TotalDisc ~~ Aktionspreis
 //payment
 We are redirecting you to paypal..... ~~ Redirecting to paypal.....
 BUY NOW ~~ JETZT KAUFEN
+thank_you ~~ Vielen Dank f&uumlr Ihre Bestellung Nr.
+invoice_mail ~~ Wir werden Ihre Bestellung prüfen und Ihnen Ihre Rechnung per Mail zukommen lassen
+process_order ~~ Wir werden Ihre Bestellung bearbeiten und auf Rechnung zukommen lassen.
+
 
 //profile
+profile_submit ~~ Einreichen
+all_awards ~~ Ich will trotzdem alle Auszeichnungen tragen
+use_setting ~~ Empfohlene Einstellungen verwenden
+ranking ~~ Informationen f&uumlr die korrekte Rangordnung
+billing_address ~~ Rechnungsanschrift
 My Account ~~ Mein Konto
 Company ~~ Firma
 Contact Number ~~ Telefonnummer

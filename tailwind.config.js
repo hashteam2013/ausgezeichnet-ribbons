@@ -29,9 +29,7 @@ export default {
         gothic: ['var(--gothic)'],
       },
       backgroundImage:{
-        herobanner:"url('/ribbons/assets/images/banner.jpg')",
-        shop:"url('/ribbons/assets/images/shop.jpg')",
-        map:"url('/ribbons/assets/images/map.jpg')",
+      
       }
     },
   },
