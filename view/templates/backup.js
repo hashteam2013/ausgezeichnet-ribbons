@@ -29,9 +29,10 @@ $(window).load(function(e) {
 	}
 })
     
-    $('.cat_class').change(function () {
-            catChange(this);
-    });
+$('.cat_class').change(function () {
+		catChange(this);
+});
+
 
     function catChange(myval){
         var ids = [];
@@ -50,7 +51,7 @@ $(window).load(function(e) {
         }
         if (id != '') {
             var district_related = $(myval).attr("dist-attr");
-	        var show_closed = $(myval).attr("showclosed");
+	var show_closed = $(myval).attr("showclosed");
             var district_ids = [];
             if (district_related == '1') {
                 $("input[name='districts_name[]']:checked").each(function () {
@@ -93,14 +94,14 @@ $(window).load(function(e) {
                                     if (countt != 0) {
                                         cat_list += "</div>";
                                     }
-                                    cat_list += "<div class='conurty-nm test-11 bg-[#d9d9d9] justify-between text-base text-black font-normal rounded-[10px] px-5 2xl:py-0 py-1 inline-flex items-center w-full min-h-[46px] cat_" + remove_id + " contract'>" + v.org_name + "<div class='plusminus'><svg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M4.5 6.75L9 11.25L13.5 6.75' stroke='#343434' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/></svg></div></div><div class='inner'style='display: none;'>";
+                                    cat_list += "<div class='conurty-nm bg-[#d9d9d9] justify-between text-base text-black font-normal rounded-[10px] px-5 2xl:py-0 py-1 inline-flex items-center w-full min-h-[46px] cat_" + remove_id + " contract'>" + v.org_name + "<div class='plusminus'><svg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M4.5 6.75L9 11.25L13.5 6.75' stroke='#343434' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/></svg></div></div><div class='inner'style='display: none;'>";
                                     countt++;
                                 } else if (v.org_name == null && orgname == 0) {
                                     orgname = 1;
                                     if (countt != 0) {
                                         cat_list += "</div>";
                                     }
-                                    cat_list += "<div class='conurty-nm test-22 bg-[#d9d9d9] justify-between text-base text-black font-normal rounded-[10px] px-5 2xl:py-0 py-1 inline-flex items-center w-full min-h-[46px] cat_" + remove_id + " contract '>" + cat_name + " <div class='plusminus'><svg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M4.5 6.75L9 11.25L13.5 6.75' stroke='#343434' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/></svg></div> </div><div class='inner' style='display: none;'>";
+                                    cat_list += "<div class='conurty-nm bg-[#d9d9d9] justify-between text-base text-black font-normal rounded-[10px] px-5 2xl:py-0 py-1 inline-flex items-center w-full min-h-[46px] cat_" + remove_id + " contract '>" + cat_name + " <div class='plusminus'><svg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M4.5 6.75L9 11.25L13.5 6.75' stroke='#343434' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/></svg></div> </div><div class='inner' style='display: none;'>";
                                     countt++;
                                 }
                                 status = v.org_id;
@@ -110,12 +111,16 @@ $(window).load(function(e) {
                                 //console.log(valuebecome);
 
 				
-                                if(v.ItemType!=='10'){
-                                    cat_list += "<ul class='border border-[#b1b1b1] rounded-[10px] 2xl:p-5 p-3 cat_" + remove_id + "'><li class='ribbon_shop flex 2xl:gap-5 gap-3'" + gray + "><div><img src=<?php echo DIR_WS_UPLOADS; ?>batch/" + v.batch_image + " class='2xl:max-w-[150px] lg:max-w-[100px] md:max-w-[70px] max-w-[55px]'></div><div class='flex-auto flex 2xl:gap-5 gap-3 xl:flex-row lg:flex-col md:flex-row flex-col justify-between'><div class='flex flex-col'><p class='mb-2.5 font-gothic text-black md:text-base text-sm md:break-normal break-all'>" + v.webshop_title_en + "</p><div class='price_shop md:text-lg text-sm text-secondary font-normal'>EUR " + CurrencyFormatted(v.unit_price) + "</div><p class='text-black mt-1.5' >" + v.comment + "</p></div><div class='add-to-list'><input type='button' class='add-list font-medium px-5 cursor-pointer hover:bg-primary py-2.5 text-white bg-secondary rounded-md text-sm' " + disabledvalue + " value='" + valuebecome + "' data-batch-id='" + v.batch_id + "' data-batch-type=" + v.type + "></div></div> </li></ul>";
+                                if(v.ItemType!=='10')
+                                {
+                                                cat_list += "<ul class='border border-[#b1b1b1] rounded-[10px] 2xl:p-5 p-3 cat_" + remove_id + "'><li class='ribbon_shop flex 2xl:gap-5 gap-3'" + gray + "><div><img src=<?php echo DIR_WS_UPLOADS; ?>batch/" + v.batch_image + " class='2xl:max-w-[150px] lg:max-w-[100px] md:max-w-[70px] max-w-[55px]'></div><div class='flex-auto flex 2xl:gap-5 gap-3 xl:flex-row lg:flex-col md:flex-row flex-col justify-between'><div class='flex flex-col'><p class='mb-2.5 font-gothic text-black md:text-base text-sm md:break-normal break-all'>" + v.webshop_title_en + "</p><div class='price_shop md:text-lg text-sm text-secondary font-normal'>EUR " + CurrencyFormatted(v.unit_price) + "</div><p class='text-black mt-1.5' >" + v.comment + "</p></div><div class='add-to-list'><input type='button' class='add-list font-medium px-5 cursor-pointer hover:bg-primary py-2.5 text-white bg-secondary rounded-md text-sm' " + disabledvalue + " value='" + valuebecome + "' data-batch-id='" + v.batch_id + "' data-batch-type=" + v.type + "></div></div> </li></ul>";
                                 }
-                                else{
+                                else
+                                {
+
                                     var cust_id = $("#custm").val();
-                                    cat_list += "<ul class='border border-[#b1b1b1] rounded-[10px] p-5 cat_" + remove_id + "'><li class='ribbon_shop'" + gray + "><div><img src=<?php echo DIR_WS_UPLOADS; ?>batch/" + v.batch_image + " class='img-responsive'></div><div class='add-to-list'><input type='button' name='rename_cust'  data-toggle='modal' data-target='#Type10' onclick='RenameFunction(" + cust_id +", " + v.batch_id + ")' data-cid ='" + cust_id + "' class='add-list2'" + " value='" + valuebecome + "' data-batch-id='" + v.batch_id + "' data-batch-type=10></div><div class='price_shop'>EUR " + CurrencyFormatted(v.unit_price) + "</div><p>" + v.webshop_title_en + "</p><br><p class='text-black mt-1.5' >" + v.comment + "</p> </li></ul>";
+                                                cat_list += "<ul class='border border-[#b1b1b1] rounded-[10px] p-5 cat_" + remove_id + "'><li class='ribbon_shop'" + gray + "><div><img src=<?php echo DIR_WS_UPLOADS; ?>batch/" + v.batch_image + " class='img-responsive'></div><div class='add-to-list'><input type='button' name='rename_cust'  data-toggle='modal' data-target='#Type10' onclick='RenameFunction(" + cust_id +", " + v.batch_id + ")' data-cid ='" + cust_id + "' class='add-list2'" + " value='" + valuebecome + "' data-batch-id='" + v.batch_id + "' data-batch-type=10></div><div class='price_shop'>EUR " + CurrencyFormatted(v.unit_price) + "</div><p>" + v.webshop_title_en + "</p><br><p class='text-black mt-1.5' >" + v.comment + "</p> </li></ul>";
+
                                 }
 
                             } else {
@@ -146,10 +151,10 @@ $(window).load(function(e) {
                         orgname = "";
                     });
                     /*district specified is closed **/
-                    if (show_closed == 0) { 
+                   if (show_closed == 0) { 
                         $(".contract").next(".inner").slideDown(300);
                         $(".contract").children(".plusminus").html('<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.5 6.75L9 11.25L13.5 6.75" stroke="#343434" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>');
-                    } 
+                       } 
                 }
             });
         } else {
@@ -166,158 +171,136 @@ $(window).load(function(e) {
         }
     }
     /*-----------------------------------------------Related categories and districts---------------------------------------------------------------------------------*/
-        var batchIDarry = [];
-        $('.dist_class').change(function () {
-            var district_related = $(this).attr("dist-attr");
-            var dist_id = $(this).attr('id');
-            var dist_remove_id = $(this).val();
-            var items = [];
-            var id = '';
-            batchIDarry = [];
+    $('.dist_class').change(function () {
+        var district_related = $(this).attr("dist-attr");
+        var dist_id = $(this).attr('id');
+        var dist_remove_id = $(this).val();
+        var items = [];
+        var id = '';
+        $("input[name='districts_name[]']:checked").each(function () {
+            items.push($(this).val());
+        });
+        if (log_in == "1") {
+            ddid = [];
             $("input[name='districts_name[]']:checked").each(function () {
-                items.push($(this).val());
+                ddid.push($(this).val());
             });
-            if (log_in == "1") {
-                ddid = [];
-                $("input[name='districts_name[]']:checked").each(function () {
-                    ddid.push($(this).val());
-                });
-                recent_activity.district = ddid;
-                getLastactivity(recent_activity);
+            recent_activity.district = ddid;
+            getLastactivity(recent_activity);
+        }
+        var cat_id = "";
+        var at_id = '';
+        $('input.cat_class').each(function () {
+            if ($(this).attr("dist-attr") == '1') {
+                cat_id = $(this).val();
+                at_id = $(this).attr('id');
+                $(this).prop("checked", true);
             }
-            var cat_id = "";
-            var at_id = '';
-            $('input.cat_class').each(function () {
-                if ($(this).attr("dist-attr") == '1') {
-                    cat_id = $(this).val();
-                    at_id = $(this).attr('id');
-                    $(this).prop("checked", true);
-                }
-            });
-            $("#" + dist_id).prop("disabled", true);
-            $('.ajax-load-image').css('display', 'block');
-            $.ajax({
-                url: "<?php echo make_url('ajax', array("action" => "dist_list")); ?>",
-                type: "post",
-                dataType: "json",
-                data: {
-                    'cat_id': cat_id,
-                    'district_ids': items
-                },
-                success: function (data) {
-                    console.log("data-----", data);
-                    $("#" + dist_id).prop("disabled", false);
-                    $('.ajax-load-image').css('display', 'none');
-                    $('.cat_' + cat_id).remove();
-                    $('.dist-related').remove();
-                    var status = 0;
-                    var filter_id = 0;
-                    var orgname = 0;
-                    var cat_list = "";
-                    var cat_name = '';
-                    var countt = '';
-                    $(data).each(function (index, value) {
-                        $(value).each(function (i, v) {
-                            if (v.batch_image !== null) {
-                                var desc_len = v.desc_en;
-                                //var description = desc_len.substr(0, 50);
-                                batch_id = v.batch_id;
-                                org_id = v.org_id;
-                                
-                                if (district_related == 0) {
-                                    if (filter_id != v.filter_id) {
-                                        if (countt != 0) {
-                                            cat_list += "</div>";
-                                        }
-                                        
-                                        cat_list += "<div class='conurty-nm dest-"+batch_id+" bg-[#d9d9d9] justify-between text-base text-black font-normal rounded-[10px] px-5 2xl:py-0 py-1 inline-flex items-center w-full min-h-[46px] dist-related dist_" + dist_remove_id + " contract'>" + v.cat + "<div class='plusminus'><svg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M4.5 6.75L9 11.25L13.5 6.75' stroke='#343434' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/></svg></div></div><div class='inner'style='display: none;'>";
-                                        countt++;
-                                        console.log('.dist_+dist_remove_id', batch_id, org_id,dist_remove_id);
-                                        
-                                        batchIDarry.push(batch_id)
+        });
+        $("#" + dist_id).prop("disabled", true);
+        $('.ajax-load-image').css('display', 'block');
+        $.ajax({
+            url: "<?php echo make_url('ajax', array("action" => "dist_list")); ?>",
+            type: "post",
+            dataType: "json",
+            data: {
+                'cat_id': cat_id,
+                'district_ids': items
+            },
+            success: function (data) {
+                $("#" + dist_id).prop("disabled", false);
+                $('.ajax-load-image').css('display', 'none');
+                $('.cat_' + cat_id).remove();
+                $('.dist-related').remove();
+                var status = 0;
+                var filter_id = 0;
+                var orgname = 0;
+                var cat_list = "";
+                var cat_name = '';
+                var countt = '';
+                $(data).each(function (index, value) {
+                    $(value).each(function (i, v) {
+                        if (v.batch_image !== null) {
+                            var desc_len = v.desc_en;
+                            //var description = desc_len.substr(0, 50);
+                            batch_id = v.batch_id;
+                            org_id = v.org_id;
+                            if (district_related == 0) {
+                                if (filter_id != v.filter_id) {
+                                    if (countt != 0) {
+                                        cat_list += "</div>";
                                     }
-                                } else {
-                                    if (status != v.org_id && v.org_name !== null && v.org_name != '' && typeof v.org_name != "undefined") {
-                                        orgname = 0;
-                                        if (countt != 0) {
-                                            cat_list += "</div>";
-                                        }
-                                        
-                                        cat_list += "<div class='conurty-nm dest-"+batch_id+"  bg-[#d9d9d9] justify-between text-base text-black font-normal rounded-[10px] px-5 2xl:py-0 py-1 inline-flex items-center w-full min-h-[46px] dist-related dist_" + dist_remove_id + " contract'>" + v.org_name + "<div class='plusminus'><svg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M4.5 6.75L9 11.25L13.5 6.75' stroke='#343434' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/></svg></div></div><div class='inner'style='display: none;'>";
-                                        countt++;
-                                        console.log('.dist_+dist_remove_id',batch_id,org_id, dist_remove_id);
-                                        
-                                        batchIDarry.push(batch_id)
-                                        
-                                    } else if (v.org_name == null && orgname == 0) {
-                                        orgname = 1;
-                                        if (countt != 0) {
-                                            cat_list += "</div>";
-                                        }
-                                        cat_list += "<div class='conurty-nm dest-"+batch_id+" bg-[#d9d9d9] justify-between text-base text-black font-normal rounded-[10px] px-5 2xl:py-0 py-1 inline-flex items-center w-full min-h-[46px] dist-related dist_" + dist_remove_id + " contract'>" + v.name_en + "<div class='plusminus'><svg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M4.5 6.75L9 11.25L13.5 6.75' stroke='#343434' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/></svg></div></div><div class='inner'style='display: none;'>";
-                                        countt++;
-                                        console.log('.dist_+dist_remove_id', batch_id, org_id,dist_remove_id);
-                                        batchIDarry.push(batch_id)
-                                    }
-                                    status = v.org_id;
+                                    cat_list += "<div class='conurty-nm bg-[#d9d9d9] justify-between text-base text-black font-normal rounded-[10px] px-5 2xl:py-0 py-1 inline-flex items-center w-full min-h-[46px] dist-related dist_" + dist_remove_id + " contract'>" + v.cat + "<div class='plusminus'><svg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M4.5 6.75L9 11.25L13.5 6.75' stroke='#343434' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/></svg></div></div><div class='inner'style='display: none;'>";
+                                    countt++;
                                 }
-                                filter_id = v.filter_id;
-                                orgname = v.org_name;
-                                var gray = v.is_active == '0' ? "style='filter: grayscale(100%) opacity(.5);'" : "";
-                                var disabledvalue = v.is_active == '0' ? 'disabled' : '';
-                                var valuebecome = v.is_active == '0' ? '<?php _e('Not Available'); ?>' : '<?php _e('Add to list'); ?>';
-                                cat_list += "<ul class='dist-related border border-[#b1b1b1] rounded-[10px] 2xl:p-5 p-3  dist_" + dist_remove_id + "' ><li class='flex 2xl:gap-5 gap-3 ribbon_shop' " + gray + "><div><img src=<?php echo DIR_WS_UPLOADS; ?>batch/" + v.batch_image + " class='2xl:max-w-[150px] lg:max-w-[100px] md:max-w-[70px] max-w-[55px]'></div><div class='flex-auto flex 2xl:gap-5 gap-3 xl:flex-row lg:flex-col md:flex-row flex-col justify-between'><div class='flex flex-col'><p class='mb-2.5 font-gothic text-black md:text-base text-sm md:break-normal break-all'>" + v.webshop_title_en + "</p><div class='price_shop md:text-lg text-sm text-secondary font-normal'>EUR " + CurrencyFormatted(v.unit_price) + "</div><p class='text-black mt-1.5' >" + v.comment + "</p></div><div class='add-to-list '><input type='button' class='add-list font-medium px-5 cursor-pointer hover:bg-primary py-2.5 text-white bg-secondary rounded-md text-sm' " + disabledvalue + " value='" + valuebecome + "' data-batch-id='" + v.batch_id + "' data-batch-type=" + v.type + "></div></div> </li></ul>";
-                                countt++;
-
                             } else {
+                                if (status != v.org_id && v.org_name !== null && v.org_name != '' && typeof v.org_name != "undefined") {
+                                    orgname = 0;
+                                    if (countt != 0) {
+                                        cat_list += "</div>";
+                                    }
+                                    cat_list += "<div class='conurty-nm bg-[#d9d9d9] justify-between text-base text-black font-normal rounded-[10px] px-5 2xl:py-0 py-1 inline-flex items-center w-full min-h-[46px] dist-related dist_" + dist_remove_id + " contract'>" + v.org_name + "<div class='plusminus'><svg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M4.5 6.75L9 11.25L13.5 6.75' stroke='#343434' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/></svg></div></div><div class='inner'style='display: none;'>";
+                                    countt++;
+                                } else if (v.org_name == null && orgname == 0) {
+                                    orgname = 1;
+                                    if (countt != 0) {
+                                        cat_list += "</div>";
+                                    }
+                                    cat_list += "<div class='conurty-nm bg-[#d9d9d9] justify-between text-base text-black font-normal rounded-[10px] px-5 2xl:py-0 py-1 inline-flex items-center w-full min-h-[46px] dist-related dist_" + dist_remove_id + " contract'>" + v.name_en + "<div class='plusminus'><svg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M4.5 6.75L9 11.25L13.5 6.75' stroke='#343434' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/></svg></div></div><div class='inner'style='display: none;'>";
+                                    countt++;
+                                }
+                                status = v.org_id;
                             }
-                        });
-                        $('.list').append("<span class='flex flex-col gap-5 outer_" + at_id + "'>" + cat_list + "</span>");
-                        console.log("batch_id", batchIDarry);
-                        $('html, body').animate({
-                            scrollTop: $('.dest-'+batchIDarry[0]).offset().top - 50
-                        }, 500);
-                        
-                       
-
-                        var emp = $('.list').find('span').sort(sortMe);
-
-                        function sortMe(a, b)
-                        {
-                            return a.className > b.className;
-                        }
-                        $('.list').append(emp);
-
-                        // Remove any empty "inner" containers that were created without content
-                        $('.list .inner').each(function () {
-                        if ($.trim($(this).html()) === '') {
-                        $(this).remove();
-                        }
-                        });
-                        
-                        // Remove any span.test-265 wrappers that ended up empty after cleanup
-                        $('.list span').each(function () {
-                        if ($.trim($(this).html()) === '') {
-                        $(this).remove();
-                        }
-                        });
-                        var height_div = $('.high').height();
-                        var numItems = $(".list").find(".outer").length;
-                        var sr = 0;
-                        $('.outer').each(function () {
-                            if ($(this).text() !== '') {
-                                sr++;
-                            }
-                        });
-                        if (sr == 1) {
-                            $(".list.outer").find(".inner").css("max-height", height_div);
+                            filter_id = v.filter_id;
+                            orgname = v.org_name;
+                            var gray = v.is_active == '0' ? "style='filter: grayscale(100%) opacity(.5);'" : "";
+                            var disabledvalue = v.is_active == '0' ? 'disabled' : '';
+                            var valuebecome = v.is_active == '0' ? '<?php _e('Not Available'); ?>' : '<?php _e('Add to list'); ?>';
+                            cat_list += "<ul class='dist-related border border-[#b1b1b1] rounded-[10px] 2xl:p-5 p-3  dist_" + dist_remove_id + "' ><li class='flex 2xl:gap-5 gap-3 ribbon_shop' " + gray + "><div><img src=<?php echo DIR_WS_UPLOADS; ?>batch/" + v.batch_image + " class='2xl:max-w-[150px] lg:max-w-[100px] md:max-w-[70px] max-w-[55px]'></div><div class='flex-auto flex 2xl:gap-5 gap-3 xl:flex-row lg:flex-col md:flex-row flex-col justify-between'><div class='flex flex-col'><p class='mb-2.5 font-gothic text-black md:text-base text-sm md:break-normal break-all'>" + v.webshop_title_en + "</p><div class='price_shop md:text-lg text-sm text-secondary font-normal'>EUR " + CurrencyFormatted(v.unit_price) + "</div><p class='text-black mt-1.5' >" + v.comment + "</p></div><div class='add-to-list '><input type='button' class='add-list font-medium px-5 cursor-pointer hover:bg-primary py-2.5 text-white bg-secondary rounded-md text-sm' " + disabledvalue + " value='" + valuebecome + "' data-batch-id='" + v.batch_id + "' data-batch-type=" + v.type + "></div></div> </li></ul>";
+                            countt++;
                         } else {
-                            $(".list.outer").find(".inner").css("max-height", '500px');
                         }
                     });
-                }
-            });
+                    $('.list').append("<span class='flex flex-col gap-5 outer_" + at_id + "'>" + cat_list + "</span>");
+
+                    var emp = $('.list').find('span').sort(sortMe);
+
+                    function sortMe(a, b)
+                    {
+                        return a.className > b.className;
+                    }
+                    $('.list').append(emp);
+
+                    // Remove any empty "inner" containers that were created without content
+                    $('.list .inner').each(function () {
+                    if ($.trim($(this).html()) === '') {
+                    $(this).remove();
+                    }
+                    });
+                    
+                    // Remove any span.test-265 wrappers that ended up empty after cleanup
+                    $('.list span').each(function () {
+                    if ($.trim($(this).html()) === '') {
+                    $(this).remove();
+                    }
+                    });
+                    var height_div = $('.high').height();
+                    var numItems = $(".list").find(".outer").length;
+                    var sr = 0;
+                    $('.outer').each(function () {
+                        if ($(this).text() !== '') {
+                            sr++;
+                        }
+                    });
+                    if (sr == 1) {
+                        $(".list.outer").find(".inner").css("max-height", height_div);
+                    } else {
+                        $(".list.outer").find(".inner").css("max-height", '500px');
+                    }
+                });
+            }
         });
+    });
     /*--------------------------------------show ribbons using additional categories---------------------------------------------------------------*/
     $('.add_cat_class').change(function () {
         var ids = [];

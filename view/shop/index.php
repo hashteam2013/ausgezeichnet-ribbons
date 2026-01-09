@@ -16,9 +16,9 @@
 </div>
 <div class="flex xl:py-16 md:py-10 py-8 w-full">
     <div class="container-custom">
-        <div class="flex lg:flex-row flex-col 2xl:gap-14 xl:gap-6 gap-5">
+        <div class="flex lg:flex-row lg:items-start flex-col 2xl:gap-14 xl:gap-6 gap-5">
             <!-----------------------Side-bar------------------------->
-            <div class="high flex flex-col gap-5 lg:w-[22%] w-full">
+            <div class="high flex flex-col gap-5 lg:w-[22%] w-full lg:sticky lg:top-5">
                 <h3 class="xl:text-3xl lg:text-2xl text-xl text-black font-gothic lg:block hidden"><?php _e("filters") ?></h3>
                 <button class="flex items-center text-lg font-gothic cursor-pointer justify-between lg:hidden flex w-full py-2" id="filterBtn">
                     <span class="text-black font-gothic xl:text-2xl lg:text-xl text-lg font-medium"><?php _e("filters") ?></span>
@@ -27,7 +27,7 @@
                     </svg>
 
                 </button>
-                <div class="flex flex-col bg-body rounded-xl xl:p-5 lg:p-3 p-5 gap-5 " id="sibebarfilter">
+                <div class="flex flex-col bg-body rounded-xl xl:p-5 lg:p-3 p-5 gap-5 lg:max-h-[90vh] lg:overflow-y-auto" id="sibebarfilter">
                     <div class="categories">
                         <div class="cat-heading xl:text-[22px] xl:leading-[32px] lg:text-xl text-lg text-black font-semibold"><?php _e("Categories"); ?></div>
                         <ul class="mt-5 flex flex-col gap-4 w-full">

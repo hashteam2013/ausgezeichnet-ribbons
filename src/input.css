@@ -114,20 +114,24 @@ body.active::before {
 }
 
 .list .inner::-webkit-scrollbar,
-.check-tag::-webkit-scrollbar {
+.check-tag::-webkit-scrollbar,
+#sibebarfilter::-webkit-scrollbar {
     @apply w-1.5;
 }
 
 .list .inner::-webkit-scrollbar-thumb,
-.check-tag::-webkit-scrollbar-thumb {
+.check-tag::-webkit-scrollbar-thumb,
+#sibebarfilter::-webkit-scrollbar-thumb {
     @apply bg-black/80 rounded-xl;
 }
 
 .list .inner::-webkit-scrollbar-track,
-.check-tag::-webkit-scrollbar-track {
+.check-tag::-webkit-scrollbar-track{
     @apply bg-body rounded-xl;
 }
-
+#sibebarfilter::-webkit-scrollbar-track{
+    @apply bg-[#d9d9d9] rounded-xl;
+}
 .flag-sec .list .inner .ribbon_shop p br {
     @apply hidden;
 }
