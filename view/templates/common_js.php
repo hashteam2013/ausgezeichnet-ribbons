@@ -251,9 +251,9 @@
     });
         /*-----------------------------------Add customer----------------------------------------------------*/
     $(".add_cust").click(function () {
-        
+
         if (log_in == 1) {
-            
+
             $('#custmodal').css({"opacity": "1","display":"block"});
             $('body').addClass('active');
             $("#cust-submit").click(function (e) {
@@ -273,10 +273,13 @@
                             $('#custm').append('<option value =' + response.id + '>' + response.first_name + ' ' + response.last_name + '</option>');
                             $('#custm').show();
                             toastr.success(response.msg);
-                            $('#custmodal').modal('hide');
-                            $('.fname').val('');
+
+                            // Properly close and reset the custom "Add customer" modal
+                            $('body').removeClass('active');
+                            $('#custmodal').css({"opacity": "0","display":"none"});
+                            $('#customer_add_form')[0].reset();
                             $('#msg').html('');
-                            // window.location.reload();
+
                             var name = GetParameterValues('page');
                             if (name == 'customer') {
                                 setTimeout(function () {

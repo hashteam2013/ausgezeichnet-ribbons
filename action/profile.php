@@ -132,14 +132,19 @@ if (isset($app['POST']['update'])) {
         $query->Data['community'] = isset($app['POST']['community'])?$app['POST']['community']:'';
         $query->Data['borough'] = isset($app['POST']['name_boro'])?$app['POST']['name_boro']:'';
         $query->Data['subdistrict'] = isset($app['POST']['subdist'])?$app['POST']['subdist']:'';
-        $query->Data['forcewearall']=isset($app['POST']['forcewearall'])?$app['POST']['forcewearall']:'';
+        // Only set forcewearall when a value is actually submitted, so we don't hit DB range/strict-mode issues
+        if (isset($app['POST']['forcewearall']) && $app['POST']['forcewearall'] !== '') {
+            $query->Data['forcewearall'] = (int)$app['POST']['forcewearall'];
+        }
 
         //$query->print=1;
         if ($query->Update()) {
             set_alert('success', "Account info updated successfully");
             redirect(make_url('profile'));
         } else {
-            $msg = 'Error occurred while updating account info. Please try again!';
+            // Surface the actual database error for debugging instead of a generic message
+            $dbError = mysqli_error($app['mysqllink']);
+            $msg = 'Error updating account: ' . $dbError;
         }
 
     }

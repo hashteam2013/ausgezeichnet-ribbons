@@ -25,7 +25,7 @@
                                 
                                 // Start new customer section
                                 $first_customer = false;
-                                echo '<div class="customer-section bg-body rounded-[20px] border border-[#d9d9d9] p-5' . ($customer_name != "" ? ' lg:mt-8 mt-5' : '') . '">';
+                                echo '<div id="customer_' . (int)$record['customer_id'] . '" class="customer-section bg-body rounded-[20px] border border-[#d9d9d9] p-5' . ($customer_name != "" ? ' lg:mt-8 mt-5' : '') . '">';
                                 echo '<table class="cf w-full">';
                                 echo '<thead class="cf">';
                                 echo '<tr>';
@@ -164,7 +164,8 @@
                                             </button>
                                             <input type="number" name="quant[<?php echo $record['id']; ?>]"
                                                 id="p_<?php echo $record['id']; ?>"
-                                                class="cart_sel qty-input w-7 focus:outline-none text-center text-sm text-dark font-medium"
+                                                class="cart_sel qty-input w-16 focus:outline-none text-center text-sm text-dark font-medium"
+                                                data-anchor="customer_<?php echo (int)$record['customer_id']; ?>"
                                                 min="0" max="15" value="<?php echo $record['quantity']; ?>" />
                                             <button type="button" class="qty-btn qty-increase"
                                                 data-target="p_<?php echo $record['id']; ?>" aria-label="Increase">
@@ -267,8 +268,8 @@
 <script>
     $(document.body).on('change', ".cart_sel", function (e) {
         var val = $(this).val();
-        var id = $(this).attr('id');
-        $("#redirect_id").val(id);
+        var anchor = $(this).data('anchor') || $(this).attr('id');
+        $("#redirect_id").val(anchor);
         $("#cart-form").submit();
     });
 

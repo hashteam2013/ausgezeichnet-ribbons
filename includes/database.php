@@ -40,6 +40,7 @@ class Connection {
                 if ($this->Recordset = mysqli_query($this->ConRe, $this->Query))
                     return true;
                 else {
+                   // echo '<pre>SQL ERROR: ' . mysqli_error($this->ConRe) . "\nQUERY: " . $Query . "</pre>";
                     $ParameterArray = array("Query" => $Query,
                         "FunctionName" => "ExecuteQuery");
                     //$this->SendErrorMail(ERROR_EMAIL,mysql_error(),$ParameterArray);
@@ -49,6 +50,7 @@ class Connection {
                 return true;
         }
         else {
+
             $ParameterArray = array("Query" => $Query,
                 "FunctionName" => "ExecuteQuery");
             //$this->SendErrorMail(ERROR_EMAIL,mysql_error(),$ParameterArray);

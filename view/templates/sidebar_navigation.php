@@ -8,9 +8,9 @@
             <a class="bg-[#d9d9d9] font-normal md:text-base text-sm text-black hover:bg-primary hover:text-white rounded-md px-5 inline-flex py-3" href="<?php echo make_url('customer'); ?>"><?php _e('Customers');?></a></li>
         <li class="<?php echo($page == 'orders') ? 'selected' : '' ?>">
             <a class="bg-[#d9d9d9] font-normal md:text-base text-sm text-black hover:bg-primary hover:text-white rounded-md px-5 inline-flex py-3" href="<?php echo make_url('orders'); ?>"><?php _e('Orders');?></a></li>
-        <li class="<?php echo($page == 'cart') ? 'selected' : '' ?>">
+            <li style="display:none;" class="<?php echo($page == 'cart') ? 'selected' : '' ?>">
             <a class="bg-[#d9d9d9] font-normal md:text-base text-sm text-black hover:bg-primary hover:text-white rounded-md px-5 inline-flex py-3" href="<?php echo make_url('cart'); ?>"><?php _e('Cart');?></a></li>
-        <li class="<?php echo($page == 'dsgvo') ? 'selected' : '' ?>">
+            <li class="<?php echo($page == 'dsgvo') ? 'selected' : '' ?>">
             <a class="bg-[#d9d9d9] font-normal md:text-base text-sm text-black hover:bg-primary hover:text-white rounded-md px-5 inline-flex py-3" href="<?php echo make_url('dsgvo'); ?>"><?php _e('dsgvo1');?></a></li>
     </ul>
 </div>
