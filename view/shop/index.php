@@ -115,20 +115,7 @@
                                     </div>
                                 </div>
                                 <?php if (isset($app['logged_in_user']) && $app['logged_in_user']!="") { ?>
-                                <div class="mb-5 flex gap-2.5 items-center lg:justify-between">
-                                    <h4 class="text-secondary xl:text-xl text-lg font-medium font-gothic"><?php _e("filters") ?></h4>
-                                    <div id='show_buttons'>
-                                        <?php 
-                                        if (isset($app['logged_in_user']) && $app['logged_in_user'] != '' &&  !empty($selected_customer_batches)) { ?>
-                                        <select id="action-dropdown" class="delet-slct min-h-[46px]  2xl:w-auto w-full focus:outline-none cursor-pointer text-black text-base font-regular rounded-[10px] xl:px-5 px-2.5 border border-[#D9D9D9]">
-                                            <option value=""><?php _e("select_action");?></option>
-                                            <option value="delete"><?php _e("Delete Selected");?></option>
-                                            <option value="select"><?php _e("Select All");?></option>
-                                            <option value="select_n"><?php _e("Select New");?></option>
-                                        </select>
-                                        <?php } ?>
-                                    </div>
-                                </div>
+                                
                                 <div class="check-tag flex overflow-y-auto max-h-[400px] flex-wrap bg-white rounded-[10px] xl:p-5 p-3 border border-[#D9D9D9]">
                                     <div class="w-full">
                                         <ul class="batch w-full flex flex-col">
@@ -169,6 +156,20 @@
                                             </li>
                                             <?php } ?>
                                         </ul>
+                                    </div>
+                                </div>
+                                <div class="mt-5 flex gap-2.5 items-center lg:justify-between">
+                                    <h4 class="text-secondary xl:text-xl text-lg font-medium font-gothic"><?php _e("filters") ?></h4>
+                                    <div id='show_buttons'>
+                                        <?php 
+                                        if (isset($app['logged_in_user']) && $app['logged_in_user'] != '' &&  !empty($selected_customer_batches)) { ?>
+                                        <select id="action-dropdown" class="delet-slct min-h-[46px]  2xl:w-auto w-full focus:outline-none cursor-pointer text-black text-base font-regular rounded-[10px] xl:px-5 px-2.5 border border-[#D9D9D9]">
+                                            <option value=""><?php _e("select_action");?></option>
+                                            <option value="delete"><?php _e("Delete Selected");?></option>
+                                            <option value="select"><?php _e("Select All");?></option>
+                                            <option value="select_n"><?php _e("Select New");?></option>
+                                        </select>
+                                        <?php } ?>
                                     </div>
                                 </div>
                                 <div class="flex 2xl:flex-row lg:flex-col xs:flex-row flex-col md:flex-nowrap flex-wrap xl:gap-3 gap-2.5 xl:mt-10 mt-5 w-full">

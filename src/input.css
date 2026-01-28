@@ -136,8 +136,8 @@ body.active::before {
     @apply hidden;
 }
 
-.german-active .inner ul li p {
-    @apply break-all;
+.checkout_products .ribbon_outer img{
+    @apply max-h-[100px];
 }
 
 .side-bar ul li.selected a {
@@ -293,12 +293,16 @@ label.info-disc{
     .iframe_call iframe {
         max-height: 320px;
     }
+     .checkout_products .ribbon_outer img{
+        @apply max-h-[60px];
+    }
 }
 
 @media(max-width:599px) {
     .iframe_call iframe {
         max-height: 260px;
     }
+   
 }
 
 @media(max-width:499px) {

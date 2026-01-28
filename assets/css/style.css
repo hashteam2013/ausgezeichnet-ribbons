@@ -627,3 +627,8 @@ input.cart-slct.divider.hvr-float-shadow {
 .bg-map{
     background-image: url('../images/map.jpg');
 }
+.german-active .inner ul li p {
+    overflow-wrap: break-word;   /* modern & preferred */
+    word-wrap: break-word; 
+    word-break: normal;
+}

@@ -134,7 +134,7 @@ Lastname ~~ Lastname
 Email ~~ Email
 Password ~~ Password
 Confirm Password ~~ Confirm Password
-I agree DSGVO ~~ I agree that the data I have entered will be processed in accordance with our <a href="https://ausgezeichnet.cc/datenschutzerklaerung.pdf" target="_blank">Privacy Policy</a>. This consent can be revoked at any time in the "My Profile" section.
+I agree DSGVO ~~ I agree that the data I have entered will be processed in accordance with our <a style="text-decoration:underline;font-weight:600;" href="https://ausgezeichnet.cc/datenschutzerklaerung.pdf" target="_blank">Privacy Policy</a>. This consent can be revoked at any time in the "My Profile" section.
 dataprotlink ~~ <a href="https://ausgezeichnet.cc/datenschutzerklaerung.pdf" class="text-center" style="color: inherit; font-size: 18px; ">Privacy Policy</a>
 NoPhoneWarning ~~ Attention: If you do not agree to this statement, we will not be able to contact you by phone. This means, for example, that we cannot ask direct follow-up questions if there are any questions regarding your order.
 I agree all terms and conditions ~~ I agree to all terms and conditions
