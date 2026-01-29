@@ -379,7 +379,7 @@
                             </svg>
                         </a>
                     </h3>
-                    <div class="bg-body rounded-[20px] border border-[#d9d9d9] p-5 flex flex-col">
+                    <div class="rounded-[20px] border border-[#d9d9d9] p-5 flex flex-col">
                         <?php
                         $customer_name = "";
                         $confirmation_needed = 0;

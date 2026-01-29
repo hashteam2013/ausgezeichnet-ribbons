@@ -164,7 +164,7 @@
                                             </button>
                                             <input type="number" name="quant[<?php echo $record['id']; ?>]"
                                                 id="p_<?php echo $record['id']; ?>"
-                                                class="cart_sel qty-input w-16 focus:outline-none text-center text-sm text-dark font-medium"
+                                                class="cart_sel qty-input min-w-12 focus:outline-none text-center text-sm text-dark font-medium"
                                                 data-anchor="customer_<?php echo (int)$record['customer_id']; ?>"
                                                 min="0" max="15" value="<?php echo $record['quantity']; ?>" />
                                             <button type="button" class="qty-btn qty-increase"
