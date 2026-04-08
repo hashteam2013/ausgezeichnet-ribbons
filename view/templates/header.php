@@ -1,5 +1,10 @@
+<?php
+    // Define language attribute for HTML tag
+    $currentLang = isset($app['language']) ? strtolower($app['language']) : '';
+    $htmlAttr = ($currentLang === 'en') ? 'en' : 'de';
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<?php echo $htmlAttr; ?>">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -36,9 +41,8 @@
         <script src="<?= DIR_WS_ASSETS_JS; ?>bootstrap.min.js"></script>
     </head>
     <?php
-        // Normalize language code to avoid case-sensitivity issues (e.g. "DE" vs "de")
+        // Define body class based on current language
         $currentLang = isset($app['language']) ? strtolower($app['language']) : '';
-        // Treat English explicitly; everything else (e.g. "dr" for German) uses the German body class
         $bodyClass = ($currentLang === 'en') ? 'english' : 'german-active';
     ?>
     <body class="<?php echo $bodyClass; ?> testing-body">

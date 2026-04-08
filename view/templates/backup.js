@@ -836,7 +836,7 @@ $('.cat_class').change(function () {
 	strNotShown = "";
 	if (total < totalBeforePreSort )
 	{
-		strNotShown += '<div class= "ribbonsnotshownsection"> Ihnen werden ' + (totalBeforePreSort  - total) + ' Ihrer ' + totalBeforePreSortIntegrity + ' Auszeichnungen nicht angezeigt, da in Ihrer Organisation nur die jeweils h&oumlchste Stufe einer Auszeichnung getragen wird. <a class="add-btn hvr-float-shadow" href="?page=profile" title="ribbonsnotshown">Einstellungen &auml;ndern</a></div>';
+		strNotShown += '<div class= "ribbonsnotshownsection"> Ihnen werden ' + (totalBeforePreSort  - total) + ' Ihrer ' + totalBeforePreSortIntegrity + ' Auszeichnungen Nicht angezeigt, da in Ihrer Organisation nur die jeweils h&oumlchste Stufe einer Auszeichnung getragen wird. <a class="add-btn hvr-float-shadow" href="?page=profile" title="ribbonsnotshown">Einstellungen &auml;ndern</a></div>';
 	}
 	if (totalBeforePreSort < totalBeforePreSortIntegrity )
 	{
@@ -1002,7 +1002,7 @@ $('.cat_class').change(function () {
 	strNotShown = "";
 	if (total < totalBeforePreSort )
 	{
-		strNotShown += '<div class= "ribbonsnotshownsection"> Ihnen werden ' + (totalBeforePreSort  - total) + ' Ihrer ' + totalBeforePreSortIntegrity + ' Auszeichnungen nicht angezeigt, da in Ihrer Organisation nur die jeweils h&ouml;chste Stufe einer Auszeichnung getragen wird. <a class="add-btn hvr-float-shadow" href="?page=profile" title="ribbonsnotshown">Einstellungen &auml;ndern</a></div>';
+		strNotShown += '<div class= "ribbonsnotshownsection"> Ihnen werden ' + (totalBeforePreSort  - total) + ' Ihrer ' + totalBeforePreSortIntegrity + ' Auszeichnungen Nicht angezeigt, da in Ihrer Organisation nur die jeweils h&ouml;chste Stufe einer Auszeichnung getragen wird. <a class="add-btn hvr-float-shadow" href="?page=profile" title="ribbonsnotshown">Einstellungen &auml;ndern</a></div>';
 	}
 	if (totalBeforePreSort < totalBeforePreSortIntegrity )
 	{

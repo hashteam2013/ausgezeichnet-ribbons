@@ -1,7 +1,6 @@
 <script>
     /*-------------------------------------shop checkbox (show ribbons using category)-------------------------------------------------------------------------*/
-    // Read login state directly from PHP session to avoid stale/missing DOM values
-    var log_in = "<?php echo LOGGED_IN_USER ? '1' : '0'; ?>";
+    var log_in = $("#LOGGED_IN_USER").val();
     var customer_id = $("#custm option:selected").val();
     var recent_activity = {};
     recent_activity['category'] = {};
@@ -359,7 +358,7 @@
                             $('.batch').html(custData);
                         });
                         if (data.result != '') {
-                            $('#show_buttons').html('<select id="action-dropdown" class="delet-slct hvr-float-shadow"><option value=""><?php _e("Select Action");?></option><option value="delete"><?php _e("Delete Selected"); ?></option><option value="select"><?php _e("Select All"); ?></option></select><a href="javascript:void(0)"><input type="button" class="cart-slct divider hvr-float-shadow add_to_cart_ribbon" value="<?php _e("Add to Cart"); ?>"></a><a href="<?php echo make_url('cart'); ?>"><input type="button" class="cart-slct divider buy hvr-float-shadow view_cart" value="<?php _e("View Cart"); ?>"></a>');
+                            $('#show_buttons').html('<input type="button" class="delet-slct hvr-float-shadow delete" value="<?php _e("Delete Selected"); ?>"><input type="button" class="delet-slct hvr-float-shadow select" value="<?php _e("Select All"); ?>"><a href="javascript:void(0)"><input type="button" class="cart-slct divider hvr-float-shadow add_to_cart_ribbon" value="<?php _e("Add to Cart"); ?>"></a><a href="<?php echo make_url('cart'); ?>"><input type="button" class="cart-slct divider buy hvr-float-shadow view_cart" value="<?php _e("View Cart"); ?>"></a>');
                             badgeFilterByLevel(cust_id);
                         }
                     }
@@ -397,7 +396,7 @@
                                 return false;
                             }
                             if (data != '') {
-                                $('#show_buttons').html('<select id="action-dropdown" class="delet-slct hvr-float-shadow"><option value=""><?php _e("Select Action");?></option><option value="delete"><?php _e("Delete Selected"); ?></option><option value="select"><?php _e('Select All'); ?></option></select><a href="javascript:void(0)"><input type="button" class="cart-slct divider hvr-float-shadow add_to_cart_ribbon" value="<?php _e("Add to Cart"); ?>"></a><a href="<?php echo make_url('cart'); ?>"><input type="button" class="cart-slct divider buy hvr-float-shadow view_cart" value="<?php _e("View Cart"); ?>"></a>');
+                                $('#show_buttons').html('<input type="button" class="delet-slct hvr-float-shadow delete" value="<?php _e("Delete Selected"); ?>"><input type="button" class="delet-slct hvr-float-shadow select" value="<?php _e('Select All'); ?>"><a href="javascript:void(0)"><input type="button" class="cart-slct divider hvr-float-shadow add_to_cart_ribbon" value="<?php _e("Add to Cart"); ?>"></a><a href="<?php echo make_url('cart'); ?>"><input type="button" class="cart-slct divider buy hvr-float-shadow view_cart" value="<?php _e("View Cart"); ?>"></a>');
                                 badgeFilterByLevel(cust_id);
                             }
                         }
@@ -507,7 +506,7 @@
                     });
                     $('.batch').html(htmlData);
                     if (htmlData != '') {
-                        $('#show_buttons').html('<select id="action-dropdown" class="delet-slct hvr-float-shadow"><option value=""><?php _e("Select Action");?></option><option value="delete"><?php _e('Delete Selected'); ?></option><option value="select"><?php _e('Select All'); ?></option></select><a href="javascript:void(0)"><input type="button" class="cart-slct divider hvr-float-shadow add_to_cart_ribbon" value="<?php _e("Add to Cart"); ?>"></a><a href="<?php echo make_url('cart'); ?>"><input type="button" class="cart-slct divider buy hvr-float-shadow view_cart" value="<?php _e("View Cart"); ?>"></a>');
+                        $('#show_buttons').html('<input type="button" class="delet-slct hvr-float-shadow delete" value="<?php _e('Delete Selected'); ?>"><input type="button" class="delet-slct hvr-float-shadow select" value="<?php _e('Select All'); ?>"><a href="javascript:void(0)"><input type="button" class="cart-slct divider hvr-float-shadow add_to_cart_ribbon" value="<?php _e("Add to Cart"); ?>"></a><a href="<?php echo make_url('cart'); ?>"><input type="button" class="cart-slct divider buy hvr-float-shadow view_cart" value="<?php _e("View Cart"); ?>"></a>');
                         var badgeData = '';
                         $(data).each(function (index, value) {
                             badgeData += value.ribbon_type;
@@ -614,7 +613,7 @@
                                             nails = 4;
                                         }
                                     });
-                                    $('.badges').html('<div class=srch-reslt slect mar-top-10><div class=srch-heading><?php _e("Badges Placed"); ?></div>'+'<div class="druken-btn"><a class="add-btn hvr-float-shadow  pull-left" href="<?php echo WS_PATH; ?>?page=printBadgesPlaced&id=' + cust_id + '" title="invoice">Ansicht Drucken</a> <a class="add-btn hvr-float-shadow pull-right" href="<?php echo WS_PATH; ?>?page=printFullBadgesPlaced&id=' + cust_id + '" title="invoice">Alle Drucken</a></div>'+'<div class=flag-contaner>' + '<p> F&uumlr diese Spange ben&oumltigen Sie ' + LConnectors + " L&aumlngsverbinder und " + QConnectors + " Querverbinder. Wir empfehlen " + nails + " N&aumlgel. Bitte passen Sie die St&uumlckzahlen im Warenkorb an. </p>" + badgeData + '</div></div></div>');
+                                    $('.badges').html('<div class=srch-reslt slect mar-top-10><div class=srch-heading><?php _e("Badges Placed"); ?></div>'+'<div class="druken-btn"><a class="add-btn hvr-float-shadow  pull-left" href="http://www.ausgezeichnet.cc/?page=printBadgesPlaced&id=' + cust_id + '" title="invoice">Ansicht Drucken</a> <a class="add-btn hvr-float-shadow pull-right" href="http://www.ausgezeichnet.cc/?page=printFullBadgesPlaced&id=' + cust_id + '" title="invoice">Alle Drucken</a></div>'+'<div class=flag-contaner>' + '<p> F&uumlr diese Spange ben&oumltigen Sie ' + LConnectors + " L&aumlngsverbinder und " + QConnectors + " Querverbinder. Wir empfehlen " + nails + " N&aumlgel. Bitte passen Sie die St&uumlckzahlen im Warenkorb an. </p>" + badgeData + '</div></div></div>');
                                 }
                             });
 
@@ -691,8 +690,8 @@
     var tot;
     $(document.body).on('click', ".teriff", function () {
         tot = $(this).data('count');
-        $('.search-out_' + tot).remove();
-        $('.tag_line_' + tot).remove();
+        $('.search-out_' + tot).html('');
+        $('.tag_line_' + tot).hide('');
     });
 
     function badgeFilterByLevel(customer_id)
@@ -744,7 +743,7 @@
                         nails = 4;
                     }
                 });
-                $('.badges').html('<div class = srch-reslt slect mar-top-10><div class=srch-heading><?php _e("Badges Placed"); ?></div>'+'<div class="druken-btn"><a class="add-btn hvr-float-shadow  pull-left" href="<?php echo WS_PATH; ?>?page=printBadgesPlaced&id=' + customer_id + '" title="invoice">Ansicht Drucken</a> <a class="add-btn hvr-float-shadow pull-right" href="<?php echo WS_PATH; ?>?page=printFullBadgesPlaced&id=' + customer_id + '" title="invoice">Alle Drucken</a></div>'+'<div class=flag-contaner>' + '<p> F&uumlr diese Spange ben&oumltigen Sie ' + LConnectors + " L&aumlngsverbinder und " + QConnectors + " Querverbinder. Wir empfehlen " + nails + " N&aumlgel. Bitte passen Sie die St&uumlckzahlen im Warenkorb an.  </p>" + badgeData + '</div></div></div>');
+                $('.badges').html('<div class = srch-reslt slect mar-top-10><div class=srch-heading><?php _e("Badges Placed"); ?></div>'+'<div class="druken-btn"><a class="add-btn hvr-float-shadow  pull-left" href="http://www.ausgezeichnet.cc/?page=printBadgesPlaced&id=' + customer_id + '" title="invoice">Ansicht Drucken</a> <a class="add-btn hvr-float-shadow pull-right" href="http://www.ausgezeichnet.cc/?page=printFullBadgesPlaced&id=' + customer_id + '" title="invoice">Alle Drucken</a></div>'+'<div class=flag-contaner>' + '<p> F&uumlr diese Spange ben&oumltigen Sie ' + LConnectors + " L&aumlngsverbinder und " + QConnectors + " Querverbinder. Wir empfehlen " + nails + " N&aumlgel. Bitte passen Sie die St&uumlckzahlen im Warenkorb an.  </p>" + badgeData + '</div></div></div>');
                 if (total == '1') {
                     $(".flag-contaner img").css("max-width", "140px");
                     $(".flag-contaner").find(".ribbon_outer").addClass('opacity');

@@ -1,6 +1,5 @@
 <script type="text/javascript">
-    // Use server-side login state to avoid stale DOM reads overriding auth status
-    var log_in = "<?php echo LOGGED_IN_USER ? '1' : '0'; ?>";
+    var log_in = $("#LOGGED_IN_USER").val();
     /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -login ajax- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
     $("#login-submit").click(function (e) {
         var current_url = $('.current_url').val();
@@ -27,11 +26,11 @@
 
                     if (current_url == "add_to_list" || customer_url == 'add_to_cust') {
                         log_in = true;
-                            $('#myModal').modal('hide');
-                            $("#logged").remove();
-                            $("#reg").remove();
-                            $(".login-top").html(' <li><a href="<?php echo make_url("info"); ?>"> <?php _e("HELLO"); ?> ' + response.first_name + '</a></li><li><a href="<?php echo make_url("logout"); ?>"><?php _e("Logout"); ?></a> </li>');
-                            $("#ajax_reg").append('<li><a href="<?php echo make_url("logout"); ?>">Logout</a></li>');
+                        $('#myModal').modal('hide');
+                        $("#logged").remove();
+                        $("#reg").remove();
+                        $(".login-top").html(' <li><a href="<?php echo make_url("info"); ?>"> <?php _e("HELLO"); ?> ' + response.first_name + '</a></li><li><a href="<?php echo make_url("logout"); ?>"><?php _e("Logout"); ?></a> </li>');
+                        $("#ajax_reg").append('<li><a href="<?php echo make_url("logout"); ?>">Logout</a></li>');
                         var options = '';
                         $(response.customers).each(function (i, v) {
                             options += "<option value='" + v.id + "'>" + v.first_name + ' ' + v.last_name + "</option>";
@@ -44,7 +43,7 @@
                         });
                         $('.batch').html(cust_record);
                         if (cust_record != '') {
-                            $('#show_buttons').html('<select id="action-dropdown" class="delet-slct hvr-float-shadow"><option value=""><?php _e("Select Action");?></option><option value="delete"><?php _e("Delete Selected"); ?></option><option value="select">Select All</option></select><a href="javascript:void(0)"><input type="button" class="cart-slct divider hvr-float-shadow add_to_cart_ribbon" value="<?php _e("Add to Cart"); ?>"></a><a href="<?php echo make_url('cart'); ?>"><input type="button" class="cart-slct divider buy hvr-float-shadow view_cart" value="<?php _e("View Cart"); ?>"></a>');
+                            $('#show_buttons').html('<input type="button" class="delet-slct hvr-float-shadow delete" value="<?php _e("Delete Selected"); ?>"><input type="button" class="delet-slct hvr-float-shadow select" value="Select All"><a href="javascript:void(0)"><input type="button" class="cart-slct divider hvr-float-shadow add_to_cart_ribbon" value="<?php _e("Add to Cart"); ?>"></a><a href="<?php echo make_url('cart'); ?>"><input type="button" class="cart-slct divider buy hvr-float-shadow view_cart" value="<?php _e("View Cart"); ?>"></a>');
                         } else if (cust_record == '') {
                             $('#show_buttons').html('');
                         }
@@ -252,8 +251,7 @@
         /*-----------------------------------Add customer----------------------------------------------------*/
     $(".add_cust").click(function () {
         if (log_in) {
-           
-            $('#custmodal').css({"opacity": "1","display":"block"});
+            $('#custmodal').modal('show');
             $("#cust-submit").click(function (e) {
                 var data = {"action": "add_customer"};
                 data = $("#customer_add_form").serialize() + "&" + $.param(data);
@@ -297,7 +295,7 @@
                 });
             });
         } else {
-            $('#loginmodal').css({"opacity": "1","display":"block"});
+            $('#myModal').modal('show');
             $('.customer_url').val("add_to_cust");
         }
     });

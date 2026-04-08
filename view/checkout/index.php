@@ -1,4 +1,4 @@
-﻿<?php //echo "<pre/>";print_R($user_detail); ?>
+﻿<?php //echo "<pre/>";print_R($user_detail) cheeckout index; ?>
 <div class="filter-bar sampewr bg-body md:py-7 py-4  flex w-full">
     <div class="container-custom">
         <h1 class="md:text-3xl text-lg font-gothic text-black text-center"><?php _e("Checkout"); ?></h1>
@@ -379,7 +379,7 @@
                             </svg>
                         </a>
                     </h3>
-                    <div class="bg-body rounded-[20px] border border-[#d9d9d9] p-5 flex flex-col">
+                    <div class="rounded-[20px] border border-[#d9d9d9] p-5 flex flex-col">
                         <?php
                         $customer_name = "";
                         $confirmation_needed = 0;
@@ -416,38 +416,46 @@
                         <h3 class="md:text-3xl text-xl text-black font-gothic billsum_heading"><?php _e("bill_summary") ?>
                         </h3>
                         <div class="bg-body rounded-[20px] border border-[#d9d9d9] p-5 flex flex-col">
+                            
+                            <?php
+                            $checkout_discount = (float) $cart_detail->discount;
+                            $checkout_discount = min(1, max(0, $checkout_discount));
+                            $checkout_has_code = !empty(trim((string) $cart_detail->rabattcode));
+                            $checkout_effective_discount = $checkout_has_code ? $checkout_discount : 0;
+                            $checkout_total_before_shipping = get_total() * (1 - $checkout_effective_discount);
+                            ?>
                             <div class="total text-sm font-normal text-secondary flex gap-2.5 justify-between">
                                 <p class=""><?php _e("Total"); ?></p>
                                 <p class=""><?php show_price(get_total()); ?></p>
                             </div>
                             <?php
-                            if ($cart_detail->discount <> 0) {
+                            if ($checkout_effective_discount > 0) {
                                 echo '<div class="total text-sm font-normal text-secondary flex gap-2.5 justify-between">';
                                 echo '<p>';
-                                echo 'Aktionspreis durch Code ' . ($cart_detail->rabattcode);
+                                echo 'Aktionspreis durch Code ' . htmlspecialchars($cart_detail->rabattcode);
                                 echo '</p>';
                                 echo '<p>';
-                                echo show_price(get_total() * (1 - $cart_detail->discount));
+                                echo show_price($checkout_total_before_shipping);
                                 echo '</p>';
                                 echo '</div>';
                             }
                             ?>
                             <input type="hidden" class="total_amount_after_discount"
-                                value="<?php show_price(get_total() * (1 - $cart_detail->discount)); ?>" />
+                                value="<?php echo show_price($checkout_total_before_shipping, true); ?>" />
                             <div class="total text-sm font-normal text-secondary flex gap-2.5 justify-between mt-5">
                                 <p><?php _e("ShippingCost"); ?><br> <?php echo SHIPPING_COST_COMMENT; ?></p>
                                 <p class="area_shipping_cost">
-                                    <?php show_price(shipingCostWithArea(get_total() * (1 - $cart_detail->discount), $area)); ?>
+                                    <?php show_price(shipingCostWithArea($checkout_total_before_shipping, $area)); ?>
                                 </p>
                             </div>
                             <div class="mt-5 text-sm font-medium text-black/55">
                                 <p><?php echo SHIPPING_TIME_TITLE ?> - <?php echo SHIPPING_TIME_VALUE ?></p>
                             </div>
                             <div
-                                class="mt-5 pt-5 border-t border-solid border-[#d9d9d9] flex md:flex-nowrap flex-wrap gap-2.5 text-sm font-medium text-black justify-between">
+                                class="mt-5 pt-5 border-t border-solid border-[#d9d9d9] flex md:flex-nowrap flex-wrap gap-2.5 md:text-lg text-sm font-medium text-black justify-between">
                                 <p><?php _e('TotalShipping'); ?></p>
                                 <p class="total_amnt_shipping_cost">
-                                    <?php echo show_price(get_total() * (1 - $cart_detail->discount) + shipingCostWithArea(get_total() * (1 - $cart_detail->discount), $area)); ?>
+                                    <?php echo show_price($checkout_total_before_shipping + shipingCostWithArea($checkout_total_before_shipping, $area)); ?>
                                 </p>
                             </div>
                         </div>
@@ -456,7 +464,7 @@
                         <h3 class="md:text-3xl text-xl text-black font-gothic"><?php _e("Payment Gateway"); ?></h3>
                         <div class="bg-body rounded-[20px] border border-[#d9d9d9] p-5 flex flex-col">
                             <?php if (PAYMENT_GATEWAYS == 'Both') { ?>
-                                <div class="flex flex-wrap gap-3 mb-5">
+                                <div class="flex flex-col gap-5 mb-5">
                                     <label class="radio text-sm text-secondary font-regular gap-2 flex items-center relative">
                                         <input type="radio" class="min-w-4 h-4 opacity-0 absolute left-0" <?php echo (DEFAULT_PAYMENT_GATEWAY == 'Paypal') ? "checked" : "" ?> name="payment_gateway"
                                             value="Paypal" />

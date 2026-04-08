@@ -1,4 +1,4 @@
-<div class="flex flex-col md:gap-20 gap-5">
+<div class="flex flex-col md:gap-20 gap-5 cartindex">
     <div class="bg-body md:py-7 py-4 flex w-full">
         <div class="container-custom">
             <h1 class="cart-hdng text-3xl font-gothic text-black text-center"><?php _e("Cart"); ?></h1>
@@ -164,7 +164,7 @@
                                             </button>
                                             <input type="number" name="quant[<?php echo $record['id']; ?>]"
                                                 id="p_<?php echo $record['id']; ?>"
-                                                class="cart_sel qty-input w-16 focus:outline-none text-center text-sm text-dark font-medium"
+                                                class="cart_sel qty-input min-w-12 focus:outline-none text-center text-sm text-dark font-medium"
                                                 data-anchor="customer_<?php echo (int)$record['customer_id']; ?>"
                                                 min="0" max="15" value="<?php echo $record['quantity']; ?>" />
                                             <button type="button" class="qty-btn qty-increase"
@@ -207,24 +207,30 @@
                                     class="btn btn-info btn-sm update_quantity text-sm text-primary"><?php _e('Clear'); ?></button>
                             </div>
                             <?php
-                            $discount = $cart_detail->discount;
+                              // Clamp discount to 0–1; only apply for display when a code is present (avoid wrong total when code empty but discount stored)
+                            $discount = (float) $cart_detail->discount;
+                            $discount = min(1, max(0, $discount));
+                            $has_code = !empty(trim((string) $cart_detail->rabattcode));
+                            $effective_discount = $has_code ? $discount : 0;
+                            $total_before_shipping = get_total() * (1 - $effective_discount);
                             echo '<div class="flex gap-2.5 justify-between text-sm text-secondary mb-6 font-normal"><p>';
                             echo _e('Total');
                             echo '</p><p>';
                             echo show_price(get_total());
                             echo '</p></div>';
-                            if ($discount <> 0) {
+                            // Only show Aktionspreis when we have a valid discount and a code (valid code was applied)
+                            if ($effective_discount > 0) {
                                 echo '<div class="flex gap-2.5 justify-between"><p>';
-                                echo 'Atkionspreis -' . ($discount * 100) . '% durch Code ' . $cart_detail->rabattcode . '';
+                                echo 'Aktionspreis -' . round($discount * 100, 0) . '% durch Code ' . htmlspecialchars($cart_detail->rabattcode) . '';
                                 echo '</p>';
                                 echo '<p>';
-                                echo show_price(get_total() * (1 - $discount));
+                                echo show_price($total_before_shipping);
                                 echo '</p></div>';
                             }
                             ?>
                             <div class="flex gap-2.5 justify-between text-sm text-secondary mb-5 font-normal">
                                 <p><?php _e('ShippingCost'); ?></p>
-                                <p><?php echo show_price(shipingCostWithArea(get_total() * (1 - $discount), $area)); ?>
+                                <p><?php echo show_price(shipingCostWithArea($total_before_shipping, $area)); ?>
                                 </p>
                             </div>
                             <div class="text-black/55 text-sm font-medium mb-5">
@@ -239,7 +245,7 @@
                             <div
                                 class="flex gap-2.5 justify-between md:text-lg text-sm text-black font-medium pt-5 border-t border-[#d9d9d9] mb-6">
                                 <p><?php _e('TotalShipping'); ?></p>
-                                <p><?php echo show_price(get_total() * (1 - $discount) + shipingCostWithArea(get_total() * (1 - $discount), $area)); ?>
+                                <p><?php echo show_price($total_before_shipping + shipingCostWithArea($total_before_shipping, $area)); ?>
                                 </p>
                             </div>
                             <div class="flex xl:flex-nowrap flex-wrap gap-2.5 mb-5">
@@ -247,7 +253,7 @@
                                     class="feild-a flex-auto px-4 min-h-10 text-sm text-black font-normal focus:outline-none border border-[#d9d9d9] rounded-md"
                                     name='rabattcode' value="<?php echo $cart_detail->rabattcode; ?>"
                                     placeholder="<?php _e('enter_discount'); ?>">
-                                <button type='submit' name='sendrabatt'
+                                <button type='submit' name='sendrabatt' 
                                     class="btn text-white rounded-md btn-info btn-sm update_quantity bg-primary min-h-10 text-sm px-4 font-medium hover:bg-secondary"><?php _e('usecode'); ?>
                                 </button>
                             </div>

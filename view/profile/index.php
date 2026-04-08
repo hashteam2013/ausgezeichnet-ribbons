@@ -1,4 +1,4 @@
-<div class="filter-bar sampewr bg-body md:py-7 py-4 flex w-full">
+﻿<div class="filter-bar sampewr bg-body md:py-7 py-4 flex w-full">
     <div class="container-custom">
         <h1 class="md:text-3xl text-lg font-gothic text-black text-center"><?php _e(" My Account"); ?></h1>
     </div>
@@ -71,7 +71,7 @@
                        <h3><?php _e('ranking')?></h3>
 		
 
-	                   <div class="form-group mb-7  flex flex-col gap-2.5">
+	                   <div class="form-group mb-7  flex flex-col gap-2.5  forcewearall">
                             <?php
                                     echo $msgWearAll;
                                     

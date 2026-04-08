@@ -251,9 +251,9 @@
     });
         /*-----------------------------------Add customer----------------------------------------------------*/
     $(".add_cust").click(function () {
-
+        
         if (log_in == 1) {
-
+            
             $('#custmodal').css({"opacity": "1","display":"block"});
             $('body').addClass('active');
             $("#cust-submit").click(function (e) {
@@ -267,7 +267,7 @@
                     url: '<?php echo make_url('ajax', array("action" => "add_customer")); ?>',
                     data: data,
                     dataType: 'JSON',
-                    success: function (response) {
+                     success: function (response) {
                         $('.ajax-load-image').css('display', 'none');
                         if (response.status == "Sucessfully") {
                             $('#custm').append('<option value =' + response.id + '>' + response.first_name + ' ' + response.last_name + '</option>');
